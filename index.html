@@ -1,5 +1,1150 @@
 <!DOCTYPE html>
-<html>
-<head><title>So MIAM</title></head>
-<body><h1>Coming soon</h1></body>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So MIAM — Votre restaurant mérite plus de visibilité</title>
+<meta name="description" content="So MIAM, agence de communication digitale spécialisée restaurants. Réseaux sociaux, Meta Ads, Google, shooting photo. +100 restaurants accompagnés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --y: #F5C400;
+  --k: #111111;
+  --k2: #1C1C1C;
+  --k3: #2D2D2D;
+  --g1: #444444;
+  --g2: #888888;
+  --g3: #CCCCCC;
+  --g4: #E8E8E8;
+  --cr: #FFF8E7;
+  --w: #FFFFFF;
+  --green: #1A7A4A;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cr);
+  color: var(--k);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--k);
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid #222;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--w); letter-spacing: 1px;
+}
+.nav-logo span { color: var(--y); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--g3);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--y); }
+.nav-cta {
+  background: var(--y); color: var(--k);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 700;
+  padding: 9px 20px; border-radius: 5px;
+  text-decoration: none; white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.88; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--w); border-radius: 2px; transition: 0.3s; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  background: var(--k);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 120px 48px 80px;
+  gap: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-dot {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: var(--y);
+  opacity: 0.04;
+  top: -200px; right: -200px;
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #1a1a1a; border: 1px solid #333;
+  color: var(--g2); font-size: 12px; font-weight: 500;
+  padding: 6px 14px; border-radius: 20px;
+  margin-bottom: 28px; letter-spacing: 0.04em;
+}
+.hero-badge span { color: var(--y); }
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  color: var(--w);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+h1 em { color: var(--y); font-style: normal; }
+.hero-sub {
+  font-size: 17px; color: var(--g2);
+  line-height: 1.7; margin-bottom: 40px;
+  max-width: 480px; font-weight: 300;
+}
+.hero-sub strong { color: var(--w); font-weight: 500; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--y); color: var(--k);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  padding: 14px 28px; border-radius: 6px;
+  text-decoration: none; transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-secondary {
+  background: transparent; color: var(--w);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  padding: 13px 28px; border-radius: 6px;
+  text-decoration: none; border: 1px solid #444;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--y); color: var(--y); }
+.hero-right { position: relative; display: flex; justify-content: center; }
+.hero-photo-wrap {
+  position: relative;
+  width: 380px; height: 460px;
+}
+.hero-photo-bg {
+  position: absolute; inset: 0;
+  background: var(--y);
+  border-radius: 20px;
+  transform: rotate(3deg);
+  opacity: 0.15;
+}
+.hero-photo {
+  position: relative;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  background: var(--k3);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.hero-photo-placeholder {
+  text-align: center; color: var(--g2); font-size: 13px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.hero-stat-pill {
+  position: absolute;
+  background: var(--y); color: var(--k);
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  padding: 10px 18px; border-radius: 30px;
+  font-size: 14px; white-space: nowrap;
+}
+.hero-stat-pill.one { bottom: 30px; left: -40px; }
+.hero-stat-pill.two { top: 40px; right: -30px; font-size: 12px; }
+
+/* ── LOGOS ── */
+#logos {
+  background: var(--k2);
+  padding: 48px;
+  border-top: 1px solid #222; border-bottom: 1px solid #222;
+}
+.logos-label {
+  text-align: center;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--g2);
+  margin-bottom: 32px;
+}
+.logos-grid {
+  display: flex; gap: 48px;
+  justify-content: center; align-items: center;
+  flex-wrap: wrap;
+}
+.logo-item {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--g1); letter-spacing: 0.5px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.logo-item:hover { color: var(--g3); }
+
+/* ── STATS ── */
+#stats {
+  background: var(--y);
+  padding: 72px 48px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  max-width: 1100px; margin: 0 auto;
+}
+.stat-item {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--y);
+}
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800; color: var(--k);
+  line-height: 1;
+}
+.stat-desc {
+  font-size: 13px; color: var(--k3);
+  margin-top: 8px; font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── COMMENT CA MARCHE ── */
+#comment {
+  background: var(--cr);
+  padding: 100px 48px;
+}
+.section-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--y);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 2px;
+  background: var(--y);
+}
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800; color: var(--k);
+  line-height: 1.1; margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 16px; color: var(--g1);
+  margin-bottom: 64px; font-weight: 300;
+  max-width: 520px; line-height: 1.6;
+}
+.steps-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.step-card {
+  background: var(--w);
+  padding: 40px 32px;
+  position: relative;
+  transition: transform 0.2s;
+}
+.step-card:hover { transform: translateY(-4px); }
+.step-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 64px; font-weight: 800;
+  color: var(--y); line-height: 1;
+  margin-bottom: 20px; opacity: 0.3;
+}
+.step-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800;
+  color: var(--k); margin-bottom: 12px;
+}
+.step-text {
+  font-size: 14px; color: var(--g1);
+  line-height: 1.7; font-weight: 300;
+}
+.step-accent {
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--y);
+}
+
+/* ── AVANTAGES ── */
+#avantages {
+  background: var(--k);
+  padding: 100px 48px;
+}
+#avantages .section-title { color: var(--w); }
+#avantages .section-sub { color: var(--g2); }
+.avantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.avantage-card {
+  padding: 32px;
+  border: 1px solid #222;
+  border-radius: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.avantage-card:hover { border-color: var(--y); transform: translateY(-3px); }
+.avantage-icon {
+  width: 44px; height: 44px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.avantage-icon svg { width: 22px; height: 22px; }
+.avantage-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 800;
+  color: var(--w); margin-bottom: 10px;
+}
+.avantage-text {
+  font-size: 13px; color: var(--g2);
+  line-height: 1.7; font-weight: 300;
+}
+
+/* ── SERVICES ── */
+#services {
+  background: var(--cr);
+  padding: 100px 48px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.services-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.service-card {
+  background: var(--w);
+  padding: 28px 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.service-card:hover { border-color: var(--y); transform: translateY(-3px); }
+.service-icon {
+  width: 48px; height: 48px;
+  background: var(--y);
+  border-radius: 12px;
+  margin: 0 auto 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.service-icon svg { width: 24px; height: 24px; }
+.service-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px; font-weight: 800;
+  color: var(--k); letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── RESULTATS ── */
+#resultats {
+  background: var(--k);
+  padding: 100px 48px;
+}
+#resultats .section-title { color: var(--w); }
+#resultats .section-sub { color: var(--g2); }
+.resultats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.resultat-card {
+  background: var(--k2);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: border-color 0.2s;
+}
+.resultat-card:hover { border-color: var(--y); }
+.resultat-img {
+  height: 200px;
+  background: var(--k3);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--g2); font-size: 12px;
+  overflow: hidden;
+}
+.resultat-body { padding: 24px; }
+.resultat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px; font-weight: 800;
+  color: var(--y); line-height: 1; margin-bottom: 6px;
+}
+.resultat-label {
+  font-size: 13px; color: var(--g2); margin-bottom: 8px;
+}
+.resultat-client {
+  font-size: 11px; color: var(--g1);
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+}
+
+/* ── TEMOIGNAGES ── */
+#temoignages {
+  background: var(--cr);
+  padding: 100px 48px;
+}
+.temoignages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.temoignage-card {
+  background: var(--w);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--g4);
+  position: relative;
+}
+.temoignage-quote {
+  font-size: 40px; font-family: 'Syne', sans-serif;
+  font-weight: 800; color: var(--y);
+  line-height: 1; margin-bottom: 16px;
+}
+.temoignage-text {
+  font-size: 14px; color: var(--g1);
+  line-height: 1.75; font-weight: 300;
+  margin-bottom: 24px;
+}
+.temoignage-text strong { color: var(--k); font-weight: 600; }
+.temoignage-author {
+  font-size: 13px; font-weight: 600; color: var(--k);
+}
+.temoignage-resto {
+  font-size: 11px; color: var(--g2); margin-top: 2px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* ── EQUIPE ── */
+#equipe {
+  background: var(--k);
+  padding: 100px 48px;
+}
+#equipe .section-title { color: var(--w); }
+#equipe .section-sub { color: var(--g2); }
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.equipe-card { text-align: center; }
+.equipe-photo {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: var(--k3);
+  margin: 0 auto 16px;
+  overflow: hidden;
+  border: 3px solid #222;
+  transition: border-color 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.equipe-card:hover .equipe-photo { border-color: var(--y); }
+.equipe-photo img { width: 100%; height: 100%; object-fit: cover; }
+.equipe-photo-placeholder {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px; font-weight: 800; color: var(--g1);
+}
+.equipe-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 800;
+  color: var(--w); margin-bottom: 4px;
+}
+.equipe-role {
+  font-size: 12px; color: var(--g2);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* ── CTA ── */
+#contact {
+  background: var(--y);
+  padding: 100px 48px;
+}
+.contact-inner {
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+.contact-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800; color: var(--k);
+  line-height: 1.1; margin-bottom: 20px;
+}
+.contact-sub {
+  font-size: 15px; color: var(--k3);
+  line-height: 1.7; font-weight: 300;
+  margin-bottom: 32px;
+}
+.contact-bloc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 800;
+  color: var(--k); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+.contact-lille {
+  background: var(--k);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 16px;
+}
+.contact-lille-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 800; color: var(--y);
+  margin-bottom: 8px;
+}
+.contact-lille-text {
+  font-size: 13px; color: var(--g2);
+  margin-bottom: 20px; line-height: 1.6;
+}
+.btn-dark {
+  background: var(--y); color: var(--k);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 700;
+  padding: 12px 24px; border-radius: 6px;
+  text-decoration: none; display: inline-block;
+  transition: opacity 0.2s;
+}
+.btn-dark:hover { opacity: 0.85; }
+.contact-national {
+  background: var(--w);
+  border-radius: 12px;
+  padding: 28px;
+}
+.contact-national-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 800; color: var(--k);
+  margin-bottom: 8px;
+}
+.contact-national-text {
+  font-size: 13px; color: var(--g1);
+  margin-bottom: 20px; line-height: 1.6;
+}
+.btn-cal {
+  background: var(--k); color: var(--y);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 700;
+  padding: 12px 24px; border-radius: 6px;
+  text-decoration: none; display: inline-block;
+  transition: opacity 0.2s;
+}
+.btn-cal:hover { opacity: 0.85; }
+
+/* ── PLATEFORME TEASER ── */
+#plateforme {
+  background: var(--k2);
+  padding: 80px 48px;
+  border-top: 1px solid #222;
+  text-align: center;
+}
+.plateforme-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #1a1a1a; border: 1px solid #333;
+  color: var(--y); font-size: 11px; font-weight: 600;
+  padding: 5px 12px; border-radius: 20px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.plateforme-dot {
+  width: 7px; height: 7px;
+  background: var(--y); border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.plateforme-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 800; color: var(--w);
+  margin-bottom: 12px;
+}
+.plateforme-sub {
+  font-size: 15px; color: var(--g2);
+  margin-bottom: 32px; font-weight: 300;
+}
+.waitlist-form {
+  display: flex; gap: 10px;
+  justify-content: center; flex-wrap: wrap;
+}
+.waitlist-input {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; padding: 12px 20px;
+  background: #1a1a1a; border: 1px solid #333;
+  color: var(--w); border-radius: 6px;
+  width: 280px; outline: none;
+  transition: border-color 0.2s;
+}
+.waitlist-input:focus { border-color: var(--y); }
+.waitlist-input::placeholder { color: var(--g1); }
+.btn-waitlist {
+  background: var(--y); color: var(--k);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 700;
+  padding: 12px 24px; border-radius: 6px;
+  border: none; cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-waitlist:hover { opacity: 0.88; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--k);
+  border-top: 1px solid #1a1a1a;
+  padding: 32px 48px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 800;
+  color: var(--w); letter-spacing: 1px;
+}
+.footer-logo span { color: var(--y); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 12px; color: var(--g2);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--g3); }
+.footer-copy {
+  font-size: 12px; color: var(--g1);
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid, .services-grid-2 { grid-template-columns: repeat(3, 1fr); }
+  .equipe-grid { grid-template-columns: repeat(3, 1fr); }
+  .avantages-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  #hero { grid-template-columns: 1fr; padding: 100px 20px 60px; text-align: center; }
+  .hero-right { display: none; }
+  .hero-sub { margin: 0 auto 40px; }
+  .hero-btns { justify-content: center; }
+  #logos, #stats, #comment, #avantages, #services, #resultats, #temoignages, #equipe, #contact, #plateforme { padding: 60px 20px; }
+  .steps-grid, .avantages-grid, .resultats-grid, .temoignages-grid { grid-template-columns: 1fr; }
+  .services-grid, .services-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .equipe-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  footer { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SO<span> MIAM</span></div>
+  <ul class="nav-links">
+    <li><a href="#comment">Comment ça marche</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#resultats">Résultats</a></li>
+    <li><a href="#equipe">Équipe</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Prendre RDV</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-dot"></div>
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span>★</span> +100 restaurants accompagnés
+    </div>
+    <h1>Votre resto mérite<br>d'être <em>vu.</em></h1>
+    <p class="hero-sub">
+      Pendant que <strong>vous faites tourner votre restaurant</strong>, on s'occupe de remplir vos tables grâce aux réseaux sociaux, Meta Ads et Google.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Réserver un appel stratégique</a>
+      <a href="#resultats" class="btn-secondary">Voir les résultats →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-bg"></div>
+      <div class="hero-photo">
+        <div class="hero-photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="18" r="10" stroke="#555" stroke-width="2"/>
+            <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span style="font-size:11px;">Photo Thomas</span>
+        </div>
+      </div>
+      <div class="hero-stat-pill one">+34% de réservations</div>
+      <div class="hero-stat-pill two">100+ restaurants</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS CLIENTS -->
+<section id="logos">
+  <div class="logos-label">Ils nous font confiance</div>
+  <div class="logos-grid">
+    <div class="logo-item">Comptoir 44</div>
+    <div class="logo-item">Bistrot de la Station</div>
+    <div class="logo-item">GABO</div>
+    <div class="logo-item">Barbue d'Anvers</div>
+    <div class="logo-item">Les Toquées</div>
+    <div class="logo-item">Sweet Lady</div>
+    <div class="logo-item">L'Evidence</div>
+    <div class="logo-item">Bi Bim Bap</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item fade-up">
+      <div class="stat-num">+100</div>
+      <div class="stat-desc">Restaurants accompagnés</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.1s">
+      <div class="stat-num">+76%</div>
+      <div class="stat-desc">De réservations en moyenne</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.2s">
+      <div class="stat-num">3x</div>
+      <div class="stat-desc">Plus de visibilité Google</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.3s">
+      <div class="stat-num">3€</div>
+      <div class="stat-desc">Coût moyen par réservation</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT CA MARCHE -->
+<section id="comment">
+  <div class="section-eyebrow">Comment ça marche</div>
+  <h2 class="section-title">3 étapes pour remplir<br>votre restaurant.</h2>
+  <p class="section-sub">On s'occupe de tout. Vous vous concentrez sur ce que vous faites de mieux.</p>
+  <div class="steps-grid">
+    <div class="step-card fade-up">
+      <div class="step-accent"></div>
+      <div class="step-num">01</div>
+      <div class="step-title">Diagnostic gratuit</div>
+      <p class="step-text">On évalue vos avis, détecte les faiblesses en communication et identifie les opportunités manquées. Si on peut vous aider, on démarre. Si on peut pas, on vous le dit.</p>
+    </div>
+    <div class="step-card fade-up" style="transition-delay:0.1s">
+      <div class="step-accent"></div>
+      <div class="step-num">02</div>
+      <div class="step-title">Shooting photo offert</div>
+      <p class="step-text">Des photos de qualité, ça change tout. On réalise un shooting professionnel pour capturer l'essence de votre restaurant. Inclus dans toutes nos offres.</p>
+    </div>
+    <div class="step-card fade-up" style="transition-delay:0.2s">
+      <div class="step-accent"></div>
+      <div class="step-num">03</div>
+      <div class="step-title">Accompagnement So MIAM</div>
+      <p class="step-text">On gère vos réseaux sociaux, votre fiche Google et vos publicités Meta. Vous recevez un rapport de performance mensuel. Pendant que vous cuisinez.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES -->
+<section id="avantages">
+  <div class="section-eyebrow" style="color:var(--y);">Pourquoi So MIAM</div>
+  <h2 class="section-title" style="color:var(--w);">Ce qu'on vous apporte<br>concrètement.</h2>
+  <p class="section-sub" style="color:var(--g2); margin-bottom:48px;">Pas de promesses floues. Voilà ce qui change pour votre restaurant.</p>
+  <div class="avantages-grid">
+    <div class="avantage-card fade-up">
+      <div class="avantage-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </div>
+      <div class="avantage-title">Visibilité immédiate</div>
+      <p class="avantage-text">Vos futurs clients vous cherchent sur Internet. On s'assure qu'ils vous trouvent, vous, avant tout le monde.</p>
+    </div>
+    <div class="avantage-card fade-up" style="transition-delay:0.1s">
+      <div class="avantage-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <div class="avantage-title">Communauté fidèle</div>
+      <p class="avantage-text">On crée du lien avec vos clients actuels et on en attire de nouveaux. Engagement réel, pas du chiffre gonflé.</p>
+    </div>
+    <div class="avantage-card fade-up" style="transition-delay:0.2s">
+      <div class="avantage-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2" stroke-linecap="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </div>
+      <div class="avantage-title">Publicités qui convertissent</div>
+      <p class="avantage-text">Des campagnes Meta Ads ciblées sur les gourmands de votre zone. Coût moyen constaté : 3€ par réservation générée.</p>
+    </div>
+    <div class="avantage-card fade-up" style="transition-delay:0.3s">
+      <div class="avantage-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2" stroke-linecap="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div class="avantage-title">Réputation Google</div>
+      <p class="avantage-text">Fiche Google optimisée, avis gérés, position locale améliorée. Vos clients lisent les avis avant de réserver.</p>
+    </div>
+    <div class="avantage-card fade-up" style="transition-delay:0.4s">
+      <div class="avantage-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+      <div class="avantage-title">Rapport mensuel</div>
+      <p class="avantage-text">Chaque mois, un rapport de performance complet : réservations générées, portée, publicités. Transparence totale.</p>
+    </div>
+    <div class="avantage-card fade-up" style="transition-delay:0.5s">
+      <div class="avantage-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F5C400" stroke-width="2" stroke-linecap="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <div class="avantage-title">Réactivité & proximité</div>
+      <p class="avantage-text">Une équipe dédiée, des délais respectés, un interlocuteur direct. Pas de ticket, pas de robot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-eyebrow">Nos services</div>
+  <h2 class="section-title">Tout ce qu'il faut pour<br>remplir vos tables.</h2>
+  <p class="section-sub">Une offre complète, un seul interlocuteur.</p>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <div class="service-name">Shooting photo</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.05s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
+        </svg>
+      </div>
+      <div class="service-name">Vidéos</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.1s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </div>
+      <div class="service-name">Réseaux sociaux</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.15s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </div>
+      <div class="service-name">Google</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.2s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+      </div>
+      <div class="service-name">Publicités Meta</div>
+    </div>
+  </div>
+  <div class="services-grid-2" style="margin-top:12px;">
+    <div class="service-card fade-up" style="transition-delay:0.25s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        </svg>
+      </div>
+      <div class="service-name">Influenceurs</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.3s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div class="service-name">SMS & Email</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.35s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+      <div class="service-name">Gestion des avis</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.4s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+      </div>
+      <div class="service-name">QR Code</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.45s">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </div>
+      <div class="service-name">Rapport de perf.</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTATS -->
+<section id="resultats">
+  <div class="section-eyebrow" style="color:var(--y);">Résultats clients</div>
+  <h2 class="section-title" style="color:var(--w);">Des chiffres, pas<br>des promesses.</h2>
+  <p class="section-sub" style="color:var(--g2); margin-bottom:48px;">Quelques exemples de ce qu'on a obtenu pour nos clients.</p>
+  <div class="resultats-grid">
+    <div class="resultat-card fade-up">
+      <div class="resultat-img">
+        <span>Visuel client</span>
+      </div>
+      <div class="resultat-body">
+        <div class="resultat-num">+76,2%</div>
+        <div class="resultat-label">de réservations en 3 mois</div>
+        <div class="resultat-client">Café de Paris · Lille</div>
+      </div>
+    </div>
+    <div class="resultat-card fade-up" style="transition-delay:0.1s">
+      <div class="resultat-img">
+        <span>Visuel client</span>
+      </div>
+      <div class="resultat-body">
+        <div class="resultat-num">60 → 3k</div>
+        <div class="resultat-label">abonnés en 1 mois</div>
+        <div class="resultat-client">Sweet Lady · France</div>
+      </div>
+    </div>
+    <div class="resultat-card fade-up" style="transition-delay:0.2s">
+      <div class="resultat-img">
+        <span>Visuel client</span>
+      </div>
+      <div class="resultat-body">
+        <div class="resultat-num">3€</div>
+        <div class="resultat-label">coût par réservation Meta Ads</div>
+        <div class="resultat-client">Restaurant client · Lille</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section id="temoignages">
+  <div class="section-eyebrow">Témoignages</div>
+  <h2 class="section-title">Ce que disent<br>nos clients.</h2>
+  <p class="section-sub">Ils ont choisi So MIAM. Voilà ce qu'ils en pensent.</p>
+  <div class="temoignages-grid">
+    <div class="temoignage-card fade-up">
+      <div class="temoignage-quote">"</div>
+      <p class="temoignage-text">Agence de marketing très professionnelle. J'ai ouvert mon salon de thé et j'ai <strong>obtenu très rapidement de la visibilité</strong>. L'équipe est très réactive et toujours à l'écoute. Je recommande sans hésitation.</p>
+      <div class="temoignage-author">Princess</div>
+      <div class="temoignage-resto">Sweet Lady Lille</div>
+    </div>
+    <div class="temoignage-card fade-up" style="transition-delay:0.1s">
+      <div class="temoignage-quote">"</div>
+      <p class="temoignage-text">Thomas, c'est le chef d'Internet. Il réalise le site de votre choix et <strong>gère au mieux selon vos priorités</strong>. Une méthode de travail très efficace. Je recommande So MIAM à tout restaurateur.</p>
+      <div class="temoignage-author">Emmanuel</div>
+      <div class="temoignage-resto">L'Evidence Traiteur</div>
+    </div>
+    <div class="temoignage-card fade-up" style="transition-delay:0.2s">
+      <div class="temoignage-quote">"</div>
+      <p class="temoignage-text">So MIAM m'accompagne depuis plusieurs mois dans ma communication digitale. Ils ont <strong>mis en place une stratégie pour gagner de nombreux nouveaux clients</strong>. Prix très raisonnable, je recommande vivement.</p>
+      <div class="temoignage-author">Rafik</div>
+      <div class="temoignage-resto">Bi Bim Bap Lille</div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section id="equipe">
+  <div class="section-eyebrow" style="color:var(--y);">L'équipe</div>
+  <h2 class="section-title" style="color:var(--w);">Les meilleurs en<br>marketing restaurant.</h2>
+  <p class="section-sub" style="color:var(--g2); margin-bottom:48px;">Une équipe dédiée, des experts dans leur domaine.</p>
+  <div class="equipe-grid">
+    <div class="equipe-card fade-up">
+      <div class="equipe-photo"><div class="equipe-photo-placeholder">T</div></div>
+      <div class="equipe-name">Thomas</div>
+      <div class="equipe-role">Directeur</div>
+    </div>
+    <div class="equipe-card fade-up" style="transition-delay:0.1s">
+      <div class="equipe-photo"><div class="equipe-photo-placeholder">H</div></div>
+      <div class="equipe-name">Haren</div>
+      <div class="equipe-role">Community Manager</div>
+    </div>
+    <div class="equipe-card fade-up" style="transition-delay:0.2s">
+      <div class="equipe-photo"><div class="equipe-photo-placeholder">N</div></div>
+      <div class="equipe-name">Nouria</div>
+      <div class="equipe-role">Community Manager</div>
+    </div>
+    <div class="equipe-card fade-up" style="transition-delay:0.3s">
+      <div class="equipe-photo"><div class="equipe-photo-placeholder">H</div></div>
+      <div class="equipe-name">Hichem</div>
+      <div class="equipe-role">Créateur vidéo</div>
+    </div>
+    <div class="equipe-card fade-up" style="transition-delay:0.4s">
+      <div class="equipe-photo"><div class="equipe-photo-placeholder">Y</div></div>
+      <div class="equipe-name">Yoann</div>
+      <div class="equipe-role">Photographe culinaire</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-title">Prêt à remplir<br>vos tables ?</h2>
+      <p class="contact-sub">Un appel de 45 minutes suffit pour analyser votre situation et vous donner un plan d'action concret. Gratuit, sans engagement.</p>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:var(--k3);">
+          <span style="font-weight:700; font-size:16px;">✓</span> Analyser votre situation actuelle
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:var(--k3);">
+          <span style="font-weight:700; font-size:16px;">✓</span> Identifier vos 3 blocages principaux
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:var(--k3);">
+          <span style="font-weight:700; font-size:16px;">✓</span> Vous donner un plan d'action chiffré
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-lille">
+        <div class="contact-lille-title">Vous êtes à Lille ?</div>
+        <p class="contact-lille-text">On peut se rencontrer directement. Envoyez-nous un message, on revient vers vous sous 24h.</p>
+        <a href="mailto:thomas@so-media.fr" class="btn-dark">Envoyer un message →</a>
+      </div>
+      <div class="contact-national">
+        <div class="contact-national-title">Partout en France</div>
+        <p class="contact-national-text">Réservez un appel stratégique de 45 min sur Google Meet. On analyse votre situation et on vous donne un plan d'action.</p>
+        <a href="https://cal.com" target="_blank" class="btn-cal">Réserver mon appel →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATEFORME TEASER -->
+<section id="plateforme">
+  <div class="plateforme-badge">
+    <div class="plateforme-dot"></div>
+    Bientôt disponible
+  </div>
+  <h2 class="plateforme-title">La plateforme So MIAM arrive.</h2>
+  <p class="plateforme-sub">Gérez votre communication restaurant en autonomie, avec l'IA. Soyez parmi les premiers à y accéder.</p>
+  <div class="waitlist-form">
+    <input type="email" class="waitlist-input" placeholder="votre@email.com">
+    <button class="btn-waitlist">Rejoindre la liste d'attente</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SO<span> MIAM</span></div>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="#">CGV</a>
+    <a href="#">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 So MIAM — Agence digitale restaurants · Lille</div>
+</footer>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Mobile menu
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+  } else {
+    links.style.display = 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '64px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = '#111';
+    links.style.padding = '20px 24px';
+    links.style.gap = '20px';
+    links.style.borderBottom = '1px solid #222';
+  }
+}
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    const links = document.querySelector('.nav-links');
+    links.style.display = 'none';
+  });
+});
+
+// Waitlist form
+document.querySelector('.btn-waitlist').addEventListener('click', () => {
+  const input = document.querySelector('.waitlist-input');
+  if (input.value && input.value.includes('@')) {
+    input.value = '';
+    input.placeholder = '✓ Vous êtes sur la liste !';
+    document.querySelector('.btn-waitlist').textContent = 'Inscrit !';
+  }
+});
+</script>
+
+</body>
 </html>
