@@ -339,12 +339,6 @@ h1 em { color: var(--y); font-style: normal; }
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 12px;
-  margin-bottom: 16px;
-}
-.services-grid-2 {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
 }
 .service-card {
   background: var(--w);
@@ -762,7 +756,7 @@ footer {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   #comment, #avantages, #services, #resultats, #temoignages, #equipe, #contact, #plateforme, #logos, #stats { padding: 80px 24px; }
   .avantages-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid, .services-grid-2 { grid-template-columns: repeat(3, 1fr); }
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
   .equipe-grid { grid-template-columns: repeat(4, 1fr) !important; }
   #btn-prev { left: -16px; }
   #btn-next { right: -16px; }
@@ -815,7 +809,7 @@ footer {
   .avantage-card { padding: 24px; }
 
   /* SERVICES */
-  .services-grid, .services-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
   .service-card { padding: 20px 12px; }
   .service-name { font-size: 11px; }
 
@@ -1122,8 +1116,6 @@ footer {
       </div>
       <div class="service-name">Publicités Meta</div>
     </div>
-  </div>
-  <div class="services-grid-2" style="margin-top:12px;">
     <div class="service-card fade-up" style="transition-delay:0.25s">
       <div class="service-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
@@ -1171,37 +1163,16 @@ footer {
 <section id="resultats">
   <div class="section-eyebrow" style="color:var(--y);">Résultats clients</div>
   <h2 class="section-title" style="color:var(--w);">Des chiffres, pas<br>des promesses.</h2>
-  <p class="section-sub" style="color:var(--g2); margin-bottom:48px;">Quelques exemples de ce qu'on a obtenu pour nos clients.</p>
-  <div class="resultats-grid">
-    <div class="resultat-card fade-up">
-      <div class="resultat-img">
-        <span>Visuel client</span>
-      </div>
-      <div class="resultat-body">
-        <div class="resultat-num">+76,2%</div>
-        <div class="resultat-label">de réservations en 3 mois</div>
-        <div class="resultat-client">Café de Paris · Lille</div>
-      </div>
+  <p class="section-sub" style="color:var(--g2); margin-bottom:48px;">Ce qu'on a obtenu pour nos clients. Vérifiable.</p>
+
+  <div style="position:relative;">
+    <div style="overflow:hidden;" id="res-overflow">
+      <div id="res-inner" style="display:flex;gap:16px;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;"></div>
     </div>
-    <div class="resultat-card fade-up" style="transition-delay:0.1s">
-      <div class="resultat-img">
-        <span>Visuel client</span>
-      </div>
-      <div class="resultat-body">
-        <div class="resultat-num">60 → 3k</div>
-        <div class="resultat-label">abonnés en 1 mois</div>
-        <div class="resultat-client">Sweet Lady · France</div>
-      </div>
-    </div>
-    <div class="resultat-card fade-up" style="transition-delay:0.2s">
-      <div class="resultat-img">
-        <span>Visuel client</span>
-      </div>
-      <div class="resultat-body">
-        <div class="resultat-num">3€</div>
-        <div class="resultat-label">coût par réservation Meta Ads</div>
-        <div class="resultat-client">Restaurant client · Lille</div>
-      </div>
+    <div style="display:flex;justify-content:center;align-items:center;gap:16px;margin-top:28px;">
+      <button onclick="moveRes(-1)" style="background:#1a1a1a;border:1px solid #333;color:var(--w);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#F5C400'" onmouseout="this.style.borderColor='#333'">←</button>
+      <div id="res-dots" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"></div>
+      <button onclick="moveRes(1)" style="background:#1a1a1a;border:1px solid #333;color:var(--w);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#F5C400'" onmouseout="this.style.borderColor='#333'">→</button>
     </div>
   </div>
 </section>
@@ -1486,7 +1457,130 @@ function resetAuto() {
 
 buildCarousel();
 resetAuto();
-window.addEventListener('resize', () => { buildCarousel(); });
+
+// Résultats — vrai carrousel coulissant
+const resultats = [
+  { num: "x2",      label: "réservations après 1 mois",        client: "White Lotus",    img: "" },
+  { num: "+130%",   label: "de réservations en 3 mois",        client: "Maison L",       img: "" },
+  { num: "+76,2%",  label: "de réservations en 3 mois",        client: "Café de Paris",  img: "" },
+  { num: "+40,46%", label: "de réservations en 3 mois",        client: "Le Paradoxe",    img: "" },
+  { num: "+40%",    label: "vs l'année dernière",              client: "Autour de vous", img: "" },
+  { num: "60 → 3k", label: "abonnés en 1 mois",               client: "Sweet Lady",     img: "" },
+  { num: "2,93€",   label: "coût par réservation",             client: "Domus Sicilia",  img: "" },
+  { num: "#1",      label: "restaurant asiatique Lille",       client: "Bi Bim Bap",     img: "" },
+  { num: "#1",      label: "restaurant Tourcoing sur Google",  client: "Le Paradoxe",    img: "" },
+];
+
+let rIdx = 0;
+let rAuto;
+
+function getResVc() { return window.innerWidth <= 768 ? 1 : 3; }
+function getResTotal() { return resultats.length; }
+
+function resCardHTML(r) {
+  return `<div class="resultat-card" style="flex-shrink:0;">
+    <div class="resultat-img">
+      ${r.img
+        ? `<img src="${r.img}" style="width:100%;height:100%;object-fit:cover;">`
+        : `<span style="font-size:12px;color:#555;">Visuel à venir</span>`}
+    </div>
+    <div class="resultat-body">
+      <div class="resultat-num">${r.num}</div>
+      <div class="resultat-label">${r.label}</div>
+      <div class="resultat-client">${r.client}</div>
+    </div>
+  </div>`;
+}
+
+function initRes() {
+  const inner = document.getElementById('res-inner');
+  const vc = getResVc();
+  const gap = 16;
+
+  // On génère toutes les cartes + clones pour boucle infinie
+  const all = [...resultats, ...resultats, ...resultats];
+  inner.innerHTML = all.map(r => resCardHTML(r)).join('');
+
+  // Largeur de chaque carte
+  const containerW = document.getElementById('res-overflow').offsetWidth;
+  const cardW = (containerW - gap * (vc - 1)) / vc;
+
+  Array.from(inner.children).forEach(c => {
+    c.style.width = cardW + 'px';
+    c.style.minWidth = cardW + 'px';
+  });
+
+  inner.style.gap = gap + 'px';
+
+  // Position de départ = milieu du triple
+  rIdx = resultats.length;
+  inner.style.transition = 'none';
+  inner.style.transform = `translateX(-${rIdx * (cardW + gap)}px)`;
+
+  // Dots basés sur les vrais items
+  const dots = document.getElementById('res-dots');
+  dots.innerHTML = resultats.map((_, i) =>
+    `<div onclick="goToRes(${i})" style="width:${i===0?'24px':'8px'};height:8px;border-radius:4px;background:${i===0?'var(--y)':'#333'};cursor:pointer;transition:all 0.4s;flex-shrink:0;"></div>`
+  ).join('');
+
+  window._resCardW = cardW;
+  window._resGap = gap;
+}
+
+function slideTo(targetIdx, animated) {
+  const inner = document.getElementById('res-inner');
+  const step = window._resCardW + window._resGap;
+  inner.style.transition = animated ? 'transform 0.7s cubic-bezier(0.4,0,0.2,1)' : 'none';
+  inner.style.transform = `translateX(-${targetIdx * step}px)`;
+
+  // Update dots (index relatif aux vrais items)
+  const realIdx = ((targetIdx - resultats.length) % resultats.length + resultats.length) % resultats.length;
+  document.querySelectorAll('#res-dots div').forEach((d, i) => {
+    d.style.width = i === realIdx ? '24px' : '8px';
+    d.style.background = i === realIdx ? 'var(--y)' : '#333';
+  });
+}
+
+function moveRes(dir) {
+  rIdx += dir;
+  slideTo(rIdx, true);
+
+  // Boucle infinie : après transition, on recentre silencieusement
+  clearTimeout(window._resLoopTimer);
+  window._resLoopTimer = setTimeout(() => {
+    if (rIdx <= resultats.length - 1) {
+      rIdx += resultats.length;
+      slideTo(rIdx, false);
+    } else if (rIdx >= resultats.length * 2) {
+      rIdx -= resultats.length;
+      slideTo(rIdx, false);
+    }
+  }, 720);
+
+  resetResAuto();
+}
+
+function goToRes(i) {
+  const realIdx = ((rIdx - resultats.length) % resultats.length + resultats.length) % resultats.length;
+  const diff = i - realIdx;
+  rIdx += diff;
+  slideTo(rIdx, true);
+  resetResAuto();
+}
+
+function resetResAuto() {
+  clearInterval(rAuto);
+  rAuto = setInterval(() => moveRes(1), 6000);
+}
+
+initRes();
+resetResAuto();
+window.addEventListener('resize', () => {
+  initRes();
+  resetResAuto();
+  buildCarousel();
+});
+
 
 
 document.querySelector('.btn-waitlist').addEventListener('click', () => {
