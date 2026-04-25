@@ -711,7 +711,7 @@ footer {
   display: flex;
   gap: 12px;
   width: max-content;
-  animation: galleryScroll 30s linear infinite;
+  animation: galleryScroll 90s linear infinite;
 }
 .gallery-track:hover { animation-play-state: paused; }
 
@@ -726,22 +726,17 @@ footer {
   border-radius: 12px;
   flex-shrink: 0;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 .gallery-item img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.4s ease;
+  display: block;
 }
 .gallery-item:hover img { transform: scale(1.04); }
-.gallery-placeholder {
-  font-size: 13px;
-  color: #555;
-  text-align: center;
-}
 
 /* ── PARTENAIRES ── */
 .partners-track-wrap {
@@ -947,7 +942,7 @@ footer {
       <div class="hero-photo">
         <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg" alt="Thomas - So MIAM" style="width:100%;height:100%;object-fit:cover;object-position:top;">
       </div>
-      <div class="hero-stat-pill one">100+ restaurants</div>
+      <div class="hero-stat-pill one">On s'en occupe.</div>
       <div class="hero-stat-pill two">Tables vides ?</div>
     </div>
   </div>
@@ -1027,27 +1022,73 @@ footer {
     <h2 class="section-title" style="color:var(--w);">À quoi ressemble une belle<br>communication restaurant.</h2>
   </div>
 
-  <!-- Piste défilante -->
   <div class="gallery-track-wrap">
     <div class="gallery-track" id="gallery-track">
-      <!-- Photos placeholder — remplace src par tes vraies URLs -->
-      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 1</span></div>
-      <div class="gallery-item" style="background:#222;"><span class="gallery-placeholder">📷 Photo 2</span></div>
-      <div class="gallery-item" style="background:#1c1c1c;"><span class="gallery-placeholder">📷 Photo 3</span></div>
-      <div class="gallery-item" style="background:#252525;"><span class="gallery-placeholder">📷 Photo 4</span></div>
-      <div class="gallery-item" style="background:#1e1e1e;"><span class="gallery-placeholder">📷 Photo 5</span></div>
-      <div class="gallery-item" style="background:#212121;"><span class="gallery-placeholder">📷 Photo 6</span></div>
-      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 7</span></div>
-      <div class="gallery-item" style="background:#232323;"><span class="gallery-placeholder">📷 Photo 8</span></div>
-      <!-- Doublons pour loop infinie -->
-      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 1</span></div>
-      <div class="gallery-item" style="background:#222;"><span class="gallery-placeholder">📷 Photo 2</span></div>
-      <div class="gallery-item" style="background:#1c1c1c;"><span class="gallery-placeholder">📷 Photo 3</span></div>
-      <div class="gallery-item" style="background:#252525;"><span class="gallery-placeholder">📷 Photo 4</span></div>
-      <div class="gallery-item" style="background:#1e1e1e;"><span class="gallery-placeholder">📷 Photo 5</span></div>
-      <div class="gallery-item" style="background:#212121;"><span class="gallery-placeholder">📷 Photo 6</span></div>
-      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 7</span></div>
-      <div class="gallery-item" style="background:#232323;"><span class="gallery-placeholder">📷 Photo 8</span></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC2988_h4xh4u.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3222_e7ijio.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC01928-Edit_dhyaq5.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3390_jlkwah.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC5858_pxxukv.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/1_brochette_Poulet_citronnelle_curcuma_2_zc4h4g.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3228_vceytm.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC5778_ztbsjq.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC06533_jjs4po.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3425_cehx4p.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0001_copie_2_yygocv.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC06893_b46c3m.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC5885_c2r2mt.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/2_Cookie_Matcha_2_k597nm.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3338_oxm0p2.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC06751_ey6r0m.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC4446_lpm2pf.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/tigre_qui_pleure_2_k3rhmr.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3264_cg8rzz.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC06948_u6livb.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC5953_gpydkb.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/1_Cookie_noix_de_pecan_2_hj2u6w.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3440_c9ihvp.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC07022_yb3apf.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0001_copie_3_rcsjbp.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC5985-Edit_skpybw.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC03462_fkhgqp.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_1DSC5872_hr14jo.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3435_z9oeot.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC06811_ctqp6u.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0001_copie_4_fmpai8.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC5926_rrhmld.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC06951_nt5fxi.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC2716_ixunba.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/CDP-shoot1-1350-42_erchiv.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC9932_n337mb.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC06969_uemhta.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC07069_bcyvbl.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC0504_xw7pgr.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_1DSC3379-Edit_htenxd.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC01440_wrdmkp.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0001_copie_5_tbkf4v.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC0516_jmcbwd.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0005194_kwfcek.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_1DSC4491_eizfxg.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/3_szcc3g.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC0347_gplhtv.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0001_copie_6_wpssxq.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC0579_mgppr8.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0008288-Edit_aabz0u.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_1DSC3398_tzr0fm.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0001_copie_sawccb.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC0356_feszxk.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0008337_mzmyw9.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_1DSC5941-Edit_dkmfnm.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_00001_jevt3x.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC01_in3k3j.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0001_ota2fz.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0005009_uxcthf.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0005642_vgpy4j.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_001_u0barf.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_1DSC3280_igad8c.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_1DSC9937_h6bbug.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_0000951_usib4g.jpg" alt="shooting"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3264_cg8rzz.jpg" alt="shooting"></div>
     </div>
   </div>
   <div style="padding-bottom:56px;"></div>
