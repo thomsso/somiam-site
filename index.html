@@ -1610,7 +1610,7 @@ const resultats = [
 let rIdx = 0;
 let rAuto;
 
-function getResVc() { return window.innerWidth <= 768 ? 1 : 4; }
+function getResVc() { return window.innerWidth <= 768 ? 1 : 3; }
 function getResTotal() { return resultats.length; }
 
 function resCardHTML(r) {
@@ -1629,19 +1629,21 @@ function resCardHTML(r) {
 function initRes() {
   const inner = document.getElementById('res-inner');
   const vc = getResVc();
-  const gap = 16;
+  const gap = 24;
+  const sidePadding = window.innerWidth <= 768 ? 0 : window.innerWidth * 0.06;
 
-  // On génère toutes les cartes + clones pour boucle infinie
   const all = [...resultats, ...resultats, ...resultats];
   inner.innerHTML = all.map(r => resCardHTML(r)).join('');
 
-  // Largeur de chaque carte
-  const containerW = document.getElementById('res-overflow').offsetWidth;
+  const containerW = document.getElementById('res-overflow').offsetWidth - sidePadding * 2;
   const cardW = (containerW - gap * (vc - 1)) / vc;
 
   Array.from(inner.children).forEach(c => {
     c.style.width = cardW + 'px';
     c.style.minWidth = cardW + 'px';
+    if (sidePadding && Array.from(inner.children).indexOf(c) === 0) {
+      c.style.marginLeft = sidePadding + 'px';
+    }
   });
 
   inner.style.gap = gap + 'px';
@@ -1704,7 +1706,7 @@ function goToRes(i) {
 
 function resetResAuto() {
   clearInterval(rAuto);
-  rAuto = setInterval(() => moveRes(1), 6000);
+  rAuto = setInterval(() => moveRes(1), 8000);
 }
 
 initRes();
