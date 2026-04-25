@@ -385,24 +385,34 @@ h1 em { color: var(--y); font-style: normal; }
 }
 .resultat-card:hover { border-color: var(--y); }
 .resultat-img {
-  height: 200px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
   background: var(--k3);
   display: flex; align-items: center; justify-content: center;
   color: var(--g2); font-size: 12px;
   overflow: hidden;
+  position: relative;
 }
-.resultat-body { padding: 24px; }
+.resultat-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.resultat-body { padding: 20px 24px 24px; }
 .resultat-num {
   font-family: 'Syne', sans-serif;
-  font-size: 32px; font-weight: 800;
-  color: var(--y); line-height: 1; margin-bottom: 6px;
+  font-size: 42px; font-weight: 800;
+  color: var(--y); line-height: 1; margin-bottom: 8px;
 }
 .resultat-label {
-  font-size: 13px; color: var(--g2); margin-bottom: 8px;
+  font-size: 15px; color: var(--w);
+  margin-bottom: 10px; line-height: 1.4; font-weight: 500;
 }
 .resultat-client {
-  font-size: 11px; color: var(--g1);
-  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+  font-size: 12px; color: var(--g2);
+  text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;
 }
 
 /* ── TEMOIGNAGES ── */
@@ -815,7 +825,7 @@ footer {
 
   /* RESULTATS */
   .resultats-grid { grid-template-columns: 1fr; gap: 16px; }
-  .resultat-img { height: 160px; }
+  .resultat-img { height: auto; }
 
   /* TEMOIGNAGES */
   #temoignages > div { max-width: 100% !important; padding: 0 !important; }
@@ -896,13 +906,7 @@ footer {
     <div class="hero-photo-wrap">
       <div class="hero-photo-bg"></div>
       <div class="hero-photo">
-        <div class="hero-photo-placeholder">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="18" r="10" stroke="#555" stroke-width="2"/>
-            <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="#555" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <span style="font-size:11px;">Photo Thomas</span>
-        </div>
+        <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg" alt="Thomas - So MIAM" style="width:100%;height:100%;object-fit:cover;object-position:top;">
       </div>
       <div class="hero-stat-pill one">100+ restaurants</div>
       <div class="hero-stat-pill two">Tables vides ?</div>
@@ -1204,37 +1208,37 @@ footer {
   <p class="section-sub" style="color:var(--g2); margin-bottom:48px;">Une équipe dédiée, des experts dans leur domaine.</p>
   <div class="equipe-grid" style="grid-template-columns: repeat(7,1fr);">
     <div class="equipe-card fade-up">
-      <div class="equipe-photo"><div class="equipe-photo-placeholder">T</div></div>
+      <div class="equipe-photo"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777125513/Thomas_-_Pre%CC%81sident_uupxum.png" alt="Thomas"></div>
       <div class="equipe-name">Thomas</div>
       <div class="equipe-role">Directeur</div>
     </div>
     <div class="equipe-card fade-up" style="transition-delay:0.1s">
-      <div class="equipe-photo"><div class="equipe-photo-placeholder">H</div></div>
+      <div class="equipe-photo"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777125512/Haren_-_Community_manager_lfi0lq.png" alt="Haren"></div>
       <div class="equipe-name">Haren</div>
       <div class="equipe-role">Community Manager</div>
     </div>
     <div class="equipe-card fade-up" style="transition-delay:0.2s">
-      <div class="equipe-photo"><div class="equipe-photo-placeholder">N</div></div>
+      <div class="equipe-photo"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777125512/Nouria_-_Community_manager_e9lhlf.png" alt="Nouria"></div>
       <div class="equipe-name">Nouria</div>
       <div class="equipe-role">Community Manager</div>
     </div>
     <div class="equipe-card fade-up" style="transition-delay:0.3s">
-      <div class="equipe-photo"><div class="equipe-photo-placeholder">H</div></div>
+      <div class="equipe-photo"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777125512/Hichem_-_Cre%CC%81ateur_vide%CC%81o_wyjqa3.png" alt="Hichem"></div>
       <div class="equipe-name">Hichem</div>
       <div class="equipe-role">Créateur vidéo</div>
     </div>
     <div class="equipe-card fade-up" style="transition-delay:0.4s">
-      <div class="equipe-photo"><div class="equipe-photo-placeholder">Y</div></div>
+      <div class="equipe-photo"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777125514/Yoann_-_Photographe_culinaire_z9ovzz.png" alt="Yoann"></div>
       <div class="equipe-name">Yoann</div>
       <div class="equipe-role">Photographe culinaire</div>
     </div>
     <div class="equipe-card fade-up" style="transition-delay:0.5s">
-      <div class="equipe-photo"><div class="equipe-photo-placeholder">E</div></div>
+      <div class="equipe-photo"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777125511/enzo_mhorvz.png" alt="Enzo"></div>
       <div class="equipe-name">Enzo</div>
       <div class="equipe-role">Créateur de site web</div>
     </div>
     <div class="equipe-card fade-up" style="transition-delay:0.6s">
-      <div class="equipe-photo"><div class="equipe-photo-placeholder">G</div></div>
+      <div class="equipe-photo"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777125511/gauthier_-_Photographe_culinaire_mlwglf.png" alt="Gauthier"></div>
       <div class="equipe-name">Gauthier</div>
       <div class="equipe-role">Commercial</div>
     </div>
@@ -1460,29 +1464,27 @@ resetAuto();
 
 // Résultats — vrai carrousel coulissant
 const resultats = [
-  { num: "x2",      label: "réservations après 1 mois",        client: "White Lotus",    img: "" },
-  { num: "+130%",   label: "de réservations en 3 mois",        client: "Maison L",       img: "" },
-  { num: "+76,2%",  label: "de réservations en 3 mois",        client: "Café de Paris",  img: "" },
-  { num: "+40,46%", label: "de réservations en 3 mois",        client: "Le Paradoxe",    img: "" },
-  { num: "+40%",    label: "vs l'année dernière",              client: "Autour de vous", img: "" },
-  { num: "60 → 3k", label: "abonnés en 1 mois",               client: "Sweet Lady",     img: "" },
-  { num: "2,93€",   label: "coût par réservation",             client: "Domus Sicilia",  img: "" },
-  { num: "#1",      label: "restaurant asiatique Lille",       client: "Bi Bim Bap",     img: "" },
-  { num: "#1",      label: "restaurant Tourcoing sur Google",  client: "Le Paradoxe",    img: "" },
+  { num: "×2",      label: "Réservations doublées en 1 mois",              client: "White Lotus",    img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124936/white_lotus_-_re%CC%81servations_x2_apre%CC%80s_1_mois_d_accompagnement_frugpz.png" },
+  { num: "+130%",   label: "De réservations supplémentaires en 3 mois",    client: "Maison L",       img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124935/maison_L___130_38_de_re%CC%81servations_en_3_mois_tmf9cm.png" },
+  { num: "+76,2%",  label: "De réservations générées en 3 mois",           client: "Café de Paris",  img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124933/cafe%CC%81_de_paris___76_2_de_re%CC%81servations_apre%CC%80s_3_mois_e6vsdv.png" },
+  { num: "+40,46%", label: "De réservations en plus en 3 mois",            client: "Le Paradoxe",    img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124934/le_paradoxe___40_46_de_re%CC%81servations_en_3_mois_tky9xd.png" },
+  { num: "+40%",    label: "De réservations vs l'année précédente",        client: "Autour de vous", img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124932/autour_de_vous___40_par_rapport_a%CC%80_l_anne%CC%81e_dernie%CC%80re_q5skps.png" },
+  { num: "60→3000", label: "Abonnés gagnés en seulement 1 mois",           client: "Sweet Lady",     img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124935/sweet_lady___de_60_a%CC%80_3000_abonne%CC%81s_en_1_mois_lntfpr.png" },
+  { num: "2,93€",   label: "Seulement par réservation générée",            client: "Domus Sicilia",  img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124933/domus_sicilia___2_93_de_cou%CC%82t_par_re%CC%81servation_ovuawj.png" },
+  { num: "#1",      label: "Sur « restaurant asiatique Lille » sur Google", client: "Bi Bim Bap",     img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124933/bi_bim_bap___1er_sur_restaurant_asiatique_lille_eh8hjp.png" },
+  { num: "#1",      label: "Sur « restaurant Tourcoing » sur Google",       client: "Le Paradoxe",    img: "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777124934/le_paradoxe___1er_resultat_google_sur_restaurant_tourcoing_vpdxg9.png" },
 ];
 
 let rIdx = 0;
 let rAuto;
 
-function getResVc() { return window.innerWidth <= 768 ? 1 : 3; }
+function getResVc() { return window.innerWidth <= 768 ? 1 : 4; }
 function getResTotal() { return resultats.length; }
 
 function resCardHTML(r) {
   return `<div class="resultat-card" style="flex-shrink:0;">
     <div class="resultat-img">
-      ${r.img
-        ? `<img src="${r.img}" style="width:100%;height:100%;object-fit:cover;">`
-        : `<span style="font-size:12px;color:#555;">Visuel à venir</span>`}
+      ${r.img ? `<img src="${r.img}" alt="${r.client}">` : `<span style="font-size:12px;color:#555;">Visuel à venir</span>`}
     </div>
     <div class="resultat-body">
       <div class="resultat-num">${r.num}</div>
