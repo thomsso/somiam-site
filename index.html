@@ -650,6 +650,45 @@ footer {
   font-size: 12px; color: var(--g1);
 }
 
+/* ── LOGOS STRIP ── */
+.logos-strip-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.logos-strip-wrap::before,
+.logos-strip-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+}
+.logos-strip-wrap::before { left: 0; background: linear-gradient(to right, var(--k2), transparent); }
+.logos-strip-wrap::after  { right: 0; background: linear-gradient(to left, var(--k2), transparent); }
+
+.logos-strip {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: logosScroll 40s linear infinite;
+  padding: 0 24px;
+}
+.logos-strip:hover { animation-play-state: paused; }
+
+@keyframes logosScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logos-strip img {
+  height: 90px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 1;
+  flex-shrink: 0;
+}
+
 /* ── GALERIE ── */
 .gallery-track-wrap {
   width: 100%;
@@ -915,17 +954,69 @@ footer {
 </section>
 
 <!-- LOGOS CLIENTS -->
-<section id="logos">
-  <div class="logos-label">Ils nous font confiance</div>
-  <div class="logos-grid">
-    <div class="logo-item">Comptoir 44</div>
-    <div class="logo-item">Bistrot de la Station</div>
-    <div class="logo-item">GABO</div>
-    <div class="logo-item">Barbue d'Anvers</div>
-    <div class="logo-item">Les Toquées</div>
-    <div class="logo-item">Sweet Lady</div>
-    <div class="logo-item">L'Evidence</div>
-    <div class="logo-item">Bi Bim Bap</div>
+<section id="logos" style="background:var(--k2);padding:48px 0;border-top:1px solid #222;border-bottom:1px solid #222;overflow:hidden;">
+  <div class="logos-label" style="margin-bottom:32px;">Ils nous font confiance</div>
+  <div class="logos-strip-wrap">
+    <div class="logos-strip">
+      <!-- Ordre : alternance styles visuels pour rythme harmonieux -->
+      <!-- Logos typographiques épurés -->
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135259/logo_comptoir_44_ynqtmh.png" alt="Comptoir 44">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135258/logo_gabo_bjy167.png" alt="Gabo">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135273/logo_maison_L_i6ex1a.png" alt="Maison L">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135269/logo_le_paradoxe_dex3dr.png" alt="Le Paradoxe">
+      <!-- Logos avec icône forte -->
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135267/logo_le_barbue_d_anvers_zypelh.png" alt="Barbue d'Anvers">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135261/logo_l_evidence_traiteur_ejfkvd.png" alt="L'Evidence Traiteur">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135256/logo_cafe%CC%81_de_paris_chez_boubier_1930_c96ikv.png" alt="Café de Paris">
+      <!-- Logos ronds / emblèmes -->
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135252/logo_bi_bim_bap_qqq8vc.png" alt="Bi Bim Bap">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135264/logo_la_mamounia_vhrpxy.png" alt="La Mamounia">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135268/logo_le_carthage_jcosyk.png" alt="Le Carthage">
+      <!-- Logos modernes / géométriques -->
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135280/logo_two_d_rfslxn.png" alt="Two D">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135279/logo_square_e9ejww.png" alt="Square">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135276/logo_poke_wave_xv5vfw.png" alt="Poke Wave">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135275/logo_oww_pqgfkb.png" alt="OWW">
+      <!-- Logos illustratifs / avec dessin -->
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135271/logo_les_toque%CC%81es_rkgofn.png" alt="Les Toquées">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135263/logo_des_saveurs_et_des_ailes_ljnju8.png" alt="Des Saveurs et des Ailes">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135265/logo_la_promenade_yisuem.png" alt="La Promenade">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135277/logo_qi_loh_cmysik.png" alt="Qi Loh">
+      <!-- Logos texte avec caractère -->
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135254/logo_bistrot_235_pwtzii.png" alt="Bistrot 235">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135255/logo_bouillon_pignol_lcss7t.png" alt="Bouillon Pignol">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135252/logo_autour_de_vous_nl1ssf.png" alt="Autour de vous">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135270/logo_le_petit_grain_u5pklb.png" alt="Le Petit Grain">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135274/logo_michel_aku2sz.png" alt="Michel">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135262/logo_l_industrie_qigrdh.png" alt="L'Industrie">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135257/logo_casa_mazita_xd5qsw.png" alt="Casa Mazita">
+      <!-- Doublons pour boucle infinie -->
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135259/logo_comptoir_44_ynqtmh.png" alt="Comptoir 44">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135258/logo_gabo_bjy167.png" alt="Gabo">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135273/logo_maison_L_i6ex1a.png" alt="Maison L">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135269/logo_le_paradoxe_dex3dr.png" alt="Le Paradoxe">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135267/logo_le_barbue_d_anvers_zypelh.png" alt="Barbue d'Anvers">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135261/logo_l_evidence_traiteur_ejfkvd.png" alt="L'Evidence Traiteur">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135256/logo_cafe%CC%81_de_paris_chez_boubier_1930_c96ikv.png" alt="Café de Paris">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135252/logo_bi_bim_bap_qqq8vc.png" alt="Bi Bim Bap">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135264/logo_la_mamounia_vhrpxy.png" alt="La Mamounia">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135268/logo_le_carthage_jcosyk.png" alt="Le Carthage">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135280/logo_two_d_rfslxn.png" alt="Two D">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135279/logo_square_e9ejww.png" alt="Square">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135276/logo_poke_wave_xv5vfw.png" alt="Poke Wave">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135275/logo_oww_pqgfkb.png" alt="OWW">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135271/logo_les_toque%CC%81es_rkgofn.png" alt="Les Toquées">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135263/logo_des_saveurs_et_des_ailes_ljnju8.png" alt="Des Saveurs et des Ailes">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135265/logo_la_promenade_yisuem.png" alt="La Promenade">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135277/logo_qi_loh_cmysik.png" alt="Qi Loh">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135254/logo_bistrot_235_pwtzii.png" alt="Bistrot 235">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135255/logo_bouillon_pignol_lcss7t.png" alt="Bouillon Pignol">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135252/logo_autour_de_vous_nl1ssf.png" alt="Autour de vous">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135270/logo_le_petit_grain_u5pklb.png" alt="Le Petit Grain">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135274/logo_michel_aku2sz.png" alt="Michel">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135262/logo_l_industrie_qigrdh.png" alt="L'Industrie">
+      <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777135257/logo_casa_mazita_xd5qsw.png" alt="Casa Mazita">
+    </div>
   </div>
 </section>
 
