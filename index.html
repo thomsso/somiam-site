@@ -24,14 +24,22 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--cr);
   color: var(--k);
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
+
+section, nav, footer { max-width: 100%; overflow-x: hidden; }
 
 /* ── NAV ── */
 nav {
@@ -165,10 +173,11 @@ h1 em { color: var(--y); font-style: normal; }
   background: var(--y); color: var(--k);
   font-family: 'Syne', sans-serif; font-weight: 800;
   padding: 10px 18px; border-radius: 30px;
-  font-size: 14px; white-space: nowrap;
+  font-size: 13px; white-space: nowrap;
+  max-width: 200px;
 }
-.hero-stat-pill.one { bottom: 30px; left: -40px; }
-.hero-stat-pill.two { top: 40px; right: -30px; font-size: 12px; }
+.hero-stat-pill.one { bottom: 30px; left: -20px; }
+.hero-stat-pill.two { top: 40px; right: -10px; font-size: 12px; }
 
 /* ── LOGOS ── */
 #logos {
@@ -718,10 +727,11 @@ footer {
   .resultat-img { height: 160px; }
 
   /* TEMOIGNAGES */
-  #temoignages > div { max-width: 100% !important; }
-  #btn-prev { left: -8px; width: 36px; height: 36px; font-size: 14px; }
-  #btn-next { right: -8px; width: 36px; height: 36px; font-size: 14px; }
-  #carousel-track > div > div { padding: 28px 20px !important; }
+  #temoignages > div { max-width: 100% !important; padding: 0 !important; }
+  #temoignages > div > div:first-child { padding: 0 40px; }
+  #btn-prev { left: 0 !important; width: 32px !important; height: 32px !important; font-size: 13px !important; }
+  #btn-next { right: 0 !important; width: 32px !important; height: 32px !important; font-size: 13px !important; }
+  #carousel-inner > div { flex: 0 0 100% !important; }
 
   /* EQUIPE */
   .equipe-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px; }
@@ -1072,14 +1082,14 @@ footer {
   <h2 class="section-title">Ce que disent<br>nos clients.</h2>
   <p class="section-sub">Ils ont choisi So MIAM. Voilà ce qu'ils en pensent.</p>
 
-  <div style="position:relative; max-width:1100px; margin:0 auto;">
-    <div id="carousel-track">
+  <div style="position:relative; max-width:1100px; margin:0 auto; padding:0 48px;">
+    <div id="carousel-track" style="overflow:hidden;">
       <div id="carousel-inner" style="display:flex; gap:16px;"></div>
     </div>
 
     <!-- Flèches -->
-    <button id="btn-prev" onclick="moveCarousel(-1)" style="position:absolute;top:50%;left:-56px;transform:translateY(-50%);background:var(--w);border:1px solid var(--g4);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
-    <button id="btn-next" onclick="moveCarousel(1)" style="position:absolute;top:50%;right:-56px;transform:translateY(-50%);background:var(--w);border:1px solid var(--g4);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
+    <button id="btn-prev" onclick="moveCarousel(-1)" style="position:absolute;top:50%;left:0;transform:translateY(-50%);background:var(--w);border:1px solid var(--g4);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
+    <button id="btn-next" onclick="moveCarousel(1)" style="position:absolute;top:50%;right:0;transform:translateY(-50%);background:var(--w);border:1px solid var(--g4);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
 
     <!-- Dots -->
     <div id="carousel-dots" style="display:flex;justify-content:center;gap:8px;margin-top:28px;flex-wrap:wrap;"></div>
@@ -1229,9 +1239,15 @@ const VISIBLE = 3;
 let cIdx = 0;
 let cAuto;
 
+function getVisibleCount() {
+  return window.innerWidth <= 768 ? 1 : 3;
+}
+
 function cardHTML(t) {
+  const vc = getVisibleCount();
+  const w = vc === 1 ? '100%' : 'calc(33.333% - 11px)';
   return `<div style="
-    flex:0 0 calc(33.333% - 11px);
+    flex:0 0 ${w};
     background:var(--w);
     border-radius:12px;
     border:1px solid var(--g4);
@@ -1251,7 +1267,8 @@ function cardHTML(t) {
 }
 
 function getVisible() {
-  return [0,1,2].map(i => temoignages[(cIdx + i) % temoignages.length]);
+  const vc = getVisibleCount();
+  return Array.from({length: vc}, (_, i) => temoignages[(cIdx + i) % temoignages.length]);
 }
 
 function buildCarousel() {
@@ -1317,6 +1334,7 @@ function resetAuto() {
 
 buildCarousel();
 resetAuto();
+window.addEventListener('resize', () => { buildCarousel(); });
 
 
 document.querySelector('.btn-waitlist').addEventListener('click', () => {
