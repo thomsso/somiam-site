@@ -648,29 +648,113 @@ footer {
   transform: translateY(0);
 }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE TABLET ── */
 @media (max-width: 1024px) {
+  nav { padding: 0 24px; }
+  #hero { padding: 100px 24px 80px; gap: 40px; }
+  .hero-photo-wrap { width: 300px; height: 360px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid, .services-grid-2 { grid-template-columns: repeat(3, 1fr); }
-  .equipe-grid { grid-template-columns: repeat(3, 1fr); }
+  #comment, #avantages, #services, #resultats, #temoignages, #equipe, #contact, #plateforme, #logos, #stats { padding: 80px 24px; }
   .avantages-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid, .services-grid-2 { grid-template-columns: repeat(3, 1fr); }
+  .equipe-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  #btn-prev { left: -16px; }
+  #btn-next { right: -16px; }
 }
 
+/* ── RESPONSIVE MOBILE ── */
 @media (max-width: 768px) {
-  nav { padding: 0 20px; }
+  /* NAV */
+  nav { padding: 0 16px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  #hero { grid-template-columns: 1fr; padding: 100px 20px 60px; text-align: center; }
+
+  /* HERO */
+  #hero {
+    grid-template-columns: 1fr;
+    padding: 88px 16px 56px;
+    text-align: center;
+    gap: 0;
+  }
   .hero-right { display: none; }
-  .hero-sub { margin: 0 auto 40px; }
-  .hero-btns { justify-content: center; }
-  #logos, #stats, #comment, #avantages, #services, #resultats, #temoignages, #equipe, #contact, #plateforme { padding: 60px 20px; }
-  .steps-grid, .avantages-grid, .resultats-grid, .temoignages-grid { grid-template-columns: 1fr; }
+  .hero-badge { margin: 0 auto 20px; }
+  h1 { font-size: 36px; letter-spacing: -0.5px; }
+  .hero-sub { font-size: 15px; margin: 0 auto 32px; max-width: 100%; }
+  .hero-btns { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+  /* SECTIONS PADDING */
+  #logos, #stats, #comment, #avantages, #services,
+  #resultats, #temoignages, #equipe, #contact, #plateforme { padding: 56px 16px; }
+
+  /* LOGOS */
+  .logos-grid { gap: 20px; justify-content: center; }
+  .logo-item { font-size: 13px; }
+
+  /* STATS */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+  .stat-item { padding: 24px 16px; }
+  .stat-num { font-size: 36px; }
+  .stat-desc { font-size: 12px; }
+
+  /* COMMENT CA MARCHE */
+  .section-title { font-size: 28px; }
+  .section-sub { font-size: 14px; margin-bottom: 40px; }
+  .steps-grid { grid-template-columns: 1fr; gap: 12px; }
+  .step-card { padding: 28px 24px; }
+  .step-num { font-size: 48px; }
+
+  /* AVANTAGES */
+  .avantages-grid { grid-template-columns: 1fr; gap: 12px; }
+  .avantage-card { padding: 24px; }
+
+  /* SERVICES */
+  .services-grid, .services-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .service-card { padding: 20px 12px; }
+  .service-name { font-size: 11px; }
+
+  /* RESULTATS */
+  .resultats-grid { grid-template-columns: 1fr; gap: 16px; }
+  .resultat-img { height: 160px; }
+
+  /* TEMOIGNAGES */
+  #temoignages > div { max-width: 100% !important; }
+  #btn-prev { left: -8px; width: 36px; height: 36px; font-size: 14px; }
+  #btn-next { right: -8px; width: 36px; height: 36px; font-size: 14px; }
+  #carousel-track > div > div { padding: 28px 20px !important; }
+
+  /* EQUIPE */
+  .equipe-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px; }
+  .equipe-photo { width: 90px; height: 90px; }
+  .equipe-name { font-size: 13px; }
+  .equipe-role { font-size: 10px; }
+
+  /* CONTACT */
+  .contact-inner { grid-template-columns: 1fr; gap: 32px; }
+  .contact-title { font-size: 28px; }
+  .contact-lille, .contact-national { padding: 20px; }
+  .btn-dark, .btn-cal { width: 100%; text-align: center; display: block; }
+
+  /* PLATEFORME */
+  .plateforme-title { font-size: 22px; }
+  .plateforme-sub { font-size: 14px; }
+  .waitlist-form { flex-direction: column; align-items: center; }
+  .waitlist-input { width: 100%; max-width: 360px; }
+  .btn-waitlist { width: 100%; max-width: 360px; }
+
+  /* FOOTER */
+  footer { flex-direction: column; align-items: flex-start; padding: 24px 16px; gap: 12px; }
+  .footer-links { flex-wrap: wrap; gap: 12px; }
+  .footer-copy { font-size: 11px; }
+}
+
+/* ── RESPONSIVE SMALL MOBILE ── */
+@media (max-width: 380px) {
+  h1 { font-size: 30px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
   .services-grid, .services-grid-2 { grid-template-columns: repeat(2, 1fr); }
-  .equipe-grid { grid-template-columns: repeat(2, 1fr); }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-  footer { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
+  .equipe-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .equipe-photo { width: 76px; height: 76px; }
 }
 </style>
 </head>
@@ -700,7 +784,7 @@ footer {
     </div>
     <h1>Votre resto mérite<br>d'être <em>vu.</em></h1>
     <p class="hero-sub">
-      Pendant que <strong>vous faites tourner votre restaurant</strong>, on s'occupe de remplir vos tables grâce aux réseaux sociaux, Meta Ads et Google.
+      Pendant que <strong>vous faites tourner votre restaurant</strong>, on s'occupe de remplir vos tables grâce aux réseaux sociaux, à Google et à la publicité.
     </p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Réserver un appel stratégique</a>
@@ -719,8 +803,8 @@ footer {
           <span style="font-size:11px;">Photo Thomas</span>
         </div>
       </div>
-      <div class="hero-stat-pill one">+34% de réservations</div>
-      <div class="hero-stat-pill two">100+ restaurants</div>
+      <div class="hero-stat-pill one">100+ restaurants</div>
+      <div class="hero-stat-pill two">Tables vides ?</div>
     </div>
   </div>
 </section>
@@ -748,16 +832,16 @@ footer {
       <div class="stat-desc">Restaurants accompagnés</div>
     </div>
     <div class="stat-item fade-up" style="transition-delay:0.1s">
-      <div class="stat-num">+76%</div>
-      <div class="stat-desc">De réservations en moyenne</div>
+      <div class="stat-num">+40%</div>
+      <div class="stat-desc">De réservations en moyenne<br><span style="font-size:11px;opacity:0.7;">sur l'ensemble des clients accompagnés</span></div>
     </div>
     <div class="stat-item fade-up" style="transition-delay:0.2s">
-      <div class="stat-num">3x</div>
-      <div class="stat-desc">Plus de visibilité Google</div>
+      <div class="stat-num">4,50€</div>
+      <div class="stat-desc">Coût moyen par réservation générée</div>
     </div>
     <div class="stat-item fade-up" style="transition-delay:0.3s">
-      <div class="stat-num">3€</div>
-      <div class="stat-desc">Coût moyen par réservation</div>
+      <div class="stat-num">3x</div>
+      <div class="stat-desc">Plus de visibilité sur Google</div>
     </div>
   </div>
 </section>
@@ -777,8 +861,8 @@ footer {
     <div class="step-card fade-up" style="transition-delay:0.1s">
       <div class="step-accent"></div>
       <div class="step-num">02</div>
-      <div class="step-title">Shooting photo offert</div>
-      <p class="step-text">Des photos de qualité, ça change tout. On réalise un shooting professionnel pour capturer l'essence de votre restaurant. Inclus dans toutes nos offres.</p>
+      <div class="step-title">Shooting photo & vidéo offert</div>
+      <p class="step-text">Des photos et vidéos de qualité professionnelle, ça change tout. On réalise un shooting photo ET un tournage vidéo pour capturer l'essence de votre restaurant. Inclus dans toutes nos offres.</p>
     </div>
     <div class="step-card fade-up" style="transition-delay:0.2s">
       <div class="step-accent"></div>
@@ -987,25 +1071,18 @@ footer {
   <div class="section-eyebrow">Témoignages</div>
   <h2 class="section-title">Ce que disent<br>nos clients.</h2>
   <p class="section-sub">Ils ont choisi So MIAM. Voilà ce qu'ils en pensent.</p>
-  <div class="temoignages-grid">
-    <div class="temoignage-card fade-up">
-      <div class="temoignage-quote">"</div>
-      <p class="temoignage-text">Agence de marketing très professionnelle. J'ai ouvert mon salon de thé et j'ai <strong>obtenu très rapidement de la visibilité</strong>. L'équipe est très réactive et toujours à l'écoute. Je recommande sans hésitation.</p>
-      <div class="temoignage-author">Princess</div>
-      <div class="temoignage-resto">Sweet Lady Lille</div>
+
+  <div style="position:relative; max-width:1100px; margin:0 auto;">
+    <div id="carousel-track">
+      <div id="carousel-inner" style="display:flex; gap:16px;"></div>
     </div>
-    <div class="temoignage-card fade-up" style="transition-delay:0.1s">
-      <div class="temoignage-quote">"</div>
-      <p class="temoignage-text">Thomas, c'est le chef d'Internet. Il réalise le site de votre choix et <strong>gère au mieux selon vos priorités</strong>. Une méthode de travail très efficace. Je recommande So MIAM à tout restaurateur.</p>
-      <div class="temoignage-author">Emmanuel</div>
-      <div class="temoignage-resto">L'Evidence Traiteur</div>
-    </div>
-    <div class="temoignage-card fade-up" style="transition-delay:0.2s">
-      <div class="temoignage-quote">"</div>
-      <p class="temoignage-text">So MIAM m'accompagne depuis plusieurs mois dans ma communication digitale. Ils ont <strong>mis en place une stratégie pour gagner de nombreux nouveaux clients</strong>. Prix très raisonnable, je recommande vivement.</p>
-      <div class="temoignage-author">Rafik</div>
-      <div class="temoignage-resto">Bi Bim Bap Lille</div>
-    </div>
+
+    <!-- Flèches -->
+    <button id="btn-prev" onclick="moveCarousel(-1)" style="position:absolute;top:50%;left:-56px;transform:translateY(-50%);background:var(--w);border:1px solid var(--g4);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
+    <button id="btn-next" onclick="moveCarousel(1)" style="position:absolute;top:50%;right:-56px;transform:translateY(-50%);background:var(--w);border:1px solid var(--g4);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
+
+    <!-- Dots -->
+    <div id="carousel-dots" style="display:flex;justify-content:center;gap:8px;margin-top:28px;flex-wrap:wrap;"></div>
   </div>
 </section>
 
@@ -1014,7 +1091,7 @@ footer {
   <div class="section-eyebrow" style="color:var(--y);">L'équipe</div>
   <h2 class="section-title" style="color:var(--w);">Les meilleurs en<br>marketing restaurant.</h2>
   <p class="section-sub" style="color:var(--g2); margin-bottom:48px;">Une équipe dédiée, des experts dans leur domaine.</p>
-  <div class="equipe-grid">
+  <div class="equipe-grid" style="grid-template-columns: repeat(7,1fr);">
     <div class="equipe-card fade-up">
       <div class="equipe-photo"><div class="equipe-photo-placeholder">T</div></div>
       <div class="equipe-name">Thomas</div>
@@ -1040,6 +1117,16 @@ footer {
       <div class="equipe-name">Yoann</div>
       <div class="equipe-role">Photographe culinaire</div>
     </div>
+    <div class="equipe-card fade-up" style="transition-delay:0.5s">
+      <div class="equipe-photo"><div class="equipe-photo-placeholder">E</div></div>
+      <div class="equipe-name">Enzo</div>
+      <div class="equipe-role">Créateur de site web</div>
+    </div>
+    <div class="equipe-card fade-up" style="transition-delay:0.6s">
+      <div class="equipe-photo"><div class="equipe-photo-placeholder">G</div></div>
+      <div class="equipe-name">Gauthier</div>
+      <div class="equipe-role">Commercial</div>
+    </div>
   </div>
 </section>
 
@@ -1048,7 +1135,7 @@ footer {
   <div class="contact-inner">
     <div>
       <h2 class="contact-title">Prêt à remplir<br>vos tables ?</h2>
-      <p class="contact-sub">Un appel de 45 minutes suffit pour analyser votre situation et vous donner un plan d'action concret. Gratuit, sans engagement.</p>
+      <p class="contact-sub">Un appel de 30 minutes suffit pour analyser votre situation et vous donner un plan d'action concret. Gratuit, sans engagement.</p>
       <div style="display:flex; flex-direction:column; gap:8px;">
         <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:var(--k3);">
           <span style="font-weight:700; font-size:16px;">✓</span> Analyser votre situation actuelle
@@ -1070,7 +1157,7 @@ footer {
       <div class="contact-national">
         <div class="contact-national-title">Partout en France</div>
         <p class="contact-national-text">Réservez un appel stratégique de 45 min sur Google Meet. On analyse votre situation et on vous donne un plan d'action.</p>
-        <a href="https://cal.com" target="_blank" class="btn-cal">Réserver mon appel →</a>
+        <a href="https://cal.com/team/recette-so-miam/appel-strategique" target="_blank" class="btn-cal">Réserver mon appel →</a>
       </div>
     </div>
   </div>
@@ -1109,33 +1196,129 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // Mobile menu
+const navLinks = document.querySelector('.nav-links');
 function toggleMenu() {
-  const links = document.querySelector('.nav-links');
-  if (links.style.display === 'flex') {
-    links.style.display = 'none';
-  } else {
-    links.style.display = 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'absolute';
-    links.style.top = '64px';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = '#111';
-    links.style.padding = '20px 24px';
-    links.style.gap = '20px';
-    links.style.borderBottom = '1px solid #222';
-  }
+  const open = navLinks.style.display === 'flex';
+  navLinks.style.cssText = open ? '' : `
+    display:flex; flex-direction:column; position:fixed;
+    top:64px; left:0; right:0; background:var(--k);
+    padding:24px 16px; gap:24px; border-bottom:1px solid #222;
+    z-index:99;
+  `;
 }
-
-// Close mobile menu on link click
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    const links = document.querySelector('.nav-links');
-    links.style.display = 'none';
-  });
+  a.addEventListener('click', () => { navLinks.style.cssText = ''; });
 });
 
-// Waitlist form
+// Testimonials carousel - 3 visible, rotate 1 by 1
+const temoignages = [
+  { text: "Très bonne agence qui nous suit depuis maintenant <strong>plus d'un an</strong> ! Parfait pour les restaurateurs ! Pro et efficace !", author: "Paco", resto: "Café de Paris" },
+  { text: "Extrêmement professionnel, tellement développé que nous avons dû <strong>embaucher en interne</strong>, avec quelques influenceurs en plus. Je recommande vivement !", author: "Bertrand", resto: "Den Artiest" },
+  { text: "Depuis que nous avons commencé à travailler avec eux nous avons vu une <strong>évolution significative de nos résultats</strong> et du trafic dans notre restaurant ! Allez-y les yeux fermés !", author: "Laetitia", resto: "Autour de vous" },
+  { text: "Très bonne collaboration avec So MIAM. Sérieux, réactivité et contenu de qualité qui permet de <strong>booster nos ventes</strong> !", author: "Boris", resto: "Food House" },
+  { text: "Agence de marketing très professionnelle. J'ai ouvert mon salon de thé et j'ai <strong>obtenu très rapidement de la visibilité</strong>. Je recommande sans hésitation.", author: "Princess", resto: "Sweet Lady Lille" },
+  { text: "So MIAM m'accompagne dans ma communication digitale. Ils ont mis en place une stratégie pour me faire gagner de <strong>nombreux nouveaux clients</strong>. Prix très raisonnable.", author: "Rafik", resto: "Bi Bim Bap Lille" },
+  { text: "Très content du travail réalisé, je recommande.", author: "Camille", resto: "Bouillon Pignol" },
+  { text: "Top of the top ! Best marketing and communication agency in Lille.", author: "Layal", resto: "Maison L" },
+  { text: "Si vous êtes restaurateur et que vous souhaitez développer votre communication, vous pouvez faire confiance à 100% à l'agence So MIAM.", author: "Nathan Poncet", resto: "" },
+  { text: "Thomas est une personne très rigoureuse dans son travail, je le recommande si vous souhaitez <strong>développer votre restaurant</strong> !", author: "Benjamin", resto: "" },
+  { text: "Excellente relation pro. Ça fait plus d'un an que je travaille avec Thomas, il est <strong>efficace et super sympa</strong>. Restaurateurs, n'hésitez plus !", author: "Yoann", resto: "" },
+];
+
+const VISIBLE = 3;
+let cIdx = 0;
+let cAuto;
+
+function cardHTML(t) {
+  return `<div style="
+    flex:0 0 calc(33.333% - 11px);
+    background:var(--w);
+    border-radius:12px;
+    border:1px solid var(--g4);
+    padding:28px;
+    box-sizing:border-box;
+  ">
+    <div style="font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--y);line-height:0.8;margin-bottom:16px;">"</div>
+    <p style="font-size:14px;color:var(--g1);line-height:1.75;font-weight:300;margin-bottom:20px;flex:1;">${t.text}</p>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--y);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--k);flex-shrink:0;">${t.author[0]}</div>
+      <div>
+        ${t.resto ? `<div style="font-size:12px;font-weight:700;color:var(--k);text-transform:uppercase;letter-spacing:0.06em;">${t.resto}</div>` : ''}
+        <div style="font-size:12px;color:var(--g2);margin-top:${t.resto ? '1px' : '0'};">${t.author}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function getVisible() {
+  return [0,1,2].map(i => temoignages[(cIdx + i) % temoignages.length]);
+}
+
+function buildCarousel() {
+  const grid = document.getElementById('carousel-inner');
+  grid.style.display = 'flex';
+  grid.style.gap = '16px';
+  grid.innerHTML = getVisible().map(t => cardHTML(t)).join('');
+
+  const dots = document.getElementById('carousel-dots');
+  dots.innerHTML = temoignages.map((_, i) =>
+    `<div onclick="goToSlide(${i})" style="width:${i===cIdx?'24px':'8px'};height:8px;border-radius:4px;background:${i===cIdx?'var(--k)':'var(--g4)'};cursor:pointer;transition:all 0.3s;"></div>`
+  ).join('');
+}
+
+function updateDots() {
+  document.querySelectorAll('#carousel-dots div').forEach((d, i) => {
+    d.style.width = i === cIdx ? '24px' : '8px';
+    d.style.background = i === cIdx ? 'var(--k)' : 'var(--g4)';
+  });
+}
+
+function animateRotate(dir) {
+  const grid = document.getElementById('carousel-inner');
+  const cards = grid.children;
+  const entering = dir === 1 ? temoignages[(cIdx + 2) % temoignages.length] : temoignages[(cIdx - 1 + temoignages.length) % temoignages.length];
+
+  // Slide out
+  grid.style.transition = 'transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s';
+  grid.style.transform = `translateX(${dir === 1 ? '-20px' : '20px'})`;
+  grid.style.opacity = '0.4';
+
+  setTimeout(() => {
+    grid.style.transition = 'none';
+    grid.style.transform = 'translateX(0)';
+    grid.style.opacity = '1';
+    grid.innerHTML = getVisible().map(t => cardHTML(t)).join('');
+    updateDots();
+    // Fade back in
+    requestAnimationFrame(() => {
+      grid.style.transition = 'opacity 0.25s';
+      grid.style.opacity = '1';
+    });
+  }, 350);
+}
+
+function moveCarousel(dir) {
+  cIdx = (cIdx + dir + temoignages.length) % temoignages.length;
+  animateRotate(dir);
+  resetAuto();
+}
+
+function goToSlide(i) {
+  const dir = i > cIdx ? 1 : -1;
+  cIdx = i;
+  animateRotate(dir);
+  resetAuto();
+}
+
+function resetAuto() {
+  clearInterval(cAuto);
+  cAuto = setInterval(() => moveCarousel(1), 3500);
+}
+
+buildCarousel();
+resetAuto();
+
+
 document.querySelector('.btn-waitlist').addEventListener('click', () => {
   const input = document.querySelector('.waitlist-input');
   if (input.value && input.value.includes('@')) {
