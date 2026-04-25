@@ -646,6 +646,103 @@ footer {
   font-size: 12px; color: var(--g1);
 }
 
+/* ── GALERIE ── */
+.gallery-track-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-track-wrap::before,
+.gallery-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.gallery-track-wrap::before { left: 0; background: linear-gradient(to right, #111111, transparent); }
+.gallery-track-wrap::after  { right: 0; background: linear-gradient(to left, #111111, transparent); }
+
+.gallery-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: galleryScroll 30s linear infinite;
+}
+.gallery-track:hover { animation-play-state: paused; }
+
+@keyframes galleryScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.gallery-item {
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-placeholder {
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+}
+
+/* ── PARTENAIRES ── */
+.partners-track-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.partners-track-wrap::before,
+.partners-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.partners-track-wrap::before { left: 0; background: linear-gradient(to right, var(--k2), transparent); }
+.partners-track-wrap::after  { right: 0; background: linear-gradient(to left, var(--k2), transparent); }
+
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: partnersScroll 20s linear infinite;
+}
+.partners-track:hover { animation-play-state: paused; }
+
+@keyframes partnersScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+.partner-item:hover { opacity: 1; }
+
 /* ── SCROLL ANIMATIONS ── */
 .fade-up {
   opacity: 0;
@@ -832,6 +929,39 @@ footer {
     <div class="logo-item">L'Evidence</div>
     <div class="logo-item">Bi Bim Bap</div>
   </div>
+</section>
+
+<!-- GALERIE PHOTO -->
+<section id="galerie" style="background:var(--k); padding:0; overflow:hidden;">
+  <div style="padding:56px 48px 28px; text-align:center;">
+    <div class="section-eyebrow" style="justify-content:center; color:var(--y);">Nos shootings</div>
+    <h2 class="section-title" style="color:var(--w);">À quoi ressemble une belle<br>communication restaurant.</h2>
+  </div>
+
+  <!-- Piste défilante -->
+  <div class="gallery-track-wrap">
+    <div class="gallery-track" id="gallery-track">
+      <!-- Photos placeholder — remplace src par tes vraies URLs -->
+      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 1</span></div>
+      <div class="gallery-item" style="background:#222;"><span class="gallery-placeholder">📷 Photo 2</span></div>
+      <div class="gallery-item" style="background:#1c1c1c;"><span class="gallery-placeholder">📷 Photo 3</span></div>
+      <div class="gallery-item" style="background:#252525;"><span class="gallery-placeholder">📷 Photo 4</span></div>
+      <div class="gallery-item" style="background:#1e1e1e;"><span class="gallery-placeholder">📷 Photo 5</span></div>
+      <div class="gallery-item" style="background:#212121;"><span class="gallery-placeholder">📷 Photo 6</span></div>
+      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 7</span></div>
+      <div class="gallery-item" style="background:#232323;"><span class="gallery-placeholder">📷 Photo 8</span></div>
+      <!-- Doublons pour loop infinie -->
+      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 1</span></div>
+      <div class="gallery-item" style="background:#222;"><span class="gallery-placeholder">📷 Photo 2</span></div>
+      <div class="gallery-item" style="background:#1c1c1c;"><span class="gallery-placeholder">📷 Photo 3</span></div>
+      <div class="gallery-item" style="background:#252525;"><span class="gallery-placeholder">📷 Photo 4</span></div>
+      <div class="gallery-item" style="background:#1e1e1e;"><span class="gallery-placeholder">📷 Photo 5</span></div>
+      <div class="gallery-item" style="background:#212121;"><span class="gallery-placeholder">📷 Photo 6</span></div>
+      <div class="gallery-item" style="background:#1a1a1a;"><span class="gallery-placeholder">📷 Photo 7</span></div>
+      <div class="gallery-item" style="background:#232323;"><span class="gallery-placeholder">📷 Photo 8</span></div>
+    </div>
+  </div>
+  <div style="padding-bottom:56px;"></div>
 </section>
 
 <!-- STATS -->
@@ -1184,6 +1314,28 @@ footer {
   <div class="waitlist-form">
     <input type="email" class="waitlist-input" placeholder="votre@email.com">
     <button class="btn-waitlist">Rejoindre la liste d'attente</button>
+  </div>
+</section>
+
+<!-- PARTENAIRES -->
+<section id="partenaires" style="background:var(--k); padding:40px 48px; border-top:1px solid #1a1a1a;">
+  <div class="logos-label" style="margin-bottom:24px;">Outils & partenaires</div>
+  <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:40px;">
+    <div class="partner-item">
+      <span style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#555;">Meta</span>
+    </div>
+    <div class="partner-item">
+      <span style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#555;">Google</span>
+    </div>
+    <div class="partner-item">
+      <span style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#555;">ZenChef</span>
+    </div>
+    <div class="partner-item">
+      <span style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#555;">Yoann Photo</span>
+    </div>
+    <div class="partner-item">
+      <span style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#555;">Instagram</span>
+    </div>
   </div>
 </section>
 
