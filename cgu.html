@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGU — So MIAM</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root { --y:#F5C400; --k:#111111; --cr:#FFF8E7; --g1:#444; --g2:#888; --g4:#E8E8E8; --w:#fff; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; background:var(--cr); color:var(--k); }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:var(--k); height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 48px; }
+.nav-logo { font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:#fff; letter-spacing:1px; text-decoration:none; }
+.nav-logo span { color:var(--y); }
+.nav-back { font-size:13px; color:var(--g2); text-decoration:none; transition:color .2s; }
+.nav-back:hover { color:var(--y); }
+.page { max-width:760px; margin:0 auto; padding:120px 24px 80px; }
+.page-label { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--y); margin-bottom:16px; }
+h1 { font-family:'Syne',sans-serif; font-size:40px; font-weight:800; color:var(--k); line-height:1.1; margin-bottom:48px; }
+h2 { font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:var(--k); margin:36px 0 12px; }
+p { font-size:15px; color:var(--g1); line-height:1.75; margin-bottom:12px; font-weight:300; }
+ul { margin:8px 0 16px 20px; }
+ul li { font-size:15px; color:var(--g1); line-height:1.75; font-weight:300; margin-bottom:4px; }
+a { color:var(--k); font-weight:500; }
+footer { background:var(--k); padding:24px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+.footer-logo { font-family:'Syne',sans-serif; font-size:15px; font-weight:800; color:#fff; }
+.footer-logo span { color:var(--y); }
+.footer-links { display:flex; gap:20px; flex-wrap:wrap; }
+.footer-links a { font-size:12px; color:var(--g2); text-decoration:none; }
+.footer-links a:hover { color:#fff; }
+@media(max-width:768px){ nav{padding:0 16px;} footer{padding:20px 16px; flex-direction:column; align-items:flex-start;} }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">SO<span> MIAM</span></a>
+  <a href="/" class="nav-back">← Retour au site</a>
+</nav>
+
+<div class="page">
+  <div class="page-label">Légal</div>
+  <h1>Conditions générales d'utilisation</h1>
+
+  <h2>Article 1 — Objet</h2>
+  <p>Les présentes conditions générales d'utilisation ont pour objet de définir les modalités d'accès et d'utilisation du site www.so-miam.com. En accédant au site, l'utilisateur accepte intégralement les présentes CGU.</p>
+
+  <h2>Article 2 — Services proposés sur le site</h2>
+  <p>Le site permet notamment :</p>
+  <ul>
+    <li>La présentation de l'agence So MIAM</li>
+    <li>La consultation du portfolio</li>
+    <li>La prise de rendez-vous (Cal.com)</li>
+    <li>L'accès aux pages menant à la formation et à la plateforme Systeme.io</li>
+    <li>La possibilité de paiement pour la formation (via Systeme.io + Stripe)</li>
+    <li>L'accès à une communauté privée liée à la formation</li>
+  </ul>
+  <p>L'utilisation du site est gratuite, hors coûts d'accès au réseau Internet.</p>
+
+  <h2>Article 3 — Accès au site</h2>
+  <p>Le site est accessible en permanence, sauf interruption volontaire ou non, notamment pour maintenance. So MEDIA ne pourra être tenue responsable en cas d'indisponibilité temporaire.</p>
+
+  <h2>Article 4 — Obligations de l'utilisateur</h2>
+  <p>L'utilisateur s'engage à :</p>
+  <ul>
+    <li>Ne pas utiliser le site à des fins illégales ou contraires à l'ordre public</li>
+    <li>Ne pas copier, extraire, scraper ou reproduire le contenu du site sans autorisation</li>
+    <li>Ne pas tenter d'accéder aux zones protégées du site</li>
+  </ul>
+
+  <h2>Article 5 — Responsabilité</h2>
+  <p>So MEDIA met tout en œuvre pour assurer un site fiable mais ne garantit pas l'absence d'erreurs, l'absence d'interruptions techniques, ni l'exactitude des informations fournies par des tiers. So MEDIA ne pourra être tenue responsable de tout dommage direct ou indirect lié à l'usage du site.</p>
+
+  <h2>Article 6 — Propriété intellectuelle</h2>
+  <p>Tous les éléments présents sur le site restent la propriété exclusive de So MEDIA et ne peuvent être utilisés sans autorisation.</p>
+
+  <h2>Article 7 — Liens externes</h2>
+  <p>Les liens sortants ne sauraient engager la responsabilité de l'éditeur.</p>
+
+  <h2>Article 8 — Données personnelles</h2>
+  <p>Le site collecte principalement : cookies de navigation, données Google Analytics, données du pixel Meta, données de prise de rendez-vous (Cal.com). Pour la formation (via Systeme.io) : progression des modules, données de connexion, données Stripe. Les modalités complètes figurent dans la <a href="/politique-confidentialite.html">Politique de confidentialité</a>.</p>
+
+  <h2>Article 9 — Droit applicable</h2>
+  <p>Les présentes CGU sont régies par le droit français.</p>
+</div>
+
+<footer>
+  <div class="footer-logo">SO<span> MIAM</span></div>
+  <div class="footer-links">
+    <a href="/mentions-legales.html">Mentions légales</a>
+    <a href="/cgv.html">CGV</a>
+    <a href="/cgu.html">CGU</a>
+    <a href="/politique-confidentialite.html">Politique de confidentialité</a>
+  </div>
+</footer>
+</body>
+</html>
