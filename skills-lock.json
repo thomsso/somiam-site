@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "seo-audit": {
+      "source": "JeffLi1993/seo-audit-skill",
+      "sourceType": "github",
+      "skillPath": "seo-audit/SKILL.md",
+      "computedHash": "72495f1fe6dd750819fc7f881d30a5ab63e32c114152555962fd5a0fa6261211"
+    },
+    "seo-audit-full": {
+      "source": "JeffLi1993/seo-audit-skill",
+      "sourceType": "github",
+      "skillPath": "seo-audit-full/SKILL.md",
+      "computedHash": "7c66865e028bcd19f12b75aed50f9de26018e40c3aec3214825144868bb85ce3"
+    }
+  }
+}
