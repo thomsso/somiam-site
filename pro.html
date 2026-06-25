@@ -203,17 +203,23 @@ nav {
   max-width: 600px; line-height: 1.6;
 }
 
+/* ── CONTAINER ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* ── PROBLEME ── */
 #probleme {
   background: var(--cr);
-  padding: 100px 48px;
+  padding: 100px 0;
 }
 #probleme .section-title { color: var(--k); }
 .pain-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  max-width: 1100px;
 }
 .pain-card {
   background: var(--w);
@@ -247,7 +253,7 @@ nav {
 /* ── SOLUTION ── */
 #solution {
   background: var(--k);
-  padding: 100px 48px;
+  padding: 100px 0;
 }
 #solution .section-title { color: var(--w); }
 #solution .section-sub { color: var(--g2); }
@@ -255,7 +261,6 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  max-width: 1100px;
 }
 .feature-card {
   padding: 32px;
@@ -285,41 +290,42 @@ nav {
 /* ── SCREENSHOTS ── */
 .screenshots-section {
   background: var(--k);
-  padding: 0 48px 100px;
+  padding: 0 0 100px;
 }
 .screenshots-section .section-title { color: var(--w); text-align: center; margin-bottom: 48px; }
 .screenshots-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 .screenshot-card {
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #222;
-  transition: border-color 0.3s, transform 0.3s;
-  background: var(--k2);
+  background: #1a1a1a;
+  transition: transform 0.3s;
 }
-.screenshot-card:hover { border-color: var(--y); transform: translateY(-4px); }
+.screenshot-card:hover { transform: translateY(-4px); }
 .screenshot-card img {
-  width: 100%; height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
 }
 .screenshot-label {
-  padding: 14px 16px;
-  font-size: 12px; font-weight: 600;
-  color: var(--g2);
+  padding: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-align: center;
 }
 
 /* ── PRIX ── */
 #prix {
   background: var(--cr);
-  padding: 100px 48px;
+  padding: 100px 0;
 }
 #prix .section-title { color: var(--k); }
 .pricing-table {
@@ -376,7 +382,7 @@ nav {
 /* ── PREUVE ── */
 #preuve {
   background: var(--k);
-  padding: 100px 48px;
+  padding: 100px 0;
 }
 #preuve .section-title { color: var(--w); }
 #preuve .section-sub { color: var(--g2); }
@@ -384,7 +390,6 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 1100px;
 }
 .video-card {
   border: 1px solid #222;
@@ -393,11 +398,20 @@ nav {
   transition: border-color 0.2s;
 }
 .video-card:hover { border-color: var(--y); }
-.video-card iframe {
+.video-embed {
+  position: relative;
   width: 100%;
-  aspect-ratio: 9 / 16;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   border: none;
-  display: block;
+  border-radius: 12px 12px 0 0;
 }
 .video-info {
   padding: 16px 20px;
@@ -427,7 +441,7 @@ nav {
 /* ── CTA INTERMEDIAIRE ── */
 #cta-mid {
   background: var(--y);
-  padding: 80px 48px;
+  padding: 80px 0;
   text-align: center;
 }
 #cta-mid h2 {
@@ -454,7 +468,7 @@ nav {
 /* ── FAQ ── */
 #faq {
   background: var(--cr);
-  padding: 100px 48px;
+  padding: 100px 0;
 }
 #faq .section-title { color: var(--k); }
 .faq-list {
@@ -507,7 +521,7 @@ nav {
 /* ── CTA FINAL ── */
 #cta-final {
   background: var(--k);
-  padding: 120px 48px;
+  padding: 120px 0;
   text-align: center;
 }
 #cta-final h2 {
@@ -564,7 +578,7 @@ footer {
 @media (max-width: 1024px) {
   nav { padding: 0 24px; }
   #hero { padding: 120px 24px 80px; }
-  #probleme, #solution, .screenshots-section, #prix, #preuve, #cta-mid, #faq, #cta-final { padding-left: 24px; padding-right: 24px; }
+  .container { padding: 0 1.5rem; }
   .pain-grid, .features-grid, .videos-grid { grid-template-columns: repeat(2, 1fr); }
   .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -582,7 +596,8 @@ footer {
   #hero h1 { font-size: 32px; }
   .hero-sub { font-size: 15px; }
 
-  #probleme, #solution, .screenshots-section, #prix, #preuve, #cta-mid, #faq, #cta-final { padding: 56px 16px; }
+  #probleme, #solution, .screenshots-section, #prix, #preuve, #cta-mid, #faq, #cta-final { padding-top: 56px; padding-bottom: 56px; }
+  .container { padding: 0 1rem; }
 
   .section-title { font-size: 26px; }
   .section-sub { font-size: 14px; margin-bottom: 40px; }
@@ -642,6 +657,7 @@ footer {
 
 <!-- BLOC 2 — PROBLÈME -->
 <section id="probleme">
+  <div class="container">
   <div class="section-eyebrow">Le problème</div>
   <h2 class="section-title fade-up">Votre restaurant est bon.<br>Votre visibilité, elle ?</h2>
   <div class="pain-grid">
@@ -658,10 +674,12 @@ footer {
       <p class="pain-text">Vos concurrents apparaissent avant vous sur Google Maps. Pas parce qu'ils sont meilleurs — parce qu'ils sont mieux référencés.</p>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- BLOC 3 — SOLUTION / FEATURES -->
 <section id="solution">
+  <div class="container">
   <div class="section-eyebrow" style="color:var(--y);">La solution</div>
   <h2 class="section-title fade-up" style="color:var(--w);">Ce que So MIAM Pro fait<br>pendant que vous cuisinez</h2>
   <p class="section-sub fade-up" style="color:var(--g2);">Trois outils, un seul abonnement, zéro prise de tête.</p>
@@ -694,10 +712,12 @@ footer {
       <p class="feature-text">Dès l'inscription, vous obtenez un score de santé de votre présence en ligne et toutes les clés pour l'améliorer. Dans le vert = plus de visibilité = plus de clients.</p>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- SCREENSHOTS PLATEFORME -->
 <section class="screenshots-section">
+  <div class="container">
   <h2 class="section-title fade-up" style="color:var(--w); text-align:center; margin-bottom:48px;">La plateforme en images</h2>
   <div class="screenshots-grid">
     <div class="screenshot-card fade-up">
@@ -737,10 +757,12 @@ footer {
       <div class="screenshot-label">Vue d'ensemble</div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- BLOC 4 — ANCRAGE PRIX -->
 <section id="prix">
+  <div class="container">
   <div class="section-eyebrow">Tarif</div>
   <h2 class="section-title fade-up">Tout ça pour moins qu'un<br>repas par semaine</h2>
   <div class="pricing-table fade-up" style="transition-delay:0.1s">
@@ -761,16 +783,20 @@ footer {
       <span class="price">59€/mois</span>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- BLOC 5 — PREUVE SOCIALE -->
 <section id="preuve">
+  <div class="container">
   <div class="section-eyebrow" style="color:var(--y);">Résultats</div>
   <h2 class="section-title fade-up" style="color:var(--w);">Le système derrière nos<br>résultats clients</h2>
   <p class="section-sub fade-up" style="color:var(--g2);">So MIAM Pro, c'est le système qu'on utilise pour piloter la communication de nos clients agence. Voici ce qu'il produit.</p>
   <div class="videos-grid">
     <div class="video-card fade-up">
-      <iframe src="https://www.tella.tv/video/vid_cmod1dixm00qe04jj6ccu8txj/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-embed">
+        <iframe src="https://www.tella.tv/video/vid_cmod1dixm00qe04jj6ccu8txj/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+      </div>
       <div class="video-info">
         <div class="video-name">Aphi</div>
         <div class="video-resto">White Lotus</div>
@@ -778,7 +804,9 @@ footer {
       </div>
     </div>
     <div class="video-card fade-up" style="transition-delay:0.1s">
-      <iframe src="https://www.tella.tv/video/vid_cmkfg4rpv010004l8450a5d6j/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-embed">
+        <iframe src="https://www.tella.tv/video/vid_cmkfg4rpv010004l8450a5d6j/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+      </div>
       <div class="video-info">
         <div class="video-name">Layal</div>
         <div class="video-resto">Maison L</div>
@@ -786,7 +814,9 @@ footer {
       </div>
     </div>
     <div class="video-card fade-up" style="transition-delay:0.2s">
-      <iframe src="https://www.tella.tv/video/vid_cml6ndbpz00hc04jph1jw4t00/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-embed">
+        <iframe src="https://www.tella.tv/video/vid_cml6ndbpz00hc04jph1jw4t00/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+      </div>
       <div class="video-info">
         <div class="video-name">Paco</div>
         <div class="video-resto">Café de Paris</div>
@@ -794,17 +824,21 @@ footer {
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- BLOC 6 — CTA INTERMÉDIAIRE -->
 <section id="cta-mid">
+  <div class="container">
   <h2 class="fade-up">Prêt à remplir votre restaurant ?</h2>
   <a href="STRIPE_LINK_PLACEHOLDER" class="btn-dark fade-up" style="transition-delay:0.1s">Commencer mon essai de 14 jours</a>
   <p class="cta-micro fade-up" style="transition-delay:0.2s">59€/mois après l'essai · Sans surprise · Annulez avant si ce n'est pas pour vous</p>
+  </div>
 </section>
 
 <!-- BLOC 7 — FAQ -->
 <section id="faq">
+  <div class="container">
   <div class="section-eyebrow">FAQ</div>
   <h2 class="section-title fade-up">Vos questions</h2>
   <div class="faq-list fade-up" style="transition-delay:0.1s">
@@ -854,14 +888,17 @@ footer {
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- BLOC 8 — CTA FINAL -->
 <section id="cta-final">
+  <div class="container">
   <h2 class="fade-up">Votre restaurant mérite<br>d'être <em>plein.</em></h2>
   <p class="hero-sub fade-up" style="transition-delay:0.1s">14 jours pour le vérifier par vous-même.</p>
   <a href="STRIPE_LINK_PLACEHOLDER" class="btn-primary fade-up" style="transition-delay:0.2s">Démarrer mon essai gratuit</a>
   <p class="hero-micro fade-up" style="transition-delay:0.3s">Accès immédiat · 59€/mois ensuite · Annulez avant si ce n'est pas pour vous</p>
+  </div>
 </section>
 
 <!-- FOOTER -->
