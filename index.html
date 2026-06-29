@@ -270,41 +270,64 @@ h1 em { color: var(--y); font-style: normal; }
 .hero-right { position: relative; display: flex; justify-content: center; }
 .hero-photo-wrap {
   position: relative;
-  width: 380px; height: 460px;
+  width: 100%;
+  max-width: 480px;
 }
-.hero-photo-bg {
-  position: absolute; inset: 0;
-  background: var(--y);
-  border-radius: 20px;
-  transform: rotate(3deg);
-  opacity: 0.15;
-}
-.hero-photo {
-  position: relative;
-  width: 100%; height: 100%;
+.hero-photo-wrap > img {
+  width: 100%;
   border-radius: 16px;
-  background: var(--k3);
-  overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
-.hero-photo img {
-  width: 100%; height: 100%;
+  display: block;
+  aspect-ratio: 4/5;
   object-fit: cover;
 }
-.hero-photo-placeholder {
-  text-align: center; color: var(--g2); font-size: 13px;
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-}
-.hero-stat-pill {
+.hero-float-card {
   position: absolute;
-  background: var(--y); color: var(--k);
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  padding: 10px 18px; border-radius: 30px;
-  font-size: 13px; white-space: nowrap;
-  max-width: 200px;
+  background: var(--w);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  z-index: 3;
+  max-width: 260px;
 }
-.hero-stat-pill.one { bottom: 30px; left: -20px; }
-.hero-stat-pill.two { top: 40px; right: -10px; font-size: 12px; }
+.hero-float-card .float-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--g2);
+  margin-bottom: 6px;
+}
+.hero-float-card .float-stat {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--k);
+  line-height: 1.2;
+}
+.hero-float-card .float-detail {
+  font-size: 12px;
+  color: var(--g1);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.hero-float-card.card-result {
+  bottom: 40px;
+  left: -30px;
+}
+.hero-float-card.card-product {
+  top: 40px;
+  right: -30px;
+}
+.hero-float-card .float-badge {
+  display: inline-block;
+  background: var(--y);
+  color: var(--k);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
 
 /* ── LOGOS ── */
 #logos {
@@ -930,7 +953,9 @@ footer {
 @media (max-width: 1024px) {
   nav { padding: 0 24px; }
   #hero { padding: 100px 24px 80px; gap: 40px; }
-  .hero-photo-wrap { width: 300px; height: 360px; }
+  .hero-photo-wrap { max-width: 360px; }
+  .hero-float-card.card-result { left: -10px; }
+  .hero-float-card.card-product { right: -10px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   #comment, #avantages, #services, #resultats, #temoignages, #equipe, #contact, #plateforme, #logos, #stats { padding: 80px 24px; }
   .avantages-grid { grid-template-columns: repeat(2, 1fr); }
@@ -952,9 +977,13 @@ footer {
     grid-template-columns: 1fr;
     padding: 88px 16px 56px;
     text-align: center;
-    gap: 0;
+    gap: 32px;
   }
-  .hero-right { display: none; }
+  .hero-right { display: flex; }
+  .hero-photo-wrap { max-width: 100%; }
+  .hero-float-card.card-result { left: 10px; bottom: 20px; }
+  .hero-float-card.card-product { right: 10px; top: 20px; }
+  .hero-float-card .float-stat { font-size: 18px; }
   .hero-badge { margin: 0 auto 20px; }
   h1 { font-size: 36px; letter-spacing: -0.5px; }
   .hero-sub { font-size: 15px; margin: 0 auto 32px; max-width: 100%; }
@@ -1076,12 +1105,21 @@ footer {
   </div>
   <div class="hero-right">
     <div class="hero-photo-wrap">
-      <div class="hero-photo-bg"></div>
-      <div class="hero-photo">
-        <img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg" alt="Thomas - So MIAM" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      <img src="/public/images/agence/CDP-shoot1-1350-10.jpg" alt="Café de Paris — client So MIAM" style="object-position:center;">
+      <!-- Card résultat client -->
+      <div class="hero-float-card card-result">
+        <div class="float-eyebrow">Résultat — Café de Paris</div>
+        <div class="float-stat">+100% réservations</div>
+        <div class="float-detail">par mois vs année précédente</div>
+        <div class="float-badge">CLIENT AGENCE</div>
       </div>
-      <div class="hero-stat-pill one">On s'en occupe.</div>
-      <div class="hero-stat-pill two">Tables vides ?</div>
+      <!-- Card résultat SEO -->
+      <div class="hero-float-card card-product">
+        <div class="float-eyebrow">SEO — Le Paradoxe</div>
+        <div class="float-stat">#1 Google</div>
+        <div class="float-detail">« restaurant tourcoing »</div>
+        <div class="float-badge">POSITION ORGANIQUE</div>
+      </div>
     </div>
   </div>
 </section>

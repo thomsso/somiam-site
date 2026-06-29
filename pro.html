@@ -117,12 +117,11 @@ nav {
 #hero {
   min-height: 100vh;
   background: var(--k);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 140px 48px 80px;
+  padding: 120px 48px 80px;
+  gap: 60px;
   position: relative;
   overflow: hidden;
 }
@@ -135,30 +134,22 @@ nav {
   top: -200px; right: -200px;
   pointer-events: none;
 }
-.hero-bg-dot-2 {
-  position: absolute;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: var(--y);
-  opacity: 0.03;
-  bottom: -100px; left: -100px;
-  pointer-events: none;
-}
+.hero-left { position: relative; z-index: 2; }
+.hero-right { position: relative; display: flex; justify-content: center; }
 #hero h1 {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(36px, 5vw, 56px);
   font-weight: 800;
   color: var(--w);
   line-height: 1.08;
   letter-spacing: -1px;
   margin-bottom: 24px;
-  max-width: 800px;
 }
 #hero h1 em { color: var(--y); font-style: normal; }
 .hero-sub {
   font-size: 17px; color: var(--g2);
   line-height: 1.7; margin-bottom: 40px;
-  max-width: 600px; font-weight: 300;
+  max-width: 480px; font-weight: 300;
 }
 .hero-sub strong { color: var(--w); font-weight: 500; }
 .btn-primary {
@@ -174,6 +165,84 @@ nav {
   font-size: 13px; color: var(--g2);
   margin-top: 16px; font-weight: 300;
   line-height: 1.6;
+}
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+.hero-photo-wrap img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.hero-float-card {
+  position: absolute;
+  background: var(--w);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  z-index: 3;
+  max-width: 260px;
+}
+.hero-float-card .float-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--g2);
+  margin-bottom: 6px;
+}
+.hero-float-card .float-stat {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--k);
+  line-height: 1.2;
+}
+.hero-float-card .float-detail {
+  font-size: 12px;
+  color: var(--g1);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.hero-float-card.card-result {
+  bottom: 40px;
+  left: -30px;
+}
+.hero-float-card.card-product {
+  top: 40px;
+  right: -30px;
+}
+.hero-float-card .float-badge {
+  display: inline-block;
+  background: var(--y);
+  color: var(--k);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+.hero-guarantees {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.hero-guarantees span {
+  font-size: 13px;
+  color: var(--g2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hero-guarantees span::before {
+  content: '✓';
+  color: #4CAF50;
+  font-weight: 700;
 }
 
 /* ── SECTION SHARED ── */
@@ -577,10 +646,12 @@ footer {
 /* ── RESPONSIVE TABLET ── */
 @media (max-width: 1024px) {
   nav { padding: 0 24px; }
-  #hero { padding: 120px 24px 80px; }
+  #hero { padding: 120px 24px 80px; gap: 40px; }
   .container { padding: 0 1.5rem; }
   .pain-grid, .features-grid, .videos-grid { grid-template-columns: repeat(2, 1fr); }
   .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-float-card.card-result { left: -10px; }
+  .hero-float-card.card-product { right: -10px; }
 }
 
 /* ── RESPONSIVE MOBILE ── */
@@ -590,11 +661,18 @@ footer {
   .hamburger { display: flex; }
 
   #hero {
+    grid-template-columns: 1fr;
     padding: 100px 16px 56px;
     min-height: auto;
+    gap: 40px;
   }
   #hero h1 { font-size: 32px; }
   .hero-sub { font-size: 15px; }
+  .hero-photo-wrap { max-width: 100%; }
+  .hero-float-card.card-result { left: 10px; bottom: 20px; }
+  .hero-float-card.card-product { right: 10px; top: 20px; }
+  .hero-float-card .float-stat { font-size: 18px; }
+  .hero-guarantees { gap: 12px; }
 
   #probleme, #solution, .screenshots-section, #prix, #preuve, #cta-mid, #faq, #cta-final { padding-top: 56px; padding-bottom: 56px; }
   .container { padding: 0 1rem; }
@@ -646,12 +724,40 @@ footer {
 <!-- BLOC 1 — HERO -->
 <section id="hero">
   <div class="hero-bg-dot"></div>
-  <div class="hero-bg-dot-2"></div>
-  <h1 class="fade-up">Gérez toute la communication de votre restaurant en <em>1h par semaine.</em></h1>
-  <p class="hero-sub fade-up" style="transition-delay:0.1s">
-    So MIAM Pro automatise vos posts Instagram, vos réponses Google et votre référencement. <strong>Gusto, votre IA</strong>, crée un mois de contenu à partir de vos photos — en un clic.
-  </p>
-  <a href="https://recette.so-miam.com/" class="btn-primary fade-up" style="transition-delay:0.2s">Découvrir So MIAM Pro</a>
+  <div class="hero-left">
+    <h1 class="fade-up">Gérez toute la com de votre restaurant en <em>1h par semaine.</em></h1>
+    <p class="hero-sub fade-up" style="transition-delay:0.1s">
+      So MIAM Pro automatise vos posts Instagram, vos réponses Google et votre référencement. <strong>Gusto, votre IA</strong>, crée un mois de contenu à partir de vos photos — en un clic.
+    </p>
+    <a href="https://recette.so-miam.com/" class="btn-primary fade-up" style="transition-delay:0.2s">Essai gratuit — 14 jours →</a>
+    <div class="hero-guarantees fade-up" style="transition-delay:0.3s">
+      <span>Sans engagement</span>
+      <span>Annulation en 1 clic</span>
+      <span>59€/mois ensuite</span>
+    </div>
+  </div>
+  <div class="hero-right fade-up" style="transition-delay:0.2s">
+    <div class="hero-photo-wrap">
+      <img src="/public/images/pro/00_03141.jpg" alt="Restaurant utilisant So MIAM Pro">
+      <!-- Card résultat client -->
+      <div class="hero-float-card card-result">
+        <div class="float-eyebrow">Résultat client — Maison L</div>
+        <div class="float-stat">×5 réservations</div>
+        <div class="float-detail">au 3e mois d'utilisation</div>
+        <div class="float-badge">VÉRIFIÉ</div>
+      </div>
+      <!-- Card produit en action -->
+      <div class="hero-float-card card-product">
+        <div class="float-eyebrow">Gusto — Réponse automatique</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--y);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">G</div>
+          <div style="font-size:11px;color:var(--g1);">Réponse générée — 2,4s</div>
+        </div>
+        <div style="font-size:12px;color:var(--g1);line-height:1.5;font-style:italic;">« Merci Sophie ! Ravi que le risotto vous ait conquise. À bientôt ! »</div>
+        <div class="float-badge">IA ACTIVE 24/7</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- BLOC 2 — PROBLÈME -->
