@@ -846,6 +846,794 @@ footer {
 @media (max-width: 380px) {
   #hero h1 { font-size: 27px; }
 }
+
+/* ════════════════════════════════════════
+   MOCKUP COMPONENTS
+   ════════════════════════════════════════ */
+
+/* ── Shared mockup base ── */
+.mockup-base {
+  background: #1C1C1C;
+  padding: 12px;
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+.mockup-base.gallery-size { height: 220px; }
+.mockup-base.step-size { height: 300px; }
+.mockup-base.feature-size { height: 400px; }
+.mockup-base.hero-size { height: 380px; }
+.mockup-text-line {
+  background: #444;
+  height: 6px;
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+.mockup-text-line.short { width: 40%; }
+.mockup-text-line.medium { width: 65%; }
+.mockup-text-line.long { width: 85%; }
+.mockup-text-line.light { background: #333; }
+
+/* ── 1. DASHBOARD ── */
+.mockup-dashboard {
+  display: flex;
+  height: 100%;
+}
+.mockup-sidebar {
+  width: 56px;
+  background: #111;
+  border-radius: 6px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+.mockup-sidebar-logo {
+  width: 28px;
+  height: 28px;
+  background: #222;
+  border-radius: 6px;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.mockup-sidebar-logo::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #4CAF50;
+  border-radius: 50%;
+}
+.mockup-sidebar-item {
+  width: 32px;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+.mockup-sidebar-item.active {
+  background: #F5C400;
+}
+.mockup-main {
+  flex: 1;
+  min-width: 0;
+}
+.mockup-main-header {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mockup-stat-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.mockup-stat-card {
+  background: #2D2D2D;
+  border-radius: 6px;
+  padding: 8px 6px;
+  text-align: center;
+}
+.mockup-stat-card-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin: 0 auto 4px;
+}
+.mockup-stat-card-icon.blue { background: #2196F3; }
+.mockup-stat-card-icon.orange { background: #FF9800; }
+.mockup-stat-card-icon.yellow { background: #F5C400; }
+.mockup-stat-card-icon.green { background: #4CAF50; }
+.mockup-stat-card-value {
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.mockup-stat-card-label {
+  font-size: 7px;
+  color: #888;
+  margin-top: 2px;
+}
+.mockup-social-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+.mockup-social-chip {
+  flex: 1;
+  background: #2D2D2D;
+  border-radius: 6px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mockup-social-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.mockup-social-icon.instagram {
+  background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF);
+}
+.mockup-social-icon.facebook { background: #1877F2; }
+.mockup-social-icon.tiktok { background: #111; border: 1px solid #444; }
+.mockup-social-text {
+  font-size: 8px;
+  color: #CCC;
+}
+.mockup-social-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ── 2. BANQUE DE CONTENUS ── */
+.mockup-banque {
+  height: 100%;
+}
+.mockup-banque-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.mockup-banque-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+.mockup-banque-tabs {
+  display: flex;
+  gap: 6px;
+}
+.mockup-banque-tab {
+  font-size: 7px;
+  color: #888;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #2D2D2D;
+}
+.mockup-banque-tab.active {
+  background: #F5C400;
+  color: #111;
+  font-weight: 600;
+}
+.mockup-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+.mockup-photo-item {
+  aspect-ratio: 1;
+  border-radius: 4px;
+}
+.mockup-photo-item:nth-child(1) { background: linear-gradient(135deg, #D4A574, #8B6914); }
+.mockup-photo-item:nth-child(2) { background: linear-gradient(135deg, #E8735A, #C0392B); }
+.mockup-photo-item:nth-child(3) { background: linear-gradient(135deg, #7CB342, #558B2F); }
+.mockup-photo-item:nth-child(4) { background: linear-gradient(135deg, #FFB74D, #F57C00); }
+.mockup-photo-item:nth-child(5) { background: linear-gradient(135deg, #A1887F, #6D4C41); }
+.mockup-photo-item:nth-child(6) { background: linear-gradient(135deg, #FF7043, #BF360C); }
+.mockup-photo-item:nth-child(7) { background: linear-gradient(135deg, #AED581, #689F38); }
+.mockup-photo-item:nth-child(8) { background: linear-gradient(135deg, #FFCC80, #EF6C00); }
+.mockup-photo-item:nth-child(9) { background: linear-gradient(135deg, #BCAAA4, #795548); }
+.mockup-photo-item:nth-child(10) { background: linear-gradient(135deg, #CE93D8, #7B1FA2); }
+.mockup-photo-item:nth-child(11) { background: linear-gradient(135deg, #FFE082, #F9A825); }
+.mockup-photo-item:nth-child(12) { background: linear-gradient(135deg, #EF9A9A, #C62828); }
+.mockup-photo-item:nth-child(13) { background: linear-gradient(135deg, #C5E1A5, #33691E); }
+.mockup-photo-item:nth-child(14) { background: linear-gradient(135deg, #FFAB91, #D84315); }
+.mockup-photo-item:nth-child(15) { background: linear-gradient(135deg, #B39DDB, #4527A0); }
+.mockup-photo-item:nth-child(16) { background: linear-gradient(135deg, #FFF176, #F57F17); }
+
+/* ── 3. PLANNING EDITORIAL ── */
+.mockup-planning {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+.mockup-planning-left {
+  flex: 1.2;
+  min-width: 0;
+}
+.mockup-planning-right {
+  width: 90px;
+  flex-shrink: 0;
+}
+.mockup-planning-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.mockup-post-card {
+  background: #2D2D2D;
+  border-radius: 6px;
+  padding: 7px;
+  margin-bottom: 6px;
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+}
+.mockup-post-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.mockup-post-thumb.t1 { background: linear-gradient(135deg, #FFB74D, #F57C00); }
+.mockup-post-thumb.t2 { background: linear-gradient(135deg, #E8735A, #C0392B); }
+.mockup-post-thumb.t3 { background: linear-gradient(135deg, #7CB342, #558B2F); }
+.mockup-post-thumb.t4 { background: linear-gradient(135deg, #D4A574, #8B6914); }
+.mockup-post-thumb.t5 { background: linear-gradient(135deg, #FFCC80, #EF6C00); }
+.mockup-post-info {
+  flex: 1;
+  min-width: 0;
+}
+.mockup-post-info .mockup-text-line { height: 5px; margin-bottom: 3px; }
+.mockup-post-badge {
+  display: inline-block;
+  font-size: 6px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-top: 2px;
+}
+.mockup-post-badge.validated {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+}
+.mockup-post-badge.published {
+  background: rgba(245, 196, 0, 0.2);
+  color: #F5C400;
+}
+.mockup-post-date {
+  font-size: 6px;
+  color: #666;
+  margin-top: 2px;
+}
+.mockup-feed-preview-title {
+  font-size: 7px;
+  color: #888;
+  margin-bottom: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.mockup-feed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.mockup-feed-item {
+  aspect-ratio: 1;
+  border-radius: 2px;
+}
+.mockup-feed-item:nth-child(1) { background: linear-gradient(135deg, #FFB74D, #F57C00); }
+.mockup-feed-item:nth-child(2) { background: linear-gradient(135deg, #E8735A, #C0392B); }
+.mockup-feed-item:nth-child(3) { background: linear-gradient(135deg, #7CB342, #558B2F); }
+.mockup-feed-item:nth-child(4) { background: linear-gradient(135deg, #D4A574, #8B6914); }
+.mockup-feed-item:nth-child(5) { background: linear-gradient(135deg, #FFCC80, #EF6C00); }
+.mockup-feed-item:nth-child(6) { background: linear-gradient(135deg, #A1887F, #6D4C41); }
+.mockup-feed-item:nth-child(7) { background: linear-gradient(135deg, #FF7043, #BF360C); }
+.mockup-feed-item:nth-child(8) { background: linear-gradient(135deg, #AED581, #689F38); }
+.mockup-feed-item:nth-child(9) { background: linear-gradient(135deg, #CE93D8, #7B1FA2); }
+
+/* ── 4. CALENDRIER ── */
+.mockup-calendrier {
+  height: 100%;
+}
+.mockup-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.mockup-cal-title {
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+}
+.mockup-cal-nav {
+  display: flex;
+  gap: 4px;
+}
+.mockup-cal-nav-btn {
+  width: 16px;
+  height: 16px;
+  background: #2D2D2D;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #888;
+}
+.mockup-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+.mockup-cal-day-header {
+  font-size: 7px;
+  color: #888;
+  text-align: center;
+  padding: 3px 0;
+  font-weight: 600;
+}
+.mockup-cal-cell {
+  background: #2D2D2D;
+  border-radius: 4px;
+  padding: 4px;
+  min-height: 36px;
+  position: relative;
+}
+.mockup-cal-cell.today {
+  border: 1px solid #F5C400;
+}
+.mockup-cal-day-num {
+  font-size: 7px;
+  color: #888;
+  margin-bottom: 3px;
+}
+.mockup-cal-dot {
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  margin-bottom: 2px;
+}
+.mockup-cal-dot.dot-yellow { background: rgba(245, 196, 0, 0.6); }
+.mockup-cal-dot.dot-blue { background: rgba(33, 150, 243, 0.6); }
+.mockup-cal-dot.dot-green { background: rgba(76, 175, 80, 0.6); }
+.mockup-cal-dot.dot-orange { background: rgba(255, 152, 0, 0.6); }
+
+/* ── 5. ONGLET AVIS ── */
+.mockup-avis {
+  height: 100%;
+}
+.mockup-avis-alert {
+  background: rgba(229, 57, 53, 0.15);
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mockup-avis-alert-dot {
+  width: 8px;
+  height: 8px;
+  background: #E53935;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.mockup-avis-alert-text {
+  font-size: 8px;
+  color: #E53935;
+  font-weight: 600;
+}
+.mockup-avis-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.mockup-avis-score {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+}
+.mockup-stars {
+  display: flex;
+  gap: 2px;
+}
+.mockup-star {
+  width: 10px;
+  height: 10px;
+  background: #F5C400;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.mockup-star.empty {
+  background: #444;
+}
+.mockup-avis-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.mockup-avis-tab {
+  font-size: 7px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #888;
+  background: #2D2D2D;
+}
+.mockup-avis-tab.active {
+  background: #F5C400;
+  color: #111;
+  font-weight: 600;
+}
+.mockup-review-card {
+  background: #2D2D2D;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+.mockup-review-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.mockup-review-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.mockup-review-avatar.av-green { background: #4CAF50; }
+.mockup-review-avatar.av-purple { background: #7B1FA2; }
+.mockup-review-avatar.av-orange { background: #FF9800; }
+.mockup-review-name {
+  font-size: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+.mockup-review-stars {
+  display: flex;
+  gap: 1px;
+  margin-left: auto;
+}
+.mockup-review-star {
+  width: 7px;
+  height: 7px;
+  background: #F5C400;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.mockup-review-star.empty { background: #444; }
+.mockup-review-text {
+  margin-bottom: 5px;
+}
+.mockup-review-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.mockup-review-btn {
+  font-size: 6px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.mockup-review-btn.primary {
+  background: #F5C400;
+  color: #111;
+}
+.mockup-review-btn.secondary {
+  background: #444;
+  color: #CCC;
+}
+.mockup-review-status {
+  font-size: 6px;
+  color: #FF9800;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+/* ── 6. PERFORMANCES ── */
+.mockup-performances {
+  height: 100%;
+}
+.mockup-perf-header {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.mockup-perf-big-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.mockup-perf-big-card {
+  background: #2D2D2D;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.mockup-perf-big-value {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+}
+.mockup-perf-big-label {
+  font-size: 7px;
+  color: #888;
+  margin-top: 2px;
+}
+.mockup-perf-up {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 7px;
+  color: #4CAF50;
+  font-weight: 700;
+  margin-top: 3px;
+}
+.mockup-perf-up::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 5px solid #4CAF50;
+}
+.mockup-perf-social {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.mockup-perf-social-card {
+  flex: 1;
+  background: #2D2D2D;
+  border-radius: 6px;
+  padding: 7px;
+  text-align: center;
+}
+.mockup-perf-social-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  margin: 0 auto 4px;
+}
+.mockup-perf-social-num {
+  font-size: 8px;
+  font-weight: 700;
+  color: #4CAF50;
+}
+.mockup-perf-gmb {
+  background: #2D2D2D;
+  border-radius: 6px;
+  padding: 8px;
+}
+.mockup-perf-gmb-title {
+  font-size: 7px;
+  color: #888;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.mockup-perf-gmb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.mockup-perf-gmb-item {
+  text-align: center;
+}
+.mockup-perf-gmb-value {
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+}
+.mockup-perf-gmb-label {
+  font-size: 6px;
+  color: #888;
+}
+
+/* ── 7. STORY DESIGNER ── */
+.mockup-story {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+.mockup-story-panel {
+  flex: 1;
+  min-width: 0;
+}
+.mockup-story-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.mockup-story-thumb {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #FFB74D, #F57C00);
+  margin-bottom: 8px;
+}
+.mockup-story-input {
+  background: #2D2D2D;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 7px;
+  color: #CCC;
+  margin-bottom: 6px;
+}
+.mockup-story-label {
+  font-size: 7px;
+  color: #888;
+  margin-bottom: 4px;
+}
+.mockup-story-font {
+  background: #2D2D2D;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 7px;
+  color: #fff;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.mockup-color-palette {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.mockup-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.mockup-story-controls {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+.mockup-story-ctrl-btn {
+  width: 20px;
+  height: 20px;
+  background: #2D2D2D;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #888;
+}
+.mockup-phone {
+  width: 100px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mockup-phone-frame {
+  width: 88px;
+  height: 100%;
+  max-height: 280px;
+  background: #111;
+  border-radius: 14px;
+  border: 2px solid #444;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.mockup-phone-notch {
+  width: 40px;
+  height: 10px;
+  background: #111;
+  border-radius: 0 0 8px 8px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.mockup-phone-screen {
+  flex: 1;
+  background: linear-gradient(180deg, #FF8A50, #F57C00, #EF6C00);
+  margin: 2px;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px;
+  position: relative;
+}
+.mockup-phone-text {
+  font-size: 8px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── 8. GOOGLE (for gallery) ── */
+.mockup-google {
+  height: 100%;
+}
+.mockup-google-header {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.mockup-google-info {
+  background: #2D2D2D;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.mockup-google-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+.mockup-google-row:last-child { margin-bottom: 0; }
+.mockup-google-icon {
+  width: 14px;
+  height: 14px;
+  background: #4285F4;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.mockup-google-icon.g-red { background: #EA4335; }
+.mockup-google-icon.g-green { background: #34A853; }
+.mockup-google-icon.g-yellow { background: #FBBC05; }
+.mockup-google-map {
+  background: #2D2D2D;
+  border-radius: 6px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.mockup-google-map::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #EA4335;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+.mockup-google-map-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
 </style>
 </head>
 <body>
@@ -892,7 +1680,57 @@ footer {
           <div class="browser-frame-dot yellow"></div>
           <div class="browser-frame-dot green"></div>
         </div>
-        <img src="/public/images/pro/dashboard.png" alt="Dashboard So MIAM Pro" loading="eager">
+        <!-- Dashboard Mockup -->
+        <div class="mockup-base hero-size" role="img" aria-label="Dashboard So MIAM Pro">
+          <div class="mockup-dashboard">
+            <div class="mockup-sidebar">
+              <div class="mockup-sidebar-logo"></div>
+              <div class="mockup-sidebar-item active"></div>
+              <div class="mockup-sidebar-item"></div>
+              <div class="mockup-sidebar-item"></div>
+              <div class="mockup-sidebar-item"></div>
+            </div>
+            <div class="mockup-main">
+              <div class="mockup-main-header">Le Bistrot Parisien</div>
+              <div class="mockup-stat-cards">
+                <div class="mockup-stat-card">
+                  <div class="mockup-stat-card-icon blue"></div>
+                  <div class="mockup-stat-card-value">18</div>
+                  <div class="mockup-stat-card-label">posts</div>
+                </div>
+                <div class="mockup-stat-card">
+                  <div class="mockup-stat-card-icon orange"></div>
+                  <div class="mockup-stat-card-value">4</div>
+                  <div class="mockup-stat-card-label">avis</div>
+                </div>
+                <div class="mockup-stat-card">
+                  <div class="mockup-stat-card-icon yellow"></div>
+                  <div class="mockup-stat-card-value">4.6</div>
+                  <div class="mockup-stat-card-label">note</div>
+                </div>
+                <div class="mockup-stat-card">
+                  <div class="mockup-stat-card-icon green"></div>
+                  <div class="mockup-stat-card-value">5</div>
+                  <div class="mockup-stat-card-label">abonnés</div>
+                </div>
+              </div>
+              <div class="mockup-social-row">
+                <div class="mockup-social-chip">
+                  <div class="mockup-social-icon instagram"></div>
+                  <div><div class="mockup-social-num">2.4K</div><div class="mockup-social-text">abonnés</div></div>
+                </div>
+                <div class="mockup-social-chip">
+                  <div class="mockup-social-icon facebook"></div>
+                  <div><div class="mockup-social-num">1.8K</div><div class="mockup-social-text">abonnés</div></div>
+                </div>
+                <div class="mockup-social-chip">
+                  <div class="mockup-social-icon tiktok"></div>
+                  <div><div class="mockup-social-num">802</div><div class="mockup-social-text">abonnés</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="hero-float-card card-1">
         <div class="float-eyebrow">Résultat client</div>
@@ -915,11 +1753,11 @@ footer {
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item fade-up">
-        <div class="stat-number"><span class="counter" data-target="10000">0</span>+</div>
+        <div class="stat-number"><span class="counter" data-target="1000">0</span>+</div>
         <div class="stat-label">posts créés</div>
       </div>
       <div class="stat-item fade-up" style="transition-delay:0.1s">
-        <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+        <div class="stat-number"><span class="counter" data-target="100">0</span>+</div>
         <div class="stat-label">restaurants accompagnés</div>
       </div>
       <div class="stat-item fade-up" style="transition-delay:0.2s">
@@ -973,7 +1811,29 @@ footer {
               <div class="browser-frame-dot yellow"></div>
               <div class="browser-frame-dot green"></div>
             </div>
-            <img src="/public/images/pro/banque%20de%20contenus.png" alt="Banque de contenus" loading="lazy">
+            <!-- Banque de contenus Mockup -->
+            <div class="mockup-base step-size" role="img" aria-label="Banque de contenus">
+              <div class="mockup-banque">
+                <div class="mockup-banque-header">
+                  <div class="mockup-banque-title">Banque de contenus</div>
+                  <div class="mockup-banque-tabs">
+                    <div class="mockup-banque-tab active">Favoris</div>
+                    <div class="mockup-banque-tab">Photos</div>
+                    <div class="mockup-banque-tab">Vidéos</div>
+                  </div>
+                </div>
+                <div class="mockup-photo-grid">
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                  <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -988,7 +1848,58 @@ footer {
               <div class="browser-frame-dot yellow"></div>
               <div class="browser-frame-dot green"></div>
             </div>
-            <img src="/public/images/pro/planning%20%C3%A9ditorial.png" alt="Planning éditorial" loading="lazy">
+            <!-- Planning éditorial Mockup -->
+            <div class="mockup-base step-size" role="img" aria-label="Planning éditorial">
+              <div class="mockup-planning">
+                <div class="mockup-planning-left">
+                  <div class="mockup-planning-title">Planning Juillet 2026</div>
+                  <div class="mockup-post-card">
+                    <div class="mockup-post-thumb t1"></div>
+                    <div class="mockup-post-info">
+                      <div class="mockup-text-line long"></div>
+                      <div class="mockup-text-line medium"></div>
+                      <div class="mockup-post-badge validated">Validé</div>
+                      <div class="mockup-post-date">Lun 7 juil. — 12:00</div>
+                    </div>
+                  </div>
+                  <div class="mockup-post-card">
+                    <div class="mockup-post-thumb t2"></div>
+                    <div class="mockup-post-info">
+                      <div class="mockup-text-line long"></div>
+                      <div class="mockup-text-line short"></div>
+                      <div class="mockup-post-badge published">Publié</div>
+                      <div class="mockup-post-date">Mar 8 juil. — 18:30</div>
+                    </div>
+                  </div>
+                  <div class="mockup-post-card">
+                    <div class="mockup-post-thumb t3"></div>
+                    <div class="mockup-post-info">
+                      <div class="mockup-text-line medium"></div>
+                      <div class="mockup-text-line short"></div>
+                      <div class="mockup-post-badge validated">Validé</div>
+                      <div class="mockup-post-date">Jeu 10 juil. — 12:00</div>
+                    </div>
+                  </div>
+                  <div class="mockup-post-card">
+                    <div class="mockup-post-thumb t4"></div>
+                    <div class="mockup-post-info">
+                      <div class="mockup-text-line long"></div>
+                      <div class="mockup-text-line medium"></div>
+                      <div class="mockup-post-badge published">Publié</div>
+                      <div class="mockup-post-date">Ven 11 juil. — 19:00</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mockup-planning-right">
+                  <div class="mockup-feed-preview-title">Aperçu feed</div>
+                  <div class="mockup-feed-grid">
+                    <div class="mockup-feed-item"></div><div class="mockup-feed-item"></div><div class="mockup-feed-item"></div>
+                    <div class="mockup-feed-item"></div><div class="mockup-feed-item"></div><div class="mockup-feed-item"></div>
+                    <div class="mockup-feed-item"></div><div class="mockup-feed-item"></div><div class="mockup-feed-item"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1003,7 +1914,57 @@ footer {
               <div class="browser-frame-dot yellow"></div>
               <div class="browser-frame-dot green"></div>
             </div>
-            <img src="/public/images/pro/calendrier%20de%20programmation.png" alt="Calendrier de programmation" loading="lazy">
+            <!-- Calendrier Mockup -->
+            <div class="mockup-base step-size" role="img" aria-label="Calendrier de programmation">
+              <div class="mockup-calendrier">
+                <div class="mockup-cal-header">
+                  <div class="mockup-cal-title">22 juin — 28 juin 2026</div>
+                  <div class="mockup-cal-nav">
+                    <div class="mockup-cal-nav-btn">&lsaquo;</div>
+                    <div class="mockup-cal-nav-btn">&rsaquo;</div>
+                  </div>
+                </div>
+                <div class="mockup-cal-grid">
+                  <div class="mockup-cal-day-header">Lun</div>
+                  <div class="mockup-cal-day-header">Mar</div>
+                  <div class="mockup-cal-day-header">Mer</div>
+                  <div class="mockup-cal-day-header">Jeu</div>
+                  <div class="mockup-cal-day-header">Ven</div>
+                  <div class="mockup-cal-day-header">Sam</div>
+                  <div class="mockup-cal-day-header">Dim</div>
+                  <div class="mockup-cal-cell">
+                    <div class="mockup-cal-day-num">22</div>
+                    <div class="mockup-cal-dot dot-yellow"></div>
+                    <div class="mockup-cal-dot dot-blue"></div>
+                  </div>
+                  <div class="mockup-cal-cell">
+                    <div class="mockup-cal-day-num">23</div>
+                    <div class="mockup-cal-dot dot-green"></div>
+                  </div>
+                  <div class="mockup-cal-cell today">
+                    <div class="mockup-cal-day-num">24</div>
+                    <div class="mockup-cal-dot dot-yellow"></div>
+                    <div class="mockup-cal-dot dot-orange"></div>
+                  </div>
+                  <div class="mockup-cal-cell">
+                    <div class="mockup-cal-day-num">25</div>
+                    <div class="mockup-cal-dot dot-blue"></div>
+                  </div>
+                  <div class="mockup-cal-cell">
+                    <div class="mockup-cal-day-num">26</div>
+                    <div class="mockup-cal-dot dot-yellow"></div>
+                    <div class="mockup-cal-dot dot-green"></div>
+                  </div>
+                  <div class="mockup-cal-cell">
+                    <div class="mockup-cal-day-num">27</div>
+                  </div>
+                  <div class="mockup-cal-cell">
+                    <div class="mockup-cal-day-num">28</div>
+                    <div class="mockup-cal-dot dot-orange"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1045,7 +2006,67 @@ footer {
             <div class="browser-frame-dot yellow"></div>
             <div class="browser-frame-dot green"></div>
           </div>
-          <img src="/public/images/pro/planning%20%C3%A9ditorial.png" alt="Planning éditorial So MIAM Pro" loading="lazy">
+          <!-- Planning éditorial Mockup (feature) -->
+          <div class="mockup-base feature-size" role="img" aria-label="Planning éditorial So MIAM Pro">
+            <div class="mockup-planning">
+              <div class="mockup-planning-left">
+                <div class="mockup-planning-title">Planning Juillet 2026</div>
+                <div class="mockup-post-card">
+                  <div class="mockup-post-thumb t1"></div>
+                  <div class="mockup-post-info">
+                    <div class="mockup-text-line long"></div>
+                    <div class="mockup-text-line medium"></div>
+                    <div class="mockup-post-badge validated">Validé</div>
+                    <div class="mockup-post-date">Lun 7 juil. — 12:00</div>
+                  </div>
+                </div>
+                <div class="mockup-post-card">
+                  <div class="mockup-post-thumb t2"></div>
+                  <div class="mockup-post-info">
+                    <div class="mockup-text-line long"></div>
+                    <div class="mockup-text-line short"></div>
+                    <div class="mockup-post-badge published">Publié</div>
+                    <div class="mockup-post-date">Mar 8 juil. — 18:30</div>
+                  </div>
+                </div>
+                <div class="mockup-post-card">
+                  <div class="mockup-post-thumb t3"></div>
+                  <div class="mockup-post-info">
+                    <div class="mockup-text-line medium"></div>
+                    <div class="mockup-text-line short"></div>
+                    <div class="mockup-post-badge validated">Validé</div>
+                    <div class="mockup-post-date">Jeu 10 juil. — 12:00</div>
+                  </div>
+                </div>
+                <div class="mockup-post-card">
+                  <div class="mockup-post-thumb t4"></div>
+                  <div class="mockup-post-info">
+                    <div class="mockup-text-line long"></div>
+                    <div class="mockup-text-line medium"></div>
+                    <div class="mockup-post-badge published">Publié</div>
+                    <div class="mockup-post-date">Ven 11 juil. — 19:00</div>
+                  </div>
+                </div>
+                <div class="mockup-post-card">
+                  <div class="mockup-post-thumb t5"></div>
+                  <div class="mockup-post-info">
+                    <div class="mockup-text-line long"></div>
+                    <div class="mockup-text-line medium"></div>
+                    <div class="mockup-post-badge validated">Validé</div>
+                    <div class="mockup-post-date">Sam 12 juil. — 11:00</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mockup-planning-right">
+                <div class="mockup-feed-preview-title">Aperçu feed</div>
+                <div class="mockup-feed-grid">
+                  <div class="mockup-feed-item"></div><div class="mockup-feed-item"></div><div class="mockup-feed-item"></div>
+                  <div class="mockup-feed-item"></div><div class="mockup-feed-item"></div><div class="mockup-feed-item"></div>
+                  <div class="mockup-feed-item"></div><div class="mockup-feed-item"></div><div class="mockup-feed-item"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1086,7 +2107,89 @@ footer {
             <div class="browser-frame-dot yellow"></div>
             <div class="browser-frame-dot green"></div>
           </div>
-          <img src="/public/images/pro/onglet%20avis.png" alt="Gestion des avis Google" loading="lazy">
+          <!-- Onglet avis Mockup -->
+          <div class="mockup-base feature-size" role="img" aria-label="Gestion des avis Google">
+            <div class="mockup-avis">
+              <div class="mockup-avis-alert">
+                <div class="mockup-avis-alert-dot"></div>
+                <div class="mockup-avis-alert-text">4 avis sans réponse</div>
+              </div>
+              <div class="mockup-avis-rating">
+                <div class="mockup-avis-score">4.6</div>
+                <div class="mockup-stars">
+                  <div class="mockup-star"></div>
+                  <div class="mockup-star"></div>
+                  <div class="mockup-star"></div>
+                  <div class="mockup-star"></div>
+                  <div class="mockup-star empty"></div>
+                </div>
+              </div>
+              <div class="mockup-avis-tabs">
+                <div class="mockup-avis-tab active">À traiter</div>
+                <div class="mockup-avis-tab">Archives</div>
+              </div>
+              <div class="mockup-review-card">
+                <div class="mockup-review-header">
+                  <div class="mockup-review-avatar av-green"></div>
+                  <div class="mockup-review-name">Marie D.</div>
+                  <div class="mockup-review-stars">
+                    <div class="mockup-review-star"></div><div class="mockup-review-star"></div>
+                    <div class="mockup-review-star"></div><div class="mockup-review-star"></div>
+                    <div class="mockup-review-star"></div>
+                  </div>
+                </div>
+                <div class="mockup-review-text">
+                  <div class="mockup-text-line long" style="background:#444"></div>
+                  <div class="mockup-text-line medium" style="background:#444"></div>
+                </div>
+                <div class="mockup-review-actions">
+                  <div class="mockup-review-btn primary">Répondre avec Gusto</div>
+                  <div class="mockup-review-btn secondary">Manuellement</div>
+                  <div class="mockup-review-status">En attente</div>
+                </div>
+              </div>
+              <div class="mockup-review-card">
+                <div class="mockup-review-header">
+                  <div class="mockup-review-avatar av-purple"></div>
+                  <div class="mockup-review-name">Paul T.</div>
+                  <div class="mockup-review-stars">
+                    <div class="mockup-review-star"></div><div class="mockup-review-star"></div>
+                    <div class="mockup-review-star"></div><div class="mockup-review-star empty"></div>
+                    <div class="mockup-review-star empty"></div>
+                  </div>
+                </div>
+                <div class="mockup-review-text">
+                  <div class="mockup-text-line long" style="background:#444"></div>
+                  <div class="mockup-text-line short" style="background:#444"></div>
+                </div>
+                <div class="mockup-review-actions">
+                  <div class="mockup-review-btn primary">Répondre avec Gusto</div>
+                  <div class="mockup-review-btn secondary">Manuellement</div>
+                  <div class="mockup-review-status">En attente</div>
+                </div>
+              </div>
+              <div class="mockup-review-card">
+                <div class="mockup-review-header">
+                  <div class="mockup-review-avatar av-orange"></div>
+                  <div class="mockup-review-name">Sophie L.</div>
+                  <div class="mockup-review-stars">
+                    <div class="mockup-review-star"></div><div class="mockup-review-star"></div>
+                    <div class="mockup-review-star"></div><div class="mockup-review-star"></div>
+                    <div class="mockup-review-star empty"></div>
+                  </div>
+                </div>
+                <div class="mockup-review-text">
+                  <div class="mockup-text-line medium" style="background:#444"></div>
+                  <div class="mockup-text-line long" style="background:#444"></div>
+                </div>
+                <div class="mockup-review-actions">
+                  <div class="mockup-review-btn primary">Répondre avec Gusto</div>
+                  <div class="mockup-review-btn secondary">Manuellement</div>
+                  <div class="mockup-review-status">En attente</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1127,7 +2230,59 @@ footer {
             <div class="browser-frame-dot yellow"></div>
             <div class="browser-frame-dot green"></div>
           </div>
-          <img src="/public/images/pro/onglet%20performances.png" alt="Performance et Health Score" loading="lazy">
+          <!-- Performances Mockup -->
+          <div class="mockup-base feature-size" role="img" aria-label="Performance et Health Score">
+            <div class="mockup-performances">
+              <div class="mockup-perf-header">Le Bistrot Parisien</div>
+              <div class="mockup-perf-big-stats">
+                <div class="mockup-perf-big-card">
+                  <div class="mockup-perf-big-value">5 004</div>
+                  <div class="mockup-perf-big-label">Abonnés totaux</div>
+                  <div class="mockup-perf-up">+12%</div>
+                </div>
+                <div class="mockup-perf-big-card">
+                  <div class="mockup-perf-big-value">44.2K</div>
+                  <div class="mockup-perf-big-label">Impressions totales</div>
+                  <div class="mockup-perf-up">+23%</div>
+                </div>
+              </div>
+              <div class="mockup-perf-social">
+                <div class="mockup-perf-social-card">
+                  <div class="mockup-perf-social-icon" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF)"></div>
+                  <div class="mockup-perf-social-num">+307</div>
+                </div>
+                <div class="mockup-perf-social-card">
+                  <div class="mockup-perf-social-icon" style="background:#1877F2"></div>
+                  <div class="mockup-perf-social-num">+111</div>
+                </div>
+                <div class="mockup-perf-social-card">
+                  <div class="mockup-perf-social-icon" style="background:#111;border:1px solid #444"></div>
+                  <div class="mockup-perf-social-num">+114</div>
+                </div>
+              </div>
+              <div class="mockup-perf-gmb">
+                <div class="mockup-perf-gmb-title">Google My Business</div>
+                <div class="mockup-perf-gmb-grid">
+                  <div class="mockup-perf-gmb-item">
+                    <div class="mockup-perf-gmb-value">1 842</div>
+                    <div class="mockup-perf-gmb-label">Vues</div>
+                  </div>
+                  <div class="mockup-perf-gmb-item">
+                    <div class="mockup-perf-gmb-value">347</div>
+                    <div class="mockup-perf-gmb-label">Clics</div>
+                  </div>
+                  <div class="mockup-perf-gmb-item">
+                    <div class="mockup-perf-gmb-value">89</div>
+                    <div class="mockup-perf-gmb-label">Appels</div>
+                  </div>
+                  <div class="mockup-perf-gmb-item">
+                    <div class="mockup-perf-gmb-value">156</div>
+                    <div class="mockup-perf-gmb-label">Itinéraires</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1168,7 +2323,49 @@ footer {
             <div class="browser-frame-dot yellow"></div>
             <div class="browser-frame-dot green"></div>
           </div>
-          <img src="/public/images/pro/story%20designer.png" alt="Story Designer" loading="lazy">
+          <!-- Story Designer Mockup -->
+          <div class="mockup-base feature-size" role="img" aria-label="Story Designer">
+            <div class="mockup-story">
+              <div class="mockup-story-panel">
+                <div class="mockup-story-title">Story Designer</div>
+                <div class="mockup-story-thumb"></div>
+                <div class="mockup-story-input">Créez votre story...</div>
+                <div class="mockup-story-label">Police</div>
+                <div class="mockup-story-font"><span>Modern</span><span style="color:#888">&#9662;</span></div>
+                <div class="mockup-story-label">Couleurs</div>
+                <div class="mockup-color-palette">
+                  <div class="mockup-color-dot" style="background:#F5C400"></div>
+                  <div class="mockup-color-dot" style="background:#E53935"></div>
+                  <div class="mockup-color-dot" style="background:#4CAF50"></div>
+                  <div class="mockup-color-dot" style="background:#2196F3"></div>
+                  <div class="mockup-color-dot" style="background:#FF9800"></div>
+                  <div class="mockup-color-dot" style="background:#9C27B0"></div>
+                </div>
+                <div class="mockup-color-palette">
+                  <div class="mockup-color-dot" style="background:#fff"></div>
+                  <div class="mockup-color-dot" style="background:#111"></div>
+                  <div class="mockup-color-dot" style="background:#888"></div>
+                  <div class="mockup-color-dot" style="background:#FF5722"></div>
+                  <div class="mockup-color-dot" style="background:#00BCD4"></div>
+                  <div class="mockup-color-dot" style="background:#795548"></div>
+                </div>
+                <div class="mockup-story-controls">
+                  <div class="mockup-story-ctrl-btn">T</div>
+                  <div class="mockup-story-ctrl-btn">A</div>
+                  <div class="mockup-story-ctrl-btn">+</div>
+                  <div class="mockup-story-ctrl-btn">-</div>
+                </div>
+              </div>
+              <div class="mockup-phone">
+                <div class="mockup-phone-frame">
+                  <div class="mockup-phone-notch"></div>
+                  <div class="mockup-phone-screen">
+                    <div class="mockup-phone-text">Créez votre<br>story</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1182,28 +2379,141 @@ footer {
     <h2 class="section-title fade-up">La plateforme en images</h2>
     <p class="section-sub fade-up">Chaque écran a été pensé pour vous faire gagner du temps.</p>
     <div class="gallery-grid">
+      <!-- Gallery: Dashboard -->
       <div class="gallery-card fade-up">
-        <img src="/public/images/pro/dashboard.png" alt="Dashboard" loading="lazy">
+        <div class="mockup-base gallery-size" role="img" aria-label="Dashboard">
+          <div class="mockup-dashboard">
+            <div class="mockup-sidebar">
+              <div class="mockup-sidebar-logo"></div>
+              <div class="mockup-sidebar-item active"></div>
+              <div class="mockup-sidebar-item"></div>
+              <div class="mockup-sidebar-item"></div>
+              <div class="mockup-sidebar-item"></div>
+            </div>
+            <div class="mockup-main">
+              <div class="mockup-main-header">Le Bistrot Parisien</div>
+              <div class="mockup-stat-cards">
+                <div class="mockup-stat-card"><div class="mockup-stat-card-icon blue"></div><div class="mockup-stat-card-value">18</div><div class="mockup-stat-card-label">posts</div></div>
+                <div class="mockup-stat-card"><div class="mockup-stat-card-icon orange"></div><div class="mockup-stat-card-value">4</div><div class="mockup-stat-card-label">avis</div></div>
+                <div class="mockup-stat-card"><div class="mockup-stat-card-icon yellow"></div><div class="mockup-stat-card-value">4.6</div><div class="mockup-stat-card-label">note</div></div>
+                <div class="mockup-stat-card"><div class="mockup-stat-card-icon green"></div><div class="mockup-stat-card-value">5</div><div class="mockup-stat-card-label">abonnés</div></div>
+              </div>
+              <div class="mockup-social-row">
+                <div class="mockup-social-chip"><div class="mockup-social-icon instagram"></div><div><div class="mockup-social-num">2.4K</div></div></div>
+                <div class="mockup-social-chip"><div class="mockup-social-icon facebook"></div><div><div class="mockup-social-num">1.8K</div></div></div>
+                <div class="mockup-social-chip"><div class="mockup-social-icon tiktok"></div><div><div class="mockup-social-num">802</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="gallery-label">Dashboard</div>
       </div>
+      <!-- Gallery: Fiche Google -->
       <div class="gallery-card fade-up" style="transition-delay:0.1s">
-        <img src="/public/images/pro/onglet%20google.png" alt="Onglet Google" loading="lazy">
+        <div class="mockup-base gallery-size" role="img" aria-label="Fiche Google">
+          <div class="mockup-google">
+            <div class="mockup-google-header">Fiche Google</div>
+            <div class="mockup-google-info">
+              <div class="mockup-google-row"><div class="mockup-google-icon"></div><div class="mockup-text-line long" style="background:#444"></div></div>
+              <div class="mockup-google-row"><div class="mockup-google-icon g-red"></div><div class="mockup-text-line medium" style="background:#444"></div></div>
+              <div class="mockup-google-row"><div class="mockup-google-icon g-green"></div><div class="mockup-text-line short" style="background:#444"></div></div>
+              <div class="mockup-google-row"><div class="mockup-google-icon g-yellow"></div><div class="mockup-text-line medium" style="background:#444"></div></div>
+            </div>
+            <div class="mockup-google-map">
+              <div class="mockup-google-map-grid"></div>
+            </div>
+          </div>
+        </div>
         <div class="gallery-label">Fiche Google</div>
       </div>
+      <!-- Gallery: Banque de contenus -->
       <div class="gallery-card fade-up" style="transition-delay:0.2s">
-        <img src="/public/images/pro/banque%20de%20contenus.png" alt="Banque de contenus" loading="lazy">
+        <div class="mockup-base gallery-size" role="img" aria-label="Banque de contenus">
+          <div class="mockup-banque">
+            <div class="mockup-banque-header">
+              <div class="mockup-banque-title">Banque de contenus</div>
+              <div class="mockup-banque-tabs"><div class="mockup-banque-tab active">Favoris</div><div class="mockup-banque-tab">Photos</div></div>
+            </div>
+            <div class="mockup-photo-grid">
+              <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div><div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+              <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div><div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+              <div class="mockup-photo-item"></div><div class="mockup-photo-item"></div><div class="mockup-photo-item"></div><div class="mockup-photo-item"></div>
+            </div>
+          </div>
+        </div>
         <div class="gallery-label">Banque de contenus</div>
       </div>
+      <!-- Gallery: Calendrier -->
       <div class="gallery-card fade-up" style="transition-delay:0.05s">
-        <img src="/public/images/pro/calendrier%20de%20programmation.png" alt="Calendrier de programmation" loading="lazy">
+        <div class="mockup-base gallery-size" role="img" aria-label="Calendrier de programmation">
+          <div class="mockup-calendrier">
+            <div class="mockup-cal-header">
+              <div class="mockup-cal-title">22 — 28 juin</div>
+              <div class="mockup-cal-nav"><div class="mockup-cal-nav-btn">&lsaquo;</div><div class="mockup-cal-nav-btn">&rsaquo;</div></div>
+            </div>
+            <div class="mockup-cal-grid">
+              <div class="mockup-cal-day-header">L</div><div class="mockup-cal-day-header">M</div><div class="mockup-cal-day-header">M</div><div class="mockup-cal-day-header">J</div><div class="mockup-cal-day-header">V</div><div class="mockup-cal-day-header">S</div><div class="mockup-cal-day-header">D</div>
+              <div class="mockup-cal-cell"><div class="mockup-cal-day-num">22</div><div class="mockup-cal-dot dot-yellow"></div></div>
+              <div class="mockup-cal-cell"><div class="mockup-cal-day-num">23</div><div class="mockup-cal-dot dot-green"></div></div>
+              <div class="mockup-cal-cell today"><div class="mockup-cal-day-num">24</div><div class="mockup-cal-dot dot-yellow"></div></div>
+              <div class="mockup-cal-cell"><div class="mockup-cal-day-num">25</div><div class="mockup-cal-dot dot-blue"></div></div>
+              <div class="mockup-cal-cell"><div class="mockup-cal-day-num">26</div><div class="mockup-cal-dot dot-orange"></div></div>
+              <div class="mockup-cal-cell"><div class="mockup-cal-day-num">27</div></div>
+              <div class="mockup-cal-cell"><div class="mockup-cal-day-num">28</div><div class="mockup-cal-dot dot-yellow"></div></div>
+            </div>
+          </div>
+        </div>
         <div class="gallery-label">Calendrier</div>
       </div>
+      <!-- Gallery: Performances -->
       <div class="gallery-card fade-up" style="transition-delay:0.15s">
-        <img src="/public/images/pro/onglet%20performances.png" alt="Performances" loading="lazy">
+        <div class="mockup-base gallery-size" role="img" aria-label="Performances">
+          <div class="mockup-performances">
+            <div class="mockup-perf-header">Performances</div>
+            <div class="mockup-perf-big-stats">
+              <div class="mockup-perf-big-card"><div class="mockup-perf-big-value">5 004</div><div class="mockup-perf-big-label">Abonnés</div><div class="mockup-perf-up">+12%</div></div>
+              <div class="mockup-perf-big-card"><div class="mockup-perf-big-value">44.2K</div><div class="mockup-perf-big-label">Impressions</div><div class="mockup-perf-up">+23%</div></div>
+            </div>
+            <div class="mockup-perf-gmb">
+              <div class="mockup-perf-gmb-title">Google My Business</div>
+              <div class="mockup-perf-gmb-grid">
+                <div class="mockup-perf-gmb-item"><div class="mockup-perf-gmb-value">1 842</div><div class="mockup-perf-gmb-label">Vues</div></div>
+                <div class="mockup-perf-gmb-item"><div class="mockup-perf-gmb-value">347</div><div class="mockup-perf-gmb-label">Clics</div></div>
+                <div class="mockup-perf-gmb-item"><div class="mockup-perf-gmb-value">89</div><div class="mockup-perf-gmb-label">Appels</div></div>
+                <div class="mockup-perf-gmb-item"><div class="mockup-perf-gmb-value">156</div><div class="mockup-perf-gmb-label">Itin.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="gallery-label">Performances</div>
       </div>
+      <!-- Gallery: Story Designer -->
       <div class="gallery-card fade-up" style="transition-delay:0.25s">
-        <img src="/public/images/pro/story%20designer.png" alt="Story Designer" loading="lazy">
+        <div class="mockup-base gallery-size" role="img" aria-label="Story Designer">
+          <div class="mockup-story">
+            <div class="mockup-story-panel">
+              <div class="mockup-story-title">Story Designer</div>
+              <div class="mockup-story-thumb"></div>
+              <div class="mockup-story-input">Créez votre story...</div>
+              <div class="mockup-story-label">Police</div>
+              <div class="mockup-story-font"><span>Modern</span><span style="color:#888">&#9662;</span></div>
+              <div class="mockup-color-palette">
+                <div class="mockup-color-dot" style="background:#F5C400"></div>
+                <div class="mockup-color-dot" style="background:#E53935"></div>
+                <div class="mockup-color-dot" style="background:#4CAF50"></div>
+                <div class="mockup-color-dot" style="background:#2196F3"></div>
+              </div>
+            </div>
+            <div class="mockup-phone">
+              <div class="mockup-phone-frame">
+                <div class="mockup-phone-notch"></div>
+                <div class="mockup-phone-screen">
+                  <div class="mockup-phone-text">Story</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="gallery-label">Story Designer</div>
       </div>
     </div>
