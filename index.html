@@ -758,29 +758,6 @@ h1 em { color: var(--y); font-style: normal; }
   font-size: 15px; color: var(--g2);
   margin-bottom: 32px; font-weight: 300;
 }
-.waitlist-form {
-  display: flex; gap: 10px;
-  justify-content: center; flex-wrap: wrap;
-}
-.waitlist-input {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px; padding: 12px 20px;
-  background: #1a1a1a; border: 1px solid #333;
-  color: var(--w); border-radius: 6px;
-  width: 280px; outline: none;
-  transition: border-color 0.2s;
-}
-.waitlist-input:focus { border-color: var(--y); }
-.waitlist-input::placeholder { color: var(--g1); }
-.btn-waitlist {
-  background: var(--y); color: var(--k);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px; font-weight: 700;
-  padding: 12px 24px; border-radius: 6px;
-  border: none; cursor: pointer;
-  transition: opacity 0.2s;
-}
-.btn-waitlist:hover { opacity: 0.88; }
 
 /* ── FOOTER ── */
 footer {
@@ -972,22 +949,62 @@ footer {
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  /* HERO */
+  /* HERO — fullscreen immersif */
   #hero {
     grid-template-columns: 1fr;
-    padding: 88px 16px 56px;
+    padding: 0;
     text-align: center;
-    gap: 32px;
+    gap: 0;
+    min-height: 100svh;
+    position: relative;
   }
-  .hero-right { display: flex; }
-  .hero-photo-wrap { max-width: 100%; }
-  .hero-float-card.card-result { left: 10px; bottom: 20px; }
-  .hero-float-card.card-product { right: 10px; top: 20px; }
-  .hero-float-card .float-stat { font-size: 18px; }
+  .hero-left {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 100px 24px 40px;
+  }
+  .hero-right {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: block;
+  }
+  .hero-photo-wrap {
+    max-width: none;
+    width: 100%; height: 100%;
+    border-radius: 0;
+  }
+  .hero-photo-wrap > img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    aspect-ratio: auto;
+  }
+  .hero-photo-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.7) 0%,
+      rgba(0,0,0,0.55) 40%,
+      rgba(0,0,0,0.65) 70%,
+      rgba(0,0,0,0.85) 100%
+    );
+    z-index: 2;
+  }
+  .hero-float-card { display: none; }
   .hero-badge { margin: 0 auto 20px; }
   h1 { font-size: 36px; letter-spacing: -0.5px; }
-  .hero-sub { font-size: 15px; margin: 0 auto 32px; max-width: 100%; }
-  .hero-btns { flex-direction: column; align-items: center; gap: 12px; }
+  .hero-sub { font-size: 15px; margin: 0 auto 32px; max-width: 100%; color: rgba(255,255,255,0.8); }
+  .hero-sub strong { color: #fff; }
+  .hero-btns { flex-direction: column; align-items: center; gap: 12px; width: 100%; }
   .btn-primary, .btn-secondary { width: 100%; text-align: center; }
 
   /* SECTIONS PADDING */
@@ -1046,9 +1063,6 @@ footer {
   /* PLATEFORME */
   .plateforme-title { font-size: 22px; }
   .plateforme-sub { font-size: 14px; }
-  .waitlist-form { flex-direction: column; align-items: center; }
-  .waitlist-input { width: 100%; max-width: 360px; }
-  .btn-waitlist { width: 100%; max-width: 360px; }
 
   /* FOOTER */
   footer { flex-direction: column; align-items: flex-start; padding: 24px 16px; gap: 12px; }
@@ -1078,7 +1092,7 @@ footer {
     <li><a href="#equipe">Équipe</a></li>
 
     <li><a href="/avis">Avis</a></li>
-    <li><a href="/pro" style="color:var(--y);border:1px solid var(--y);padding:4px 12px;border-radius:4px;font-weight:600;">So MIAM Pro</a></li>
+    <li><a href="/gusto" style="color:var(--y);border:1px solid var(--y);padding:4px 12px;border-radius:4px;font-weight:600;">Gusto</a></li>
   </ul>
   <a href="https://recette.so-miam.com/" class="nav-cta">Prendre RDV</a>
   <div class="hamburger" onclick="toggleMenu()">
@@ -1101,7 +1115,7 @@ footer {
       <a href="https://recette.so-miam.com/" class="btn-primary">Réserver un appel stratégique</a>
       <a href="#resultats" class="btn-secondary">Voir les résultats →</a>
     </div>
-    <a href="/pro" style="display:inline-block;margin-top:16px;font-size:13px;color:var(--g2);text-decoration:none;transition:color 0.2s;font-weight:400;" onmouseover="this.style.color='var(--y)'" onmouseout="this.style.color='var(--g2)'">Découvrir So MIAM Pro →</a>
+    <a href="/gusto" style="display:inline-block;margin-top:16px;font-size:13px;color:var(--g2);text-decoration:none;transition:color 0.2s;font-weight:400;" onmouseover="this.style.color='var(--y)'" onmouseout="this.style.color='var(--g2)'">Découvrir Gusto →</a>
   </div>
   <div class="hero-right">
     <div class="hero-photo-wrap">
@@ -1575,7 +1589,7 @@ footer {
       <div class="contact-lille">
         <div class="contact-lille-title">Vous êtes à Lille ?</div>
         <p class="contact-lille-text">On peut se rencontrer directement. Envoyez-nous un message, on revient vers vous sous 24h.</p>
-        <a href="https://recette.so-miam.com/" class="btn-dark">Envoyer un message →</a>
+        <a href="mailto:thomas@so-media.fr" class="btn-dark">Envoyer un message →</a>
       </div>
       <div class="contact-national">
         <div class="contact-national-title">Partout en France</div>
@@ -1586,12 +1600,12 @@ footer {
   </div>
 </section>
 
-<!-- SO MIAM PRO SECTION -->
+<!-- GUSTO SECTION -->
 <section id="pro-teaser" style="background:var(--cr);padding:80px 48px;">
   <div style="max-width:800px;margin:0 auto;text-align:center;">
-    <div class="section-eyebrow" style="justify-content:center;">So MIAM Pro</div>
+    <div class="section-eyebrow" style="justify-content:center;">Gusto</div>
     <h2 class="section-title fade-up" style="color:var(--k);">Vous préférez gérer<br>vous-même ?</h2>
-    <p class="section-sub fade-up" style="color:var(--g1);margin:0 auto 40px;max-width:520px;">So MIAM Pro vous donne les mêmes outils que notre agence, en autonomie complète.</p>
+    <p class="section-sub fade-up" style="color:var(--g1);margin:0 auto 40px;max-width:520px;">Gusto vous donne les mêmes outils que notre agence, en autonomie complète.</p>
     <div style="display:flex;flex-direction:column;gap:12px;align-items:center;margin-bottom:40px;" class="fade-up" >
       <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:var(--k);">
         <span style="color:var(--y);font-weight:800;font-size:18px;">✓</span> Planning éditorial IA — un mois de contenu en 1 clic
@@ -1603,23 +1617,20 @@ footer {
         <span style="color:var(--y);font-weight:800;font-size:18px;">✓</span> Health Score de votre présence en ligne
       </div>
     </div>
-    <a href="/pro" class="btn-primary fade-up" style="transition-delay:0.1s">Découvrir So MIAM Pro →</a>
-    <p style="font-size:13px;color:var(--g2);margin-top:12px;" class="fade-up" >14 jours d'essai gratuit · 59€/mois · Sans engagement</p>
+    <a href="/gusto" class="btn-primary fade-up" style="transition-delay:0.1s">Découvrir Gusto →</a>
+    <p style="font-size:13px;color:var(--g2);margin-top:12px;" class="fade-up" >3 mois d'essai gratuit · 59€/mois · Sans engagement</p>
   </div>
 </section>
 
-<!-- PLATEFORME TEASER -->
+<!-- GUSTO TEASER -->
 <section id="plateforme">
   <div class="plateforme-badge">
     <div class="plateforme-dot"></div>
-    Bientôt disponible
+    Disponible maintenant
   </div>
-  <h2 class="plateforme-title">La plateforme So MIAM arrive.</h2>
-  <p class="plateforme-sub">Gérez votre communication restaurant en autonomie, avec l'IA. Soyez parmi les premiers à y accéder.</p>
-  <div class="waitlist-form">
-    <input type="email" class="waitlist-input" placeholder="votre@email.com">
-    <button class="btn-waitlist">Rejoindre la liste d'attente</button>
-  </div>
+  <h2 class="plateforme-title">Gusto est là.</h2>
+  <p class="plateforme-sub">Gérez votre communication restaurant en autonomie, avec l'IA. 3 mois d'essai gratuit.</p>
+  <a href="/gusto" class="btn-primary" style="margin-top:8px;">Découvrir Gusto →</a>
 </section>
 
 <!-- PARTENAIRES -->
@@ -1647,7 +1658,7 @@ footer {
     <a href="/meta-ads-restaurant">Meta Ads</a>
     <a href="/shooting-photo-restaurant">Shooting photo</a>
     <a href="/avis">Avis</a>
-    <a href="/pro" style="color:var(--y);">So MIAM Pro</a>
+    <a href="/gusto" style="color:var(--y);">Gusto</a>
   </div>
   <div class="footer-copy">© 2026 So MIAM — Agence digitale restaurants · Lille</div>
 </footer>
@@ -1914,14 +1925,6 @@ window.addEventListener('resize', () => {
 
 
 
-document.querySelector('.btn-waitlist').addEventListener('click', () => {
-  const input = document.querySelector('.waitlist-input');
-  if (input.value && input.value.includes('@')) {
-    input.value = '';
-    input.placeholder = '✓ Vous êtes sur la liste !';
-    document.querySelector('.btn-waitlist').textContent = 'Inscrit !';
-  }
-});
 </script>
 
 </body>

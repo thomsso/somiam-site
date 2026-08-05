@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/pro",
+      "destination": "/gusto",
+      "permanent": true
+    }
+  ]
 }
