@@ -35,28 +35,31 @@
 <!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ══════════════════════════════════════════
+   DESIGN TOKENS
+   ══════════════════════════════════════════ */
 :root {
   --y: #F5C400;
   --k: #111111;
-  --k2: #1C1C1C;
-  --k3: #2D2D2D;
+  --k2: #1A1A1A;
+  --k3: #222222;
   --g1: #444444;
   --g2: #888888;
   --g3: #CCCCCC;
   --g4: #E8E8E8;
   --cr: #FFF8E7;
   --w: #FFFFFF;
-  --red: #E53935;
-  --green: #4CAF50;
+  --red: #C0392B;
+  --green: #1A7A4A;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   background: var(--k);
   color: var(--k);
   overflow-x: hidden;
@@ -77,24 +80,34 @@ body {
 }
 .section-eyebrow.center { justify-content: center; }
 .section-eyebrow.center::before { display: none; }
-.section-eyebrow.dark { color: var(--y); }
-.section-eyebrow.light { color: var(--y); }
 .section-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 800; line-height: 1.08;
   margin-bottom: 20px; letter-spacing: -0.5px;
 }
-.section-sub {
-  font-size: 17px; font-weight: 300;
-  line-height: 1.7; max-width: 600px;
-  margin-bottom: 56px;
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left {
+  opacity: 0; transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0; transform: translateX(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
 
 /* ── BUTTONS ── */
 .btn-primary {
   background: var(--y); color: var(--k);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 16px; font-weight: 700;
   padding: 16px 36px; border-radius: 8px;
   text-decoration: none; display: inline-block;
@@ -107,7 +120,7 @@ body {
 }
 .btn-dark {
   background: var(--k); color: var(--w);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 16px; font-weight: 700;
   padding: 16px 36px; border-radius: 8px;
   text-decoration: none; display: inline-block;
@@ -121,32 +134,25 @@ body {
 
 /* ── BROWSER FRAME ── */
 .browser-frame {
-  background: #1a1a1a;
+  background: var(--k2);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 .browser-frame-bar {
   display: flex; align-items: center; gap: 6px;
-  padding: 12px 16px;
-  background: #222;
+  padding: 10px 14px;
+  background: var(--k3);
 }
 .browser-frame-dot {
   width: 10px; height: 10px; border-radius: 50%;
 }
-.browser-frame-dot.red { background: #ff5f57; }
-.browser-frame-dot.yellow { background: #febc2e; }
-.browser-frame-dot.green { background: #28c840; }
+.browser-frame-dot.r { background: #ff5f57; }
+.browser-frame-dot.y { background: #febc2e; }
+.browser-frame-dot.g { background: #28c840; }
 .browser-frame img {
   width: 100%; display: block;
 }
-
-/* ── SCROLL ANIMATIONS ── */
-.fade-up {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.fade-up.visible { opacity: 1; transform: translateY(0); }
 
 /* ════════════════════════════════════════
    NAV
@@ -175,17 +181,9 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--w); }
-.nav-links .nav-pro-link {
-  color: var(--y);
-  border: 1px solid var(--y);
-  padding: 5px 14px; border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-links .nav-pro-link:hover { background: var(--y); color: var(--k); }
 .nav-cta {
   background: var(--y); color: var(--k);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 13px; font-weight: 700;
   padding: 9px 20px; border-radius: 6px;
   text-decoration: none; white-space: nowrap;
@@ -199,75 +197,93 @@ nav {
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--w); border-radius: 2px; transition: 0.3s; }
 
 /* ════════════════════════════════════════
-   HERO
+   HERO — Interactive, centered
    ════════════════════════════════════════ */
 #hero {
   min-height: 100vh;
   background: var(--k);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 120px 48px 80px;
-  gap: 64px;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 40px;
   position: relative;
   overflow: hidden;
 }
 .hero-glow {
   position: absolute;
-  width: 700px; height: 700px;
+  width: 800px; height: 800px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,196,0,0.08) 0%, transparent 70%);
-  top: -200px; right: -100px;
+  background: radial-gradient(circle, rgba(245,196,0,0.07) 0%, transparent 65%);
+  top: -300px; left: 50%; transform: translateX(-50%);
   pointer-events: none;
 }
-.hero-glow-2 {
-  position: absolute;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,196,0,0.05) 0%, transparent 70%);
-  bottom: -100px; left: -100px;
-  pointer-events: none;
-}
-.hero-left { position: relative; z-index: 2; }
-.hero-right { position: relative; z-index: 2; }
 #hero h1 {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(32px, 3.8vw, 50px);
+  font-size: clamp(36px, 5.5vw, 64px);
   font-weight: 800; color: var(--w);
-  line-height: 1.1; letter-spacing: -1.5px;
+  line-height: 1.05; letter-spacing: -2px;
   margin-bottom: 24px;
-  overflow-wrap: break-word;
+  max-width: 800px;
+  position: relative; z-index: 2;
 }
 #hero h1 em { color: var(--y); font-style: normal; }
-.hero-eyebrow {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--y);
-  margin-bottom: 20px;
-  display: flex; align-items: center; gap: 8px;
-}
-.hero-eyebrow::before {
-  content: ''; display: inline-block;
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--y); animation: pulse-dot 2s infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
 .hero-sub {
-  font-size: 17px; color: var(--g2);
-  line-height: 1.7; margin-bottom: 40px;
-  max-width: 500px; font-weight: 300;
+  font-size: 18px; color: var(--g2);
+  line-height: 1.7; margin-bottom: 48px;
+  max-width: 580px; font-weight: 400;
+  position: relative; z-index: 2;
 }
-.hero-sub strong { color: var(--w); font-weight: 500; }
-.hero-guarantees {
+.hero-sub strong { color: var(--w); font-weight: 600; }
+
+/* Hero input */
+.hero-input-wrap {
+  display: flex;
+  max-width: 520px; width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative; z-index: 2;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.hero-input-wrap:focus-within {
+  border-color: var(--y);
+  box-shadow: 0 0 0 4px rgba(245,196,0,0.1);
+}
+.hero-input {
+  flex: 1;
+  background: none; border: none; outline: none;
+  padding: 18px 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px; font-weight: 400;
+  color: var(--w);
+}
+.hero-input::placeholder { color: var(--g2); }
+.hero-input-btn {
+  background: var(--y); color: var(--k);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; font-weight: 700;
+  padding: 14px 28px;
+  border: none; cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  margin: 6px;
+  border-radius: 8px;
+}
+.hero-input-btn:hover { background: #e6b800; }
+
+.hero-trust {
   display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap;
+  justify-content: center;
+  position: relative; z-index: 2;
 }
-.hero-guarantees span {
-  font-size: 13px; color: var(--g2);
+.hero-trust span {
+  font-size: 13px; color: var(--g2); font-weight: 400;
   display: flex; align-items: center; gap: 6px;
 }
-.hero-guarantees span::before {
+.hero-trust span::before {
   content: ''; display: inline-block;
   width: 16px; height: 16px;
   background: var(--green); border-radius: 50%;
@@ -275,14 +291,15 @@ nav {
   flex-shrink: 0;
 }
 
-/* Hero screenshot area */
-.hero-screenshot-wrap {
-  position: relative;
-  max-width: 560px;
-  margin: 0 auto;
+/* Hero product screenshot */
+.hero-product {
+  margin-top: 64px;
+  max-width: 1000px;
+  width: 100%;
+  position: relative; z-index: 2;
 }
-.hero-screenshot-wrap .browser-frame {
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 120px rgba(245,196,0,0.06);
+.hero-product .browser-frame {
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 160px rgba(245,196,0,0.04);
 }
 .hero-float-card {
   position: absolute;
@@ -291,19 +308,19 @@ nav {
   padding: 16px 20px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.3);
   z-index: 3;
-  max-width: 220px;
+  max-width: 240px;
   animation: float-card 3s ease-in-out infinite;
 }
 @keyframes float-card {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-8px); }
 }
 .hero-float-card.card-1 {
-  bottom: 20px; left: -30px;
+  bottom: 60px; left: -20px;
   animation-delay: 0s;
 }
 .hero-float-card.card-2 {
-  top: 40px; right: -30px;
+  top: 30px; right: -20px;
   animation-delay: 1.5s;
 }
 .float-eyebrow {
@@ -315,11 +332,9 @@ nav {
   font-family: 'Syne', sans-serif;
   font-size: 20px; font-weight: 800;
   color: var(--k); line-height: 1.15;
-  white-space: nowrap;
 }
 .float-detail {
-  font-size: 12px; color: var(--g1);
-  margin-top: 3px;
+  font-size: 12px; color: var(--g1); margin-top: 3px;
 }
 .float-badge {
   display: inline-block;
@@ -330,29 +345,58 @@ nav {
 }
 
 /* ════════════════════════════════════════
-   STATS BAR
+   SOCIAL PROOF BAR
    ════════════════════════════════════════ */
-#stats {
-  background: var(--y);
+#social-proof {
+  background: var(--cr);
   padding: 40px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+.proof-label {
   text-align: center;
+  font-size: 13px; font-weight: 500;
+  color: var(--g2);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
-.stat-item { }
-.stat-number {
+.proof-marquee {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.proof-track {
+  display: flex;
+  gap: 48px;
+  animation: marquee 35s linear infinite;
+  width: max-content;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.proof-name {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 800; color: var(--k);
-  line-height: 1;
+  font-size: 15px; font-weight: 800;
+  color: var(--k);
 }
-.stat-label {
-  font-size: 14px; font-weight: 500;
-  color: rgba(17,17,17,0.7);
-  margin-top: 6px;
+.proof-result {
+  font-size: 13px; font-weight: 600;
+  color: var(--green);
+}
+.proof-sep {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--g3);
+  flex-shrink: 0;
 }
 
 /* ════════════════════════════════════════
@@ -371,7 +415,7 @@ nav {
 .pain-card {
   background: var(--w);
   padding: 36px 32px;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid var(--g4);
   position: relative;
   transition: transform 0.25s, box-shadow 0.25s;
@@ -384,11 +428,11 @@ nav {
   content: ''; position: absolute;
   top: 0; left: 0; width: 4px; height: 100%;
   background: var(--red);
-  border-radius: 14px 0 0 14px;
+  border-radius: 12px 0 0 12px;
 }
 .pain-icon {
   width: 48px; height: 48px;
-  background: #FFF0F0;
+  background: #FDF0EF;
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 20px; font-size: 22px;
@@ -410,8 +454,6 @@ nav {
   background: var(--k);
   padding: 100px 0;
 }
-#comment .section-title { color: var(--w); }
-#comment .section-sub { color: var(--g2); }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -423,7 +465,7 @@ nav {
   position: absolute;
   top: 28px; left: 16.67%; right: 16.67%;
   height: 2px;
-  background: linear-gradient(90deg, var(--y), rgba(245,196,0,0.3));
+  background: linear-gradient(90deg, var(--y), rgba(245,196,0,0.2));
   z-index: 0;
 }
 .step-card { position: relative; z-index: 1; }
@@ -444,7 +486,7 @@ nav {
 }
 .step-text {
   font-size: 14px; color: var(--g2);
-  line-height: 1.7; font-weight: 300;
+  line-height: 1.7; font-weight: 400;
   margin-bottom: 24px;
 }
 .step-screenshot .browser-frame {
@@ -452,11 +494,9 @@ nav {
 }
 
 /* ════════════════════════════════════════
-   FEATURES DEEP DIVE
+   FEATURES
    ════════════════════════════════════════ */
-.feature-section {
-  padding: 100px 0;
-}
+.feature-section { padding: 100px 0; }
 .feature-section.dark { background: var(--k); }
 .feature-section.light { background: var(--cr); }
 .feature-row {
@@ -467,15 +507,12 @@ nav {
 }
 .feature-row.reversed { direction: rtl; }
 .feature-row.reversed > * { direction: ltr; }
-.feature-content { }
-.feature-content .section-title.white { color: var(--w); }
-.feature-content .section-title.dark { color: var(--k); }
-.feature-content .feature-desc {
+.feature-desc {
   font-size: 16px; line-height: 1.7;
-  font-weight: 300; margin-bottom: 32px;
+  font-weight: 400; margin-bottom: 32px;
 }
-.feature-content .feature-desc.white { color: var(--g2); }
-.feature-content .feature-desc.dark-text { color: var(--g1); }
+.feature-desc.white { color: var(--g2); }
+.feature-desc.dark-text { color: var(--g1); }
 .feature-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; }
 .feature-bullets li {
   display: flex; align-items: flex-start; gap: 12px;
@@ -498,110 +535,65 @@ nav {
 .feature-screenshot .browser-frame:hover {
   transform: translateY(-4px);
 }
+.feature-screenshot-raw {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.feature-screenshot-raw:hover { transform: translateY(-4px); }
+.feature-screenshot-raw img { width: 100%; display: block; }
 
 /* ════════════════════════════════════════
-   GALLERY
+   RESULTS
    ════════════════════════════════════════ */
-#gallery {
+#resultats {
   background: var(--k);
   padding: 100px 0;
 }
-#gallery .section-title { color: var(--w); text-align: center; margin-bottom: 16px; }
-#gallery .section-sub { color: var(--g2); text-align: center; margin: 0 auto 56px; }
-.gallery-grid {
+.results-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
-.gallery-card {
-  border-radius: 12px; overflow: hidden;
-  background: #1a1a1a;
-  transition: transform 0.3s, box-shadow 0.3s;
+.result-card {
+  background: var(--k2);
   border: 1px solid rgba(255,255,255,0.06);
-}
-.gallery-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-}
-.gallery-card img {
-  width: 100%; display: block;
-  aspect-ratio: 16/10; object-fit: cover;
-}
-.gallery-label {
-  padding: 14px 16px;
-  font-size: 12px; font-weight: 600;
-  color: var(--g2); text-transform: uppercase;
-  letter-spacing: 0.1em; text-align: center;
-}
-
-/* ════════════════════════════════════════
-   PRICING
-   ════════════════════════════════════════ */
-#prix {
-  background: var(--cr);
-  padding: 100px 0;
-}
-#prix .section-title { color: var(--k); }
-.pricing-wrap {
-  max-width: 680px;
-}
-.pricing-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-.pricing-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--g4);
-  font-size: 15px; color: var(--g1);
-  transition: background 0.2s;
-}
-.pricing-row .label { font-weight: 400; }
-.pricing-row .price {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800; font-size: 16px;
-  color: var(--g2);
-  white-space: nowrap;
-  text-decoration: line-through;
-  text-decoration-color: rgba(229,57,53,0.5);
-}
-.pricing-row.highlight {
-  background: var(--y);
   border-radius: 12px;
-  border-bottom: none;
-  margin-top: 12px;
-  padding: 24px;
-  position: relative;
-  box-shadow: 0 8px 32px rgba(245,196,0,0.25);
+  padding: 32px 28px;
+  transition: border-color 0.3s, transform 0.3s;
 }
-.pricing-row.highlight .label {
-  font-weight: 700; color: var(--k); font-size: 16px;
+.result-card:hover {
+  border-color: rgba(245,196,0,0.3);
+  transform: translateY(-4px);
 }
-.pricing-row.highlight .price {
-  color: var(--k); font-size: 22px;
-  text-decoration: none;
+.result-metric {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--y);
+  margin-bottom: 4px;
 }
-.pricing-badge {
-  position: absolute;
-  top: -12px; right: 20px;
-  background: var(--k); color: var(--y);
-  font-size: 11px; font-weight: 700;
-  padding: 5px 14px; border-radius: 20px;
-  letter-spacing: 0.06em;
+.result-desc {
+  font-size: 14px; color: var(--g2);
+  margin-bottom: 16px; line-height: 1.5;
+}
+.result-restaurant {
+  font-size: 13px; font-weight: 600;
+  color: var(--w);
+}
+.result-type {
+  font-size: 11px; font-weight: 500;
+  color: var(--g2);
 }
 
 /* ════════════════════════════════════════
    TESTIMONIALS
    ════════════════════════════════════════ */
-#preuve {
-  background: var(--k);
+#temoignages {
+  background: var(--k2);
   padding: 100px 0;
 }
-#preuve .section-title { color: var(--w); }
-#preuve .section-sub { color: var(--g2); }
 .videos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -612,7 +604,7 @@ nav {
   border-radius: 14px;
   overflow: hidden;
   transition: border-color 0.3s, transform 0.3s;
-  background: var(--k2);
+  background: var(--k);
 }
 .video-card:hover {
   border-color: var(--y);
@@ -648,6 +640,57 @@ nav {
 }
 
 /* ════════════════════════════════════════
+   PRICING
+   ════════════════════════════════════════ */
+#prix {
+  background: var(--cr);
+  padding: 100px 0;
+}
+#prix .section-title { color: var(--k); }
+.pricing-wrap { max-width: 680px; }
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--g4);
+  font-size: 15px; color: var(--g1);
+}
+.pricing-row .label { font-weight: 400; }
+.pricing-row .price {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 16px;
+  color: var(--g2);
+  white-space: nowrap;
+  text-decoration: line-through;
+  text-decoration-color: rgba(192,57,43,0.5);
+}
+.pricing-row.highlight {
+  background: var(--y);
+  border-radius: 12px;
+  border-bottom: none;
+  margin-top: 12px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(245,196,0,0.25);
+}
+.pricing-row.highlight .label {
+  font-weight: 700; color: var(--k); font-size: 16px;
+}
+.pricing-row.highlight .price {
+  color: var(--k); font-size: 22px;
+  text-decoration: none;
+}
+.pricing-badge {
+  position: absolute;
+  top: -12px; right: 20px;
+  background: var(--k); color: var(--y);
+  font-size: 11px; font-weight: 700;
+  padding: 5px 14px; border-radius: 20px;
+  letter-spacing: 0.06em;
+}
+
+/* ════════════════════════════════════════
    CTA MID
    ════════════════════════════════════════ */
 #cta-mid {
@@ -670,28 +713,28 @@ nav {
    FAQ
    ════════════════════════════════════════ */
 #faq {
-  background: var(--cr);
+  background: var(--k);
   padding: 100px 0;
 }
-#faq .section-title { color: var(--k); }
+#faq .section-title { color: var(--w); }
 .faq-list {
   max-width: 700px;
   display: flex; flex-direction: column; gap: 4px;
 }
 .faq-item {
-  background: var(--w);
+  background: var(--k2);
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid var(--g4);
+  border: 1px solid rgba(255,255,255,0.06);
   transition: border-color 0.2s;
 }
-.faq-item:hover { border-color: var(--y); }
+.faq-item:hover { border-color: rgba(245,196,0,0.3); }
 .faq-question {
   width: 100%; background: none; border: none;
   padding: 22px 24px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 15px; font-weight: 600;
-  color: var(--k); text-align: left;
+  color: var(--w); text-align: left;
   cursor: pointer;
   display: flex; justify-content: space-between;
   align-items: center; gap: 16px;
@@ -710,16 +753,17 @@ nav {
 }
 .faq-answer-inner {
   padding: 0 24px 22px;
-  font-size: 15px; color: var(--g1);
-  line-height: 1.7; font-weight: 300;
+  font-size: 15px; color: var(--g2);
+  line-height: 1.7; font-weight: 400;
 }
+.faq-answer-inner a { color: var(--y); text-decoration: none; font-weight: 500; }
 
 /* ════════════════════════════════════════
    CTA FINAL
    ════════════════════════════════════════ */
 #cta-final {
   background: var(--k);
-  padding: 120px 0;
+  padding: 100px 0 120px;
   text-align: center;
   position: relative; overflow: hidden;
 }
@@ -742,7 +786,71 @@ nav {
 #cta-final h2 em { color: var(--y); font-style: normal; }
 #cta-final .cta-sub {
   font-size: 18px; color: var(--g2);
-  margin-bottom: 40px; font-weight: 300;
+  margin-bottom: 40px; font-weight: 400;
+}
+.cta-final-input {
+  display: flex;
+  max-width: 520px; width: 100%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.cta-final-input:focus-within {
+  border-color: var(--y);
+  box-shadow: 0 0 0 4px rgba(245,196,0,0.1);
+}
+.cta-final-input input {
+  flex: 1;
+  background: none; border: none; outline: none;
+  padding: 18px 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px; font-weight: 400;
+  color: var(--w);
+}
+.cta-final-input input::placeholder { color: var(--g2); }
+.cta-final-input button {
+  background: var(--y); color: var(--k);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; font-weight: 700;
+  padding: 14px 28px;
+  border: none; cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  margin: 6px;
+  border-radius: 8px;
+}
+.cta-final-input button:hover { background: #e6b800; }
+
+/* ════════════════════════════════════════
+   STICKY CTA BAR
+   ════════════════════════════════════════ */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(17,17,17,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 90;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  border-top: 1px solid rgba(245,196,0,0.15);
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-text {
+  font-size: 14px; color: var(--g3); font-weight: 500;
+}
+.sticky-cta-text strong { color: var(--w); font-weight: 700; }
+.sticky-cta .btn-primary {
+  padding: 10px 24px;
+  font-size: 14px;
 }
 
 /* ════════════════════════════════════════
@@ -776,16 +884,15 @@ footer {
    ════════════════════════════════════════ */
 @media (max-width: 1024px) {
   nav { padding: 0 24px; }
-  #hero { padding: 120px 24px 80px; gap: 40px; }
   .container { padding: 0 1.5rem; }
   .pain-grid { grid-template-columns: repeat(2, 1fr); }
   .steps-grid { gap: 24px; }
   .steps-grid::before { display: none; }
   .feature-row { gap: 40px; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
   .videos-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-float-card.card-1 { left: -10px; }
-  .hero-float-card.card-2 { right: -10px; }
+  .hero-float-card.card-1 { left: 0; }
+  .hero-float-card.card-2 { right: 0; }
 }
 
 /* ════════════════════════════════════════
@@ -797,27 +904,33 @@ footer {
   .hamburger { display: flex; }
 
   #hero {
-    grid-template-columns: 1fr;
-    padding: 100px 20px 60px;
+    padding: 100px 20px 40px;
     min-height: auto;
-    gap: 48px;
   }
   #hero h1 { font-size: 32px; letter-spacing: -1px; }
-  .hero-sub { font-size: 15px; }
-  .hero-guarantees { gap: 12px; }
-  .hero-screenshot-wrap { max-width: 100%; }
+  .hero-sub { font-size: 15px; margin-bottom: 32px; }
+  .hero-input-wrap {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+  .hero-input { padding: 16px; text-align: center; }
+  .hero-input-btn {
+    margin: 0 6px 6px;
+    padding: 14px;
+  }
+  .hero-trust { gap: 12px; }
+  .hero-product { margin-top: 40px; }
   .hero-float-card { display: none; }
 
-  .stats-grid { grid-template-columns: 1fr; gap: 24px; }
+  #social-proof { padding: 28px 0; }
 
-  #probleme, #comment, #prix, #preuve, #cta-mid, #faq, #cta-final,
-  .feature-section, #gallery {
+  #probleme, #comment, #prix, #temoignages, #cta-mid, #faq, #cta-final, #resultats,
+  .feature-section {
     padding: 64px 0;
   }
   .container { padding: 0 1rem; }
 
   .section-title { font-size: 26px; }
-  .section-sub { font-size: 14px; margin-bottom: 40px; }
 
   .pain-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -826,7 +939,7 @@ footer {
   .feature-row { grid-template-columns: 1fr; gap: 32px; }
   .feature-row.reversed { direction: ltr; }
 
-  .gallery-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
   .videos-grid { grid-template-columns: 1fr; }
 
   .pricing-row { font-size: 14px; padding: 16px; }
@@ -835,25 +948,24 @@ footer {
 
   #cta-final h2 { font-size: 28px; }
   #cta-mid h2 { font-size: 26px; }
+  .cta-final-input {
+    flex-direction: column;
+  }
+  .cta-final-input input { padding: 16px; text-align: center; }
+  .cta-final-input button { margin: 0 6px 6px; padding: 14px; }
+
+  .sticky-cta { gap: 12px; }
+  .sticky-cta-text { display: none; }
 
   footer {
     flex-direction: column; align-items: flex-start;
     padding: 24px 16px; gap: 12px;
   }
   .footer-links { gap: 12px; }
-  .footer-copy { font-size: 11px; }
 }
 
 @media (max-width: 380px) {
   #hero h1 { font-size: 27px; }
-}
-
-/* ── Gallery card images ── */
-.gallery-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
 }
 </style>
 </head>
@@ -863,13 +975,13 @@ footer {
 <nav>
   <a href="/" class="nav-logo">SO<span> MIAM</span></a>
   <ul class="nav-links">
-    <li><a href="/#comment">Comment ça marche</a></li>
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#resultats">Résultats</a></li>
-    <li><a href="/#equipe">Équipe</a></li>
+    <li><a href="#comment">Comment ça marche</a></li>
+    <li><a href="#resultats">Résultats</a></li>
+    <li><a href="#prix">Tarifs</a></li>
     <li><a href="/avis">Avis</a></li>
-      </ul>
-  <a href="/gusto" class="nav-cta">Essayer Gusto</a>
+    <li><a href="/#services">Agence</a></li>
+  </ul>
+  <a href="https://recette.so-miam.com/" class="nav-cta">Essayer Gusto</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -878,62 +990,125 @@ footer {
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
-  <div class="hero-left">
-    <div class="hero-eyebrow fade-up">PROPULSÉ PAR GUSTO, VOTRE IA</div>
-    <h1 class="fade-up" style="transition-delay:0.05s">Gérez toute la com de votre restaurant en <em>1h par semaine.</em></h1>
-    <p class="hero-sub fade-up" style="transition-delay:0.1s">
-      Gusto automatise vos posts Instagram, vos réponses Google et votre référencement. <strong>Votre IA</strong> crée un mois de contenu à partir de vos photos — en un clic.
-    </p>
-    <a href="https://recette.so-miam.com/" class="btn-primary fade-up" style="transition-delay:0.15s">Essai gratuit — 14 jours &rarr;</a>
-    <div class="hero-guarantees fade-up" style="transition-delay:0.2s">
-      <span>Sans engagement</span>
-      <span>Annulation en 1 clic</span>
-      <span>59&#8364;/mois ensuite</span>
-    </div>
+
+  <h1 class="reveal">Remplissez vos tables.<br><em>Sans lever le petit doigt.</em></h1>
+
+  <p class="hero-sub reveal" style="transition-delay:0.08s">
+    Gusto gère vos posts Instagram, vos réponses aux avis Google et votre référencement.
+    Vous envoyez vos photos — <strong>l'IA fait le reste.</strong>
+  </p>
+
+  <form class="hero-input-wrap reveal" style="transition-delay:0.16s" onsubmit="handleHeroCTA(event)">
+    <input type="text" class="hero-input" id="hero-restaurant" placeholder="Le nom de votre restaurant" autocomplete="off">
+    <button type="submit" class="hero-input-btn">Essayer gratuitement &rarr;</button>
+  </form>
+
+  <div class="hero-trust reveal" style="transition-delay:0.2s">
+    <span>14 jours gratuits</span>
+    <span>Sans engagement</span>
+    <span>59&#8364;/mois ensuite</span>
   </div>
-  <div class="hero-right fade-up" style="transition-delay:0.2s">
-    <div class="hero-screenshot-wrap">
-      <div class="browser-frame">
-        <div class="browser-frame-bar">
-          <div class="browser-frame-dot red"></div>
-          <div class="browser-frame-dot yellow"></div>
-          <div class="browser-frame-dot green"></div>
-        </div>
-        <img src="/public/images/pro/dashboard.jpg" alt="Dashboard Gusto" loading="eager">
+
+  <div class="hero-product reveal" style="transition-delay:0.3s">
+    <div class="browser-frame">
+      <div class="browser-frame-bar">
+        <div class="browser-frame-dot r"></div>
+        <div class="browser-frame-dot y"></div>
+        <div class="browser-frame-dot g"></div>
       </div>
-      <div class="hero-float-card card-1">
-        <div class="float-eyebrow">Résultat client</div>
-        <div class="float-stat">&times;5 réservations</div>
-        <div class="float-detail">au 3e mois d'utilisation</div>
-        <div class="float-badge">VÉRIFIÉ</div>
-      </div>
-      <div class="hero-float-card card-2">
-        <div class="float-eyebrow">Gusto IA</div>
-        <div class="float-stat">30 posts</div>
-        <div class="float-detail">générés en 1 clic</div>
-        <div class="float-badge">AUTOMATIQUE</div>
-      </div>
+      <img src="/public/images/gusto/dashbord%20restaurateur.png" alt="Dashboard Gusto — vue restaurateur" loading="eager" width="1920" height="1080">
+    </div>
+    <div class="hero-float-card card-1">
+      <div class="float-eyebrow">Résultat vérifié</div>
+      <div class="float-stat">&times;2 réservations</div>
+      <div class="float-detail">dès le 1er mois</div>
+      <div class="float-badge">WHITE LOTUS</div>
+    </div>
+    <div class="hero-float-card card-2">
+      <div class="float-eyebrow">Gusto IA</div>
+      <div class="float-stat">30 posts en 1 clic</div>
+      <div class="float-detail">légendes + programmation</div>
+      <div class="float-badge">AUTOMATIQUE</div>
     </div>
   </div>
 </section>
 
-<!-- ═══ STATS BAR ═══ -->
-<section id="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item fade-up">
-        <div class="stat-number"><span class="counter" data-target="1000">0</span>+</div>
-        <div class="stat-label">posts créés</div>
+<!-- ═══ SOCIAL PROOF BAR ═══ -->
+<section id="social-proof">
+  <div class="proof-label">Ils remplissent leurs tables avec Gusto</div>
+  <div class="proof-marquee">
+    <div class="proof-track">
+      <div class="proof-item">
+        <span class="proof-name">White Lotus</span>
+        <span class="proof-result">&times;2 réservations</span>
       </div>
-      <div class="stat-item fade-up" style="transition-delay:0.1s">
-        <div class="stat-number"><span class="counter" data-target="100">0</span>+</div>
-        <div class="stat-label">restaurants accompagnés</div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Maison L</span>
+        <span class="proof-result">&times;5 réservations</span>
       </div>
-      <div class="stat-item fade-up" style="transition-delay:0.2s">
-        <div class="stat-number"><span class="counter" data-target="50000">0</span>+</div>
-        <div class="stat-label">avis gérés</div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Café de Paris</span>
+        <span class="proof-result">+100% vs N-1</span>
       </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Bouillon Pignol</span>
+        <span class="proof-result">8 000 couverts/mois</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Le Paradoxe</span>
+        <span class="proof-result">N°1 Google Maps</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Domus Sicilia</span>
+        <span class="proof-result">N°1 Google Maps</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Den Artiest</span>
+        <span class="proof-result">1M vues/an</span>
+      </div>
+      <div class="proof-sep"></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="proof-item">
+        <span class="proof-name">White Lotus</span>
+        <span class="proof-result">&times;2 réservations</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Maison L</span>
+        <span class="proof-result">&times;5 réservations</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Café de Paris</span>
+        <span class="proof-result">+100% vs N-1</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Bouillon Pignol</span>
+        <span class="proof-result">8 000 couverts/mois</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Le Paradoxe</span>
+        <span class="proof-result">N°1 Google Maps</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Domus Sicilia</span>
+        <span class="proof-result">N°1 Google Maps</span>
+      </div>
+      <div class="proof-sep"></div>
+      <div class="proof-item">
+        <span class="proof-name">Den Artiest</span>
+        <span class="proof-result">1M vues/an</span>
+      </div>
+      <div class="proof-sep"></div>
     </div>
   </div>
 </section>
@@ -941,20 +1116,20 @@ footer {
 <!-- ═══ PROBLEM ═══ -->
 <section id="probleme">
   <div class="container">
-    <div class="section-eyebrow fade-up">Le problème</div>
-    <h2 class="section-title fade-up">Votre restaurant est bon.<br>Votre visibilité, elle ?</h2>
+    <div class="section-eyebrow reveal">Le problème</div>
+    <h2 class="section-title reveal">Votre restaurant est bon.<br>Votre visibilité, elle ?</h2>
     <div class="pain-grid">
-      <div class="pain-card fade-up">
+      <div class="pain-card reveal-left">
         <div class="pain-icon">&#128241;</div>
         <div class="pain-title">Instagram fantôme</div>
         <p class="pain-text">Vous postez quand vous avez le temps — et votre Instagram ressemble à un restaurant à moitié ouvert.</p>
       </div>
-      <div class="pain-card fade-up" style="transition-delay:0.1s">
+      <div class="pain-card reveal" style="transition-delay:0.1s">
         <div class="pain-icon">&#11088;</div>
         <div class="pain-title">Avis sans réponse</div>
         <p class="pain-text">Un avis sans réponse sur Google, c'est une table vide. Vous n'avez pas le temps de tous les gérer.</p>
       </div>
-      <div class="pain-card fade-up" style="transition-delay:0.2s">
+      <div class="pain-card reveal-right" style="transition-delay:0.2s">
         <div class="pain-icon">&#128205;</div>
         <div class="pain-title">Invisible sur Google Maps</div>
         <p class="pain-text">Vos concurrents apparaissent avant vous. Pas parce qu'ils sont meilleurs — parce qu'ils sont mieux référencés.</p>
@@ -966,52 +1141,52 @@ footer {
 <!-- ═══ HOW IT WORKS ═══ -->
 <section id="comment">
   <div class="container">
-    <div class="section-eyebrow fade-up">Comment ça marche</div>
-    <h2 class="section-title fade-up" style="color:var(--w)">3 étapes. Tout est automatisé.</h2>
-    <p class="section-sub fade-up" style="color:var(--g2)">Vous envoyez vos photos. Gusto fait le reste.</p>
+    <div class="section-eyebrow reveal" style="color:var(--y)">Comment ça marche</div>
+    <h2 class="section-title reveal" style="color:var(--w)">3 étapes. Tout est automatisé.</h2>
+    <p class="reveal" style="font-size:17px;color:var(--g2);margin-bottom:56px;font-weight:400">Vous envoyez vos photos. Gusto fait le reste.</p>
     <div class="steps-grid">
-      <div class="step-card fade-up">
+      <div class="step-card reveal-left">
         <div class="step-number">1</div>
         <div class="step-title">Envoyez vos photos</div>
         <p class="step-text">Importez vos photos de plats, de salle, d'équipe. Gusto les analyse et les organise dans votre banque de contenus.</p>
         <div class="step-screenshot">
           <div class="browser-frame">
             <div class="browser-frame-bar">
-              <div class="browser-frame-dot red"></div>
-              <div class="browser-frame-dot yellow"></div>
-              <div class="browser-frame-dot green"></div>
+              <div class="browser-frame-dot r"></div>
+              <div class="browser-frame-dot y"></div>
+              <div class="browser-frame-dot g"></div>
             </div>
-            <img src="/public/images/pro/banque-de-contenus.jpg" alt="Banque de contenus" loading="lazy">
+            <img src="/public/images/gusto/banque%20de%20contenu.png" alt="Banque de contenus Gusto" loading="lazy">
           </div>
         </div>
       </div>
-      <div class="step-card fade-up" style="transition-delay:0.15s">
+      <div class="step-card reveal" style="transition-delay:0.15s">
         <div class="step-number">2</div>
         <div class="step-title">Gusto crée votre contenu</div>
-        <p class="step-text">En un clic, Gusto génère un mois complet de posts avec légendes, hashtags et visuels optimisés pour votre restaurant.</p>
+        <p class="step-text">En un clic, Gusto génère un mois complet de posts avec légendes, hashtags et visuels — le tout adapté à votre restaurant.</p>
         <div class="step-screenshot">
           <div class="browser-frame">
             <div class="browser-frame-bar">
-              <div class="browser-frame-dot red"></div>
-              <div class="browser-frame-dot yellow"></div>
-              <div class="browser-frame-dot green"></div>
+              <div class="browser-frame-dot r"></div>
+              <div class="browser-frame-dot y"></div>
+              <div class="browser-frame-dot g"></div>
             </div>
-            <img src="/public/images/pro/planning-editorial.jpg" alt="Planning éditorial" loading="lazy">
+            <img src="/public/images/gusto/descriptions%20generees.png" alt="Descriptions générées par Gusto IA" loading="lazy">
           </div>
         </div>
       </div>
-      <div class="step-card fade-up" style="transition-delay:0.3s">
+      <div class="step-card reveal-right" style="transition-delay:0.3s">
         <div class="step-number">3</div>
         <div class="step-title">Publication automatique</div>
         <p class="step-text">Vos posts sont programmés et publiés automatiquement sur Instagram, Facebook et Google. Vous n'avez rien à faire.</p>
         <div class="step-screenshot">
           <div class="browser-frame">
             <div class="browser-frame-bar">
-              <div class="browser-frame-dot red"></div>
-              <div class="browser-frame-dot yellow"></div>
-              <div class="browser-frame-dot green"></div>
+              <div class="browser-frame-dot r"></div>
+              <div class="browser-frame-dot y"></div>
+              <div class="browser-frame-dot g"></div>
             </div>
-            <img src="/public/images/pro/calendrier.jpg" alt="Calendrier de programmation" loading="lazy">
+            <img src="/public/images/gusto/calendrier%20edito%20rempli.png" alt="Calendrier éditorial programmé" loading="lazy">
           </div>
         </div>
       </div>
@@ -1019,15 +1194,15 @@ footer {
   </div>
 </section>
 
-<!-- ═══ FEATURE 1 — Planning editorial ═══ -->
-<section class="feature-section dark">
+<!-- ═══ FEATURE 1 — Planning éditorial ═══ -->
+<section class="feature-section light">
   <div class="container">
     <div class="feature-row">
-      <div class="feature-content fade-up">
+      <div class="feature-content reveal-left">
         <div class="section-eyebrow">Contenu IA</div>
-        <h2 class="section-title white">Planning éditorial<br>en 1 clic</h2>
-        <p class="feature-desc white">Gusto analyse vos photos, votre carte et votre ton de voix pour générer un mois complet de contenu. Vous validez, il publie.</p>
-        <ul class="feature-bullets white">
+        <h2 class="section-title" style="color:var(--k)">Un mois de contenu.<br>En 2 minutes.</h2>
+        <p class="feature-desc dark-text">Gusto analyse vos photos, votre carte et votre ton de voix pour générer un mois complet de contenu. Vous validez, il publie.</p>
+        <ul class="feature-bullets dark">
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             30 posts générés en moins de 2 minutes
@@ -1042,33 +1217,33 @@ footer {
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Modifiable à tout moment avant publication
+            Ajustez le ton : plus court, plus engageant, plus formel
           </li>
         </ul>
       </div>
-      <div class="feature-screenshot fade-up" style="transition-delay:0.15s">
+      <div class="feature-screenshot reveal-right" style="transition-delay:0.15s">
         <div class="browser-frame">
           <div class="browser-frame-bar">
-            <div class="browser-frame-dot red"></div>
-            <div class="browser-frame-dot yellow"></div>
-            <div class="browser-frame-dot green"></div>
+            <div class="browser-frame-dot r"></div>
+            <div class="browser-frame-dot y"></div>
+            <div class="browser-frame-dot g"></div>
           </div>
-          <img src="/public/images/pro/planning-editorial.jpg" alt="Planning éditorial Gusto" loading="lazy">
+          <img src="/public/images/gusto/planning%20editorial.png" alt="Planning éditorial Gusto" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FEATURE 2 — Avis Google ═══ -->
-<section class="feature-section light">
+<!-- ═══ FEATURE 2 — Réponses avis Google ═══ -->
+<section class="feature-section dark">
   <div class="container">
     <div class="feature-row reversed">
-      <div class="feature-content fade-up">
+      <div class="feature-content reveal-right">
         <div class="section-eyebrow">Réputation</div>
-        <h2 class="section-title dark">Réponses automatiques<br>aux avis Google</h2>
-        <p class="feature-desc dark-text">Chaque avis — positif ou négatif — reçoit une réponse professionnelle et personnalisée. Votre réputation se gère toute seule, 24h/24.</p>
-        <ul class="feature-bullets dark">
+        <h2 class="section-title" style="color:var(--w)">Vos avis Google.<br>Répondus en 1 clic.</h2>
+        <p class="feature-desc white">Chaque avis — positif ou négatif — reçoit une réponse professionnelle et personnalisée. Votre réputation se gère toute seule, 24h/24.</p>
+        <ul class="feature-bullets white">
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             Réponses générées par IA, ton adapté à votre restaurant
@@ -1083,59 +1258,54 @@ footer {
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Historique complet de tous vos avis
+            Publiez la réponse ou régénérez en un clic
           </li>
         </ul>
       </div>
-      <div class="feature-screenshot fade-up" style="transition-delay:0.15s">
-        <div class="browser-frame">
-          <div class="browser-frame-bar">
-            <div class="browser-frame-dot red"></div>
-            <div class="browser-frame-dot yellow"></div>
-            <div class="browser-frame-dot green"></div>
-          </div>
-          <img src="/public/images/pro/onglet-avis.jpg" alt="Gestion des avis Google" loading="lazy">
+      <div class="feature-screenshot reveal-left" style="transition-delay:0.15s">
+        <div class="feature-screenshot-raw">
+          <img src="/public/images/gusto/reponses%20aux%20avis.png" alt="Réponses automatiques aux avis Google" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FEATURE 3 — Health Score ═══ -->
-<section class="feature-section dark">
+<!-- ═══ FEATURE 3 — Calendrier ═══ -->
+<section class="feature-section light">
   <div class="container">
     <div class="feature-row">
-      <div class="feature-content fade-up">
-        <div class="section-eyebrow">Performance</div>
-        <h2 class="section-title white">Health Score<br>&amp; Performance</h2>
-        <p class="feature-desc white">Dès l'inscription, un diagnostic complet de votre présence en ligne. Votre score augmente, votre visibilité aussi.</p>
-        <ul class="feature-bullets white">
+      <div class="feature-content reveal-left">
+        <div class="section-eyebrow">Programmation</div>
+        <h2 class="section-title" style="color:var(--k)">Votre calendrier.<br>Rempli automatiquement.</h2>
+        <p class="feature-desc dark-text">Visualisez toute votre programmation sur un calendrier hebdomadaire. Chaque post est publié au bon moment, sur le bon réseau.</p>
+        <ul class="feature-bullets dark">
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Score de santé de votre présence digitale
+            Vue hebdomadaire avec miniatures des posts
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Recommandations concrètes pour progresser
+            Instagram, Facebook, Google en un coup d'œil
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Suivi de vos KPIs : vues, clics, appels, itinéraires
+            Horaires optimisés pour votre audience
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Tableau de bord clair, sans jargon
+            Drag & drop pour réorganiser
           </li>
         </ul>
       </div>
-      <div class="feature-screenshot fade-up" style="transition-delay:0.15s">
+      <div class="feature-screenshot reveal-right" style="transition-delay:0.15s">
         <div class="browser-frame">
           <div class="browser-frame-bar">
-            <div class="browser-frame-dot red"></div>
-            <div class="browser-frame-dot yellow"></div>
-            <div class="browser-frame-dot green"></div>
+            <div class="browser-frame-dot r"></div>
+            <div class="browser-frame-dot y"></div>
+            <div class="browser-frame-dot g"></div>
           </div>
-          <img src="/public/images/pro/onglet-performances.jpg" alt="Performance et Health Score" loading="lazy">
+          <img src="/public/images/gusto/calendrier%20edito%20rempli.png" alt="Calendrier de publication Gusto" loading="lazy">
         </div>
       </div>
     </div>
@@ -1143,25 +1313,25 @@ footer {
 </section>
 
 <!-- ═══ FEATURE 4 — Story Designer ═══ -->
-<section class="feature-section light">
+<section class="feature-section dark">
   <div class="container">
     <div class="feature-row reversed">
-      <div class="feature-content fade-up">
+      <div class="feature-content reveal-right">
         <div class="section-eyebrow">Créativité</div>
-        <h2 class="section-title dark">Story Designer</h2>
-        <p class="feature-desc dark-text">Créez des stories Instagram percutantes directement depuis la plateforme. Templates pros, drag &amp; drop, publication en 1 clic.</p>
-        <ul class="feature-bullets dark">
+        <h2 class="section-title" style="color:var(--w)">Story Designer</h2>
+        <p class="feature-desc white">Créez des stories Instagram percutantes directement depuis Gusto. Vos photos, vos couleurs, votre identité — publication en 1 clic.</p>
+        <ul class="feature-bullets white">
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Templates optimisés pour la restauration
+            Éditeur visuel intuitif
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Éditeur visuel drag &amp; drop
+            Polices, couleurs et positionnement personnalisables
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Vos couleurs et votre identité visuelle
+            Prévisualisation en temps réel
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1169,27 +1339,142 @@ footer {
           </li>
         </ul>
       </div>
-      <div class="feature-screenshot fade-up" style="transition-delay:0.15s">
-        <div class="browser-frame">
-          <div class="browser-frame-bar">
-            <div class="browser-frame-dot red"></div>
-            <div class="browser-frame-dot yellow"></div>
-            <div class="browser-frame-dot green"></div>
-          </div>
-          <img src="/public/images/pro/story-designer.jpg" alt="Story Designer" loading="lazy">
+      <div class="feature-screenshot reveal-left" style="transition-delay:0.15s">
+        <div class="feature-screenshot-raw">
+          <img src="/public/images/gusto/story-designer.jpg" alt="Story Designer Gusto" loading="lazy" style="border-radius:12px;">
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ CTA MID ═══ -->
+<section id="cta-mid">
+  <div class="container">
+    <h2 class="reveal">Prêt à remplir votre restaurant ?</h2>
+    <p class="cta-sub reveal" style="transition-delay:0.05s">14 jours d'essai gratuit. Sans engagement. Annulation en 1 clic.</p>
+    <a href="https://recette.so-miam.com/" class="btn-dark reveal" style="transition-delay:0.1s">Essayer Gusto gratuitement &rarr;</a>
+  </div>
+</section>
+
+<!-- ═══ RESULTS ═══ -->
+<section id="resultats">
+  <div class="container">
+    <div class="section-eyebrow center reveal" style="color:var(--y)">Résultats</div>
+    <h2 class="section-title reveal" style="color:var(--w);text-align:center;margin-bottom:16px">Des résultats mesurables.<br>Pas des likes.</h2>
+    <p class="reveal" style="color:var(--g2);text-align:center;font-size:17px;margin-bottom:56px;font-weight:400">Ce qui compte pour un restaurant : des réservations, des couverts, des clients.</p>
+    <div class="results-grid">
+      <div class="result-card reveal-left">
+        <div class="result-metric">&times;2</div>
+        <div class="result-desc">réservations dès le 1er mois</div>
+        <div class="result-source">
+          <div>
+            <div class="result-restaurant">White Lotus</div>
+            <div class="result-type">Restaurant · Lille</div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card reveal" style="transition-delay:0.08s">
+        <div class="result-metric">&times;5</div>
+        <div class="result-desc">réservations au 3e mois</div>
+        <div class="result-source">
+          <div>
+            <div class="result-restaurant">Maison L</div>
+            <div class="result-type">Restaurant libanais · Lille</div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card reveal-right" style="transition-delay:0.16s">
+        <div class="result-metric">+100%</div>
+        <div class="result-desc">de réservations vs N-1 chaque mois</div>
+        <div class="result-source">
+          <div>
+            <div class="result-restaurant">Café de Paris</div>
+            <div class="result-type">Brasserie · Lille</div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card reveal-left" style="transition-delay:0.08s">
+        <div class="result-metric">8 000</div>
+        <div class="result-desc">couverts par mois</div>
+        <div class="result-source">
+          <div>
+            <div class="result-restaurant">Bouillon Pignol</div>
+            <div class="result-type">Bouillon · Lesquin</div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card reveal" style="transition-delay:0.16s">
+        <div class="result-metric">P1</div>
+        <div class="result-desc">Google Maps — "restaurant tourcoing"</div>
+        <div class="result-source">
+          <div>
+            <div class="result-restaurant">Le Paradoxe</div>
+            <div class="result-type">Restaurant · Tourcoing</div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card reveal-right" style="transition-delay:0.24s">
+        <div class="result-metric">5 &#8364;</div>
+        <div class="result-desc">coût moyen par réservation (Meta Ads)</div>
+        <div class="result-source">
+          <div>
+            <div class="result-restaurant">Moyenne clients</div>
+            <div class="result-type">Tous restaurants</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="temoignages">
+  <div class="container">
+    <div class="section-eyebrow center reveal" style="color:var(--y)">Témoignages</div>
+    <h2 class="section-title reveal" style="color:var(--w);text-align:center;margin-bottom:16px">Ils l'utilisent. Ils en parlent.</h2>
+    <p class="reveal" style="color:var(--g2);text-align:center;font-size:17px;margin-bottom:56px;font-weight:400">Gusto, c'est le système qu'on utilise pour piloter la communication de nos clients agence.</p>
+    <div class="videos-grid">
+      <div class="video-card reveal-left">
+        <div class="video-embed">
+          <iframe src="https://www.tella.tv/video/vid_cmod1dixm00qe04jj6ccu8txj/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-name">Aphi</div>
+          <div class="video-resto">White Lotus</div>
+          <div class="video-result">&times;2 réservations au 1er mois</div>
+        </div>
+      </div>
+      <div class="video-card reveal" style="transition-delay:0.1s">
+        <div class="video-embed">
+          <iframe src="https://www.tella.tv/video/vid_cmkfg4rpv010004l8450a5d6j/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-name">Layal</div>
+          <div class="video-resto">Maison L</div>
+          <div class="video-result">&times;5 réservations au 3e mois</div>
+        </div>
+      </div>
+      <div class="video-card reveal-right" style="transition-delay:0.2s">
+        <div class="video-embed">
+          <iframe src="https://www.tella.tv/video/vid_cml6ndbpz00hc04jph1jw4t00/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-name">Paco</div>
+          <div class="video-resto">Café de Paris</div>
+          <div class="video-result">+75% réservations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ PRICING ═══ -->
 <section id="prix">
   <div class="container">
-    <div class="section-eyebrow fade-up">Tarif</div>
-    <h2 class="section-title fade-up">Tout ça pour moins qu'un<br>repas par semaine</h2>
-    <div class="pricing-wrap fade-up" style="transition-delay:0.1s">
+    <div class="section-eyebrow reveal">Tarif</div>
+    <h2 class="section-title reveal">Tout ça pour moins qu'un<br>repas par semaine</h2>
+    <div class="pricing-wrap reveal" style="transition-delay:0.1s">
       <div class="pricing-row">
         <span class="label">Outil de réponse aux avis (ex: Partoo)</span>
         <span class="price">~69&#8364;/mois</span>
@@ -1208,84 +1493,34 @@ footer {
         <span class="price">59&#8364;/mois</span>
       </div>
     </div>
-    <div style="margin-top:32px;" class="fade-up" style="transition-delay:0.2s">
-      <a href="https://recette.so-miam.com/" class="btn-primary">Essai gratuit — 14 jours &rarr;</a>
+    <div style="margin-top:32px" class="reveal">
+      <a href="https://recette.so-miam.com/" class="btn-primary">Essayer Gusto gratuitement &rarr;</a>
     </div>
-  </div>
-</section>
-
-<!-- ═══ TESTIMONIALS ═══ -->
-<section id="preuve">
-  <div class="container">
-    <div class="section-eyebrow fade-up">Résultats</div>
-    <h2 class="section-title fade-up" style="color:var(--w)">Le système derrière nos<br>résultats clients</h2>
-    <p class="section-sub fade-up" style="color:var(--g2)">Gusto, c'est le système qu'on utilise pour piloter la communication de nos clients agence.</p>
-    <div class="videos-grid">
-      <div class="video-card fade-up">
-        <div class="video-embed">
-          <iframe src="https://www.tella.tv/video/vid_cmod1dixm00qe04jj6ccu8txj/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-name">Aphi</div>
-          <div class="video-resto">White Lotus</div>
-          <div class="video-result">&times;2 réservations au 1er mois</div>
-        </div>
-      </div>
-      <div class="video-card fade-up" style="transition-delay:0.1s">
-        <div class="video-embed">
-          <iframe src="https://www.tella.tv/video/vid_cmkfg4rpv010004l8450a5d6j/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-name">Layal</div>
-          <div class="video-resto">Maison L</div>
-          <div class="video-result">&times;5 réservations au 3e mois</div>
-        </div>
-      </div>
-      <div class="video-card fade-up" style="transition-delay:0.2s">
-        <div class="video-embed">
-          <iframe src="https://www.tella.tv/video/vid_cml6ndbpz00hc04jph1jw4t00/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-name">Paco</div>
-          <div class="video-resto">Café de Paris</div>
-          <div class="video-result">+75% réservations</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA MID ═══ -->
-<section id="cta-mid">
-  <div class="container">
-    <h2 class="fade-up">Prêt à remplir votre restaurant ?</h2>
-    <p class="cta-sub fade-up" style="transition-delay:0.05s">14 jours d'essai gratuit. Sans engagement.</p>
-    <a href="https://recette.so-miam.com/" class="btn-dark fade-up" style="transition-delay:0.1s">Essai gratuit — 14 jours &rarr;</a>
   </div>
 </section>
 
 <!-- ═══ FAQ ═══ -->
 <section id="faq">
   <div class="container">
-    <div class="section-eyebrow fade-up">FAQ</div>
-    <h2 class="section-title fade-up">Vos questions</h2>
-    <div class="faq-list fade-up" style="transition-delay:0.1s">
+    <div class="section-eyebrow reveal" style="color:var(--y)">FAQ</div>
+    <h2 class="section-title reveal" style="color:var(--w)">Vos questions</h2>
+    <div class="faq-list reveal" style="transition-delay:0.1s">
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           Faut-il être à l'aise avec la technologie ?
           <span class="arrow">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Non. Si vous savez envoyer une photo sur WhatsApp, vous savez utiliser Gusto.</div>
+          <div class="faq-answer-inner">Non. Si vous savez envoyer une photo sur WhatsApp, vous savez utiliser Gusto. L'interface est pensée pour les restaurateurs, pas pour les développeurs.</div>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          Que se passe-t-il après les 14 jours ?
+          Que se passe-t-il après les 14 jours gratuits ?
           <span class="arrow">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Vous êtes prélevé de 59&#8364;/mois automatiquement. Vous pouvez annuler à tout moment avant la fin des 14 jours d'essai.</div>
+          <div class="faq-answer-inner">Vous êtes prélevé de 59&#8364;/mois automatiquement. Vous pouvez annuler à tout moment en un clic, même avant la fin de l'essai.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -1294,7 +1529,25 @@ footer {
           <span class="arrow">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Oui — indépendants, bistrots, gastronomique, food truck, brasserie.</div>
+          <div class="faq-answer-inner">Oui — restaurants indépendants, bistrots, gastronomiques, brasseries, food trucks. Gusto s'adapte à votre type de cuisine et à votre ton.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Est-ce que Gusto publie vraiment à ma place ?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Oui. Gusto se connecte à votre Instagram, Facebook et Google My Business. Vos posts sont programmés et publiés automatiquement aux horaires optimaux.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Combien de temps faut-il pour tout mettre en place ?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Moins de 10 minutes. Vous connectez vos comptes, vous importez vos photos, et Gusto génère votre premier mois de contenu.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -1303,7 +1556,7 @@ footer {
           <span class="arrow">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Nos offres agence existent pour ça. Contactez-nous : <a href="mailto:thomas@so-media.fr" style="color:var(--y);text-decoration:none;font-weight:500;">thomas@so-media.fr</a></div>
+          <div class="faq-answer-inner">Nos offres agence existent pour ça. On gère tout pour vous. <a href="mailto:thomas@so-media.fr">Contactez-nous</a> pour en discuter.</div>
         </div>
       </div>
     </div>
@@ -1313,9 +1566,17 @@ footer {
 <!-- ═══ CTA FINAL ═══ -->
 <section id="cta-final">
   <div class="container">
-    <h2 class="fade-up">Votre restaurant mérite<br>d'être <em>plein.</em></h2>
-    <p class="cta-sub fade-up" style="transition-delay:0.1s">14 jours pour le vérifier par vous-même.</p>
-    <a href="https://recette.so-miam.com/" class="btn-primary fade-up" style="transition-delay:0.15s">Essai gratuit — 14 jours &rarr;</a>
+    <h2 class="reveal">Votre restaurant mérite<br>d'être <em>plein.</em></h2>
+    <p class="cta-sub reveal" style="transition-delay:0.1s">14 jours pour le vérifier par vous-même.</p>
+    <form class="cta-final-input reveal" style="transition-delay:0.15s" onsubmit="handleHeroCTA(event)">
+      <input type="text" placeholder="Le nom de votre restaurant" autocomplete="off">
+      <button type="submit">Essayer gratuitement &rarr;</button>
+    </form>
+    <div class="hero-trust reveal" style="transition-delay:0.2s;margin-top:20px">
+      <span>14 jours gratuits</span>
+      <span>Sans engagement</span>
+      <span>59&#8364;/mois ensuite</span>
+    </div>
   </div>
 </section>
 
@@ -1336,43 +1597,20 @@ footer {
   <div class="footer-copy">&copy; 2026 So MIAM — Agence digitale restaurants &middot; Lille</div>
 </footer>
 
+<!-- ═══ STICKY CTA BAR ═══ -->
+<div class="sticky-cta" id="stickyCta">
+  <span class="sticky-cta-text"><strong>Gusto</strong> — 14 jours d'essai gratuit</span>
+  <a href="https://recette.so-miam.com/" class="btn-primary">Essayer gratuitement &rarr;</a>
+</div>
+
 <script>
-// ── Scroll fade-up animations ──
-const observer = new IntersectionObserver((entries) => {
+// ── Scroll reveal animations ──
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
+    if (e.isIntersecting) e.target.classList.add('visible');
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-// ── Animated counters ──
-let countersStarted = false;
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting && !countersStarted) {
-      countersStarted = true;
-      document.querySelectorAll('.counter').forEach(counter => {
-        const target = parseInt(counter.dataset.target);
-        const duration = 2000;
-        const start = performance.now();
-        function update(now) {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          // ease out cubic
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const current = Math.floor(eased * target);
-          counter.textContent = current.toLocaleString('fr-FR');
-          if (progress < 1) requestAnimationFrame(update);
-        }
-        requestAnimationFrame(update);
-      });
-    }
-  });
-}, { threshold: 0.3 });
-const statsSection = document.getElementById('stats');
-if (statsSection) counterObserver.observe(statsSection);
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 
 // ── Mobile menu ──
 const navLinks = document.querySelector('.nav-links');
@@ -1403,6 +1641,31 @@ function toggleFaq(btn) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+// ── Hero CTA handler ──
+function handleHeroCTA(e) {
+  e.preventDefault();
+  // For now, redirect to recette.so-miam.com
+  // Later: redirect to app.so-miam.com/onboarding?restaurant_name=...
+  const name = e.target.querySelector('input').value;
+  const url = 'https://recette.so-miam.com/';
+  // Future: const url = `https://app.so-miam.com/onboarding?restaurant_name=${encodeURIComponent(name)}`;
+  window.location.href = url;
+}
+
+// ── Sticky CTA bar on scroll ──
+const stickyCta = document.getElementById('stickyCta');
+const heroSection = document.getElementById('hero');
+const stickyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  });
+}, { threshold: 0 });
+stickyObserver.observe(heroSection);
 </script>
 
 </body>
