@@ -202,21 +202,25 @@ nav {
 #hero {
   min-height: 100vh;
   background: var(--k);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,196,0,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 100%, rgba(245,196,0,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(245,196,0,0.04) 0%, transparent 50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 24px 40px;
+  padding: 100px 24px 48px;
   position: relative;
   overflow: hidden;
 }
 .hero-glow {
   position: absolute;
-  width: 800px; height: 800px;
+  width: 900px; height: 900px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,196,0,0.07) 0%, transparent 65%);
-  top: -300px; left: 50%; transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(245,196,0,0.12) 0%, transparent 55%);
+  top: -350px; left: 50%; transform: translateX(-50%);
   pointer-events: none;
 }
 #hero h1 {
@@ -293,7 +297,7 @@ nav {
 
 /* Hero product screenshot */
 .hero-product {
-  margin-top: 64px;
+  margin-top: 48px;
   max-width: 1000px;
   width: 100%;
   position: relative; z-index: 2;
@@ -316,11 +320,11 @@ nav {
   50% { transform: translateY(-8px); }
 }
 .hero-float-card.card-1 {
-  bottom: 60px; left: -20px;
+  bottom: -20px; left: -30px;
   animation-delay: 0s;
 }
 .hero-float-card.card-2 {
-  top: 30px; right: -20px;
+  top: -20px; right: -30px;
   animation-delay: 1.5s;
 }
 .float-eyebrow {
@@ -492,6 +496,11 @@ nav {
 .step-screenshot .browser-frame {
   box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
+.step-screenshot .browser-frame img {
+  height: 220px;
+  object-fit: cover;
+  object-position: top left;
+}
 
 /* ════════════════════════════════════════
    FEATURES
@@ -543,6 +552,11 @@ nav {
 }
 .feature-screenshot-raw:hover { transform: translateY(-4px); }
 .feature-screenshot-raw img { width: 100%; display: block; }
+.feature-screenshot .browser-frame img {
+  min-height: 280px;
+  object-fit: cover;
+  object-position: top left;
+}
 
 /* ════════════════════════════════════════
    RESULTS
@@ -719,6 +733,7 @@ nav {
 #faq .section-title { color: var(--w); }
 .faq-list {
   max-width: 700px;
+  margin: 0 auto;
   display: flex; flex-direction: column; gap: 4px;
 }
 .faq-item {
@@ -904,7 +919,7 @@ footer {
   .hamburger { display: flex; }
 
   #hero {
-    padding: 100px 20px 40px;
+    padding: 96px 20px 40px;
     min-height: auto;
   }
   #hero h1 { font-size: 32px; letter-spacing: -1px; }
@@ -994,7 +1009,7 @@ footer {
   <h1 class="reveal">Remplissez vos tables.<br><em>Sans lever le petit doigt.</em></h1>
 
   <p class="hero-sub reveal" style="transition-delay:0.08s">
-    Gusto gère vos posts Instagram, vos réponses aux avis Google et votre référencement.
+    Sans agence, sans community manager. Gusto gère vos posts Instagram, vos réponses aux avis Google et votre référencement.
     Vous envoyez vos photos — <strong>l'IA fait le reste.</strong>
   </p>
 
@@ -1242,15 +1257,15 @@ footer {
       <div class="feature-content reveal-right">
         <div class="section-eyebrow">Réputation</div>
         <h2 class="section-title" style="color:var(--w)">Vos avis Google.<br>Répondus en 1 clic.</h2>
-        <p class="feature-desc white">Chaque avis — positif ou négatif — reçoit une réponse professionnelle et personnalisée. Votre réputation se gère toute seule, 24h/24.</p>
+        <p class="feature-desc white">Chaque avis — positif ou négatif — reçoit une réponse professionnelle et personnalisée. En mode automatique, Gusto répond seul. En mode manuel, vous validez avant publication.</p>
         <ul class="feature-bullets white">
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Réponses générées par IA, ton adapté à votre restaurant
+            Mode automatique : réponses envoyées sans intervention
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Gestion avis positifs et négatifs
+            Ton adapté à votre restaurant, avis positifs et négatifs
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1258,7 +1273,7 @@ footer {
           </li>
           <li>
             <span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            Publiez la réponse ou régénérez en un clic
+            Historique complet + régénération en un clic
           </li>
         </ul>
       </div>
@@ -1362,7 +1377,7 @@ footer {
   <div class="container">
     <div class="section-eyebrow center reveal" style="color:var(--y)">Résultats</div>
     <h2 class="section-title reveal" style="color:var(--w);text-align:center;margin-bottom:16px">Des résultats mesurables.<br>Pas des likes.</h2>
-    <p class="reveal" style="color:var(--g2);text-align:center;font-size:17px;margin-bottom:56px;font-weight:400">Ce qui compte pour un restaurant : des réservations, des couverts, des clients.</p>
+    <p class="reveal" style="color:var(--g2);text-align:center;font-size:17px;margin-bottom:56px;font-weight:400">+100 restaurants accompagnés. Voici quelques résultats concrets.</p>
     <div class="results-grid">
       <div class="result-card reveal-left">
         <div class="result-metric">&times;2</div>
@@ -1502,8 +1517,8 @@ footer {
 <!-- ═══ FAQ ═══ -->
 <section id="faq">
   <div class="container">
-    <div class="section-eyebrow reveal" style="color:var(--y)">FAQ</div>
-    <h2 class="section-title reveal" style="color:var(--w)">Vos questions</h2>
+    <div class="section-eyebrow center reveal" style="color:var(--y)">FAQ</div>
+    <h2 class="section-title reveal" style="color:var(--w);text-align:center;margin-bottom:40px">Vos questions</h2>
     <div class="faq-list reveal" style="transition-delay:0.1s">
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
