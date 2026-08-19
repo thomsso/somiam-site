@@ -200,7 +200,6 @@ nav {
    HERO — Interactive, centered
    ════════════════════════════════════════ */
 #hero {
-  min-height: 100vh;
   background: var(--k);
   background-image:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,196,0,0.10) 0%, transparent 60%),
@@ -209,9 +208,8 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 100px 24px 48px;
+  padding: 140px 24px 80px;
   position: relative;
   overflow: hidden;
 }
@@ -495,9 +493,11 @@ nav {
 }
 .step-screenshot .browser-frame {
   box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  height: 260px;
+  overflow: hidden;
 }
 .step-screenshot .browser-frame img {
-  height: 220px;
+  height: 230px;
   object-fit: cover;
   object-position: top left;
 }
@@ -552,11 +552,6 @@ nav {
 }
 .feature-screenshot-raw:hover { transform: translateY(-4px); }
 .feature-screenshot-raw img { width: 100%; display: block; }
-.feature-screenshot .browser-frame img {
-  min-height: 280px;
-  object-fit: cover;
-  object-position: top left;
-}
 
 /* ════════════════════════════════════════
    RESULTS
@@ -1201,7 +1196,7 @@ footer {
               <div class="browser-frame-dot y"></div>
               <div class="browser-frame-dot g"></div>
             </div>
-            <img src="/public/images/gusto/calendrier%20edito%20rempli.png" alt="Calendrier éditorial programmé" loading="lazy">
+            <img src="/public/images/gusto/beau%20calendrier.png" alt="Calendrier éditorial programmé" loading="lazy">
           </div>
         </div>
       </div>
@@ -1256,7 +1251,7 @@ footer {
     <div class="feature-row reversed">
       <div class="feature-content reveal-right">
         <div class="section-eyebrow">Réputation</div>
-        <h2 class="section-title" style="color:var(--w)">Vos avis Google.<br>Répondus en 1 clic.</h2>
+        <h2 class="section-title" style="color:var(--w)">Vos avis Google.<br>Répondus automatiquement.</h2>
         <p class="feature-desc white">Chaque avis — positif ou négatif — reçoit une réponse professionnelle et personnalisée. En mode automatique, Gusto répond seul. En mode manuel, vous validez avant publication.</p>
         <ul class="feature-bullets white">
           <li>
@@ -1289,7 +1284,7 @@ footer {
 <!-- ═══ FEATURE 3 — Calendrier ═══ -->
 <section class="feature-section light">
   <div class="container">
-    <div class="feature-row">
+    <div class="feature-row" style="grid-template-columns: 2fr 3fr;">
       <div class="feature-content reveal-left">
         <div class="section-eyebrow">Programmation</div>
         <h2 class="section-title" style="color:var(--k)">Votre calendrier.<br>Rempli automatiquement.</h2>
@@ -1320,7 +1315,7 @@ footer {
             <div class="browser-frame-dot y"></div>
             <div class="browser-frame-dot g"></div>
           </div>
-          <img src="/public/images/gusto/calendrier%20edito%20rempli.png" alt="Calendrier de publication Gusto" loading="lazy">
+          <img src="/public/images/gusto/beau%20calendrier.png" alt="Calendrier de publication Gusto" loading="lazy">
         </div>
       </div>
     </div>
