@@ -235,25 +235,20 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
   z-index: 3;
   animation: bounce-down 2s ease-in-out infinite;
-  cursor: pointer;
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: background 0.2s;
+  pointer-events: none;
 }
-.hero-scroll-hint:hover {
-  background: rgba(255,255,255,0.2);
-}
-.hero-scroll-hint svg {
-  width: 20px;
-  height: 20px;
-  color: var(--w);
+.hero-scroll-hint span {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-right: 2px solid rgba(255,255,255,0.5);
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+  transform: rotate(45deg);
 }
 @keyframes bounce-down {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -1201,8 +1196,8 @@ footer {
     <span>59&#8364;/mois ensuite</span>
   </div>
 
-  <div class="hero-scroll-hint" onclick="document.querySelector('.dashboard-showcase').scrollIntoView({behavior:'smooth'})">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"/></svg>
+  <div class="hero-scroll-hint">
+    <span></span>
   </div>
 
 </section>
