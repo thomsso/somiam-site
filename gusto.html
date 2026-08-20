@@ -220,9 +220,9 @@ nav {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(17,17,17,0.70) 0%,
-    rgba(17,17,17,0.55) 40%,
-    rgba(17,17,17,0.75) 100%
+    rgba(17,17,17,0.78) 0%,
+    rgba(17,17,17,0.62) 40%,
+    rgba(17,17,17,0.82) 100%
   );
   z-index: 1;
 }
@@ -279,25 +279,63 @@ nav {
 .hero-glow {
   display: none;
 }
+/* Social proof badge */
+.hero-proof-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 18px;
+  border-radius: 24px;
+  margin-bottom: 28px;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.01em;
+}
+.hero-proof-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
 #hero h1 {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(36px, 5.5vw, 64px);
+  font-size: clamp(40px, 6.5vw, 76px);
   font-weight: 800; color: var(--w);
-  line-height: 1.05; letter-spacing: -2px;
-  margin-bottom: 24px;
-  max-width: 800px;
+  line-height: 1.05; letter-spacing: -2.5px;
+  margin-bottom: 20px;
+  max-width: 860px;
   position: relative; z-index: 2;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 #hero h1 em { color: var(--y); font-style: normal; }
 .hero-sub {
-  font-size: 18px; color: rgba(255,255,255,0.85);
-  line-height: 1.7; margin-bottom: 48px;
-  max-width: 580px; font-weight: 400;
+  font-size: 19px; color: rgba(255,255,255,0.9);
+  line-height: 1.5; margin-bottom: 36px;
+  max-width: 480px; font-weight: 400;
   position: relative; z-index: 2;
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  letter-spacing: 0.01em;
 }
-.hero-sub strong { color: var(--w); font-weight: 600; }
+
+/* Micro-copy under input */
+.hero-microcopy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 10px;
+  margin-bottom: 0;
+  position: relative; z-index: 2;
+  letter-spacing: 0.02em;
+}
 
 /* Hero input */
 .hero-input-wrap {
@@ -343,7 +381,7 @@ nav {
   position: relative; z-index: 2;
 }
 .hero-trust span {
-  font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 400;
+  font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 500;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   display: flex; align-items: center; gap: 6px;
 }
@@ -1002,23 +1040,25 @@ footer {
   #hero::before {
     background: linear-gradient(
       to bottom,
-      rgba(17,17,17,0.75) 0%,
-      rgba(17,17,17,0.50) 35%,
-      rgba(17,17,17,0.80) 100%
+      rgba(17,17,17,0.82) 0%,
+      rgba(17,17,17,0.60) 35%,
+      rgba(17,17,17,0.85) 100%
     );
   }
   .hero-scroll-hint { bottom: 16px; }
   .hero-scroll-hint span { width: 18px; height: 18px; }
+  .hero-proof-badge { font-size: 11px; padding: 6px 14px; margin-bottom: 20px; }
   #hero h1 {
     font-size: 32px;
     letter-spacing: -1px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .hero-sub {
-    font-size: 15px;
-    margin-bottom: 28px;
-    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.5;
   }
+  .hero-microcopy { font-size: 11px; margin-top: 8px; }
   .hero-input-wrap {
     flex-direction: column;
     border-radius: 12px;
@@ -1157,9 +1197,10 @@ footer {
    RESPONSIVE — SMALL MOBILE
    ════════════════════════════════════════ */
 @media (max-width: 380px) {
-  #hero h1 { font-size: 27px; }
+  #hero h1 { font-size: 28px; }
   #hero { padding: 72px 16px 56px; }
-  .hero-sub { font-size: 14px; }
+  .hero-proof-badge { font-size: 10px; padding: 5px 12px; }
+  .hero-sub { font-size: 15px; }
   .hero-trust span { font-size: 11px; }
   .section-title { font-size: 22px; }
   .pain-card { padding: 20px 16px; }
@@ -1189,19 +1230,24 @@ footer {
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
-  <h1 class="reveal">Remplissez vos tables.<br><em>Sans lever le petit doigt.</em></h1>
+  <div class="hero-proof-badge reveal">
+    <span class="hero-proof-dot"></span>
+    +100 restaurants remplissent leurs tables avec Gusto
+  </div>
 
-  <p class="hero-sub reveal" style="transition-delay:0.08s">
-    Sans agence, sans community manager. Gusto gère vos posts Instagram, vos réponses aux avis Google et votre référencement.
-    Vous envoyez vos photos — <strong>l'IA fait le reste.</strong>
+  <h1 class="reveal" style="transition-delay:0.06s">Remplissez vos tables.<br><em>Sans lever le petit doigt.</em></h1>
+
+  <p class="hero-sub reveal" style="transition-delay:0.12s">
+    Gusto gère votre com. Vous, vous cuisinez.
   </p>
 
-  <form class="hero-input-wrap reveal" style="transition-delay:0.16s" onsubmit="handleHeroCTA(event)">
+  <form class="hero-input-wrap reveal" style="transition-delay:0.18s" onsubmit="handleHeroCTA(event)">
     <input type="text" class="hero-input" id="hero-restaurant" placeholder="Le nom de votre restaurant" autocomplete="off">
     <button type="submit" class="hero-input-btn">Essayer gratuitement &rarr;</button>
   </form>
+  <p class="hero-microcopy reveal" style="transition-delay:0.22s">Aucune carte bancaire requise</p>
 
-  <div class="hero-trust reveal" style="transition-delay:0.2s">
+  <div class="hero-trust reveal" style="transition-delay:0.26s">
     <span>14 jours gratuits</span>
     <span>Sans engagement</span>
     <span>59&#8364;/mois ensuite</span>
