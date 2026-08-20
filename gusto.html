@@ -624,6 +624,7 @@ nav {
 }
 .feature-screenshot-raw:hover { transform: translateY(-4px); }
 .feature-screenshot-raw img { width: 100%; display: block; }
+.feature-row-calendar { grid-template-columns: 1fr 2fr; }
 
 /* ════════════════════════════════════════
    RESULTS
@@ -874,10 +875,11 @@ nav {
   display: flex;
   max-width: 520px; width: 100%;
   margin: 0 auto;
-  background: rgba(255,255,255,0.06);
-  border: 1.5px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.50);
+  border: 1.5px solid rgba(255,255,255,0.25);
   border-radius: 12px;
   overflow: hidden;
+  backdrop-filter: blur(8px);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .cta-final-input:focus-within {
@@ -957,8 +959,9 @@ footer {
 .footer-links a {
   font-size: 12px; color: var(--g2);
   text-decoration: none; transition: color 0.2s;
+  padding: 4px 0;
 }
-.footer-links a:hover { color: var(--g3); }
+.footer-links a:hover { color: var(--w); }
 .footer-copy { font-size: 12px; color: var(--g1); }
 
 /* ════════════════════════════════════════
@@ -1003,7 +1006,7 @@ footer {
     );
   }
   .hero-scroll-hint { bottom: 16px; }
-  .hero-scroll-hint span { height: 24px; }
+  .hero-scroll-hint span { width: 18px; height: 18px; }
   #hero h1 {
     font-size: 32px;
     letter-spacing: -1px;
@@ -1038,7 +1041,7 @@ footer {
   .hero-float-card { display: none; }
 
   /* ── DASHBOARD SHOWCASE MOBILE ── */
-  .dashboard-showcase { padding: 0 16px 48px; }
+  .dashboard-showcase { padding: 32px 16px 48px; }
   .dashboard-showcase .hero-product { max-width: 100%; }
 
   /* ── SOCIAL PROOF MOBILE ── */
@@ -1078,7 +1081,7 @@ footer {
   }
 
   /* ── FEATURES MOBILE ── */
-  .feature-row { grid-template-columns: 1fr; gap: 24px; }
+  .feature-row, .feature-row-calendar { grid-template-columns: 1fr !important; gap: 24px; }
   .feature-row.reversed { direction: ltr; }
   .feature-desc { font-size: 15px; margin-bottom: 20px; }
   .feature-bullets li { font-size: 14px; }
@@ -1144,7 +1147,8 @@ footer {
     flex-direction: column; align-items: flex-start;
     padding: 24px 16px; gap: 12px;
   }
-  .footer-links { gap: 12px; flex-wrap: wrap; }
+  .footer-links { gap: 4px 16px; flex-wrap: wrap; }
+  .footer-links a { padding: 8px 0; font-size: 13px; }
 }
 
 /* ════════════════════════════════════════
@@ -1183,8 +1187,6 @@ footer {
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="hero-glow"></div>
-
   <h1 class="reveal">Remplissez vos tables.<br><em>Sans lever le petit doigt.</em></h1>
 
   <p class="hero-sub reveal" style="transition-delay:0.08s">
@@ -1484,7 +1486,7 @@ footer {
 <!-- ═══ FEATURE 3 — Calendrier ═══ -->
 <section class="feature-section light">
   <div class="container">
-    <div class="feature-row" style="grid-template-columns: 1fr 2fr;">
+    <div class="feature-row feature-row-calendar">
       <div class="feature-content reveal-left">
         <div class="section-eyebrow">Programmation</div>
         <h2 class="section-title" style="color:var(--k)">Votre calendrier.<br>Rempli automatiquement.</h2>
@@ -1828,7 +1830,7 @@ function toggleMenu() {
   const open = navLinks.style.display === 'flex';
   navLinks.style.cssText = open ? '' : `
     display:flex; flex-direction:column; position:fixed;
-    top:64px; left:0; right:0; background:rgba(17,17,17,0.98);
+    top:56px; left:0; right:0; background:rgba(17,17,17,0.98);
     padding:24px 20px; gap:24px; border-bottom:1px solid #222;
     z-index:99; backdrop-filter:blur(12px);
   `;
