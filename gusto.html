@@ -282,13 +282,15 @@ nav {
   margin-bottom: 24px;
   max-width: 800px;
   position: relative; z-index: 2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 #hero h1 em { color: var(--y); font-style: normal; }
 .hero-sub {
-  font-size: 18px; color: var(--g2);
+  font-size: 18px; color: rgba(255,255,255,0.85);
   line-height: 1.7; margin-bottom: 48px;
   max-width: 580px; font-weight: 400;
   position: relative; z-index: 2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .hero-sub strong { color: var(--w); font-weight: 600; }
 
@@ -296,9 +298,10 @@ nav {
 .hero-input-wrap {
   display: flex;
   max-width: 520px; width: 100%;
-  background: rgba(255,255,255,0.06);
-  border: 1.5px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.50);
+  border: 1.5px solid rgba(255,255,255,0.25);
   border-radius: 12px;
+  backdrop-filter: blur(8px);
   overflow: hidden;
   position: relative; z-index: 2;
   transition: border-color 0.3s, box-shadow 0.3s;
@@ -335,7 +338,8 @@ nav {
   position: relative; z-index: 2;
 }
 .hero-trust span {
-  font-size: 13px; color: var(--g2); font-weight: 400;
+  font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   display: flex; align-items: center; gap: 6px;
 }
 .hero-trust span::before {
