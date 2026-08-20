@@ -235,23 +235,25 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  z-index: 2;
+  justify-content: center;
+  z-index: 3;
   animation: bounce-down 2s ease-in-out infinite;
+  cursor: pointer;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s;
 }
-.hero-scroll-hint span {
-  font-size: 11px;
-  color: var(--g2);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
+.hero-scroll-hint:hover {
+  background: rgba(255,255,255,0.2);
 }
 .hero-scroll-hint svg {
-  width: 24px;
-  height: 24px;
-  color: var(--g2);
+  width: 20px;
+  height: 20px;
+  color: var(--w);
 }
 @keyframes bounce-down {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -980,77 +982,182 @@ footer {
    RESPONSIVE — MOBILE
    ════════════════════════════════════════ */
 @media (max-width: 768px) {
-  nav { padding: 0 16px; }
+  nav { padding: 0 16px; height: 56px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
+  /* ── HERO MOBILE ── */
   #hero {
-    padding: 96px 20px 40px;
+    padding: 80px 20px 60px;
     min-height: 100vh;
     min-height: 100dvh;
+    background-position: center 30%;
   }
-  .hero-scroll-hint { bottom: 20px; }
-  .dashboard-showcase { padding: 0 16px 48px; }
-  #hero h1 { font-size: 32px; letter-spacing: -1px; }
-  .hero-sub { font-size: 15px; margin-bottom: 32px; }
+  #hero::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(17,17,17,0.75) 0%,
+      rgba(17,17,17,0.50) 35%,
+      rgba(17,17,17,0.80) 100%
+    );
+  }
+  .hero-scroll-hint { bottom: 16px; width: 40px; height: 40px; }
+  #hero h1 {
+    font-size: 32px;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
   .hero-input-wrap {
     flex-direction: column;
     border-radius: 12px;
   }
-  .hero-input { padding: 16px; text-align: center; }
+  .hero-input {
+    padding: 16px;
+    text-align: center;
+    font-size: 16px; /* prevent iOS zoom */
+  }
   .hero-input-btn {
     margin: 0 6px 6px;
-    padding: 14px;
+    padding: 16px;
+    font-size: 16px;
+    min-height: 48px; /* touch target */
   }
-  .hero-trust { gap: 12px; }
+  .hero-trust {
+    gap: 8px 16px;
+    margin-top: 16px;
+  }
+  .hero-trust span { font-size: 12px; }
   .hero-product { margin-top: 40px; }
   .hero-float-card { display: none; }
+
+  /* ── DASHBOARD SHOWCASE MOBILE ── */
+  .dashboard-showcase { padding: 0 16px 48px; }
   .dashboard-showcase .hero-product { max-width: 100%; }
 
-  #social-proof { padding: 28px 0; }
+  /* ── SOCIAL PROOF MOBILE ── */
+  #social-proof { padding: 24px 0; }
+  .proof-label { font-size: 11px; margin-bottom: 16px; }
+  .proof-track { gap: 32px; }
+  .proof-name { font-size: 13px; }
+  .proof-result { font-size: 12px; }
 
+  /* ── SECTIONS PADDING MOBILE ── */
   #probleme, #comment, #prix, #temoignages, #cta-mid, #faq, #cta-final, #resultats,
   .feature-section {
-    padding: 64px 0;
+    padding: 56px 0;
   }
   .container { padding: 0 1rem; }
+  .section-title { font-size: 24px; margin-bottom: 16px; }
+  .section-eyebrow { font-size: 10px; margin-bottom: 12px; }
 
-  .section-title { font-size: 26px; }
+  /* ── PROBLÈME MOBILE ── */
+  .pain-grid { grid-template-columns: 1fr; gap: 12px; }
+  .pain-card { padding: 24px 20px; }
+  .pain-title { font-size: 16px; }
+  .pain-text { font-size: 14px; }
 
-  .pain-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: 1fr; gap: 40px; }
+  /* ── COMMENT ÇA MARCHE MOBILE ── */
+  .steps-grid { grid-template-columns: 1fr; gap: 36px; }
   .steps-grid::before { display: none; }
-
-  .feature-row { grid-template-columns: 1fr; gap: 32px; }
-  .feature-row.reversed { direction: ltr; }
-
-  .results-grid { grid-template-columns: 1fr; }
-  .videos-grid { grid-template-columns: 1fr; }
-
-  .pricing-row { font-size: 14px; padding: 16px; }
-  .pricing-row .price { font-size: 14px; }
-  .pricing-row.highlight .price { font-size: 18px; }
-
-  #cta-final h2 { font-size: 28px; }
-  #cta-mid h2 { font-size: 26px; }
-  .cta-final-input {
-    flex-direction: column;
+  .step-number { width: 48px; height: 48px; font-size: 20px; margin-bottom: 16px; }
+  .step-title { font-size: 17px; }
+  .step-text { font-size: 14px; margin-bottom: 16px; }
+  .step-screenshot .browser-frame {
+    height: auto;
   }
-  .cta-final-input input { padding: 16px; text-align: center; }
-  .cta-final-input button { margin: 0 6px 6px; padding: 14px; }
+  .step-screenshot .browser-frame img {
+    height: auto;
+    max-height: 200px;
+  }
 
-  .sticky-cta { gap: 12px; }
+  /* ── FEATURES MOBILE ── */
+  .feature-row { grid-template-columns: 1fr; gap: 24px; }
+  .feature-row.reversed { direction: ltr; }
+  .feature-desc { font-size: 15px; margin-bottom: 20px; }
+  .feature-bullets li { font-size: 14px; }
+
+  /* ── RÉSULTATS MOBILE ── */
+  .results-grid { grid-template-columns: 1fr; gap: 12px; }
+  .result-card { padding: 24px 20px; }
+  .result-metric { font-size: 28px; }
+  .result-desc { font-size: 13px; }
+
+  /* ── TÉMOIGNAGES MOBILE ── */
+  .videos-grid { grid-template-columns: 1fr; gap: 16px; }
+  .video-info { padding: 16px; }
+  .video-name { font-size: 15px; }
+
+  /* ── PRICING MOBILE ── */
+  .pricing-row { font-size: 14px; padding: 16px; }
+  .pricing-row .label { max-width: 65%; }
+  .pricing-row .price { font-size: 14px; }
+  .pricing-row.highlight { padding: 20px; }
+  .pricing-row.highlight .label { font-size: 15px; }
+  .pricing-row.highlight .price { font-size: 18px; }
+  .pricing-badge { font-size: 10px; padding: 4px 10px; top: -10px; right: 12px; }
+
+  /* ── CTA MOBILE ── */
+  #cta-mid h2 { font-size: 24px; }
+  #cta-mid .cta-sub { font-size: 15px; margin-bottom: 24px; }
+  #cta-final h2 { font-size: 26px; }
+  #cta-final .cta-sub { font-size: 15px; }
+  .cta-final-input { flex-direction: column; }
+  .cta-final-input input {
+    padding: 16px;
+    text-align: center;
+    font-size: 16px; /* prevent iOS zoom */
+  }
+  .cta-final-input button {
+    margin: 0 6px 6px;
+    padding: 16px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  /* ── FAQ MOBILE ── */
+  .faq-question { padding: 18px 16px; font-size: 14px; }
+  .faq-answer-inner { padding: 0 16px 18px; font-size: 14px; }
+
+  /* ── STICKY CTA MOBILE ── */
+  .sticky-cta {
+    gap: 12px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
   .sticky-cta-text { display: none; }
+  .sticky-cta .btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 48px;
+  }
 
+  /* ── FOOTER MOBILE ── */
   footer {
     flex-direction: column; align-items: flex-start;
     padding: 24px 16px; gap: 12px;
   }
-  .footer-links { gap: 12px; }
+  .footer-links { gap: 12px; flex-wrap: wrap; }
 }
 
+/* ════════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE
+   ════════════════════════════════════════ */
 @media (max-width: 380px) {
   #hero h1 { font-size: 27px; }
+  #hero { padding: 72px 16px 56px; }
+  .hero-sub { font-size: 14px; }
+  .hero-trust span { font-size: 11px; }
+  .section-title { font-size: 22px; }
+  .pain-card { padding: 20px 16px; }
+  .result-card { padding: 20px 16px; }
+  #cta-final h2 { font-size: 24px; }
+  #cta-mid h2 { font-size: 22px; }
 }
 </style>
 </head>
@@ -1092,6 +1199,10 @@ footer {
     <span>14 jours gratuits</span>
     <span>Sans engagement</span>
     <span>59&#8364;/mois ensuite</span>
+  </div>
+
+  <div class="hero-scroll-hint" onclick="document.querySelector('.dashboard-showcase').scrollIntoView({behavior:'smooth'})">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"/></svg>
   </div>
 
 </section>
