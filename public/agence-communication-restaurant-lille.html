@@ -605,7 +605,23 @@
             .footer-links {
                 justify-content: center;
             }
+
+            .subfooter { padding: 12px 24px; gap: 12px; }
         }
+        .subfooter {
+            background: #0A0A0A;
+            padding: 16px 48px;
+            display: flex; align-items: center;
+            justify-content: center;
+            flex-wrap: wrap; gap: 20px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .subfooter a {
+            font-size: 11px; color: #555;
+            text-decoration: none; transition: color 0.2s;
+        }
+        .subfooter a:hover { color: #888; }
+        .subfooter-copy { font-size: 11px; color: #333; }
     </style>
 </head>
 <body>
@@ -788,20 +804,25 @@
 
     <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">SO<span> MIAM</span></div>
-  <div class="footer-links">
-    <a href="/mentions-legales">Mentions légales</a>
-    <a href="/cgv">CGV</a>
-    <a href="/cgu">CGU</a>
-    <a href="/politique-confidentialite">Politique de confidentialité</a>
-
-    <a href="/agence-communication-restaurant-lille">Agence Lille</a>
-    <a href="/meta-ads-restaurant">Meta Ads</a>
-    <a href="/shooting-photo-restaurant">Shooting photo</a>
-    <a href="/avis">Avis</a>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">SO<span> MIAM</span></a>
+    <div class="footer-links">
+      <a href="/gusto" style="color:var(--y);">Gusto IA</a>
+      <a href="/blog">Blog</a>
+      <a href="/avis">Avis</a>
+      <a href="/agence-communication-restaurant-lille">Agence Lille</a>
+      <a href="/meta-ads-restaurant">Meta Ads</a>
+      <a href="/shooting-photo-restaurant">Shooting photo</a>
+    </div>
   </div>
-  <div class="footer-copy">© 2026 So MIAM — Agence digitale restaurants · Lille</div>
 </footer>
+<div class="subfooter">
+  <a href="/mentions-legales">Mentions l&eacute;gales</a>
+  <a href="/cgv">CGV</a>
+  <a href="/cgu">CGU</a>
+  <a href="/politique-confidentialite">Confidentialit&eacute;</a>
+  <span class="subfooter-copy">&copy; 2026 So MIAM &mdash; Agence digitale restaurants &middot; Lille</span>
+</div>
 
     <script>
         // Hamburger menu toggle

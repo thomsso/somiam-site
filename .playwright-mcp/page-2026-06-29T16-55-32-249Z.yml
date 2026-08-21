@@ -1,0 +1,208 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "SO MIAM" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - link "Comment ça marche" [ref=e6] [cursor=pointer]:
+          - /url: /#comment
+      - listitem [ref=e7]:
+        - link "Services" [ref=e8] [cursor=pointer]:
+          - /url: /#services
+      - listitem [ref=e9]:
+        - link "Résultats" [ref=e10] [cursor=pointer]:
+          - /url: /#resultats
+      - listitem [ref=e11]:
+        - link "Équipe" [ref=e12] [cursor=pointer]:
+          - /url: /#equipe
+      - listitem [ref=e13]:
+        - link "Avis" [ref=e14] [cursor=pointer]:
+          - /url: /avis
+      - listitem [ref=e15]:
+        - link "So MIAM Pro" [ref=e16] [cursor=pointer]:
+          - /url: /pro
+    - link "Essai gratuit" [ref=e17] [cursor=pointer]:
+      - /url: https://recette.so-miam.com/
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "Gérez toute la com de votre restaurant en 1h par semaine." [level=1] [ref=e20]:
+        - text: Gérez toute la com de votre restaurant en
+        - emphasis [ref=e21]: 1h par semaine.
+      - paragraph [ref=e22]:
+        - text: So MIAM Pro automatise vos posts Instagram, vos réponses Google et votre référencement.
+        - strong [ref=e23]: Gusto, votre IA
+        - text: ", crée un mois de contenu à partir de vos photos — en un clic."
+      - link "Essai gratuit — 14 jours →" [ref=e24] [cursor=pointer]:
+        - /url: https://recette.so-miam.com/
+      - generic [ref=e25]:
+        - generic [ref=e26]: ✓ Sans engagement
+        - generic [ref=e27]: ✓ Annulation en 1 clic
+        - generic [ref=e28]: ✓ 59€/mois ensuite
+    - generic [ref=e30]:
+      - img "Restaurant utilisant So MIAM Pro" [ref=e31]
+      - generic [ref=e32]:
+        - generic [ref=e33]: Résultat client — Maison L
+        - generic [ref=e34]: ×5 réservations
+        - generic [ref=e35]: au 3e mois d'utilisation
+        - generic [ref=e36]: VÉRIFIÉ
+      - generic [ref=e37]:
+        - generic [ref=e38]: Gusto — Réponse automatique
+        - generic [ref=e39]:
+          - generic [ref=e40]: G
+          - generic [ref=e41]: Réponse générée — 2,4s
+        - generic [ref=e42]: « Merci Sophie ! Ravi que le risotto vous ait conquise. À bientôt ! »
+        - generic [ref=e43]: IA ACTIVE 24/7
+  - generic [ref=e45]:
+    - generic [ref=e46]: Le problème
+    - heading "Votre restaurant est bon. Votre visibilité, elle ?" [level=2] [ref=e47]:
+      - text: Votre restaurant est bon.
+      - text: Votre visibilité, elle ?
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]: 📱
+        - paragraph [ref=e51]: Vous postez quand vous avez le temps — et votre Instagram ressemble à un restaurant à moitié ouvert.
+      - generic [ref=e52]:
+        - generic [ref=e53]: ⭐
+        - paragraph [ref=e54]: Un avis sans réponse sur Google, c'est une table vide. Vous n'avez pas le temps de tous les gérer.
+      - generic [ref=e55]:
+        - generic [ref=e56]: 📍
+        - paragraph [ref=e57]: Vos concurrents apparaissent avant vous sur Google Maps. Pas parce qu'ils sont meilleurs — parce qu'ils sont mieux référencés.
+  - generic [ref=e59]:
+    - generic [ref=e60]: La solution
+    - heading "Ce que So MIAM Pro fait pendant que vous cuisinez" [level=2] [ref=e61]:
+      - text: Ce que So MIAM Pro fait
+      - text: pendant que vous cuisinez
+    - paragraph [ref=e62]: Trois outils, un seul abonnement, zéro prise de tête.
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - img [ref=e66]
+        - generic [ref=e70]: Planning éditorial en 1 clic
+        - paragraph [ref=e71]: Donnez vos photos à Gusto. Il crée et programme des semaines de contenu sur Instagram, Facebook et Google. Vous validez. C'est parti.
+      - generic [ref=e72]:
+        - img [ref=e74]
+        - generic [ref=e76]: Réponses automatiques aux avis Google
+        - paragraph [ref=e77]: Chaque avis reçoit une réponse professionnelle et personnalisée. Votre réputation se gère toute seule, 24h/24.
+      - generic [ref=e78]:
+        - img [ref=e80]
+        - generic [ref=e82]: Health Score instantané
+        - paragraph [ref=e83]: Dès l'inscription, vous obtenez un score de santé de votre présence en ligne et toutes les clés pour l'améliorer. Dans le vert = plus de visibilité = plus de clients.
+  - generic [ref=e85]:
+    - heading "La plateforme en images" [level=2] [ref=e86]
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - img "Dashboard So MIAM Pro" [ref=e89]
+        - generic [ref=e90]: Dashboard
+      - generic [ref=e91]:
+        - img "Planning éditorial" [ref=e92]
+        - generic [ref=e93]: Planning éditorial
+      - generic [ref=e94]:
+        - img "Gestion des avis" [ref=e95]
+        - generic [ref=e96]: Gestion des avis
+    - paragraph [ref=e97]: Et bien plus encore — découvrez le reste en vous inscrivant.
+  - generic [ref=e99]:
+    - generic [ref=e100]: Tarif
+    - heading "Tout ça pour moins qu'un repas par semaine" [level=2] [ref=e101]:
+      - text: Tout ça pour moins qu'un
+      - text: repas par semaine
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - generic [ref=e104]: "Outil de réponse aux avis (ex: Partoo)"
+        - generic [ref=e105]: ~69€/mois
+      - generic [ref=e106]:
+        - generic [ref=e107]: "Planification réseaux sociaux (ex: Later)"
+        - generic [ref=e108]: ~45€/mois
+      - generic [ref=e109]:
+        - generic [ref=e110]: "Optimisation Google My Business (ex: Uberall)"
+        - generic [ref=e111]: ~50€/mois
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - text: So MIAM Pro — tout-en-un
+          - generic [ref=e114]: Recommandé
+        - generic [ref=e115]: 59€/mois
+  - generic [ref=e117]:
+    - generic [ref=e118]: Résultats
+    - heading "Le système derrière nos résultats clients" [level=2] [ref=e119]:
+      - text: Le système derrière nos
+      - text: résultats clients
+    - paragraph [ref=e120]: So MIAM Pro, c'est le système qu'on utilise pour piloter la communication de nos clients agence. Voici ce qu'il produit.
+    - generic [ref=e121]:
+      - generic [ref=e122]:
+        - iframe [ref=e124]
+        - generic [ref=e125]:
+          - generic [ref=e126]: Aphi
+          - generic [ref=e127]: White Lotus
+          - generic [ref=e128]: ×2 réservations au 1er mois
+      - generic [ref=e129]:
+        - iframe [ref=e131]
+        - generic [ref=e132]:
+          - generic [ref=e133]: Layal
+          - generic [ref=e134]: Maison L
+          - generic [ref=e135]: ×5 réservations au 3e mois
+      - generic [ref=e136]:
+        - iframe [ref=e138]
+        - generic [ref=e139]:
+          - generic [ref=e140]: Paco
+          - generic [ref=e141]: Café de Paris
+          - generic [ref=e142]: +75% réservations
+  - generic [ref=e144]:
+    - heading "Prêt à remplir votre restaurant ?" [level=2] [ref=e145]
+    - link "Je veux plus de réservations" [ref=e146] [cursor=pointer]:
+      - /url: https://recette.so-miam.com/
+  - generic [ref=e148]:
+    - generic [ref=e149]: FAQ
+    - heading "Vos questions" [level=2] [ref=e150]
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - button "Faut-il être à l'aise avec la technologie ? +" [ref=e153] [cursor=pointer]:
+          - text: Faut-il être à l'aise avec la technologie ?
+          - generic [ref=e154]: +
+        - generic [ref=e155]: Non. Si vous savez envoyer une photo sur WhatsApp, vous savez utiliser So MIAM Pro.
+      - generic [ref=e156]:
+        - button "Que se passe-t-il après les 14 jours ? +" [ref=e157] [cursor=pointer]:
+          - text: Que se passe-t-il après les 14 jours ?
+          - generic [ref=e158]: +
+        - generic [ref=e159]: Vous êtes prélevé de 59€/mois automatiquement. Vous pouvez annuler à tout moment avant la fin de l'essai.
+      - generic [ref=e160]:
+        - button "Est-ce que ça fonctionne pour tous les types de restaurants ? +" [ref=e161] [cursor=pointer]:
+          - text: Est-ce que ça fonctionne pour tous les types de restaurants ?
+          - generic [ref=e162]: +
+        - generic [ref=e163]: Oui — indépendants, bistrots, gastronomique, food truck, brasserie.
+      - generic [ref=e164]:
+        - button "Je préfère être accompagné plutôt que de gérer moi-même. +" [ref=e165] [cursor=pointer]:
+          - text: Je préfère être accompagné plutôt que de gérer moi-même.
+          - generic [ref=e166]: +
+        - generic [ref=e167]:
+          - text: "Nos offres agence existent pour ça. Contactez-nous :"
+          - link "thomas@so-media.fr" [ref=e168] [cursor=pointer]:
+            - /url: mailto:thomas@so-media.fr
+  - generic [ref=e170]:
+    - heading "Votre restaurant mérite d'être plein." [level=2] [ref=e171]:
+      - text: Votre restaurant mérite
+      - text: d'être
+      - emphasis [ref=e172]: plein.
+    - paragraph [ref=e173]: 14 jours pour le vérifier par vous-même.
+    - link "Je veux plus de réservations" [ref=e174] [cursor=pointer]:
+      - /url: https://recette.so-miam.com/
+  - contentinfo [ref=e175]:
+    - link "SO MIAM" [ref=e176] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e177]:
+      - link "Mentions légales" [ref=e178] [cursor=pointer]:
+        - /url: /mentions-legales
+      - link "CGV" [ref=e179] [cursor=pointer]:
+        - /url: /cgv
+      - link "CGU" [ref=e180] [cursor=pointer]:
+        - /url: /cgu
+      - link "Politique de confidentialité" [ref=e181] [cursor=pointer]:
+        - /url: /politique-confidentialite
+      - link "Agence Lille" [ref=e182] [cursor=pointer]:
+        - /url: /agence-communication-restaurant-lille
+      - link "Meta Ads" [ref=e183] [cursor=pointer]:
+        - /url: /meta-ads-restaurant
+      - link "Shooting photo" [ref=e184] [cursor=pointer]:
+        - /url: /shooting-photo-restaurant
+      - link "Avis" [ref=e185] [cursor=pointer]:
+        - /url: /avis
+      - link "So MIAM Pro" [ref=e186] [cursor=pointer]:
+        - /url: /pro
+    - generic [ref=e187]: © 2026 So MIAM — Agence digitale restaurants · Lille

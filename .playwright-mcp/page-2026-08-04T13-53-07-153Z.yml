@@ -1,0 +1,330 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "SO MIAM" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - link "Comment ça marche" [ref=e6] [cursor=pointer]:
+          - /url: /#comment
+      - listitem [ref=e7]:
+        - link "Services" [ref=e8] [cursor=pointer]:
+          - /url: /#services
+      - listitem [ref=e9]:
+        - link "Résultats" [ref=e10] [cursor=pointer]:
+          - /url: /#resultats
+      - listitem [ref=e11]:
+        - link "Équipe" [ref=e12] [cursor=pointer]:
+          - /url: /#equipe
+      - listitem [ref=e13]:
+        - link "Avis" [ref=e14] [cursor=pointer]:
+          - /url: /avis
+    - link "Prendre RDV" [ref=e15] [cursor=pointer]:
+      - /url: /#contact
+  - generic [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]: ★
+      - text: 5/5 sur Google · 12 avis
+    - heading [level=1] [ref=e19]:
+      - text: Ils remplissent leurs tables.
+      - emphasis [ref=e20]: Ils racontent.
+    - paragraph [ref=e21]: Avis Google, messages privés, retours WhatsApp — voici ce que disent les restaurateurs qui nous ont fait confiance.
+  - generic [ref=e23]:
+    - generic [ref=e24]: "5.0"
+    - generic [ref=e25]:
+      - generic [ref=e26]: ★★★★★
+      - generic [ref=e27]:
+        - strong [ref=e28]: 12 avis Google
+        - text: · 6 témoignages privés
+  - generic [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]: Ils témoignent en vidéo
+      - generic [ref=e32]: Ce que disent nos restaurateurs
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - iframe [ref=e35]:
+          - generic [ref=f1e1]:
+            - generic [ref=f1e4]:
+              - generic:
+                - generic:
+                  - generic:
+                    - button
+                    - button
+              - button [ref=f1e10] [cursor=pointer]:
+                - img "Play" [ref=f1e14]
+            - alert [ref=f1e16]
+            - generic:
+              - region "Notifications"
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - generic [ref=e38]: A
+            - generic [ref=e39]:
+              - generic [ref=e40]: Aphi
+              - generic [ref=e41]: White Lotus
+          - generic [ref=e42]: ↑ Réservations ×2 dès le 1er mois
+      - generic [ref=e43]:
+        - iframe [ref=e44]:
+          - generic [ref=f2e1]:
+            - generic [ref=f2e4]:
+              - generic:
+                - generic:
+                  - generic:
+                    - button
+              - button [ref=f2e10] [cursor=pointer]:
+                - img "Play" [ref=f2e14]
+            - alert [ref=f2e16]
+            - generic:
+              - region "Notifications"
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - text: Avis Google
+            - generic [ref=e52]: ★★★★★
+          - paragraph [ref=e53]:
+            - text: Très bonne agence qui nous suit depuis maintenant
+            - strong [ref=e54]: plus d'un an
+            - text: "! Parfait pour les restaurateurs ! Pro et efficace !"
+          - generic [ref=e55]:
+            - generic [ref=e56]: P
+            - generic [ref=e57]:
+              - generic [ref=e58]: Paco
+              - generic [ref=e59]: Café de Paris – Chez Boubier 1930
+          - generic [ref=e60]: ↑ +100% réservations vs N-1
+      - generic [ref=e61]:
+        - iframe [ref=e62]:
+          - generic [ref=f3e1]:
+            - generic [ref=f3e4]:
+              - generic:
+                - generic:
+                  - generic:
+                    - button
+              - button [ref=f3e10] [cursor=pointer]:
+                - img "Play" [ref=f3e14]
+            - alert [ref=f3e16]
+            - generic:
+              - region "Notifications"
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - text: Avis Google
+            - generic [ref=e70]: ★★★★★
+          - paragraph [ref=e71]:
+            - text: Extrêmement professionnel, tellement développé que nous avons dû
+            - strong [ref=e72]: embaucher en interne
+            - text: . Je recommande vivement !!
+          - generic [ref=e73]:
+            - generic [ref=e74]: C
+            - generic [ref=e75]:
+              - generic [ref=e76]: Camille
+              - generic [ref=e77]: Bouillon Pignol
+          - generic [ref=e78]: ↑ 8 000 couverts/mois
+      - generic [ref=e79]:
+        - iframe [ref=e80]:
+          - generic [ref=f4e1]:
+            - generic [ref=f4e4]:
+              - generic:
+                - generic:
+                  - generic:
+                    - button
+              - button [ref=f4e10] [cursor=pointer]:
+                - img "Play" [ref=f4e14]
+            - alert [ref=f4e16]
+            - generic:
+              - region "Notifications"
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - text: Avis Google
+            - generic [ref=e88]: ★★★★★
+          - paragraph [ref=e89]:
+            - text: Top of the top!
+            - strong [ref=e90]: Best marketing and communication agency
+            - text: in Lille.
+          - generic [ref=e91]:
+            - generic [ref=e92]: L
+            - generic [ref=e93]:
+              - generic [ref=e94]: Layal
+              - generic [ref=e95]: Maison L
+          - generic [ref=e96]: ↑ Allait fermer → meilleurs mois ever
+  - generic [ref=e97]:
+    - generic [ref=e98]:
+      - generic [ref=e99]: Avis Google
+      - generic [ref=e100]: Encore plus de retours
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]: Google ★
+        - generic [ref=e109]: ★★★★★
+        - generic [ref=e110]: "2025"
+        - generic [ref=e111]:
+          - generic [ref=e112]: D
+          - generic [ref=e113]: Dimitri Lebacq
+      - generic [ref=e115]:
+        - generic [ref=e116]: Google ★
+        - generic [ref=e122]: ★★★★★
+        - generic [ref=e123]: "2025"
+        - paragraph [ref=e124]:
+          - text: Très bonne collaboration avec So Miam. Sérieux, réactivité et contenu de qualité qui permet de
+          - strong [ref=e125]: booster nos ventes
+          - text: "!"
+        - generic [ref=e126]:
+          - generic [ref=e127]: B
+          - generic [ref=e128]: Boris Lombart
+      - generic [ref=e130]:
+        - generic [ref=e131]: Google ★
+        - generic [ref=e137]: ★★★★★
+        - generic [ref=e138]: "2025"
+        - paragraph [ref=e139]:
+          - text: Si vous êtes restaurateur et que vous souhaitez développer votre communication, vous pouvez faire confiance à
+          - strong [ref=e140]: 100% à l'agence So Miam
+          - text: ✨
+        - generic [ref=e141]:
+          - generic [ref=e142]: "N"
+          - generic [ref=e143]: Nathan Poncet
+      - generic [ref=e145]:
+        - generic [ref=e146]: Google ★
+        - generic [ref=e152]: ★★★★★
+        - generic [ref=e153]: 11 oct. 2024
+        - paragraph [ref=e154]:
+          - text: Nous sommes ravis de l'accompagnement et du travail fourni par Thomas et son équipe. Depuis que nous avons commencé à travailler avec eux nous avons vu une
+          - strong [ref=e155]: évolution significative de nos résultats
+          - text: insta et autres, ainsi que du trafic dans notre restaurant ! Allez-y les yeux fermés !
+        - generic [ref=e156]:
+          - generic [ref=e157]: L
+          - generic [ref=e158]: Laetitia Jacquet
+      - generic [ref=e160]:
+        - generic [ref=e161]: Google ★
+        - generic [ref=e167]: ★★★★★
+        - generic [ref=e168]: 9 oct. 2024
+        - paragraph [ref=e169]:
+          - text: Merci Thomas. Un service sérieux et efficace a su apporter
+          - strong [ref=e170]: « le truc » qui manquait
+          - text: à notre savoir-faire en relation client.
+        - generic [ref=e171]:
+          - generic [ref=e172]: R
+          - generic [ref=e173]: Romain
+      - generic [ref=e175]:
+        - generic [ref=e176]: Google ★
+        - generic [ref=e182]: ★★★★★
+        - generic [ref=e183]: 9 oct. 2024
+        - paragraph [ref=e184]:
+          - text: J'ai fait appel à So Miam pour le développement et le marketing de mon établissement. Thomas est une personne très rigoureuse dans son travail, je le recommande si vous souhaitez
+          - strong [ref=e185]: développer votre restaurant
+          - text: "!"
+        - generic [ref=e186]:
+          - generic [ref=e187]: B
+          - generic [ref=e188]: Benjamin
+      - generic [ref=e190]:
+        - generic [ref=e191]: Google ★
+        - generic [ref=e197]: ★★★★★
+        - generic [ref=e198]: 1 août 2024
+        - paragraph [ref=e199]:
+          - text: Très satisfait du travail de So Miam pour la gestion des réseaux sociaux de notre restaurant. Thomas est
+          - strong [ref=e200]: professionnel, réactif
+          - text: et sait parfaitement mettre en valeur notre établissement. Je recommande vivement !
+        - generic [ref=e201]:
+          - generic [ref=e202]: H
+          - generic [ref=e203]: Hugo
+      - generic [ref=e205]:
+        - generic [ref=e206]: Google ★
+        - generic [ref=e212]: ★★★★★
+        - generic [ref=e213]: 7 juin 2024
+        - paragraph [ref=e214]:
+          - text: Excellente relation pro. Ça fait plus d'un an que je travaille avec Thomas, il est
+          - strong [ref=e215]: efficace et super sympa
+          - text: . Restaurateurs, n'hésitez plus !!
+        - generic [ref=e216]:
+          - generic [ref=e217]: "Y"
+          - generic [ref=e218]: Yoann Gloaguen
+  - generic [ref=e220]:
+    - generic [ref=e221]:
+      - generic [ref=e222]: Témoignages privés
+      - generic [ref=e223]: Ils ont aussi travaillé avec nous
+      - paragraph [ref=e224]: Retours clients de So MEDIA, notre activité historique.
+    - generic [ref=e225]:
+      - generic [ref=e226]:
+        - generic [ref=e227]: Témoignage
+        - paragraph [ref=e230]:
+          - text: Prestation excellente, Thomas est à l'écoute et
+          - strong [ref=e231]: très réactif
+          - text: ", je recommande à 1000%."
+        - generic [ref=e232]:
+          - generic [ref=e233]: A
+          - generic [ref=e234]:
+            - generic [ref=e235]: L'Atelier d'Ora
+            - generic [ref=e236]: Bijouterie
+      - generic [ref=e237]:
+        - generic [ref=e238]: Témoignage
+        - paragraph [ref=e241]:
+          - text: Excellent profil. Toujours disponible et à l'écoute. En moins de 4 jours, Thomas a su
+          - strong [ref=e242]: développer notre prototype de boutique en ligne
+          - text: .
+        - generic [ref=e243]:
+          - generic [ref=e244]: J
+          - generic [ref=e245]:
+            - generic [ref=e246]: Jean-Luc
+            - generic [ref=e247]: Directeur, Resport
+      - generic [ref=e248]:
+        - generic [ref=e249]: Témoignage
+        - paragraph [ref=e252]:
+          - text: So MEDIA a redéfini toute notre image de marque et a clairement contribué à la
+          - strong [ref=e253]: hausse de notre chiffre d'affaires
+          - text: . La différence s'est clairement fait ressentir.
+        - generic [ref=e254]:
+          - generic [ref=e255]: S
+          - generic [ref=e256]:
+            - generic [ref=e257]: SKINEVIA
+            - generic [ref=e258]: E-commerce cosmétiques
+      - generic [ref=e259]:
+        - generic [ref=e260]: Témoignage
+        - paragraph [ref=e263]:
+          - text: Thomas a été très à l'écoute et aujourd'hui je ne reçois que des
+          - strong [ref=e264]: félicitations pour le site
+          - text: "!"
+        - generic [ref=e265]:
+          - generic [ref=e266]: C
+          - generic [ref=e267]:
+            - generic [ref=e268]: Claire Ahache
+            - generic [ref=e269]: Coach immobilier
+      - generic [ref=e270]:
+        - generic [ref=e271]: Témoignage
+        - paragraph [ref=e274]:
+          - text: Thomas, c'est le chef d'Internet. Une
+          - strong [ref=e275]: méthode de travail très efficace
+          - text: . Je recommande So MEDIA à tout entrepreneur qui cherche un partenariat web de qualité.
+        - generic [ref=e276]:
+          - generic [ref=e277]: E
+          - generic [ref=e278]:
+            - generic [ref=e279]: Emmanuel Wambre
+            - generic [ref=e280]: Traiteur, Toasts du Chef
+      - generic [ref=e281]:
+        - generic [ref=e282]: Témoignage
+        - paragraph [ref=e285]:
+          - text: Je recommande vivement So MEDIA. Thomas est
+          - strong [ref=e286]: compétent, fiable et professionnel
+          - text: . Il a un vrai sens de la relation client. Mon site a vu le jour grâce à So MEDIA !
+        - generic [ref=e287]:
+          - generic [ref=e288]: C
+          - generic [ref=e289]:
+            - generic [ref=e290]: Christelle Archambault
+            - generic [ref=e291]: Coach, Trouver sa juste place
+  - generic [ref=e292]:
+    - heading "Vous êtes restaurateur ? Parlons de votre projet." [level=2] [ref=e293]: Vous êtes restaurateur ?Parlons de votre projet.
+    - paragraph [ref=e294]: Diagnostic gratuit, sans engagement. On regarde ensemble comment remplir vos tables.
+    - link "Prendre RDV →" [ref=e295] [cursor=pointer]:
+      - /url: https://recette.so-miam.com
+  - contentinfo [ref=e296]:
+    - generic [ref=e297]: SO MIAM
+    - generic [ref=e298]:
+      - link "Mentions légales" [ref=e299] [cursor=pointer]:
+        - /url: /mentions-legales
+      - link "CGV" [ref=e300] [cursor=pointer]:
+        - /url: /cgv
+      - link "CGU" [ref=e301] [cursor=pointer]:
+        - /url: /cgu
+      - link "Politique de confidentialité" [ref=e302] [cursor=pointer]:
+        - /url: /politique-confidentialite
+      - link "Agence Lille" [ref=e303] [cursor=pointer]:
+        - /url: /agence-communication-restaurant-lille
+      - link "Meta Ads" [ref=e304] [cursor=pointer]:
+        - /url: /meta-ads-restaurant
+      - link "Shooting photo" [ref=e305] [cursor=pointer]:
+        - /url: /shooting-photo-restaurant
+      - link "Avis" [ref=e306] [cursor=pointer]:
+        - /url: /avis
+    - generic [ref=e307]: © 2026 So MIAM — Agence digitale restaurants · Lille

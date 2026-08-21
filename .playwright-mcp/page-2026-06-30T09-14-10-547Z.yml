@@ -1,0 +1,564 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e3]: SO MIAM
+    - link "Prendre RDV" [ref=f1e4] [cursor=pointer]:
+      - /url: https://recette.so-miam.com/
+  - generic [ref=f1e9]:
+    - generic [ref=f1e10]:
+      - generic [ref=f1e11]:
+        - generic [ref=f1e12]: ★
+        - text: +100 restaurants accompagnés
+      - heading "Votre resto mérite d'être vu." [level=1] [ref=f1e13]:
+        - text: Votre resto mérite
+        - text: d'être
+        - emphasis [ref=f1e14]: vu.
+      - paragraph [ref=f1e15]:
+        - text: Pendant que
+        - strong [ref=f1e16]: vous faites tourner votre restaurant
+        - text: ", on s'occupe de remplir vos tables grâce aux réseaux sociaux, à Google et à la publicité."
+      - generic [ref=f1e17]:
+        - link "Réserver un appel stratégique" [ref=f1e18] [cursor=pointer]:
+          - /url: https://recette.so-miam.com/
+        - link "Voir les résultats →" [ref=f1e19] [cursor=pointer]:
+          - /url: "#resultats"
+      - link "Découvrir So MIAM Pro →" [ref=f1e20] [cursor=pointer]:
+        - /url: /pro
+    - img "Café de Paris — client So MIAM" [ref=f1e23]
+  - generic [ref=f1e24]:
+    - generic [ref=f1e25]: Ils nous font confiance
+    - generic [ref=f1e27]:
+      - img "Comptoir 44" [ref=f1e28]
+      - img "Gabo" [ref=f1e29]
+      - img "Maison L" [ref=f1e30]
+      - img "Le Paradoxe" [ref=f1e31]
+      - img "Barbue d'Anvers" [ref=f1e32]
+      - img "L'Evidence Traiteur" [ref=f1e33]
+      - img "Café de Paris" [ref=f1e34]
+      - img "Bi Bim Bap" [ref=f1e35]
+      - img "La Mamounia" [ref=f1e36]
+      - img "Le Carthage" [ref=f1e37]
+      - img "Two D" [ref=f1e38]
+      - img "Square" [ref=f1e39]
+      - img "Poke Wave" [ref=f1e40]
+      - img "OWW" [ref=f1e41]
+      - img "Les Toquées" [ref=f1e42]
+      - img "Des Saveurs et des Ailes" [ref=f1e43]
+      - img "La Promenade"
+      - img "Qi Loh"
+      - img "Bistrot 235"
+      - img "Bouillon Pignol"
+      - img "Autour de vous"
+      - img "Le Petit Grain"
+      - img "Michel"
+      - img "L'Industrie"
+      - img "Casa Mazita"
+      - img "Comptoir 44" [ref=f1e44]
+      - img "Gabo" [ref=f1e45]
+      - img "Maison L" [ref=f1e46]
+      - img "Le Paradoxe" [ref=f1e47]
+      - img "Barbue d'Anvers" [ref=f1e48]
+      - img "L'Evidence Traiteur" [ref=f1e49]
+      - img "Café de Paris" [ref=f1e50]
+      - img "Bi Bim Bap" [ref=f1e51]
+      - img "La Mamounia" [ref=f1e52]
+      - img "Le Carthage" [ref=f1e53]
+      - img "Two D" [ref=f1e54]
+      - img "Square" [ref=f1e55]
+      - img "Poke Wave" [ref=f1e56]
+      - img "OWW" [ref=f1e57]
+      - img "Les Toquées" [ref=f1e58]
+      - img "Des Saveurs et des Ailes" [ref=f1e59]
+      - img "La Promenade"
+      - img "Qi Loh"
+      - img "Bistrot 235"
+      - img "Bouillon Pignol"
+      - img "Autour de vous"
+      - img "Le Petit Grain"
+      - img "Michel"
+      - img "L'Industrie"
+      - img "Casa Mazita"
+  - generic [ref=f1e60]:
+    - generic [ref=f1e61]:
+      - generic [ref=f1e62]: Nos shootings
+      - heading "À quoi ressemble une belle communication restaurant." [level=2] [ref=f1e63]:
+        - text: À quoi ressemble une belle
+        - text: communication restaurant.
+    - generic [ref=f1e65]:
+      - img "Photo culinaire professionnelle restaurant Lille" [ref=f1e67]
+      - img "Ambiance restaurant photographie So MIAM" [ref=f1e69]
+      - img "Plat gastronomique shooting photo Lille" [ref=f1e71]
+      - img "Intérieur restaurant photographie professionnelle" [ref=f1e73]
+      - img "Dessert photographié en studio culinaire" [ref=f1e75]
+      - img "Photographie culinaire créative plat restaurant" [ref=f1e77]
+      - img "Service en salle restaurant ambiance chaleureuse" [ref=f1e79]
+      - img "Cocktail et boisson photographie culinaire" [ref=f1e81]
+      - img "Plat signature restaurant shooting professionnel" [ref=f1e83]
+      - img "Décoration intérieure restaurant Lille" [ref=f1e85]
+      - img "Entrée gastronomique photo culinaire" [ref=f1e87]
+      - img "Assiette dressée photographie food Lille" [ref=f1e89]
+      - img "Terrasse restaurant photographie ambiance" [ref=f1e91]
+      - img "Photo culinaire professionnelle restaurant Lille" [ref=f1e93]
+      - img "Ambiance restaurant photographie So MIAM" [ref=f1e95]
+      - img "Plat gastronomique shooting photo Lille" [ref=f1e97]
+      - img "Intérieur restaurant photographie professionnelle" [ref=f1e99]
+      - img "Dessert photographié en studio culinaire" [ref=f1e101]
+      - img "Photographie culinaire créative plat restaurant" [ref=f1e103]
+      - img "Service en salle restaurant ambiance chaleureuse" [ref=f1e105]
+      - img "Cocktail et boisson photographie culinaire" [ref=f1e107]
+      - img "Plat signature restaurant shooting professionnel" [ref=f1e109]
+      - img "Décoration intérieure restaurant Lille" [ref=f1e111]
+      - img "Entrée gastronomique photo culinaire" [ref=f1e113]
+      - img "Assiette dressée photographie food Lille" [ref=f1e115]
+      - img "Terrasse restaurant photographie ambiance" [ref=f1e117]
+      - img "Photo culinaire professionnelle restaurant Lille" [ref=f1e119]
+      - img "Ambiance restaurant photographie So MIAM" [ref=f1e121]
+      - img "Plat gastronomique shooting photo Lille" [ref=f1e123]
+      - img "Intérieur restaurant photographie professionnelle" [ref=f1e125]
+      - img "Dessert photographié en studio culinaire" [ref=f1e127]
+      - img "Photographie culinaire créative plat restaurant" [ref=f1e129]
+      - img "Service en salle restaurant ambiance chaleureuse" [ref=f1e131]
+      - img "Cocktail et boisson photographie culinaire" [ref=f1e133]
+      - img "Plat signature restaurant shooting professionnel" [ref=f1e135]
+      - img "Décoration intérieure restaurant Lille" [ref=f1e137]
+      - img "Entrée gastronomique photo culinaire" [ref=f1e139]
+      - img "Assiette dressée photographie food Lille" [ref=f1e141]
+      - img "Terrasse restaurant photographie ambiance" [ref=f1e143]
+      - img "Photo culinaire professionnelle restaurant Lille" [ref=f1e145]
+      - img "Ambiance restaurant photographie So MIAM" [ref=f1e147]
+      - img "Plat gastronomique shooting photo Lille" [ref=f1e149]
+      - img "Intérieur restaurant photographie professionnelle" [ref=f1e151]
+      - img "Dessert photographié en studio culinaire" [ref=f1e153]
+      - img "Photographie culinaire créative plat restaurant" [ref=f1e155]
+      - img "Service en salle restaurant ambiance chaleureuse" [ref=f1e157]
+      - img "Cocktail et boisson photographie culinaire" [ref=f1e159]
+      - img "Plat signature restaurant shooting professionnel" [ref=f1e161]
+      - img "Décoration intérieure restaurant Lille" [ref=f1e163]
+      - img "Entrée gastronomique photo culinaire" [ref=f1e165]
+      - img "Assiette dressée photographie food Lille" [ref=f1e167]
+      - img "Terrasse restaurant photographie ambiance" [ref=f1e169]
+      - img "Photo culinaire professionnelle restaurant Lille" [ref=f1e171]
+      - img "Ambiance restaurant photographie So MIAM" [ref=f1e173]
+      - img "Plat gastronomique shooting photo Lille" [ref=f1e175]
+      - img "Intérieur restaurant photographie professionnelle" [ref=f1e177]
+      - img "Dessert photographié en studio culinaire" [ref=f1e179]
+      - img "Photographie culinaire créative plat restaurant" [ref=f1e181]
+      - img "Service en salle restaurant ambiance chaleureuse" [ref=f1e183]
+      - img "Cocktail et boisson photographie culinaire" [ref=f1e185]
+      - img "Plat signature restaurant shooting professionnel" [ref=f1e187]
+      - img "Décoration intérieure restaurant Lille" [ref=f1e189]
+      - img "Entrée gastronomique photo culinaire" [ref=f1e191]
+      - img "Assiette dressée photographie food Lille" [ref=f1e193]
+      - img "Terrasse restaurant photographie ambiance" [ref=f1e195]
+  - generic [ref=f1e198]:
+    - generic [ref=f1e199]:
+      - generic [ref=f1e200]: "+100"
+      - generic [ref=f1e201]: Restaurants accompagnés
+    - generic [ref=f1e202]:
+      - generic [ref=f1e203]: +40%
+      - generic [ref=f1e204]:
+        - text: De réservations en moyenne
+        - text: sur l'ensemble des clients accompagnés
+    - generic [ref=f1e205]:
+      - generic [ref=f1e206]: 4,50€
+      - generic [ref=f1e207]: Coût moyen par réservation générée
+    - generic [ref=f1e208]:
+      - generic [ref=f1e209]: 3x
+      - generic [ref=f1e210]: Plus de visibilité sur Google
+  - generic [ref=f1e211]:
+    - generic [ref=f1e212]: Comment ça marche
+    - heading "3 étapes pour remplir votre restaurant." [level=2] [ref=f1e213]:
+      - text: 3 étapes pour remplir
+      - text: votre restaurant.
+    - paragraph [ref=f1e214]: On s'occupe de tout. Vous vous concentrez sur ce que vous faites de mieux.
+    - generic [ref=f1e215]:
+      - generic [ref=f1e216]:
+        - generic [ref=f1e218]: "01"
+        - generic [ref=f1e219]: Diagnostic gratuit
+        - paragraph [ref=f1e220]: On évalue vos avis, détecte les faiblesses en communication et identifie les opportunités manquées. Si on peut vous aider, on démarre. Si on peut pas, on vous le dit.
+      - generic [ref=f1e221]:
+        - generic [ref=f1e223]: "02"
+        - generic [ref=f1e224]: Shooting photo & vidéo offert
+        - paragraph [ref=f1e225]: Des photos et vidéos de qualité professionnelle, ça change tout. On réalise un shooting photo ET un tournage vidéo pour capturer l'essence de votre restaurant. Inclus dans toutes nos offres.
+      - generic [ref=f1e226]:
+        - generic [ref=f1e228]: "03"
+        - generic [ref=f1e229]: Accompagnement So MIAM
+        - paragraph [ref=f1e230]: On gère vos réseaux sociaux, votre fiche Google et vos publicités Meta. Vous recevez un rapport de performance mensuel. Pendant que vous cuisinez.
+  - generic [ref=f1e231]:
+    - generic [ref=f1e232]: Pourquoi So MIAM
+    - heading "Ce qu'on vous apporte concrètement." [level=2] [ref=f1e233]:
+      - text: Ce qu'on vous apporte
+      - text: concrètement.
+    - paragraph [ref=f1e234]: Pas de promesses floues. Voilà ce qui change pour votre restaurant.
+    - generic [ref=f1e235]:
+      - generic [ref=f1e236]:
+        - img [ref=f1e238]
+        - generic [ref=f1e241]: Visibilité immédiate
+        - paragraph [ref=f1e242]: Vos futurs clients vous cherchent sur Internet. On s'assure qu'ils vous trouvent, vous, avant tout le monde.
+      - generic [ref=f1e243]:
+        - img [ref=f1e245]
+        - generic [ref=f1e250]: Communauté fidèle
+        - paragraph [ref=f1e251]: On crée du lien avec vos clients actuels et on en attire de nouveaux. Engagement réel, pas du chiffre gonflé.
+      - generic [ref=f1e252]:
+        - img [ref=f1e254]
+        - generic [ref=f1e256]: Publicités qui convertissent
+        - paragraph [ref=f1e257]: "Des campagnes Meta Ads ciblées sur les gourmands de votre zone. Coût moyen constaté : 3€ par réservation générée."
+      - generic [ref=f1e258]:
+        - img [ref=f1e260]
+        - generic [ref=f1e264]: Réputation Google
+        - paragraph [ref=f1e265]: Fiche Google optimisée, avis gérés, position locale améliorée. Vos clients lisent les avis avant de réserver.
+      - generic [ref=f1e266]:
+        - img [ref=f1e268]
+        - generic [ref=f1e271]: Rapport mensuel
+        - paragraph [ref=f1e272]: "Chaque mois, un rapport de performance complet : réservations générées, portée, publicités. Transparence totale."
+      - generic [ref=f1e273]:
+        - img [ref=f1e275]
+        - generic [ref=f1e277]: Réactivité & proximité
+        - paragraph [ref=f1e278]: Une équipe dédiée, des délais respectés, un interlocuteur direct. Pas de ticket, pas de robot.
+  - generic [ref=f1e279]:
+    - generic [ref=f1e280]: Nos services
+    - heading "Tout ce qu'il faut pour remplir vos tables." [level=2] [ref=f1e281]:
+      - text: Tout ce qu'il faut pour
+      - text: remplir vos tables.
+    - paragraph [ref=f1e282]: Une offre complète, un seul interlocuteur.
+    - generic [ref=f1e283]:
+      - generic [ref=f1e284]:
+        - img [ref=f1e286]
+        - generic [ref=f1e290]: Shooting photo
+      - generic [ref=f1e291]:
+        - img [ref=f1e293]
+        - generic [ref=f1e296]: Vidéos
+      - generic [ref=f1e297]:
+        - img [ref=f1e299]
+        - generic [ref=f1e301]: Réseaux sociaux
+      - generic [ref=f1e302]:
+        - img [ref=f1e304]
+        - generic [ref=f1e307]: Google
+      - generic [ref=f1e308]:
+        - img [ref=f1e310]
+        - generic [ref=f1e312]: Publicités Meta
+      - generic [ref=f1e313]:
+        - img [ref=f1e315]
+        - generic [ref=f1e319]: Influenceurs
+      - generic [ref=f1e320]:
+        - img [ref=f1e322]
+        - generic [ref=f1e325]: SMS & Email
+      - generic [ref=f1e326]:
+        - img [ref=f1e328]
+        - generic [ref=f1e330]: Gestion des avis
+      - generic [ref=f1e331]:
+        - img [ref=f1e333]
+        - generic [ref=f1e338]: QR Code
+      - generic [ref=f1e339]:
+        - img [ref=f1e341]
+        - generic [ref=f1e343]: Rapport de perf.
+  - generic [ref=f1e344]:
+    - generic [ref=f1e345]: Résultats clients
+    - heading "Des chiffres, pas des promesses." [level=2] [ref=f1e346]:
+      - text: Des chiffres, pas
+      - text: des promesses.
+    - paragraph [ref=f1e347]: Ce qu'on a obtenu pour nos clients. Vérifiable.
+    - generic [ref=f1e348]:
+      - generic [ref=f1e350]:
+        - generic [ref=f1e351]:
+          - img "White Lotus" [ref=f1e353]
+          - generic [ref=f1e354]:
+            - generic [ref=f1e355]: ×2
+            - generic [ref=f1e356]: Réservations doublées en 1 mois
+            - generic [ref=f1e357]: White Lotus
+        - generic [ref=f1e358]:
+          - img "Maison L" [ref=f1e360]
+          - generic [ref=f1e361]:
+            - generic [ref=f1e362]: +130%
+            - generic [ref=f1e363]: De réservations supplémentaires en 3 mois
+            - generic [ref=f1e364]: Maison L
+        - generic [ref=f1e365]:
+          - img "Café de Paris" [ref=f1e367]
+          - generic [ref=f1e368]:
+            - generic [ref=f1e369]: +75%
+            - generic [ref=f1e370]: De réservations générées en 3 mois
+            - generic [ref=f1e371]: Café de Paris
+        - generic [ref=f1e372]:
+          - img "Le Paradoxe" [ref=f1e374]
+          - generic [ref=f1e375]:
+            - generic [ref=f1e376]: +45%
+            - generic [ref=f1e377]: De réservations en plus en 3 mois
+            - generic [ref=f1e378]: Le Paradoxe
+        - generic [ref=f1e379]:
+          - img "Autour de vous" [ref=f1e381]
+          - generic [ref=f1e382]:
+            - generic [ref=f1e383]: +40%
+            - generic [ref=f1e384]: De réservations vs l'année précédente
+            - generic [ref=f1e385]: Autour de vous
+        - generic [ref=f1e386]:
+          - img "Sweet Lady" [ref=f1e388]
+          - generic [ref=f1e389]:
+            - generic [ref=f1e390]: 60→3000
+            - generic [ref=f1e391]: Abonnés gagnés en seulement 1 mois
+            - generic [ref=f1e392]: Sweet Lady
+        - generic [ref=f1e393]:
+          - img "Domus Sicilia" [ref=f1e395]
+          - generic [ref=f1e396]:
+            - generic [ref=f1e397]: 2,93€
+            - generic [ref=f1e398]: Seulement par réservation générée
+            - generic [ref=f1e399]: Domus Sicilia
+        - generic [ref=f1e400]:
+          - img "Bi Bim Bap" [ref=f1e402]
+          - generic [ref=f1e403]:
+            - generic [ref=f1e404]: "#1"
+            - generic [ref=f1e405]: Sur Google sur « restaurant asiatique Lille »
+            - generic [ref=f1e406]: Bi Bim Bap
+        - generic [ref=f1e407]:
+          - img "Le Paradoxe" [ref=f1e409]
+          - generic [ref=f1e410]:
+            - generic [ref=f1e411]: "#1"
+            - generic [ref=f1e412]: Sur Google sur « restaurant Tourcoing »
+            - generic [ref=f1e413]: Le Paradoxe
+        - generic [ref=f1e414]:
+          - img "White Lotus" [ref=f1e416]
+          - generic [ref=f1e417]:
+            - generic [ref=f1e418]: ×2
+            - generic [ref=f1e419]: Réservations doublées en 1 mois
+            - generic [ref=f1e420]: White Lotus
+        - generic [ref=f1e421]:
+          - img "Maison L" [ref=f1e423]
+          - generic [ref=f1e424]:
+            - generic [ref=f1e425]: +130%
+            - generic [ref=f1e426]: De réservations supplémentaires en 3 mois
+            - generic [ref=f1e427]: Maison L
+        - generic [ref=f1e428]:
+          - img "Café de Paris" [ref=f1e430]
+          - generic [ref=f1e431]:
+            - generic [ref=f1e432]: +75%
+            - generic [ref=f1e433]: De réservations générées en 3 mois
+            - generic [ref=f1e434]: Café de Paris
+        - generic [ref=f1e435]:
+          - img "Le Paradoxe" [ref=f1e437]
+          - generic [ref=f1e438]:
+            - generic [ref=f1e439]: +45%
+            - generic [ref=f1e440]: De réservations en plus en 3 mois
+            - generic [ref=f1e441]: Le Paradoxe
+        - generic [ref=f1e442]:
+          - img "Autour de vous" [ref=f1e444]
+          - generic [ref=f1e445]:
+            - generic [ref=f1e446]: +40%
+            - generic [ref=f1e447]: De réservations vs l'année précédente
+            - generic [ref=f1e448]: Autour de vous
+        - generic [ref=f1e449]:
+          - img "Sweet Lady" [ref=f1e451]
+          - generic [ref=f1e452]:
+            - generic [ref=f1e453]: 60→3000
+            - generic [ref=f1e454]: Abonnés gagnés en seulement 1 mois
+            - generic [ref=f1e455]: Sweet Lady
+        - generic [ref=f1e456]:
+          - img "Domus Sicilia" [ref=f1e458]
+          - generic [ref=f1e459]:
+            - generic [ref=f1e460]: 2,93€
+            - generic [ref=f1e461]: Seulement par réservation générée
+            - generic [ref=f1e462]: Domus Sicilia
+        - generic [ref=f1e463]:
+          - img "Bi Bim Bap" [ref=f1e465]
+          - generic [ref=f1e466]:
+            - generic [ref=f1e467]: "#1"
+            - generic [ref=f1e468]: Sur Google sur « restaurant asiatique Lille »
+            - generic [ref=f1e469]: Bi Bim Bap
+        - generic [ref=f1e470]:
+          - img "Le Paradoxe" [ref=f1e472]
+          - generic [ref=f1e473]:
+            - generic [ref=f1e474]: "#1"
+            - generic [ref=f1e475]: Sur Google sur « restaurant Tourcoing »
+            - generic [ref=f1e476]: Le Paradoxe
+        - generic [ref=f1e477]:
+          - img "White Lotus" [ref=f1e479]
+          - generic [ref=f1e480]:
+            - generic [ref=f1e481]: ×2
+            - generic [ref=f1e482]: Réservations doublées en 1 mois
+            - generic [ref=f1e483]: White Lotus
+        - generic [ref=f1e484]:
+          - img "Maison L" [ref=f1e486]
+          - generic [ref=f1e487]:
+            - generic [ref=f1e488]: +130%
+            - generic [ref=f1e489]: De réservations supplémentaires en 3 mois
+            - generic [ref=f1e490]: Maison L
+        - generic [ref=f1e491]:
+          - img "Café de Paris" [ref=f1e493]
+          - generic [ref=f1e494]:
+            - generic [ref=f1e495]: +75%
+            - generic [ref=f1e496]: De réservations générées en 3 mois
+            - generic [ref=f1e497]: Café de Paris
+        - generic [ref=f1e498]:
+          - img "Le Paradoxe" [ref=f1e500]
+          - generic [ref=f1e501]:
+            - generic [ref=f1e502]: +45%
+            - generic [ref=f1e503]: De réservations en plus en 3 mois
+            - generic [ref=f1e504]: Le Paradoxe
+        - generic [ref=f1e505]:
+          - img "Autour de vous" [ref=f1e507]
+          - generic [ref=f1e508]:
+            - generic [ref=f1e509]: +40%
+            - generic [ref=f1e510]: De réservations vs l'année précédente
+            - generic [ref=f1e511]: Autour de vous
+        - generic [ref=f1e512]:
+          - img "Sweet Lady" [ref=f1e514]
+          - generic [ref=f1e515]:
+            - generic [ref=f1e516]: 60→3000
+            - generic [ref=f1e517]: Abonnés gagnés en seulement 1 mois
+            - generic [ref=f1e518]: Sweet Lady
+        - generic [ref=f1e519]:
+          - img "Domus Sicilia" [ref=f1e521]
+          - generic [ref=f1e522]:
+            - generic [ref=f1e523]: 2,93€
+            - generic [ref=f1e524]: Seulement par réservation générée
+            - generic [ref=f1e525]: Domus Sicilia
+        - generic [ref=f1e526]:
+          - img "Bi Bim Bap" [ref=f1e528]
+          - generic [ref=f1e529]:
+            - generic [ref=f1e530]: "#1"
+            - generic [ref=f1e531]: Sur Google sur « restaurant asiatique Lille »
+            - generic [ref=f1e532]: Bi Bim Bap
+        - generic [ref=f1e533]:
+          - img "Le Paradoxe" [ref=f1e535]
+          - generic [ref=f1e536]:
+            - generic [ref=f1e537]: "#1"
+            - generic [ref=f1e538]: Sur Google sur « restaurant Tourcoing »
+            - generic [ref=f1e539]: Le Paradoxe
+      - generic [ref=f1e540]:
+        - button "←" [ref=f1e541] [cursor=pointer]
+        - button "→" [ref=f1e552] [cursor=pointer]
+  - generic [ref=f1e553]:
+    - generic [ref=f1e554]: Témoignages
+    - heading "Ce que disent nos clients." [level=2] [ref=f1e555]:
+      - text: Ce que disent
+      - text: nos clients.
+    - paragraph [ref=f1e556]: Ils ont choisi So MIAM. Voilà ce qu'ils en pensent.
+    - generic [ref=f1e557]:
+      - generic [ref=f1e560]:
+        - generic [ref=f1e561]: "\""
+        - paragraph [ref=f1e562]:
+          - text: Très bonne agence qui nous suit depuis maintenant
+          - strong [ref=f1e563]: plus d'un an
+          - text: "! Parfait pour les restaurateurs ! Pro et efficace !"
+        - generic [ref=f1e564]:
+          - generic [ref=f1e565]: P
+          - generic [ref=f1e566]:
+            - generic [ref=f1e567]: Café de Paris
+            - generic [ref=f1e568]: Paco
+      - button "←" [ref=f1e569] [cursor=pointer]
+      - button "→" [ref=f1e570] [cursor=pointer]
+  - generic [ref=f1e583]:
+    - generic [ref=f1e584]: L'équipe
+    - heading "Les meilleurs en marketing restaurant." [level=2] [ref=f1e585]:
+      - text: Les meilleurs en
+      - text: marketing restaurant.
+    - paragraph [ref=f1e586]: Une équipe dédiée, des experts dans leur domaine.
+    - generic [ref=f1e587]:
+      - generic [ref=f1e588]:
+        - img "Thomas" [ref=f1e590]
+        - generic [ref=f1e591]: Thomas
+        - generic [ref=f1e592]: Directeur
+      - generic [ref=f1e593]:
+        - img "Haren" [ref=f1e595]
+        - generic [ref=f1e596]: Haren
+        - generic [ref=f1e597]: Community Manager
+      - generic [ref=f1e598]:
+        - img "Nouria" [ref=f1e600]
+        - generic [ref=f1e601]: Nouria
+        - generic [ref=f1e602]: Community Manager
+      - generic [ref=f1e603]:
+        - img "Hichem" [ref=f1e605]
+        - generic [ref=f1e606]: Hichem
+        - generic [ref=f1e607]: Créateur vidéo
+      - generic [ref=f1e608]:
+        - img "Yoann" [ref=f1e610]
+        - generic [ref=f1e611]: Yoann
+        - generic [ref=f1e612]: Photographe culinaire
+      - generic [ref=f1e613]:
+        - img "Enzo" [ref=f1e615]
+        - generic [ref=f1e616]: Enzo
+        - generic [ref=f1e617]: Créateur de site web
+      - generic [ref=f1e618]:
+        - img "Gauthier" [ref=f1e620]
+        - generic [ref=f1e621]: Gauthier
+        - generic [ref=f1e622]: Commercial
+  - generic [ref=f1e624]:
+    - generic [ref=f1e625]:
+      - heading "Prêt à remplir vos tables ?" [level=2] [ref=f1e626]:
+        - text: Prêt à remplir
+        - text: vos tables ?
+      - paragraph [ref=f1e627]: Un appel de 30 minutes suffit pour analyser votre situation et vous donner un plan d'action concret. Gratuit, sans engagement.
+      - generic [ref=f1e628]:
+        - generic [ref=f1e629]:
+          - generic [ref=f1e630]: ✓
+          - text: Analyser votre situation actuelle
+        - generic [ref=f1e631]:
+          - generic [ref=f1e632]: ✓
+          - text: Identifier vos 3 blocages principaux
+        - generic [ref=f1e633]:
+          - generic [ref=f1e634]: ✓
+          - text: Vous donner un plan d'action chiffré
+    - generic [ref=f1e635]:
+      - generic [ref=f1e636]:
+        - generic [ref=f1e637]: Vous êtes à Lille ?
+        - paragraph [ref=f1e638]: On peut se rencontrer directement. Envoyez-nous un message, on revient vers vous sous 24h.
+        - link "Envoyer un message →" [ref=f1e639] [cursor=pointer]:
+          - /url: https://recette.so-miam.com/
+      - generic [ref=f1e640]:
+        - generic [ref=f1e641]: Partout en France
+        - paragraph [ref=f1e642]: Réservez un appel stratégique de 45 min sur Google Meet. On analyse votre situation et on vous donne un plan d'action.
+        - link "Réserver mon appel →" [ref=f1e643] [cursor=pointer]:
+          - /url: https://recette.so-miam.com/
+  - generic [ref=f1e645]:
+    - generic [ref=f1e646]: So MIAM Pro
+    - heading "Vous préférez gérer vous-même ?" [level=2] [ref=f1e647]:
+      - text: Vous préférez gérer
+      - text: vous-même ?
+    - paragraph [ref=f1e648]: So MIAM Pro vous donne les mêmes outils que notre agence, en autonomie complète.
+    - generic [ref=f1e649]:
+      - generic [ref=f1e650]:
+        - generic [ref=f1e651]: ✓
+        - text: Planning éditorial IA — un mois de contenu en 1 clic
+      - generic [ref=f1e652]:
+        - generic [ref=f1e653]: ✓
+        - text: Réponses automatiques à tous vos avis Google
+      - generic [ref=f1e654]:
+        - generic [ref=f1e655]: ✓
+        - text: Health Score de votre présence en ligne
+    - link "Découvrir So MIAM Pro →" [ref=f1e656] [cursor=pointer]:
+      - /url: /pro
+    - paragraph [ref=f1e657]: 14 jours d'essai gratuit · 59€/mois · Sans engagement
+  - generic [ref=f1e658]:
+    - generic [ref=f1e659]: Bientôt disponible
+    - heading "La plateforme So MIAM arrive." [level=2] [ref=f1e661]
+    - paragraph [ref=f1e662]: Gérez votre communication restaurant en autonomie, avec l'IA. Soyez parmi les premiers à y accéder.
+    - generic [ref=f1e663]:
+      - textbox "votre@email.com" [ref=f1e664]
+      - button "Rejoindre la liste d'attente" [ref=f1e665] [cursor=pointer]
+  - generic [ref=f1e667]:
+    - generic [ref=f1e668]: ·
+    - img [ref=f1e669]
+    - img [ref=f1e671]
+    - img [ref=f1e673]
+    - img "Yoann Photo"
+    - img [ref=f1e680]:
+      - generic [ref=f1e681]: ZenChef
+  - contentinfo [ref=f1e682]:
+    - generic [ref=f1e683]: SO MIAM
+    - generic [ref=f1e684]:
+      - link "Mentions légales" [ref=f1e685] [cursor=pointer]:
+        - /url: /mentions-legales
+      - link "CGV" [ref=f1e686] [cursor=pointer]:
+        - /url: /cgv
+      - link "CGU" [ref=f1e687] [cursor=pointer]:
+        - /url: /cgu
+      - link "Politique de confidentialité" [ref=f1e688] [cursor=pointer]:
+        - /url: /politique-confidentialite
+      - link "Agence Lille" [ref=f1e689] [cursor=pointer]:
+        - /url: /agence-communication-restaurant-lille
+      - link "Meta Ads" [ref=f1e690] [cursor=pointer]:
+        - /url: /meta-ads-restaurant
+      - link "Shooting photo" [ref=f1e691] [cursor=pointer]:
+        - /url: /shooting-photo-restaurant
+      - link "Avis" [ref=f1e692] [cursor=pointer]:
+        - /url: /avis
+      - link "So MIAM Pro" [ref=f1e693] [cursor=pointer]:
+        - /url: /pro
+    - generic [ref=f1e694]: © 2026 So MIAM — Agence digitale restaurants · Lille
