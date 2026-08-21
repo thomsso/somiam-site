@@ -1,0 +1,311 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog So MIAM — Conseils communication restaurant</title>
+<meta name="description" content="Conseils concrets pour remplir votre restaurant : Google Maps, Instagram, avis clients, publicité. Par So MIAM, spécialiste communication restaurant.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.so-miam.com/blog">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.so-miam.com/blog">
+<meta property="og:title" content="Blog So MIAM — Conseils communication restaurant">
+<meta property="og:description" content="Conseils concrets pour remplir votre restaurant : Google Maps, Instagram, avis clients, publicité.">
+<meta property="og:image" content="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="So MIAM">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog So MIAM — Conseils communication restaurant">
+<meta name="twitter:description" content="Conseils concrets pour remplir votre restaurant.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%23F5C400'>SM</text></svg>">
+<meta name="theme-color" content="#111111">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog So MIAM",
+  "description": "Conseils communication restaurant par So MIAM",
+  "url": "https://www.so-miam.com/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "So MIAM",
+    "url": "https://www.so-miam.com"
+  },
+  "blogPost": posts.map(post => ({
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "datePublished": post.data.date.toISOString(),
+    "author": { "@type": "Person", "name": post.data.author },
+    "url": `https://www.so-miam.com/blog/${post.id}`
+  }))
+})} />
+
+<style>
+:root {
+  --y: #F5C400;
+  --k: #111111;
+  --k2: #1A1A1A;
+  --k3: #222222;
+  --g1: #444444;
+  --g2: #888888;
+  --g3: #CCCCCC;
+  --g4: #E8E8E8;
+  --cr: #FFF8E7;
+  --w: #FFFFFF;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--cr);
+  color: var(--k);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(17,17,17,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--w); letter-spacing: 1px;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--y); }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--g3);
+  text-decoration: none; letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--w); }
+.nav-links a.active { color: var(--y); }
+.nav-cta {
+  background: var(--y); color: var(--k);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px; font-weight: 700;
+  padding: 9px 20px; border-radius: 6px;
+  text-decoration: none; white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245,196,0,0.3);
+}
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--w); border-radius: 2px; transition: 0.3s; }
+
+/* ── HERO ── */
+.blog-hero {
+  padding: 140px 2rem 64px;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.blog-hero-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--y);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+  justify-content: center;
+}
+.blog-hero-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 24px; height: 2px; background: var(--y);
+}
+.blog-hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800; line-height: 1.08;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.blog-hero p {
+  font-size: 17px; color: var(--g1);
+  line-height: 1.6;
+}
+
+/* ── POSTS GRID ── */
+.posts-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem 80px;
+}
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+}
+.post-card {
+  background: var(--w);
+  border-radius: 12px;
+  padding: 32px;
+  text-decoration: none;
+  color: var(--k);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.post-card-category {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--y);
+  margin-bottom: 16px;
+}
+.post-card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 19px; font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  flex: 1;
+}
+.post-card-excerpt {
+  font-size: 14px; color: var(--g1);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.post-card-meta {
+  font-size: 13px; color: var(--g2);
+  display: flex; gap: 12px; align-items: center;
+}
+.post-card-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--g3); }
+.post-card-arrow {
+  margin-top: 20px;
+  font-size: 13px; font-weight: 600;
+  color: var(--y);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--k);
+  padding: 48px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 24px;
+  justify-content: center; text-align: center;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--w); text-decoration: none;
+}
+.footer-logo span { color: var(--y); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.footer-links a {
+  font-size: 13px; color: var(--g2);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--w); }
+.footer-copy { font-size: 12px; color: var(--g1); width: 100%; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: var(--k);
+    padding: 24px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .blog-hero { padding-top: 100px; }
+  footer { padding: 32px 24px; }
+  .footer-links { gap: 4px 16px; }
+  .footer-links a { padding: 8px 0; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">SO<span> MIAM</span></a>
+  <ul class="nav-links">
+    <li><a href="/blog" class="active">Blog</a></li>
+    <li><a href="/gusto">Gusto IA</a></li>
+    <li><a href="/avis">Avis</a></li>
+    <li><a href="/#services">Agence</a></li>
+  </ul>
+  <a href="https://recette.so-miam.com/" class="nav-cta">Essayer Gusto</a>
+  <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="blog-hero">
+  <div class="blog-hero-eyebrow">Blog So MIAM</div>
+  <h1>Conseils concrets pour remplir ton restaurant</h1>
+  <p>Google, Instagram, avis clients — tout ce qu'il faut savoir pour que ta com ramène du monde. Pas de blabla, que du concret.</p>
+</header>
+
+<section class="posts-section">
+  <div class="posts-grid">
+    {posts.map(post => (
+      <a href={`/blog/${post.id}`} class="post-card">
+        <div class="post-card-category">{post.data.category}</div>
+        <h2 class="post-card-title">{post.data.title}</h2>
+        <p class="post-card-excerpt">{post.data.description}</p>
+        <div class="post-card-meta">
+          <span>{post.data.author}</span>
+          <span class="post-card-meta-dot"></span>
+          <time datetime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+          </time>
+        </div>
+        <div class="post-card-arrow">Lire l'article →</div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="footer-logo">SO<span> MIAM</span></a>
+  <div class="footer-links">
+    <a href="/blog">Blog</a>
+    <a href="/gusto" style="color:#F5C400;">Gusto IA</a>
+    <a href="/avis">Avis</a>
+    <a href="/agence-communication-restaurant-lille">Agence Lille</a>
+    <a href="/meta-ads-restaurant">Meta Ads</a>
+    <a href="/shooting-photo-restaurant">Shooting photo</a>
+    <a href="/mentions-legales">Mentions légales</a>
+    <a href="/cgv">CGV</a>
+    <a href="/cgu">CGU</a>
+    <a href="/politique-confidentialite">Confidentialité</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 So MIAM — Agence digitale restaurants · Lille</div>
+</footer>
+
+</body>
+</html>

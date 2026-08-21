@@ -1,0 +1,445 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date?: Date;
+  author?: string;
+  category?: string;
+  image?: string;
+  imageAlt?: string;
+  gusto_cta?: boolean;
+}
+
+const { title, description, date, author, category, image, imageAlt, gusto_cta = true } = Astro.props;
+const formattedDate = date ? new Date(date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>{title} — So MIAM</title>
+<meta name="description" content={description}>
+<meta name="author" content={author || 'Thomas Vandeweghe'}>
+<meta name="robots" content="index, follow">
+<link rel="canonical" href={canonicalURL}>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content={canonicalURL}>
+<meta property="og:title" content={`${title} — So MIAM`}>
+<meta property="og:description" content={description}>
+<meta property="og:image" content={image || 'https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg'}>
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="So MIAM">
+{date && <meta property="article:published_time" content={date.toISOString()} />}
+{author && <meta property="article:author" content={author} />}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={`${title} — So MIAM`}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={image || 'https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg'}>
+
+<!-- Schema.org Article -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": date?.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": author || "Thomas Vandeweghe",
+    "url": "https://www.so-miam.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "So MIAM",
+    "url": "https://www.so-miam.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL.toString()
+  },
+  ...(image ? { "image": image } : {})
+})} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%23F5C400'>SM</text></svg>">
+<meta name="theme-color" content="#111111">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --y: #F5C400;
+  --k: #111111;
+  --k2: #1A1A1A;
+  --k3: #222222;
+  --g1: #444444;
+  --g2: #888888;
+  --g3: #CCCCCC;
+  --g4: #E8E8E8;
+  --cr: #FFF8E7;
+  --w: #FFFFFF;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--cr);
+  color: var(--k);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(17,17,17,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--w); letter-spacing: 1px;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--y); }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--g3);
+  text-decoration: none; letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--w); }
+.nav-links a.active { color: var(--y); }
+.nav-cta {
+  background: var(--y); color: var(--k);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px; font-weight: 700;
+  padding: 9px 20px; border-radius: 6px;
+  text-decoration: none; white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245,196,0,0.3);
+}
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--w); border-radius: 2px; transition: 0.3s; }
+
+/* ── ARTICLE ── */
+.article-header {
+  padding: 120px 0 48px;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.article-breadcrumb {
+  font-size: 13px; color: var(--g2);
+  margin-bottom: 24px;
+}
+.article-breadcrumb a {
+  color: var(--g2); text-decoration: none;
+}
+.article-breadcrumb a:hover { color: var(--k); }
+.article-category {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--y); background: var(--k);
+  padding: 5px 14px; border-radius: 4px;
+  margin-bottom: 20px;
+}
+.article-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 800; line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+.article-meta {
+  font-size: 14px; color: var(--g2);
+  display: flex; gap: 16px; justify-content: center; align-items: center;
+}
+.article-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--g3); }
+
+/* ── CONTENT ── */
+.article-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 2rem 80px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #333;
+}
+.article-content h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px; font-weight: 800;
+  margin: 56px 0 20px;
+  color: var(--k);
+  letter-spacing: -0.3px;
+}
+.article-content h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 700;
+  margin: 40px 0 16px;
+  color: var(--k);
+}
+.article-content p {
+  margin-bottom: 20px;
+}
+.article-content ul, .article-content ol {
+  margin: 16px 0 24px 24px;
+}
+.article-content li {
+  margin-bottom: 8px;
+}
+.article-content strong {
+  color: var(--k);
+  font-weight: 600;
+}
+.article-content blockquote {
+  border-left: 3px solid var(--y);
+  padding: 16px 24px;
+  margin: 28px 0;
+  background: rgba(245,196,0,0.06);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--g1);
+}
+.article-content a {
+  color: var(--k);
+  text-decoration: underline;
+  text-decoration-color: var(--y);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+.article-content a:hover {
+  text-decoration-color: var(--k);
+}
+.article-content img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 28px 0;
+}
+.article-content .highlight-box {
+  background: var(--k);
+  color: var(--w);
+  padding: 28px 32px;
+  border-radius: 12px;
+  margin: 36px 0;
+}
+.article-content .highlight-box strong {
+  color: var(--y);
+}
+
+/* ── GUSTO CTA ── */
+.gusto-cta-block {
+  background: var(--k);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 80px;
+}
+.gusto-cta-block .eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--y); margin-bottom: 16px;
+}
+.gusto-cta-block h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px; font-weight: 800;
+  color: var(--w); margin-bottom: 12px;
+}
+.gusto-cta-block p {
+  color: var(--g3); font-size: 15px;
+  margin-bottom: 28px; line-height: 1.6;
+}
+.gusto-cta-block .btn-primary {
+  background: var(--y); color: var(--k);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px; font-weight: 700;
+  padding: 16px 36px; border-radius: 8px;
+  text-decoration: none; display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none; cursor: pointer;
+}
+.gusto-cta-block .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245,196,0,0.3);
+}
+
+/* ── RELATED ARTICLES ── */
+.related-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 80px;
+}
+.related-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 800;
+  margin-bottom: 32px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+.related-card {
+  background: var(--w);
+  border-radius: 12px;
+  padding: 28px;
+  text-decoration: none;
+  color: var(--k);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.related-card-category {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--y); margin-bottom: 12px;
+}
+.related-card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px; font-weight: 700;
+  line-height: 1.3; margin-bottom: 8px;
+}
+.related-card-date {
+  font-size: 13px; color: var(--g2);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--k);
+  padding: 48px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 24px;
+  justify-content: center; text-align: center;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--w); text-decoration: none;
+}
+.footer-logo span { color: var(--y); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.footer-links a {
+  font-size: 13px; color: var(--g2);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--w); }
+.footer-copy { font-size: 12px; color: var(--g1); width: 100%; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: var(--k);
+    padding: 24px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .article-header { padding-top: 96px; }
+  .article-content { font-size: 16px; }
+  .gusto-cta-block { padding: 36px 24px; margin-left: 1rem; margin-right: 1rem; }
+  .related-section { padding-bottom: 48px; }
+  footer { padding: 32px 24px; }
+  .footer-links { gap: 4px 16px; }
+  .footer-links a { padding: 8px 0; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">SO<span> MIAM</span></a>
+  <ul class="nav-links">
+    <li><a href="/blog" class="active">Blog</a></li>
+    <li><a href="/gusto">Gusto IA</a></li>
+    <li><a href="/avis">Avis</a></li>
+    <li><a href="/#services">Agence</a></li>
+  </ul>
+  <a href="https://recette.so-miam.com/" class="nav-cta">Essayer Gusto</a>
+  <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <nav class="article-breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">So MIAM</a> → <a href="/blog">Blog</a> → {title}
+  </nav>
+  {category && <span class="article-category">{category}</span>}
+  <h1 class="article-title">{title}</h1>
+  <div class="article-meta">
+    {author && <span>{author}</span>}
+    <span class="article-meta-dot"></span>
+    {formattedDate && <time datetime={date?.toISOString()}>{formattedDate}</time>}
+  </div>
+</header>
+
+<!-- CONTENT -->
+<article class="article-content">
+  <slot />
+</article>
+
+<!-- GUSTO CTA -->
+{gusto_cta && (
+  <section class="gusto-cta-block">
+    <div class="eyebrow">Gusto IA</div>
+    <h3>Ta communication restaurant en pilote automatique</h3>
+    <p>Posts Instagram, réponses aux avis Google, référencement local — Gusto s'occupe de tout. 14 jours d'essai gratuit.</p>
+    <a href="https://recette.so-miam.com/" class="btn-primary">Essayer gratuitement →</a>
+  </section>
+)}
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo">SO<span> MIAM</span></a>
+  <div class="footer-links">
+    <a href="/blog">Blog</a>
+    <a href="/gusto" style="color:#F5C400;">Gusto IA</a>
+    <a href="/avis">Avis</a>
+    <a href="/agence-communication-restaurant-lille">Agence Lille</a>
+    <a href="/meta-ads-restaurant">Meta Ads</a>
+    <a href="/shooting-photo-restaurant">Shooting photo</a>
+    <a href="/mentions-legales">Mentions légales</a>
+    <a href="/cgv">CGV</a>
+    <a href="/cgu">CGU</a>
+    <a href="/politique-confidentialite">Confidentialité</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 So MIAM — Agence digitale restaurants · Lille</div>
+</footer>
+
+</body>
+</html>
