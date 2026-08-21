@@ -947,6 +947,7 @@ footer {
   /* NAV */
   nav { padding: 0 16px; }
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .hamburger { display: flex; }
 
   /* HERO — fullscreen immersif */
@@ -966,7 +967,7 @@ footer {
     align-items: center;
     justify-content: center;
     min-height: 100svh;
-    padding: 100px 24px 40px;
+    padding: 100px 20px 40px;
   }
   .hero-right {
     position: absolute;
@@ -1001,11 +1002,11 @@ footer {
   }
   .hero-float-card { display: none; }
   .hero-badge { margin: 0 auto 20px; }
-  h1 { font-size: 36px; letter-spacing: -0.5px; }
+  h1 { font-size: 34px; letter-spacing: -0.5px; }
   .hero-sub { font-size: 15px; margin: 0 auto 32px; max-width: 100%; color: rgba(255,255,255,0.8); }
   .hero-sub strong { color: #fff; }
   .hero-btns { flex-direction: column; align-items: center; gap: 12px; width: 100%; }
-  .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; min-height: 48px; display: flex; align-items: center; justify-content: center; }
 
   /* SECTIONS PADDING */
   #logos, #stats, #comment, #avantages, #services,
@@ -1014,28 +1015,38 @@ footer {
   /* LOGOS */
   .logos-grid { gap: 20px; justify-content: center; }
   .logo-item { font-size: 13px; }
+  .logos-strip img { height: 60px; max-width: 120px; }
+  .logos-strip { gap: 32px; }
+
+  /* GALERIE */
+  #galerie > div:first-child { padding: 40px 16px 20px !important; }
+  .gallery-item { width: 200px; height: 200px; }
+  .gallery-track { gap: 8px; }
+  .gallery-track-wrap::before,
+  .gallery-track-wrap::after { width: 40px; }
 
   /* STATS */
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; }
   .stat-item { padding: 24px 16px; }
-  .stat-num { font-size: 36px; }
+  .stat-num { font-size: 32px; }
   .stat-desc { font-size: 12px; }
 
   /* COMMENT CA MARCHE */
-  .section-title { font-size: 28px; }
+  .section-title { font-size: 26px; }
   .section-sub { font-size: 14px; margin-bottom: 40px; }
   .steps-grid { grid-template-columns: 1fr; gap: 12px; }
-  .step-card { padding: 28px 24px; }
+  .step-card { padding: 28px 20px; }
   .step-num { font-size: 48px; }
 
   /* AVANTAGES */
   .avantages-grid { grid-template-columns: 1fr; gap: 12px; }
-  .avantage-card { padding: 24px; }
+  .avantage-card { padding: 24px 20px; }
 
   /* SERVICES */
   .services-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
   .service-card { padding: 20px 12px; }
   .service-name { font-size: 11px; }
+  .service-icon { width: 44px; height: 44px; }
 
   /* RESULTATS */
   .resultats-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -1043,9 +1054,9 @@ footer {
 
   /* TEMOIGNAGES */
   #temoignages > div { max-width: 100% !important; padding: 0 !important; }
-  #temoignages > div > div:first-child { padding: 0 40px; }
-  #btn-prev { left: 0 !important; width: 32px !important; height: 32px !important; font-size: 13px !important; }
-  #btn-next { right: 0 !important; width: 32px !important; height: 32px !important; font-size: 13px !important; }
+  #temoignages > div > div:first-child { padding: 0 48px; }
+  #btn-prev { left: 0 !important; width: 44px !important; height: 44px !important; font-size: 14px !important; }
+  #btn-next { right: 0 !important; width: 44px !important; height: 44px !important; font-size: 14px !important; }
   #carousel-inner > div { flex: 0 0 100% !important; }
 
   /* EQUIPE */
@@ -1056,28 +1067,47 @@ footer {
 
   /* CONTACT */
   .contact-inner { grid-template-columns: 1fr; gap: 32px; }
-  .contact-title { font-size: 28px; }
+  .contact-title { font-size: 26px; }
   .contact-lille, .contact-national { padding: 20px; }
-  .btn-dark, .btn-cal { width: 100%; text-align: center; display: block; }
+  .btn-dark, .btn-cal { width: 100%; text-align: center; display: block; min-height: 48px; line-height: 48px; padding-top: 0; padding-bottom: 0; }
+
+  /* GUSTO / PRO TEASER */
+  #pro-teaser { padding: 56px 16px !important; }
 
   /* PLATEFORME */
   .plateforme-title { font-size: 22px; }
   .plateforme-sub { font-size: 14px; }
 
+  /* RESULTATS CAROUSEL BUTTONS — touch target fix */
+  #resultats button { min-width: 44px !important; min-height: 44px !important; width: 44px !important; height: 44px !important; }
+
+  /* PARTENAIRES */
+  #partenaires > div { gap: 16px !important; }
+
   /* FOOTER */
   footer { flex-direction: column; align-items: flex-start; padding: 24px 16px; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 12px; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+  .footer-links a { font-size: 13px; min-height: 44px; display: flex; align-items: center; }
   .footer-copy { font-size: 11px; }
-  .subfooter { padding: 12px 24px; gap: 12px; }
+  .subfooter { padding: 16px 16px; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .subfooter a { min-height: 44px; display: flex; align-items: center; font-size: 12px; }
 }
 
 /* ── RESPONSIVE SMALL MOBILE ── */
 @media (max-width: 380px) {
-  h1 { font-size: 30px; }
+  h1 { font-size: 28px; }
+  .hero-left { padding: 90px 16px 32px; }
+  .hero-badge { font-size: 11px; padding: 5px 12px; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
-  .services-grid, .services-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .stat-num { font-size: 28px; }
+  .services-grid, .services-grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .service-card { padding: 16px 8px; }
+  .service-name { font-size: 10px; }
   .equipe-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .equipe-photo { width: 76px; height: 76px; }
+  .gallery-item { width: 160px; height: 160px; }
+  .section-title { font-size: 24px; }
+  .contact-title { font-size: 24px; }
 }
 .subfooter {
   background: #0A0A0A;
