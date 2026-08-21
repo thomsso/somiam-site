@@ -243,21 +243,34 @@ footer {
 .subfooter-copy { font-size: 11px; color: #333; }
 
 @media (max-width: 768px) {
-  nav { padding: 0 24px; }
+  nav { padding: 0 16px; }
   .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
   .nav-links.open {
     display: flex; flex-direction: column;
     position: absolute; top: 64px; left: 0; right: 0;
     background: var(--k);
     padding: 24px;
-    gap: 16px;
+    gap: 8px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .blog-hero { padding-top: 100px; }
-  footer { padding: 32px 24px; }
+  .nav-links.open a { padding: 10px 0; min-height: 44px; display: flex; align-items: center; }
+  .nav-links.open .nav-cta { display: inline-block; text-align: center; margin-top: 8px; }
+  .blog-hero { padding: 100px 1rem 40px; }
+  .blog-hero h1 { font-size: 28px; }
+  .blog-hero p { font-size: 15px; }
+  .posts-section { padding: 0 1rem 48px; }
+  .posts-grid { grid-template-columns: 1fr; gap: 16px; }
+  .post-card { padding: 24px; }
+  .post-card-title { font-size: 17px; }
+  .post-card-excerpt { font-size: 13px; }
+  .post-card-arrow { min-height: 44px; display: flex; align-items: center; }
+  footer { padding: 32px 16px; }
   .footer-links { gap: 4px 16px; }
-  .footer-links a { padding: 8px 0; font-size: 13px; }
+  .footer-links a { padding: 10px 0; font-size: 13px; min-height: 44px; display: flex; align-items: center; }
+  .subfooter { padding: 16px; gap: 12px; flex-direction: column; }
+  .subfooter-copy { text-align: center; }
 }
 </style>
 </head>

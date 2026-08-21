@@ -467,34 +467,49 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 0 16px; }
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .hamburger { display: flex; }
 
   #hero { padding: 100px 16px 56px; }
-  #hero h1 { font-size: 32px; }
+  #hero h1 { font-size: 28px; letter-spacing: -0.5px; }
   #hero .hero-sub { font-size: 15px; }
+  #hero .hero-badge { font-size: 11px; padding: 5px 12px; }
 
   #aggregate { padding: 0 16px 56px; }
   .agg-card {
     flex-direction: column; gap: 12px;
-    padding: 20px 28px;
+    padding: 20px 24px;
+    width: 100%;
   }
   .agg-details { text-align: center; }
   .agg-score { font-size: 44px; }
 
-  #reviews { padding: 56px 16px; }
-  #temoignages-prives { padding: 0 16px 56px !important; }
+  #reviews { padding: 48px 16px; }
+  #temoignages-prives { padding: 0 16px 48px !important; }
   .reviews-grid { grid-template-columns: 1fr; gap: 14px; }
-  #video-testimonials { padding: 56px 16px 72px; }
+  .review-card { padding: 20px; }
+
+  #video-testimonials { padding: 48px 16px 64px; }
   .video-grid { grid-template-columns: 1fr; gap: 20px; }
-  .section-title { font-size: 28px; }
+  .video-card-body { padding: 16px; }
+  .video-quote { font-size: 14px; padding-left: 12px; }
+  .section-title { font-size: 26px; }
 
-  #cta { padding: 56px 16px; }
+  #cta { padding: 48px 16px; }
   #cta h2 { font-size: 26px; }
+  .btn-dark {
+    display: block;
+    width: 100%;
+    text-align: center;
+    min-height: 48px;
+    line-height: 48px;
+    padding: 0 24px;
+  }
 
-  footer { flex-direction: column; align-items: flex-start; padding: 24px 16px; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 12px; }
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 24px 16px; gap: 12px; }
+  .footer-links { flex-wrap: wrap; gap: 12px; justify-content: center; }
   .footer-copy { font-size: 11px; }
-  .subfooter { padding: 12px 24px; gap: 12px; }
+  .subfooter { padding: 12px 16px; gap: 12px; }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
