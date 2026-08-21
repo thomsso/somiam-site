@@ -117,13 +117,60 @@ couverts, service (midi/soir), bosser, ça tourne, c'est calme, c'est creux, ça
 
 ---
 
+## Verbatims dans l'article
+
+Chaque article doit intégrer **2-3 verbatims** de `voix-restaurateurs.md` :
+- En blockquote (`> "citation"`)
+- Choisir des citations qui correspondent au sujet de l'article
+- Ne JAMAIS inventer de verbatim — uniquement ceux du fichier
+- Les placer dans le hook ou en début de section pour ancrer le propos dans le réel
+
+---
+
+## Liens sortants (sources autoritaires à citer)
+
+Chaque article doit contenir **2-5 liens sortants** vers des sources fiables. Ça renforce l'E-E-A-T pour le SEO et le GEO.
+
+### Sources Google (officiel)
+- https://support.google.com/business — Centre d'aide Google Business Profile
+- https://developers.google.com/maps/documentation — Documentation Maps
+
+### Sources Meta/Instagram (officiel)
+- https://business.instagram.com/getting-started — Guide Instagram Business
+- https://www.facebook.com/business/help — Centre d'aide Meta Ads
+
+### Industrie restauration FR
+- https://umih.fr — Union des Métiers et des Industries de l'Hôtellerie
+- https://www.insee.fr/fr/statistiques?q=restauration — Données INSEE
+- https://www.francenum.gouv.fr — Guides numérisation restaurants
+
+### Statistiques SEO / avis
+- https://brightlocal.com/research/ — Études annuelles avis locaux
+- https://partoo.co/fr/blog/ — Stats Google Business FR
+
+### Règle
+- Toujours lier vers la source quand on cite un chiffre
+- Pas de liens vers des concurrents directs (malou.io, be-hype.com — on les analyse mais on ne les cite pas)
+
+---
+
+## Liens internes
+
+Chaque article doit contenir **1-3 liens internes** vers :
+- `/gusto` — quand on mentionne Gusto ou un outil IA
+- `/blog/[autre-article]` — quand le sujet est lié à un article existant
+- `/a-propos` — si on mentionne l'expertise ou les résultats So MIAM
+
+Vérifier les articles existants dans `src/content/blog/` et créer des liens croisés pertinents.
+
+---
+
 ## SEO technique
 
 - Title tag : inclure mot-clé principal, max 65 caractères
 - H1 = title du frontmatter (géré par le layout)
 - H2 pour sections principales, H3 pour sous-sections
 - Mot-clé principal dans : H1, premier paragraphe, au moins 1 H2, meta description
-- Liens internes : vers /gusto, vers d'autres articles du blog (si pertinent)
 - Ne pas sur-optimiser (pas de keyword stuffing)
 
 ## GEO (Generative Engine Optimization)
