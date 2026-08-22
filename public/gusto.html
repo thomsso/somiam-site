@@ -172,7 +172,7 @@ nav {
   text-decoration: none;
 }
 .nav-logo img {
-  height: 22px; width: auto;
+  height: 28px; width: auto;
 }
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
@@ -281,12 +281,12 @@ nav {
 }
 /* Hero logo */
 .hero-logo {
-  height: 48px;
-  width: auto;
+  height: 72px;
+  width: 72px;
   margin-bottom: 24px;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
 }
 
 /* Social proof badge */
@@ -1076,7 +1076,7 @@ footer {
   }
   .hero-scroll-hint { bottom: 16px; }
   .hero-scroll-hint span { width: 18px; height: 18px; }
-  .hero-logo { height: 36px; margin-bottom: 20px; }
+  .hero-logo { height: 56px; width: 56px; margin-bottom: 20px; }
   .hero-proof-badge { font-size: 11px; padding: 6px 14px; margin-bottom: 20px; }
   #hero h1 {
     font-size: 32px;
@@ -1375,7 +1375,12 @@ footer {
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
-  <img src="/images/gusto/Gusto_Wordmark_FondSombre.svg" alt="Gusto" class="hero-logo reveal" height="48">
+  <svg class="hero-logo reveal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Gusto">
+    <defs><style>@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;display=swap');</style></defs>
+    <rect x="10" y="10" width="180" height="180" rx="32" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+    <text x="100" y="108" font-family="'Syne', sans-serif" font-weight="800" font-size="140" fill="#F7F6F3" text-anchor="middle" dominant-baseline="central">G</text>
+    <circle cx="160" cy="40" r="16" fill="#F5C400"/>
+  </svg>
 
   <div class="hero-proof-badge reveal" style="transition-delay:0.03s">
     <span class="hero-proof-dot"></span>
