@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "astro": "^5.9.0",
-    "puppeteer": "^25.1.0"
+    "puppeteer": "^25.1.0",
+    "stripe": "^22.5.0"
   }
 }

@@ -1358,7 +1358,7 @@ footer {
     <li><a href="/#services">Agence</a></li>
     <li><a href="/blog">Blog</a></li>
   </ul>
-  <a href="https://recette.so-miam.com/" class="nav-cta">Essayer Gusto</a>
+  <a href="#" onclick="event.preventDefault();startCheckout()" class="nav-cta">Essayer Gusto</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -1381,7 +1381,7 @@ footer {
     <input type="text" class="hero-input" id="hero-restaurant" placeholder="Le nom de votre restaurant" autocomplete="off">
     <button type="submit" class="hero-input-btn">Essayer gratuitement &rarr;</button>
   </form>
-  <p class="hero-microcopy reveal" style="transition-delay:0.22s">Aucune carte bancaire requise</p>
+  <p class="hero-microcopy reveal" style="transition-delay:0.22s">14 jours d'essai gratuit &middot; Annulation en 1 clic</p>
 
   <div class="hero-trust reveal" style="transition-delay:0.26s">
     <span>14 jours gratuits</span>
@@ -1749,7 +1749,7 @@ footer {
   <div class="container">
     <h2 class="reveal">Prêt à remplir votre restaurant ?</h2>
     <p class="cta-sub reveal" style="transition-delay:0.05s">14 jours d'essai gratuit. Sans engagement. Annulation en 1 clic.</p>
-    <a href="https://recette.so-miam.com/" class="btn-dark reveal" style="transition-delay:0.1s">Essayer Gusto gratuitement &rarr;</a>
+    <button onclick="startCheckout()" class="btn-dark reveal" style="transition-delay:0.1s;cursor:pointer;border:none;font-family:inherit">Essayer Gusto gratuitement &rarr;</button>
   </div>
 </section>
 
@@ -1890,7 +1890,7 @@ footer {
       </div>
     </div>
     <div style="margin-top:32px" class="reveal">
-      <a href="https://recette.so-miam.com/" class="btn-primary">Essayer Gusto gratuitement &rarr;</a>
+      <button onclick="startCheckout()" class="btn-primary" style="cursor:pointer;border:none;font-family:inherit">Essayer Gusto gratuitement &rarr;</button>
     </div>
   </div>
 </section>
@@ -2000,7 +2000,7 @@ footer {
 <!-- ═══ STICKY CTA BAR ═══ -->
 <div class="sticky-cta" id="stickyCta">
   <span class="sticky-cta-text"><strong>Gusto</strong> — 14 jours d'essai gratuit</span>
-  <a href="https://recette.so-miam.com/" class="btn-primary">Essayer gratuitement &rarr;</a>
+  <button onclick="startCheckout()" class="btn-primary" style="cursor:pointer;border:none;font-family:inherit">Essayer gratuitement &rarr;</button>
 </div>
 
 <script>
@@ -2066,15 +2066,38 @@ function toggleFaq(btn) {
   }
 }
 
+// ── Stripe Checkout ──
+async function startCheckout(restaurantName) {
+  // Grab restaurant name from hero input if not passed
+  if (!restaurantName) {
+    const heroInput = document.getElementById('hero-restaurant');
+    restaurantName = heroInput ? heroInput.value : '';
+  }
+
+  try {
+    const res = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ restaurantName }),
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      console.error('Checkout error:', data.error);
+      alert('Une erreur est survenue. Réessayez ou contactez-nous.');
+    }
+  } catch (err) {
+    console.error('Checkout fetch error:', err);
+    alert('Une erreur est survenue. Réessayez ou contactez-nous.');
+  }
+}
+
 // ── Hero CTA handler ──
 function handleHeroCTA(e) {
   e.preventDefault();
-  // For now, redirect to recette.so-miam.com
-  // Later: redirect to app.so-miam.com/onboarding?restaurant_name=...
   const name = e.target.querySelector('input').value;
-  const url = 'https://recette.so-miam.com/';
-  // Future: const url = `https://app.so-miam.com/onboarding?restaurant_name=${encodeURIComponent(name)}`;
-  window.location.href = url;
+  startCheckout(name);
 }
 
 // ── Sticky CTA bar on scroll ──

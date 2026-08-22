@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienvenue sur Gusto — So MIAM</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%23F5C400'>SM</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --y: #F5C400;
+  --k: #111111;
+  --w: #FFFFFF;
+  --cream: #FFF8E7;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--k);
+  color: var(--w);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  text-align: center;
+}
+.check {
+  width: 80px; height: 80px;
+  background: var(--y);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 32px;
+  animation: pop 0.4s ease-out;
+}
+.check svg { width: 40px; height: 40px; }
+@keyframes pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+h1 em { color: var(--y); font-style: normal; }
+.sub {
+  font-size: 18px;
+  color: #aaa;
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 420px;
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: left;
+}
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #1A1A1A;
+  padding: 20px;
+  border-radius: 12px;
+}
+.step-num {
+  background: var(--y);
+  color: var(--k);
+  font-weight: 700;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.step-text { font-size: 15px; line-height: 1.5; color: #ccc; }
+.step-text strong { color: var(--w); }
+.btn {
+  display: inline-block;
+  background: var(--y);
+  color: var(--k);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn:hover { background: #e6b800; }
+.footer-note {
+  margin-top: 32px;
+  font-size: 13px;
+  color: #666;
+}
+.footer-note a { color: var(--y); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="check">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </svg>
+</div>
+
+<h1>C'est <em>parti.</em></h1>
+
+<p class="sub">Votre essai gratuit de 14 jours commence maintenant. Vous allez recevoir un email pour accéder à Gusto.</p>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text"><strong>Vérifiez votre boîte mail</strong> — un email d'invitation arrive dans les prochaines minutes.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text"><strong>Créez votre mot de passe</strong> — cliquez sur le lien dans l'email.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text"><strong>Configurez votre restaurant</strong> — 2 minutes pour personnaliser Gusto.</div>
+  </div>
+</div>
+
+<a href="https://app.so-miam.com" class="btn">Accéder à Gusto &rarr;</a>
+
+<p class="footer-note">Un souci ? Écrivez-nous à <a href="mailto:thomas@so-media.fr">thomas@so-media.fr</a></p>
+
+</body>
+</html>
