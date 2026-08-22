@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;display=swap');
+      .bg { fill: #111111; }
+      .text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; fill: #F7F6F3; text-anchor: middle; dominant-baseline: central; }
+      .accent { fill: #F5C400; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="24" height="24" rx="5" class="bg" />
+  <text x="12" y="13.5" class="text">G</text>
+  <circle cx="19.5" cy="4.5" r="2.5" class="accent" />
+</svg>

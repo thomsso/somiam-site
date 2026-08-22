@@ -28,8 +28,8 @@
 <meta name="twitter:image" content="https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg">
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%23F5C400'>SM</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%23F5C400'>SM</text></svg>">
+<link rel="icon" type="image/svg+xml" href="/images/gusto/Gusto_Favicon_24px.svg">
+<link rel="apple-touch-icon" href="/images/gusto/Gusto_Favicon_24px.svg">
 <meta name="theme-color" content="#111111">
 
 <!-- Preconnect -->
@@ -168,12 +168,12 @@ nav {
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav-logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 18px; font-weight: 800;
-  color: var(--w); letter-spacing: 1px;
+  display: flex; align-items: center;
   text-decoration: none;
 }
-.nav-logo span { color: var(--y); }
+.nav-logo img {
+  height: 22px; width: auto;
+}
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
   font-size: 13px; font-weight: 500; color: var(--g3);
@@ -279,6 +279,16 @@ nav {
 .hero-glow {
   display: none;
 }
+/* Hero logo */
+.hero-logo {
+  height: 48px;
+  width: auto;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
 /* Social proof badge */
 .hero-proof-badge {
   display: inline-flex;
@@ -1066,6 +1076,7 @@ footer {
   }
   .hero-scroll-hint { bottom: 16px; }
   .hero-scroll-hint span { width: 18px; height: 18px; }
+  .hero-logo { height: 36px; margin-bottom: 20px; }
   .hero-proof-badge { font-size: 11px; padding: 6px 14px; margin-bottom: 20px; }
   #hero h1 {
     font-size: 32px;
@@ -1349,14 +1360,12 @@ footer {
 
 <!-- ═══ NAV ═══ -->
 <nav>
-  <a href="/" class="nav-logo">SO<span> MIAM</span></a>
+  <a href="/gusto" class="nav-logo"><img src="/images/gusto/Gusto_Wordmark_FondSombre.svg" alt="Gusto" height="22"></a>
   <ul class="nav-links">
     <li><a href="#comment">Comment ça marche</a></li>
     <li><a href="#resultats">Résultats</a></li>
     <li><a href="#prix">Tarifs</a></li>
     <li><a href="/avis">Avis</a></li>
-    <li><a href="/#services">Agence</a></li>
-    <li><a href="/blog">Blog</a></li>
   </ul>
   <a href="#" onclick="event.preventDefault();startCheckout()" class="nav-cta">Essayer Gusto</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -1366,7 +1375,9 @@ footer {
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="hero-proof-badge reveal">
+  <img src="/images/gusto/Gusto_Wordmark_FondSombre.svg" alt="Gusto" class="hero-logo reveal" height="48">
+
+  <div class="hero-proof-badge reveal" style="transition-delay:0.03s">
     <span class="hero-proof-dot"></span>
     +100 restaurants remplissent leurs tables avec Gusto
   </div>
