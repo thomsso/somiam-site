@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import { buffer } from 'node:stream/consumers';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -8,22 +9,20 @@ export const config = {
   },
 };
 
-function getRawBody(req) {
-  return new Promise((resolve, reject) => {
-    const chunks = [];
-    req.on('data', (chunk) => chunks.push(chunk));
-    req.on('end', () => resolve(Buffer.concat(chunks)));
-    req.on('error', reject);
-  });
-}
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).end();
   }
 
-  const rawBody = await getRawBody(req);
+  let rawBody;
+  try {
+    rawBody = await buffer(req);
+  } catch (err) {
+    console.error('Failed to read raw body:', err.message);
+    return res.status(400).json({ error: 'Could not read body' });
+  }
+
   const sig = req.headers['stripe-signature'];
 
   let event;
