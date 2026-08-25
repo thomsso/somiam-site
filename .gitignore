@@ -9,3 +9,5 @@ dist/
 .env*.local
 .vercel
 .env*
+voix-restaurateurs.md
+so-miam-core.md

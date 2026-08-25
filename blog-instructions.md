@@ -33,7 +33,7 @@ Restaurateurs francophones (France, Belgique, Suisse) qui veulent gérer leur co
 - Identifier les sujets qu'ils couvrent ET les trous (sujets non couverts = opportunité)
 
 ### 3. Croiser avec les verbatims
-- Lire `/Users/thomsso/Documents/Claude/voix-restaurateurs.md`
+- Lire `voix-restaurateurs.md` à la racine du projet (gitignored — jamais poussé sur GitHub)
 - Prioriser les sujets qui correspondent aux douleurs réelles (rang 1-5 = priorité haute)
 
 ### 4. Vérifier la non-duplication
@@ -226,9 +226,11 @@ Chaque article doit mentionner Gusto UNE fois, naturellement :
 
 1. Créer le fichier .md dans `src/content/blog/` avec le slug comme nom de fichier
 2. Slug = mots-clés séparés par des tirets, pas d'accents, max 5-6 mots
-3. Commit + push sur main
-4. Vercel déploie automatiquement
-5. Le sitemap est statique dans `public/sitemap.xml` — ajouter l'URL du nouvel article
+3. Ajouter l'URL du nouvel article dans `public/sitemap.xml` (sitemap statique) + mettre à jour le `lastmod` de `/blog`
+4. Vérifier le build Astro (copier `src`, `public`, `package.json`, `astro.config.mjs`, `tsconfig.json` dans /tmp, `npm install` puis `npx astro build` — ne jamais lancer `npm install` dans le dossier du projet, les node_modules sont compilés pour macOS)
+5. Commit sur main **uniquement** — le push échoue depuis le sandbox (pas de credentials GitHub)
+6. Terminer la réponse par un bloc "⚠️ ACTION REQUISE — À POUSSER" avec le titre, le hash du commit et la commande `cd ~/Documents/claude/site && git push origin main`
+7. Thomas pousse manuellement, Vercel déploie automatiquement
 
 ---
 
