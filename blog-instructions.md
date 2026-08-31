@@ -229,7 +229,7 @@ Chaque article doit mentionner Gusto UNE fois, naturellement :
 3. Ajouter l'URL du nouvel article dans `public/sitemap.xml` (sitemap statique) + mettre à jour le `lastmod` de `/blog`
 4. Vérifier le build Astro (copier `src`, `public`, `package.json`, `astro.config.mjs`, `tsconfig.json` dans /tmp, `npm install` puis `npx astro build` — ne jamais lancer `npm install` dans le dossier du projet, les node_modules sont compilés pour macOS)
 5. Commit sur main **uniquement** — le push échoue depuis le sandbox (pas de credentials GitHub)
-6. Terminer la réponse par un bloc "⚠️ ACTION REQUISE — À POUSSER" avec le titre, le hash du commit et la commande `cd ~/Code/somiam-site && rm -f .git/*.lock && git push origin main` (le `rm` est nécessaire : les commits faits depuis le sandbox laissent des fichiers verrous que le sandbox n'a pas le droit de supprimer)
+6. Terminer la réponse par un bloc "⚠️ ACTION REQUISE — À POUSSER" avec le titre, le hash du commit et la commande `cd ~/Code/somiam-site && find .git -name '*.lock' -delete && find .git/objects -name 'tmp_obj_*' -delete && git push origin main` (le nettoyage est nécessaire : les commits faits depuis le sandbox laissent des verrous et des objets temporaires que le sandbox n'a pas le droit de supprimer)
 7. Thomas pousse manuellement, Vercel déploie automatiquement
 
 ---
