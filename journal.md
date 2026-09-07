@@ -1,5 +1,61 @@
 # Journal — Site so-miam.com
 
+## 2026-09-07
+
+### Audit SEO complet + corrections on-page
+
+**Contexte :** premier passage sur la Search Console. Sitemap soumis, pages
+principales envoyées à l'indexation. Audit on-page lancé dans la foulée
+(skill `seo-audit`, scripts + vérification navigateur).
+
+**Problème principal trouvé (non détecté par l'audit basique) :**
+La page d'accueil déclarait un schéma `FAQPage` de 3 questions dont **aucune
+n'était rendue visible** dans le HTML. Violation directe des guidelines Google
+sur le balisage de contenu invisible — risque de perte des résultats enrichis
+voire d'action manuelle. Les 4 autres pages portant un FAQPage étaient
+conformes, c'était isolé sur la home.
+→ Section FAQ visible ajoutée, reprenant mot pour mot le contenu balisé.
+Effet secondaire : +151 mots de contenu réel (708 → 859).
+
+**Corrections effectuées :**
+- `LocalBusiness` : champ obligatoire `telephone` ajouté (+33699297756).
+  Le schéma passait Fail → sans lui, aucune éligibilité aux résultats enrichis locaux
+- `Organization` : ajout d'un `contactPoint`
+- Title home : 64 → 58 car. (plus de troncature SERP)
+- Meta description home : 217 → 144 car., preuves chiffrées conservées dans la zone visible
+- H1 : « Votre resto » → « Votre restaurant » (« resto » n'est pas un terme recherché)
+- Hero : mot-clé « communication de ton restaurant » placé naturellement dans le chapô
+- `og:title` / `twitter:title` réalignés sur le nouveau title
+- **Email unifié sur `thomas@so-miam.com`** — 12 occurrences remplacées.
+  Le site exposait 2 adresses concurrentes (légales vs marketing/schémas), ce qui
+  affaiblissait le NAP recoupé par Google
+
+**Nouvelle page `/contact` :**
+- L'URL renvoyait un 404 : page de confiance E-E-A-T manquante
+- CTA principaux = email + appel stratégique. Téléphone en texte brut non cliquable
+  dans les coordonnées (Thomas ne veut pas d'appels entrants)
+- Schema `ContactPage` + `LocalBusiness`, NAP cohérent avec la home
+- Liée depuis le footer des 14 pages, ajoutée au sitemap
+
+**Technique :**
+- `vercel.json` : règle de redirection apex → www en 308. **Inerte** — la redirection
+  configurée au niveau du domaine Vercel s'exécute avant le routage projet
+- `reports/` ajouté au `.gitignore`
+
+**Résultat audit :** 1 critique / 6 warnings → **0 critique / 2 warnings / 18 conformes**
+
+**Points en attente :**
+- Redirection apex → www toujours en 307 : à passer en 308 dans Vercel
+  (Settings → Domains → so-miam.com → status code). Impact réel faible
+- **Fiche Google Business à aligner** sur `thomas@so-miam.com` + `06 99 29 77 56`
+  (c'est là que le NAP pèse le plus en SEO local)
+- Home à 859 mots vs 1200-1800 chez les concurrents positionnés. Pas de bourrage :
+  la piste est 2-3 études de cas chiffrées (Maison L, Café de Paris, Bouillon Pignol),
+  qui servent aussi la conversion
+- Scores PageSpeed non mesurés (API rate-limitée, 429) — à lancer sur pagespeed.web.dev
+- **Mentions légales inexactes** : déclarent un hébergement o2switch alors que le site
+  tourne sur Vercel. Mention légale obligatoire, à corriger (non fait, texte juridique)
+
 ## 2026-08-21
 
 ### Repositionnement national + blog SEO/GEO complet
