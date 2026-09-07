@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://www.so-miam.com/blog</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -87,6 +87,12 @@
   <url>
     <loc>https://www.so-miam.com/blog/publicite-facebook-restaurant-cout</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.so-miam.com/blog/avoir-plus-avis-google-restaurant</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
