@@ -6,6 +6,12 @@
       "source": "/pro",
       "destination": "/gusto",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "so-miam.com" }],
+      "destination": "https://www.so-miam.com/:path*",
+      "permanent": true
     }
   ]
 }
