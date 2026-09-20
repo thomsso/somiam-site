@@ -33,6 +33,11 @@ export default async function handler(req, res) {
       cancel_url: `${process.env.SITE_URL || 'https://www.so-miam.com'}/gusto`,
       locale: 'fr',
       allow_promotion_codes: true,
+      // 59 EUR HT : Stripe Tax ajoute la TVA d'apres l'adresse de facturation
+      // (obligatoire). Un restaurateur est une entreprise : numero de TVA propose.
+      automatic_tax: { enabled: true },
+      billing_address_collection: 'required',
+      tax_id_collection: { enabled: true },
       integration_identifier: 'gusto_landing_checkout_kX9mQ2wL',
     });
 
