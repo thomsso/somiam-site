@@ -178,7 +178,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%23F5C400'>SM</text></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%23F5C400'>SM</text></svg>">
 <meta name="theme-color" content="#111111">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --y: #F5C400;
@@ -1180,13 +1180,16 @@ footer {
 </style>
 <link rel="stylesheet" href="/audience.css">
 <script src="/audience.js" defer></script>
+<link rel="stylesheet" href="/home-v2.css">
+<script src="/home-v2.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#hero">Aller au contenu</a>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">SO<span> MIAM</span></div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="main-navigation">
     <li><a href="/gusto" style="color:var(--y);font-weight:700;">Gusto IA</a></li>
     <li><a href="#comment">Comment ça marche</a></li>
     <li><a href="#services">Agence</a></li>
@@ -1195,52 +1198,41 @@ footer {
     <li><a href="/avis">Avis</a></li>
   </ul>
   <a href="/gusto" class="nav-cta">Essayer Gusto</a>
-  <div class="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" type="button" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-controls="main-navigation" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-bg-dot"></div>
-  <div class="hero-left">
-    <div class="hero-badge">
-      <span>★</span> +100 restaurants accompagnés
+<section id="hero" aria-labelledby="hero-title">
+  <div class="hero-stage">
+    <div class="hero-copy">
+      <div class="hero-badge"><span aria-hidden="true">★</span> +100 restaurants accompagnés</div>
+      <h1 id="hero-title"><span>Votre restaurant</span><span>mérite d'être <em>vu.</em></span></h1>
+      <p class="hero-sub"><strong>Gusto</strong>, l'IA qui gère la communication de ton restaurant : posts Instagram, avis Google, référencement local.<br>Tu préfères déléguer ? <strong>Notre agence s'en occupe.</strong></p>
+      <div class="hero-btns">
+        <a href="/gusto" class="btn-primary">Essayer Gusto gratuitement <span aria-hidden="true">↗</span></a>
+        <a href="#contact" class="btn-secondary">Parler à l'agence <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="hero-results-link" href="#resultats">Voir les résultats <span aria-hidden="true">↓</span></a>
     </div>
-    <h1>Votre restaurant mérite<br>d'être <em>vu.</em></h1>
-    <p class="hero-sub">
-      <strong>Gusto</strong>, l'IA qui gère la communication de ton restaurant : posts Instagram, avis Google, référencement local. Tu préfères déléguer ? <strong>Notre agence s'en occupe.</strong>
-    </p>
-    <div class="hero-btns">
-      <a href="/gusto" class="btn-primary">Essayer Gusto gratuitement</a>
-      <a href="#contact" class="btn-secondary">Parler à l'agence →</a>
-    </div>
-    <a href="#resultats" style="display:inline-block;margin-top:16px;font-size:13px;color:var(--g2);text-decoration:none;transition:color 0.2s;font-weight:400;" onmouseover="this.style.color='var(--y)'" onmouseout="this.style.color='var(--g2)'">Voir les résultats →</a>
+    <div class="hero-shots" tabindex="0" aria-label="Photographies de restaurants"><figure class="hero-shot hero-shot--portrait"><img src="/images/home-v2/portrait-720.webp" srcset="/images/home-v2/portrait-360.webp 360w, /images/home-v2/portrait-720.webp 720w" sizes="(max-width: 700px) 32vw, (max-width: 1000px) 22vw, 18vw" width="720" height="900" alt="Une restauratrice souriante tient deux truffes devant ses yeux" decoding="async" fetchpriority="high"></figure>
+<figure class="hero-shot hero-shot--oeuf"><img src="/images/home-v2/oeuf-720.webp" srcset="/images/home-v2/oeuf-360.webp 360w, /images/home-v2/oeuf-720.webp 720w" sizes="(max-width: 700px) 32vw, (max-width: 1000px) 22vw, 18vw" width="720" height="900" alt="Œuf coulant servi à table" decoding="async"></figure>
+<figure class="hero-shot hero-shot--sesame"><img src="/images/home-v2/sesame-720.webp" srcset="/images/home-v2/sesame-360.webp 360w, /images/home-v2/sesame-720.webp 720w" sizes="(max-width: 700px) 32vw, (max-width: 1000px) 22vw, 18vw" width="720" height="900" alt="Graines de sésame versées sur une assiette" decoding="async"></figure>
+<figure class="hero-shot hero-shot--cafe"><img src="/images/home-v2/cafe-720.webp" srcset="/images/home-v2/cafe-360.webp 360w, /images/home-v2/cafe-720.webp 720w" sizes="(max-width: 700px) 32vw, (max-width: 1000px) 22vw, 18vw" width="720" height="900" alt="La terrasse du Café de Paris" decoding="async"></figure>
+<figure class="hero-shot hero-shot--geste"><img src="/images/home-v2/geste-720.webp" srcset="/images/home-v2/geste-360.webp 360w, /images/home-v2/geste-720.webp 720w" sizes="(max-width: 700px) 32vw, (max-width: 1000px) 22vw, 18vw" width="720" height="900" alt="Parmesan fraîchement râpé sur une assiette" decoding="async"></figure>
+<figure class="hero-shot hero-shot--cookie"><img src="/images/home-v2/cookie-720.webp" srcset="/images/home-v2/cookie-360.webp 360w, /images/home-v2/cookie-720.webp 720w" sizes="(max-width: 700px) 32vw, (max-width: 1000px) 22vw, 18vw" width="720" height="900" alt="Cookie au matcha et chocolat blanc" decoding="async"></figure></div>
+    <div class="hero-photo-controls"><button type="button" data-hero-step="-1" aria-label="Photo précédente du hero">←</button><button type="button" data-hero-step="1" aria-label="Photo suivante du hero">→</button></div>
   </div>
-  <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <img src="/images/agence/CDP-shoot1-1350-10.jpg" alt="Café de Paris — client So MIAM" style="object-position:center;">
-      <!-- Card résultat client -->
-      <div class="hero-float-card card-result">
-        <div class="float-eyebrow">Résultat — Café de Paris</div>
-        <div class="float-stat">+117% réservations</div>
-        <div class="float-detail">par mois vs année précédente</div>
-        <div class="float-badge">VÉRIFIÉ</div>
-      </div>
-      <!-- Card résultat SEO -->
-      <div class="hero-float-card card-product">
-        <div class="float-eyebrow">SEO — Le Paradoxe</div>
-        <div class="float-stat">#1 Google</div>
-        <div class="float-detail">« restaurant tourcoing »</div>
-        <div class="float-badge">RÉFÉRENCEMENT NATUREL</div>
-      </div>
-    </div>
+  <div class="hero-evidence">
+    <div><span class="evidence-client">Résultat — Café de Paris</span><p><strong>+117%</strong> réservations</p><span class="evidence-detail">par mois vs année précédente</span><span class="evidence-tag">Vérifié</span></div>
+    <div><span class="evidence-client">SEO — Le Paradoxe</span><p><strong>#1</strong> Google</p><span class="evidence-detail">« restaurant tourcoing »</span><span class="evidence-tag">Référencement naturel</span></div>
   </div>
 </section>
 
 <!-- LOGOS CLIENTS -->
 <section id="logos" style="background:var(--k2);padding:48px 0;border-top:1px solid #222;border-bottom:1px solid #222;overflow:hidden;">
-  <div class="logos-label" style="margin-bottom:32px;">Ils nous font confiance</div>
+  <div class="logos-heading"><div class="logos-label">Ils nous font confiance</div><button type="button" class="motion-toggle" aria-pressed="false">Mettre les animations en pause</button></div>
   <div class="logos-strip-wrap">
     <div class="logos-strip">
       <!-- Ordre : alternance styles visuels pour rythme harmonieux -->
@@ -1307,13 +1299,22 @@ footer {
 
 <!-- GALERIE PHOTO -->
 <section id="galerie" style="background:var(--k); padding:0; overflow:hidden;">
-  <div style="padding:56px 48px 28px; text-align:center;">
+  <div class="gallery-heading">
     <div class="section-eyebrow" style="justify-content:center; color:var(--y);">Nos shootings</div>
     <h2 class="section-title" style="color:var(--w);">À quoi ressemble une belle<br>communication restaurant.</h2>
   </div>
 
-  <div class="gallery-track-wrap">
+  <div class="gallery-track-wrap" tabindex="0" aria-label="Galerie des shootings So MIAM">
     <div class="gallery-track" id="gallery-track">
+<div class="gallery-item"><img src="/images/home-v2/cuisinier-720.webp" srcset="/images/home-v2/cuisinier-360.webp 360w, /images/home-v2/cuisinier-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Un cuisinier dresse une assiette avec du popcorn" loading="lazy" decoding="async"></div>
+<div class="gallery-item"><img src="/images/home-v2/assiette-720.webp" srcset="/images/home-v2/assiette-360.webp 360w, /images/home-v2/assiette-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Assiette de restaurant photographiée en plongée" loading="lazy" decoding="async"></div>
+<div class="gallery-item"><img src="/images/home-v2/table-720.webp" srcset="/images/home-v2/table-360.webp 360w, /images/home-v2/table-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Service du vin à une table de restaurant" loading="lazy" decoding="async"></div>
+<div class="gallery-item"><img src="/images/home-v2/piments-720.webp" srcset="/images/home-v2/piments-360.webp 360w, /images/home-v2/piments-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Piments grillés servis à table" loading="lazy" decoding="async"></div>
+<div class="gallery-item"><img src="/images/home-v2/convivialite-720.webp" srcset="/images/home-v2/convivialite-360.webp 360w, /images/home-v2/convivialite-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Deux clientes partagent un moment autour de cocktails" loading="lazy" decoding="async"></div>
+<div class="gallery-item"><img src="/images/home-v2/produit-720.webp" srcset="/images/home-v2/produit-360.webp 360w, /images/home-v2/produit-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Un cuisinier présente son produit" loading="lazy" decoding="async"></div>
+<div class="gallery-item"><img src="/images/home-v2/pates-720.webp" srcset="/images/home-v2/pates-360.webp 360w, /images/home-v2/pates-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Dégustation de pâtes au restaurant" loading="lazy" decoding="async"></div>
+<div class="gallery-item"><img src="/images/home-v2/croquant-720.webp" srcset="/images/home-v2/croquant-360.webp 360w, /images/home-v2/croquant-720.webp 720w" sizes="(max-width: 700px) 65vw, 320px" width="720" height="900" alt="Un instant gourmand photographié par So MIAM" loading="lazy" decoding="async"></div>
+
       <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC2988_h4xh4u.jpg" alt="Photo culinaire professionnelle restaurant Lille" loading="lazy"></div>
       <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3222_e7ijio.jpg" alt="Ambiance restaurant photographie So MIAM" loading="lazy"></div>
       <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/DSC01928-Edit_dhyaq5.jpg" alt="Plat gastronomique shooting photo Lille" loading="lazy"></div>
@@ -1381,7 +1382,7 @@ footer {
       <div class="gallery-item"><img src="https://res.cloudinary.com/dowkqxlpk/image/upload/v1/_DSC3264_cg8rzz.jpg" alt="Terrasse restaurant photographie ambiance" loading="lazy"></div>
     </div>
   </div>
-  <div style="padding-bottom:56px;"></div>
+  <div class="gallery-controls"><span>Des plats. Des lieux. Des gens.</span><div><button type="button" data-gallery-step="-1" aria-label="Photos précédentes">←</button><button type="button" data-gallery-step="1" aria-label="Photos suivantes">→</button></div></div>
 </section>
 
 <!-- STATS -->
@@ -1795,18 +1796,22 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // Mobile menu
 const navLinks = document.querySelector('.nav-links');
-function toggleMenu() {
-  const open = navLinks.style.display === 'flex';
-  navLinks.style.cssText = open ? '' : `
-    display:flex; flex-direction:column; position:fixed;
-    top:64px; left:0; right:0; background:var(--k);
-    padding:24px 16px; gap:24px; border-bottom:1px solid #222;
-    z-index:99;
-  `;
+function closeMenu() {
+  navLinks.classList.remove('is-open');
+  const toggle = document.querySelector('.hamburger');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Ouvrir le menu');
 }
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => { navLinks.style.cssText = ''; });
-});
+function toggleMenu() {
+  const open = navLinks.classList.toggle('is-open');
+  const toggle = document.querySelector('.hamburger');
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+}
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && navLinks.classList.contains('is-open')) { closeMenu(); document.querySelector('.hamburger').focus(); } });
+window.addEventListener('resize', () => { if(window.innerWidth > 1000) closeMenu(); });
+window.somiamMotionPaused = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Testimonials carousel - 3 visible, rotate 1 by 1
 const temoignages = [
@@ -1917,6 +1922,7 @@ function goToSlide(i) {
 
 function resetAuto() {
   clearInterval(cAuto);
+  if (window.somiamMotionPaused) return;
   cAuto = setInterval(() => moveCarousel(1), 3500);
 }
 
@@ -2035,6 +2041,7 @@ function goToRes(i) {
 
 function resetResAuto() {
   clearInterval(rAuto);
+  if (window.somiamMotionPaused) return;
   rAuto = setInterval(() => moveRes(1), 8000);
 }
 
