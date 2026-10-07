@@ -8,10 +8,18 @@ interface Props {
   image?: string;
   imageAlt?: string;
   gusto_cta?: boolean;
+  updated?: Date;
+  offer?: 'gusto' | 'formation' | 'agence';
 }
 
-const { title, description, date, author, category, image, imageAlt, gusto_cta = true } = Astro.props;
+const { title, description, date, author, category, image, imageAlt, updated, offer = 'gusto', gusto_cta = true } = Astro.props;
 const formattedDate = date ? new Date(date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+const offers = {
+  gusto: { name: 'Gusto', title: 'Prépare tes posts et tes réponses aux avis', text: 'L’abonnement Gusto à 59 €/mois, sans la formation. Tu gardes la main sur les informations de ton restaurant.', href: '/gusto', label: 'Découvrir Gusto — 59 €/mois →' },
+  formation: { name: 'La Recette So MIAM', title: 'Apprends à gérer la communication de ton restaurant', text: 'Inscris-toi pour voir la présentation vidéo, puis échanger lors d’un appel de vente. La formation coûte 1 400 € et s’articule avec l’abonnement à 59 €/mois.', href: 'https://recette.so-miam.com/', label: 'Voir la présentation de la formation →' },
+  agence: { name: 'Agence So MIAM', title: 'Tu veux confier ta communication à une équipe ?', text: 'Parlons de ton restaurant, de tes services à remplir et du travail à prévoir.', href: '/contact', label: 'Contacter So MIAM →' },
+};
+const selectedOffer = offers[offer];
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -22,7 +30,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<title>{title} — So MIAM</title>
+<title>{title}</title>
 <meta name="description" content={description}>
 <meta name="author" content={author || 'Thomas Vandeweghe'}>
 <meta name="robots" content="index, follow">
@@ -31,7 +39,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:url" content={canonicalURL}>
-<meta property="og:title" content={`${title} — So MIAM`}>
+<meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:image" content={image || 'https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg'}>
 <meta property="og:locale" content="fr_FR">
@@ -41,7 +49,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content={`${title} — So MIAM`}>
+<meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
 <meta name="twitter:image" content={image || 'https://res.cloudinary.com/dowkqxlpk/image/upload/v1777123444/_0001913-Edit_copie_as42pm.jpg'}>
 
@@ -52,10 +60,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   "headline": title,
   "description": description,
   "datePublished": date?.toISOString(),
+  "dateModified": updated?.toISOString(),
   "author": {
     "@type": "Person",
     "name": author || "Thomas Vandeweghe",
-    "url": "https://www.so-miam.com"
+    "url": "https://www.so-miam.com/a-propos"
   },
   "publisher": {
     "@type": "Organization",
@@ -428,7 +437,7 @@ footer {
     <li><a href="/avis">Avis</a></li>
     <li><a href="/#services">Agence</a></li>
   </ul>
-  <a href="https://recette.so-miam.com/" class="nav-cta">Essayer Gusto</a>
+  <a href="/gusto" class="nav-cta">Découvrir Gusto</a>
   <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -445,6 +454,7 @@ footer {
     {author && <span>{author}</span>}
     <span class="article-meta-dot"></span>
     {formattedDate && <time datetime={date?.toISOString()}>{formattedDate}</time>}
+    {updated && <span>Mis à jour le <time datetime={updated.toISOString()}>{updated.toLocaleDateString('fr-FR')}</time></span>}
   </div>
 </header>
 
@@ -456,10 +466,10 @@ footer {
 <!-- GUSTO CTA -->
 {gusto_cta && (
   <section class="gusto-cta-block">
-    <div class="eyebrow">Gusto IA</div>
-    <h3>Ta communication restaurant en pilote automatique</h3>
-    <p>Posts Instagram, réponses aux avis Google, référencement local — Gusto s'occupe de tout. 14 jours d'essai gratuit.</p>
-    <a href="https://recette.so-miam.com/" class="btn-primary">Essayer gratuitement →</a>
+    <div class="eyebrow">{selectedOffer.name}</div>
+    <h3>{selectedOffer.title}</h3>
+    <p>{selectedOffer.text}</p>
+    <a href={selectedOffer.href} class="btn-primary">{selectedOffer.label}</a>
   </section>
 )}
 

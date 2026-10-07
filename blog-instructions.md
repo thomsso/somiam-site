@@ -1,251 +1,71 @@
-# Blog So MIAM — Instructions pour l'agent rédacteur
+# Blog So MIAM — rédaction, preuves et amélioration continue
 
-> Ce fichier est lu par l'agent scheduled qui écrit 1 article/semaine.
-> Ne pas modifier sans validation de Thomas.
+Décisions confirmées par Thomas le 7 octobre 2026. Ce document remplace les anciennes consignes : deux articles par semaine, lundi et jeudi à 9 h Europe/Paris, publication automatique autorisée avec commit et push après contrôles.
 
----
+## Avant chaque publication : observer, choisir, mesurer
 
-## Mission
+1. Lire AGENTS.md, CLAUDE.md, ce document, les contrôles pertinents de .claude, les articles existants et le fichier privé voix-restaurateurs.md. Préserver les changements d’autres travaux.
+2. Lire `.seo/performance.json`, `.seo/decisions.json` et `.seo/preuves.md`. Ce sont des données privées ignorées par Git, jamais servies par le site. Si elles manquent, les reconstruire depuis les sources, sans inventer de valeurs.
+3. Dans Search Console, compte thomas@so-media.fr, propriété **sc-domain:so-miam.com**, prendre les 28 derniers jours complets disponibles et les 28 précédents. Noter la dernière date disponible, les filtres et la fraîcheur. Comparer aussi les deux derniers mois complets lors du premier passage du mois. Une valeur inconnue reste `null`, jamais zéro. Une somme d’impressions des pages n’est pas le total de la propriété.
+4. Collecter par URL : clics, impressions, CTR, position et requêtes ; séparer marque et hors marque avec la règle employée. Dans le rapport IA Google, relever les impressions par page et le total. Ne pas assimiler impressions IA, visites et ventes. Ne pas extrapoler à ChatGPT ou Perplexity, dont le suivi est différé à la demande de Thomas.
+5. Conserver une capture ou un relevé UI daté avec les périodes et filtres. Mettre à jour performance.json en conservant les anciens relevés dans `.seo/snapshots/`. Si export indisponible, le tableau visible suffit. Si accès indisponible, utiliser le dernier relevé en le datant explicitement ; ne prétendre ni avoir analysé des données fraîches ni avoir observé une progression.
+6. Exécuter `npm run seo:opportunities`. Les suggestions sont des hypothèses : lire les requêtes, l’ancienneté et l’intention avant de décider. Une page récente, une faible exposition ou des périodes différentes ne permettent pas de déclarer un gagnant. Aucun seuil ci-dessous n’est une règle Google.
+7. Choisir une action et inscrire dans decisions.json : date, URL source, requêtes observées, preuve, hypothèse, nouvel angle, intention distincte, cible commerciale, métriques initiales, date de contrôle à +28 jours, statut. Garder les identifiants et dates des publications pour éviter les doublons à la relance.
+8. Un article qui gagne des clics ou des impressions IA peut donner un sujet voisin : diagnostic précis, cas documenté, procédure ou erreur fréquente. Il faut une autre question à résoudre, de nouvelles preuves et un lien vers l’article d’origine. Changer le titre et reformuler le même contenu n’est pas une nouvelle intention. Si les mêmes requêtes et la même réponse sont visées, améliorer la page existante sans créer un doublon.
+9. En plus des deux nouveaux articles hebdomadaires, améliorer au maximum un ancien article par exécution si une opportunité est étayée. Corriger immédiatement une erreur factuelle. Hors correction nécessaire, éviter de réécrire une page déjà modifiée depuis moins de 28 jours ; laisser le temps d’observer.
+10. À la date de contrôle, comparer des fenêtres complètes de même durée avant/après, avec délai de disponibilité des données et contexte saisonnier. Inscrire succès, résultat mitigé ou indéterminé, et pourquoi. Un avant/après n’établit pas seul une causalité. Réutiliser les apprentissages dans la sélection suivante.
 
-Écrire 1 article de blog par semaine sur so-miam.com/blog.
-Objectif : SEO + GEO (être cité par les IA) + pousser Gusto subtilement.
-
----
-
-## Cible
-
-Restaurateurs francophones (France, Belgique, Suisse) qui veulent gérer leur communication eux-mêmes.
-- Segment principal : 35-50 ans, 1 établissement, débordé, pas expert digital
-- Segment secondaire : 28-40 ans, ambitieux, veut scaler, consomme du contenu business
+## Veille et choix du sujet
 
----
+Croiser les résultats avec les douleurs réelles des restaurateurs (voix-restaurateurs.md, priorités 1–5), Google Trends France, saisonnalité et les articles récents de malou.io/blog, be-hype.com/blog, guest-suite.com/blog et postine.fr. Les concurrents servent à la veille, pas à copier ni à prouver un chiffre. Sources indisponibles : le noter et chercher ailleurs. Ne jamais inventer de volume de recherche.
 
-## Processus de sélection du sujet
+Clusters : remplissage midi/jours creux, fiche Google, avis, Instagram, autonomie, outils IA, publicité, fidélisation et saisonnalité. Respecter les pages commerciales existantes, notamment la home nationale et la page agence Lille. Octobre–novembre : préparer les groupes et décembre, seulement avec une intention distincte des pages existantes.
 
-À chaque exécution, l'agent doit :
-
-### 1. Analyser les tendances
-- Rechercher sur Google Trends FR les sujets restaurant/restauration en hausse
-- Vérifier les requêtes saisonnières (terrasse été, fêtes fin d'année, rentrée, Saint-Valentin, etc.)
+## Offres et liens : ne jamais les confondre
 
-### 2. Analyser la concurrence
-- Scanner les derniers articles de : malou.io/blog, be-hype.com/blog, guest-suite.com/blog, postine.fr
-- Identifier les sujets qu'ils couvrent ET les trous (sujets non couverts = opportunité)
+- `offer: gusto` : outil autonome **59 €/mois**, sans la formation ; lien `/gusto`. Rédaction de posts et de réponses aux avis : décrire uniquement les fonctions vérifiées. Aucun suivi automatique de positions géographiques, import CRM, relance SMS ou suivi du coût publicitaire sans preuve de fonctionnalité livrée.
+- `offer: formation` : apprendre à gérer sa communication ; `https://recette.so-miam.com/` mène à une inscription, puis une vidéo et un appel de vente. Formation **1 400 €**, articulée avec abonnement **59 €/mois**. Ne pas appeler ce lien « essai Gusto », « achat immédiat » ou « réservation directe ». Ne promettre aucune durée offerte sans revalidation actuelle.
+- `offer: agence` : besoin de déléguer, campagne ou production ; `/contact`. Aucun prix agence universel ajouté sans décision actuelle.
 
-### 3. Croiser avec les verbatims
-- Lire `voix-restaurateurs.md` à la racine du projet (gitignored — jamais poussé sur GitHub)
-- Prioriser les sujets qui correspondent aux douleurs réelles (rang 1-5 = priorité haute)
+Choisir selon le besoin dominant, pas pousser systématiquement le logiciel. Le bloc final est géré par le layout. Une mention naturelle de Gusto dans le corps au maximum si pertinente ; ne pas forcer une fonction hors sujet.
 
-### 4. Vérifier la non-duplication
-- Lire les articles existants dans `src/content/blog/`
-- Ne jamais réécrire un sujet déjà couvert (sauf angle très différent)
+## Place des études de cas — décision de Thomas du 7 octobre
 
-### 5. Choisir le cluster
-Carte de mots-clés prioritaires :
+Conserver le format pratique des articles : questions terrain, exemples fictifs signalés, tutoriels et checklists. Aucun bloc de résultats clients obligatoire. Les études de cas doivent rester rares : garde-fou éditorial d’au plus un nouvel article sur huit avec un résultat client, jamais deux publications consécutives, et ne pas recycler le même cas à chaque cycle. Ce plafond n’est pas un objectif à remplir. Consulter les huit dernières publications avant d’en utiliser un. Les performances servent surtout à trouver des questions voisines originales, pas à multiplier les récits clients. Les sources Notion servent à vérifier un résultat lorsqu’il est réellement utile, pas à alimenter chaque article.
 
-| Cluster | Requêtes cibles | Lien Gusto |
-|---|---|---|
-| Remplissage | comment remplir son restaurant, restaurant vide que faire, remplir restaurant semaine, jours creux restaurant | Indirect |
-| Google Maps/GMB | fiche google restaurant, google maps restaurant, seo local restaurant | Direct (Health Score) |
-| Avis Google | répondre avis google restaurant, avis négatif restaurant, avoir plus avis google | Direct (réponses IA) |
-| Instagram | quoi poster instagram restaurant, idée post restaurant, instagram restaurateur | Direct (contenu IA) |
-| IA resto | outil ia restaurant, intelligence artificielle restaurant communication | Direct (Gusto = la réponse) |
-| Autonomie | gérer communication restaurant seul, com restaurant sans agence | Direct (Gusto remplace agence) |
-| Meta Ads | publicité facebook restaurant, pub instagram restaurant, coût pub restaurant | Indirect |
-| Saisonnalité | restaurant été terrasse, restaurant hiver clients, restaurant fêtes | Indirect |
-| Fidélisation | fidéliser clients restaurant, faire revenir clients restaurant, base client restaurant | Indirect |
-| Recrutement & com | recruter restaurant, marque employeur restaurant | Lointain |
+## Preuves avant rédaction
 
----
+Source de référence pour les cas : Notion « Résultats clients », identifiant `342dda7d76788069a212d0ad5395a974`, confirmé par Thomas. Consulter la version actuelle et garder le relevé privé dans `.seo/preuves.md`. Une archive commerciale ou un article ancien n’est pas une preuve primaire.
 
-## Format de l'article
+Pour chaque chiffre, conserver : source exacte consultée, date, période mesurée, unité, population et calcul. Un cas précis n’est pas une moyenne. Une réservation n’est pas un couvert. Une croissance de réservations ne prouve pas l’effet exclusif du SEO ou de la publicité. Une position Maps dépend du lieu, de la requête et de la date ; sans protocole complet, qualifier explicitement l’exemple d’historique non comparable.
 
-### Frontmatter obligatoire
-```yaml
----
-title: "Titre — max 65 caractères pour Google"
-description: "Meta description — 140-160 caractères, inclure mot-clé principal"
-date: YYYY-MM-DD
-author: "Thomas Vandeweghe"
-category: "Google" | "Instagram" | "Publicité" | "Gestion" | "Tendances"
-tags: ["mot-clé 1", "mot-clé 2", "mot-clé 3"]
-gusto_cta: true
----
-```
+Ne plus reprendre : Café de Paris « +100 % chaque mois », Bouillon Pignol « 250 000 €/mois », « 15 % du classement grâce aux réponses », « 520 % d’appels grâce aux photos », première place garantie ou gains de temps universels. Les anciens agrégats +30 % et CPA 5 € ne sont pas des moyennes actuelles sans période et calcul vérifiés.
 
-### Structure type
-1. **Hook** (2-3 phrases) — problème concret, stat choc, ou verbatim restaurateur
-2. **Contexte** — pourquoi c'est important, en quoi ça impacte les réservations
-3. **Corps** — 5 à 10 points actionnables avec H2/H3
-4. **Preuve** — résultats clients So MIAM si pertinent (JAMAIS inventer un chiffre)
-5. **Mention Gusto** — 1 paragraphe max, naturel, pas pushy
-6. **Checklist/résumé** — actions concrètes à faire cette semaine
+Les fonctions Google/Meta doivent venir de leurs documentations officielles précises consultées. Une page d’accueil de documentation n’étaye pas un chiffre. Une étude étrangère ou ancienne garde son année, son pays et son périmètre. Retirer un chiffre invérifiable, jamais en inventer un pour le remplacer. Prix, droit et barèmes : revalider sur source officielle au moment de rédiger.
 
-### Longueur
-1200-2000 mots. Pas moins, pas beaucoup plus.
+Avant publication, enregistrer une fiche privée par article dans `.seo/reviews/<slug>.json` : sources consultées et affirmations qu’elles soutiennent, verbatims exacts, résultats clients, fonctions produit, liens, limites, relecture critique et résultat des contrôles. Pas de « score qualité » automatique présenté comme une vérification factuelle. Une affirmation matérielle sans preuve bloque sa publication jusqu’à correction ou retrait.
 
----
+## Format et ton
 
-## Ton & voix
+Français, tutoiement, concret, expert sans jargon ni promesse absolue. Cible : restaurateurs débordés qui veulent remplir leurs tables et comprendre quoi faire. Viser 1 200–2 000 mots utiles, pas du remplissage. Titre ≤65 caractères (le layout n’ajoute pas de suffixe), description 140–160 caractères. Réponse directe au début, 5–10 actions avec H2/H3, limites et exemples clairement fictifs si inventés, puis checklist terrain.
 
-- **Tutoiement** systématique
-- Direct, cash, expert sans être condescendant
-- Légèrement plus pédagogique que le contenu social (c'est du blog éducatif)
-- Phrases courtes et actives
-- Chiffres réels uniquement
+Frontmatter : title, description, date (publication réelle inchangée), updated uniquement pour une modification substantielle, author Thomas Vandeweghe, category, tags, offer (gusto/formation/agence), gusto_cta true. Image et imageAlt facultatifs. Conserver les anciens slugs quand on améliore un article.
 
-### Mots BANNIS (communication externe)
-innovant, sur-mesure, synergies, booster, leverager, optimiser, solution, accompagnement, dispositif, storytelling, branding, engagement, personnalisé, dédié, holistique
+Intégrer 2–3 citations exactes autorisées de voix-restaurateurs.md, anonymisées sans contexte privé. Ne jamais fabriquer un témoignage. Si aucun verbatim pertinent disponible, le signaler et ne pas forcer un témoignage. Ajouter 2–5 sources précises réellement consultées et 1–3 liens internes pertinents. Vérifier français, répétitions, utilité, offre et preuves dans une deuxième relecture critique distincte du brouillon.
 
-### Vocabulaire INTERDIT
-conversion, funnel, acquisition, engagement, portée, reach, KPI, ROI, branding, storytelling, CTA, stratégie digitale, community management, content marketing, écosystème
+Éviter : innovant, sur-mesure, synergies, booster, leverager, solution, dispositif, storytelling, branding, engagement, holistique, funnel, acquisition, reach, KPI, ROI, CTA, écosystème. Préférer réservations, couverts, service midi/soir, les réseaux, ma fiche Google, les avis, le menu. Une citation exacte ou un nom officiel ne doit pas être altéré pour satisfaire une liste de mots.
 
-### Vocabulaire IMPOSÉ
-| Dire | Pas |
-|---|---|
-| Réservations | Conversions |
-| Ton restaurant | Ton établissement |
-| Remplir tes tables | Générer du trafic |
-| Résultats | Retombées |
-| Les réseaux | Social media |
-| Poster / mettre des photos | Créer du contenu |
-| Les avis | Les reviews |
-| Ma fiche Google | Mon Google Business Profile |
+## GEO
 
-### Vocabulaire naturel des restaurateurs (utiliser)
-couverts, service (midi/soir), bosser, ça tourne, c'est calme, c'est creux, ça cartonne, remplir, ramener du monde, poster, les réseaux, ma fiche Google, mon Insta, les avis, balles (€), la carte, le menu, plat du jour, la salle, en cuisine, les gens du coin, les touristes, ticket moyen, un complet, montagnes russes, la tête dans le guidon
+Apporter des réponses compréhensibles, des exemples originaux, des sources identifiables et une expertise visible. Publier des informations accessibles et indexables avec un auteur identifié. Aucun fichier ou balisage magique ne garantit les citations IA. Google IA et les autres assistants sont des mesures distinctes.
 
----
+## Contrôles et livraison
 
-## Verbatims dans l'article
-
-Chaque article doit intégrer **2-3 verbatims** de `voix-restaurateurs.md` :
-- En blockquote (`> "citation"`)
-- Choisir des citations qui correspondent au sujet de l'article
-- Ne JAMAIS inventer de verbatim — uniquement ceux du fichier
-- Les placer dans le hook ou en début de section pour ancrer le propos dans le réel
-
----
-
-## Liens sortants (sources autoritaires à citer)
-
-Chaque article doit contenir **2-5 liens sortants** vers des sources fiables. Ça renforce l'E-E-A-T pour le SEO et le GEO.
-
-### Sources Google (officiel)
-- https://support.google.com/business — Centre d'aide Google Business Profile
-- https://developers.google.com/maps/documentation — Documentation Maps
-
-### Sources Meta/Instagram (officiel)
-- https://business.instagram.com/getting-started — Guide Instagram Business
-- https://www.facebook.com/business/help — Centre d'aide Meta Ads
-
-### Industrie restauration FR
-- https://umih.fr — Union des Métiers et des Industries de l'Hôtellerie
-- https://www.insee.fr/fr/statistiques?q=restauration — Données INSEE
-- https://www.francenum.gouv.fr — Guides numérisation restaurants
-
-### Statistiques SEO / avis
-- https://brightlocal.com/research/ — Études annuelles avis locaux
-- https://partoo.co/fr/blog/ — Stats Google Business FR
-
-### Règle
-- Toujours lier vers la source quand on cite un chiffre
-- Pas de liens vers des concurrents directs (malou.io, be-hype.com — on les analyse mais on ne les cite pas)
-
----
-
-## Liens internes
-
-Chaque article doit contenir **1-3 liens internes** vers :
-- `/gusto` — quand on mentionne Gusto ou un outil IA
-- `/blog/[autre-article]` — quand le sujet est lié à un article existant
-- `/a-propos` — si on mentionne l'expertise ou les résultats So MIAM
-
-Vérifier les articles existants dans `src/content/blog/` et créer des liens croisés pertinents.
-
----
-
-## SEO technique
-
-- Title tag : inclure mot-clé principal, max 65 caractères
-- H1 = title du frontmatter (géré par le layout)
-- H2 pour sections principales, H3 pour sous-sections
-- Mot-clé principal dans : H1, premier paragraphe, au moins 1 H2, meta description
-- Ne pas sur-optimiser (pas de keyword stuffing)
-
-## GEO (Generative Engine Optimization)
-
-Pour maximiser les chances d'être cité par les IA :
-- Réponses complètes et structurées (pas de "ça dépend" sans développer)
-- Listes numérotées et à puces
-- Définitions claires en début de section
-- Données chiffrées avec source quand possible
-- Format "question → réponse directe → développement"
-- Expertise visible (résultats clients, expérience terrain)
-
----
-
-## Résultats clients utilisables (source : so-miam-core.md)
-
-### Réservations
-- Maison L — au bord de la fermeture → explosion des réservations
-- Café de Paris — ~+100% vs N-1 chaque mois
-- Bouillon Pignol — 8 000 couverts/mois, ~250 000€ CA/mois
-- White Lotus — mois 1 : ×2, mois 2 : +62%
-- Moyenne globale — +30% réservations/mois vs N-1
-
-### Google Maps
-- Le Paradoxe : position 5 → 1 ("restaurant tourcoing")
-- Maison L : position 20 → 1 ("restaurant libanais lille")
-- Bouillon Pignol : position 20 → 1 ("restaurant lesquin")
-- Café de Paris : position 15 → 1 ("entrecôte frites lille")
-- Domus Sicilia : position 4 → 1 ("restaurant italien la madeleine")
-
-### Réseaux
-- Den Artiest : 1M vues/an avec 1 Reel/semaine
-- Sweet Lady : 0 → 3 000 abonnés en 1 mois
-
-### Meta Ads
-- Coût moyen par réservation : 5€ (fourchette 2,50€ → 6€)
-
-**Règle : ne JAMAIS inventer un chiffre. Si un résultat n'est pas listé ici, ne pas l'utiliser.**
-
----
-
-## Mention Gusto
-
-Chaque article doit mentionner Gusto UNE fois, naturellement :
-- Dans la section "comment gagner du temps" ou "automatiser"
-- Pas de vente lourde, juste montrer que ça existe et que ça résout le problème
-- Le CTA Gusto est déjà dans le layout (bloc en bas de chaque article). Pas besoin d'en ajouter un.
-- Pattern : "Des outils comme Gusto permettent de [action spécifique au sujet de l'article]"
-
----
-
-## Workflow technique
-
-1. Créer le fichier .md dans `src/content/blog/` avec le slug comme nom de fichier
-2. Slug = mots-clés séparés par des tirets, pas d'accents, max 5-6 mots
-3. Ajouter l'URL du nouvel article dans `public/sitemap.xml` (sitemap statique) + mettre à jour le `lastmod` de `/blog`
-4. Vérifier le build Astro (copier `src`, `public`, `package.json`, `astro.config.mjs`, `tsconfig.json` dans /tmp, `npm install` puis `npx astro build` — ne jamais lancer `npm install` dans le dossier du projet, les node_modules sont compilés pour macOS)
-5. Commit sur main **uniquement** — le push échoue depuis le sandbox (pas de credentials GitHub)
-6. Terminer la réponse par un bloc "⚠️ ACTION REQUISE — À POUSSER" avec le titre, le hash du commit et la commande `cd ~/Code/somiam-site && find .git -name '*.lock' -delete && find .git/objects -name 'tmp_obj_*' -delete && git push origin main` (le nettoyage est nécessaire : les commits faits depuis le sandbox laissent des verrous et des objets temporaires que le sandbox n'a pas le droit de supprimer)
-7. Thomas pousse manuellement, Vercel déploie automatiquement
-
----
-
-## Calendrier saisonnier (suggestions)
-
-| Période | Sujets prioritaires |
-|---|---|
-| Janvier-Février | Remplir en période creuse, galette des rois, Saint-Valentin |
-| Mars-Avril | Terrasse, Pâques, nouvelle carte printemps |
-| Mai-Juin | Fête des mères, terrasse été, recrutement saisonnier |
-| Juillet-Août | Touristes, adapter sa com l'été, saisonnalité |
-| Septembre | Rentrée, relance après été, nouvelle carte automne |
-| Octobre-Novembre | Halloween, Beaujolais nouveau, préparer décembre |
-| Décembre | Fêtes, réveillon, menus spéciaux, cadeaux |
-
----
-
-*Dernière mise à jour : août 2026*
+- Créer Markdown + URL canonique sitemap ; actualiser lastmod de la page et du blog lors d’une modification substantielle. Appliquer les règles de footer du projet.
+- `npm run seo:check` vérifie les routes d’offres, métadonnées et erreurs réintroduites connues ; cela ne remplace pas la relecture ni la vérification des sources.
+- Construire dans une copie temporaire complète, avec package-lock.json et configuration : npm ci puis npm run build. Ne pas installer dans le dépôt principal. Ne pas embarquer les changements préexistants d’autres travaux.
+- Vérifier pages modifiées sur navigateur ordinateur/mobile : rendu, liens, offre, prix, canonical, indexabilité, ressources et sitemap. Questions visibles pour toute FAQ structurée. Mail thomas@so-miam.com ; pas de lien tel:.
+- Après réussite, commit ciblé et push normal vers origin/main. Aucun push forcé, aucun nettoyage massif des verrous/objets Git. Si main contient des commits tiers non livrés, isoler le travail depuis origin/main.
+- Vérifier Vercel READY pour le bon commit, URL publique HTTP 200 avec contenu attendu, index et sitemap. Un build local ne prouve pas une publication.
+- Inspecter ensuite la nouvelle URL dans Search Console et demander l’indexation une seule fois si nécessaire. Suivre les demandes en attente. Respecter CAPTCHA, quota et connexion ; ne pas contourner. Pas d’Indexing API ni ancien ping sitemap pour le blog. Indexation et délai ne sont jamais garantis.
+- Compte rendu : lien publié, sujet et justification fondée sur les données, ancienne page améliorée, hash, contrôles, indexation et date du prochain contrôle. Signaler seulement résultat nouveau, changement utile ou blocage/action humaine ; rester silencieux aux relances sans changement.

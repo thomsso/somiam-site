@@ -5,6 +5,7 @@ date: 2026-09-28
 author: "Thomas Vandeweghe"
 category: "Instagram"
 tags: ["photo de plat au smartphone", "photo restaurant", "Instagram restaurant"]
+offer: gusto
 gusto_cta: true
 ---
 

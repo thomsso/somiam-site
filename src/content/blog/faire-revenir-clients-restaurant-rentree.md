@@ -1,10 +1,12 @@
 ---
 title: "Faire revenir tes clients au restaurant : le plan de rentrée"
 description: "Ta base client dort dans ton logiciel de résa. Voici comment faire revenir tes clients au restaurant en septembre, sans pub et sans y passer des heures."
+updated: 2026-10-07
 date: 2026-08-31
 author: "Thomas Vandeweghe"
 category: "Gestion"
 tags: ["faire revenir clients restaurant", "fidéliser clients restaurant", "base client restaurant", "rentrée restaurant", "relance client"]
+offer: formation
 gusto_cta: true
 ---
 
@@ -126,9 +128,7 @@ L'intérêt, c'est que tu n'as plus à inventer un prétexte chaque mois. Tu as 
 
 Les chiffres qu'on mesure chez nos clients, sur l'ensemble de ce qui est mis en place — pas uniquement les relances :
 
-- **Café de Paris** — environ +100 % de réservations par rapport au même mois de l'année précédente, chaque mois
-- **White Lotus** — mois 1 : ×2, mois 2 : +62 %
-- **Moyenne sur nos clients** — +30 % de réservations par mois vs N-1
+- Compare les réservations de chaque mois au même mois de l’année précédente, en tenant compte des jours d’ouverture.
 
 La relance de base client n'explique pas tout ça à elle seule. Mais c'est le levier le moins cher de la liste, et le seul qui ne dépend d'aucun algorithme : tu as les numéros, tu les utilises.
 
@@ -138,7 +138,7 @@ Le vrai frein, ce n'est pas la méthode. C'est ça :
 
 > "J'ai beaucoup de choses à gérer et faire la com en plus, ça devient très compliqué."
 
-Trier une base, écrire douze messages, tenir un rythme mensuel entre deux services, ça ne tient pas si tu le fais à la main. Des outils comme [Gusto](/gusto) reprennent ta base client, la trient par date de dernier passage et préparent les messages de relance à ta place — tu relis, tu valides, tu envoies. Le tri et la rédaction, c'est là que passent les heures ; c'est exactement ce qui s'automatise.
+[Gusto](/gusto) peut t’aider à rédiger tes posts et réponses aux avis. Pour relancer ta base, utilise les fonctions effectivement disponibles dans ton logiciel de réservation : ne présume pas qu’un outil importe, trie ou contacte tes clients.
 
 ## Ta checklist de rentrée
 

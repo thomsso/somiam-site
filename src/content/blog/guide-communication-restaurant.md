@@ -1,18 +1,20 @@
 ---
-title: "Communication restaurant : le guide complet pour remplir tes tables"
-description: "Le guide de référence pour gérer la communication de ton restaurant. Google, Instagram, avis, publicité — structuré par problème, avec des méthodes concrètes et des résultats réels."
+title: "Communication restaurant : le guide pour passer à l’action"
+description: "Google, Instagram, avis et publicité : organise la communication de ton restaurant avec des actions concrètes, des exemples et une checklist utile."
+updated: 2026-10-07
 date: 2026-08-21
 author: "Thomas Vandeweghe"
 category: "Guide"
 tags: ["communication restaurant", "marketing restaurant", "guide complet", "google restaurant", "instagram restaurant", "remplir restaurant"]
+offer: formation
 gusto_cta: true
 ---
 
-175 000 restaurants en France. 35% survivent au-delà de 5 ans. Et dans la grande majorité des cas, ce n'est pas la cuisine qui fait fermer — c'est le manque de clients.
+Quand les services sont irréguliers, commence par repérer où les clients te trouvent et ce qui les aide à choisir. Ce guide propose une routine adaptée au temps dont tu disposes.
 
 Ce guide n'est pas une liste de "12 astuces digitales". C'est une méthode complète, structurée autour des vrais problèmes que tu vis au quotidien. Pas autour d'outils à la mode.
 
-Tout ce qui est écrit ici vient de +100 restaurants accompagnés et de dizaines de conversations avec des restaurateurs. Pas de théorie marketing. Que du terrain.
+Ce guide s’appuie sur notre travail avec des restaurateurs et sur les recommandations officielles citées. Les exemples ne sont pas une promesse de résultat.
 
 ---
 
@@ -28,11 +30,11 @@ Les montagnes russes de la fréquentation — c'est le problème n°1. Presque t
 
 **Ce qui change la donne :** mettre en place 3 canaux qui travaillent en continu, même quand toi tu es en cuisine :
 
-1. **Ta fiche Google** — pour que les gens qui cherchent "restaurant + ta ville" te trouvent. [46% des recherches Google](https://developers.google.com/maps/documentation) ont une intention locale. Et [78% des recherches mobiles locales](https://www.francenum.gouv.fr/guides-et-conseils/communication-et-publicite/referencement/google-business-profile-le-service-de) aboutissent à une visite dans les 24h.
+1. **Ta fiche Google** — pour présenter tes horaires, ta carte et le moyen de réserver aux personnes qui cherchent un restaurant près de chez elles.
 
-2. **Tes réseaux sociaux** — pour rester dans la tête des gens entre deux visites. [87% des Français](https://www.extencia.fr/restaurants-reseaux-sociaux-2025) consultent internet avant de choisir un restaurant. Et [74% choisissent en fonction de l'activité sur les réseaux](https://www.extencia.fr/restaurants-reseaux-sociaux-2025).
+2. **Tes réseaux sociaux** — pour montrer tes plats, préciser tes horaires et rester présent entre deux visites.
 
-3. **Tes avis Google** — pour convaincre ceux qui hésitent. [83% des Français consultent les avis en ligne](https://presence.fr/les-avis-en-ligne-en-2026-83-des-francais-les-consultent-80-en-deposent-un-incontournable-de-lexperience-client/) avant de réserver.
+3. **Tes avis Google** — pour aider les futurs clients à comprendre l’expérience proposée, avec des retours authentiques et des réponses utiles.
 
 Le reste de ce guide détaille comment activer chacun de ces canaux. Concrètement.
 
@@ -76,7 +78,7 @@ Si même 15 minutes c'est trop, des outils comme [Gusto](https://www.so-miam.com
 
 Quand quelqu'un tape "restaurant italien" sur Google, il a déjà décidé de sortir manger. Il cherche juste OÙ. C'est un client prêt à réserver. Pas quelqu'un qui scrolle en pyjama.
 
-Et pourtant, [1 entreprise sur 2 seulement](https://www.francenum.gouv.fr/guides-et-conseils/communication-et-publicite/referencement/google-business-profile-le-service-de) utilise correctement Google Business Profile en France.
+Commence par vérifier ce qu’un client voit réellement sur ta fiche, depuis son téléphone.
 
 ### Fais le test maintenant
 
@@ -86,28 +88,21 @@ Tu y es ? Si non, pour les touristes, les gens de passage et les nouveaux arriva
 
 ### Les 7 leviers pour remonter
 
-**1. Remplis TOUS les champs de ta fiche** — nom, adresse, téléphone, horaires (y compris jours fériés), catégorie principale ET secondaires, description avec tes mots-clés, attributs (terrasse, wifi, parking, réservation). Chaque champ rempli envoie un signal à Google.
+**1. Renseigne les informations utiles** — nom, adresse, horaires, menu et services réellement proposés. Vérifie leur exactitude.
 
-**2. Publie un post Google chaque semaine** — comme un mini post Instagram, mais sur Google. "Nouvelle carte automne", "Ce soir, soirée moules-frites", "Réservez pour la Saint-Valentin". [Google favorise les fiches actives](https://support.google.com/business).
+**2. Publie une actualité utile** — une nouvelle carte ou un changement de service, quand c’est pertinent. Ce n’est pas une promesse de meilleur classement.
 
-**3. Accumule les avis** — pose un QR code sur la table qui mène directement à ta page d'avis. Demande après un bon retour en salle : "Si ça vous a plu, un petit avis Google nous aiderait beaucoup." Vise [4,2 à 4,8 étoiles](https://brightlocal.com/research/) — un 5,0 parfait paraît suspect.
+**3. Facilite les avis authentiques** — propose le même lien ou QR code à tous les clients, sans récompense ni sélection selon leur satisfaction.
 
-**4. Réponds à TOUS les avis** — [88% des clients](https://brightlocal.com/research/) choisissent un restaurant qui répond à ses avis. Google le prend aussi en compte dans le classement. Lire notre [guide complet des réponses aux avis](/blog/repondre-avis-google-restaurant).
+**4. Réponds quand tu apportes quelque chose d’utile** — une explication, un suivi ou un merci personnel. Consulte notre [guide des réponses aux avis](/blog/repondre-avis-google-restaurant).
 
-**5. Ajoute des photos régulièrement** — 5 par mois minimum. Plats, salle, terrasse, équipe. Les fiches avec plus de 100 photos reçoivent [520% plus d'appels](https://brightlocal.com/research/) que celles avec moins de 10.
+**5. Actualise tes photos** — plats réellement proposés, salle, terrasse et devanture. Aucune quantité ne garantit un gain d’appels.
 
-**6. Uniformise ton NAP partout** — Nom, Adresse, Téléphone identiques sur ta fiche Google, ton site web, PagesJaunes, TripAdvisor, TheFork. Les incohérences font chuter ton classement.
+**6. Vérifie tes coordonnées** — corrige les anciens numéros et les mauvaises adresses sur ton site, ta fiche et tes annuaires.
 
 **7. Choisis les bonnes catégories et mots-clés** — "Restaurant italien" et pas juste "Restaurant". Ajoute tes spécialités dans la description : "pizza au feu de bois", "pâtes fraîches maison", "terrasse vue mer".
 
 ### Résultats réels
-
-Des restaurants qu'on a accompagnés sur Google Maps :
-
-- **Le Paradoxe** : position 5 → position 1 sur "restaurant tourcoing"
-- **Maison L** : position 20 → position 1 sur "restaurant libanais lille"
-- **Bouillon Pignol** : position 20 → position 1 sur "restaurant lesquin"
-- **Café de Paris** : position 15 → position 1 sur "entrecôte frites lille"
 
 Plus de détails dans notre [guide fiche Google](/blog/fiche-google-restaurant-position-1).
 
@@ -121,7 +116,7 @@ Plus de détails dans notre [guide fiche Google](/blog/fiche-google-restaurant-p
 
 Ce restaurateur a tout compris. Les likes ne payent pas le loyer.
 
-[54% des 18-35 ans](https://www.extencia.fr/restaurants-reseaux-sociaux-2025) découvrent les restaurants exclusivement via les réseaux. Mais si tu postes juste pour "être présent", tu perds ton temps.
+Montre ce que les clients pourront réellement trouver chez toi : des plats, une ambiance et une équipe. Choisis un rythme tenable puis regarde ce qui amène des demandes.
 
 ### Ce qui marche
 
@@ -152,7 +147,7 @@ Notre [guide complet Instagram](/blog/quoi-poster-instagram-restaurateur) détai
 
 > "J'ai pas osé répondre."
 
-[9 clients sur 10](https://presence.fr/les-avis-en-ligne-en-2026-83-des-francais-les-consultent-80-en-deposent-un-incontournable-de-lexperience-client/) lisent les avis avant de réserver. Et [+1 étoile sur Google = +5 à +9% de CA](https://brightlocal.com/research/) selon Harvard Business School.
+Les avis peuvent éclairer le choix d’un futur client. On ne peut pas déduire un pourcentage de chiffre d’affaires supplémentaire d’une étoile Google pour chaque restaurant.
 
 ### Les 3 règles
 
@@ -267,7 +262,7 @@ Si tu as été brûlé par une agence, tu n'es pas seul. Voici comment évaluer 
 
 ### L'alternative : le faire toi-même
 
-C'est pour ça que ce guide existe. Et c'est pour ça que des outils comme [Gusto](https://www.so-miam.com/gusto) existent. Tout ce que fait une agence (posts Instagram, réponses avis, fiche Google), tu peux le faire toi-même en 15 minutes par jour — ou en 2 minutes avec un outil IA.
+[Gusto](/gusto) aide à rédiger des posts et des réponses aux avis. Un outil ne remplace pas à lui seul le tournage, le pilotage publicitaire et les décisions d’une agence : choisis selon le travail que tu souhaites garder.
 
 La question n'est pas "agence ou pas agence". C'est "est-ce que je veux y passer du temps, ou de l'argent ?"
 
@@ -312,20 +307,10 @@ Tu ne peux pas tout faire en même temps. Voici l'ordre de priorité :
 
 ---
 
-## Les chiffres à retenir
+## Sources et méthode
 
-| Donnée | Source |
-|---|---|
-| 87% des Français consultent internet avant de choisir un restaurant | [Extencia 2025](https://www.extencia.fr/restaurants-reseaux-sociaux-2025) |
-| 83% consultent les avis en ligne | [IFOP / Presence.fr 2026](https://presence.fr/les-avis-en-ligne-en-2026-83-des-francais-les-consultent-80-en-deposent-un-incontournable-de-lexperience-client/) |
-| 78% des recherches locales mobile → visite en 24h | [France Num / Google](https://www.francenum.gouv.fr/guides-et-conseils/communication-et-publicite/referencement/google-business-profile-le-service-de) |
-| 74% choisissent selon l'activité réseaux sociaux | [Extencia 2025](https://www.extencia.fr/restaurants-reseaux-sociaux-2025) |
-| +1 étoile Google = +5 à 9% de CA | [Harvard Business School](https://brightlocal.com/research/) |
-| 5€ coût moyen par réservation (Meta Ads) | So MIAM — données internes 2026 |
-| +30% de réservations en moyenne | So MIAM — données internes 2026 |
+Pour les informations de fiche et les facteurs du classement, consulte les [explications de Google](https://support.google.com/business/answer/7091?hl=fr). Pour la collecte et les réponses aux avis, suis ses [recommandations officielles](https://support.google.com/business/answer/3474122?hl=fr).
 
----
-
-*Ce guide est mis à jour régulièrement. Dernière mise à jour : août 2026.*
+Compare tes propres chiffres sur des périodes comparables, en distinguant réservations, couverts et dépenses. Un résultat observé ne permet pas d’isoler automatiquement l’effet d’une seule action.
 
 *Tu as des questions ? Envoie-nous un message sur [Instagram](https://www.instagram.com/so.miam) ou découvre [Gusto](https://www.so-miam.com/gusto), l'IA qui gère ta communication restaurant.*

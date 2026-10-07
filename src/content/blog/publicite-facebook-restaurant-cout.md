@@ -1,10 +1,12 @@
 ---
 title: "Publicité Facebook restaurant : combien ça coûte vraiment"
 description: "Combien coûte une publicité Facebook pour un restaurant ? Le budget minimum, le coût réel par réservation, et les 3 cas où tu ne dois surtout pas lancer de pub."
+updated: 2026-10-07
 date: 2026-09-01
 author: "Thomas Vandeweghe"
 category: "Publicité"
 tags: ["publicité facebook restaurant", "meta ads restaurant", "coût pub restaurant", "pub instagram restaurant", "budget publicité restaurant"]
+offer: agence
 gusto_cta: true
 ---
 
@@ -16,24 +18,19 @@ Alors voilà les vrais chiffres : ce que ça coûte, ce que ça rapporte, et les
 
 ## Combien coûte une publicité Facebook pour un restaurant : la réponse courte
 
-Pour un restaurant indépendant en France, en 2026 :
+Commence par un budget que tu peux consacrer à un test, par exemple 150 à 300 € sur un mois si ta marge le permet. C’est un exemple de budget, pas un minimum imposé par Meta. Définis avant le lancement la manière de compter les réservations et ton coût maximal acceptable.
 
-- **Budget de départ utile : 150 à 300 € par mois.** En dessous de 5 € par jour, Meta n'a pas assez de matière pour trouver les bonnes personnes.
-- **Coût pour toucher 1 000 personnes : 8 à 14 €** selon ta ville et la saison. C'est plus cher en décembre, moins cher en janvier.
-- **Coût d'un clic vers ta page ou ton menu : 0,50 à 1,20 €.** La restauration est un des secteurs les moins chers de Meta — les gens cliquent facilement sur une photo de plat.
-- **Coût par réservation : c'est le seul chiffre qui compte.** Chez nos clients, il tourne autour de **5 €**, avec une fourchette de 2,50 € à 6 € selon la ville et le ticket moyen.
-
-Traduction concrète : avec 200 € de pub sur un mois, tu peux viser 30 à 60 réservations. Si ton ticket moyen est à 35 €, ça fait entre 1 000 et 2 000 € encaissés. C'est ça le calcul à faire — pas le nombre de likes.
+Les coûts varient selon l’audience, la période, le message et le suivi disponible. Il n’existe pas un prix par réservation valable pour tous les restaurants. Une campagne avec peu de réservations donne une estimation encore fragile.
 
 ## Le seul chiffre à suivre : ton coût par réservation
 
 > "J'en ai rien à foutre d'avoir 100 likes. Tout ce que je veux c'est 100 réservations."
 
-Meta va te montrer des dizaines de chiffres. Ignore-les tous sauf un.
+Meta va te montrer des dizaines de chiffres. Commence par les dépenses et les réservations attribuées, puis vérifie la fiabilité du suivi et la marge.
 
-**Coût par réservation = budget dépensé ÷ nombre de couverts venus grâce à la pub.**
+**Coût par réservation = budget dépensé ÷ nombre de réservations attribuées à la pub.**
 
-Tu as dépensé 180 € ce mois-ci et tu as eu 40 réservations issues de la pub ? Ton coût par réservation est de 4,50 €. Tu as investi 4,50 € pour remplir une table qui t'en rapporte 70. La question n'est plus "est-ce que la pub marche", elle est "pourquoi je ne mets pas 400 €".
+Exemple fictif : 180 € dépensés pour 40 réservations attribuées donnent 4,50 € par réservation. Cela ne dit pas combien de personnes sont venues ni quelle marge elles ont générée. Vérifie les annulations, la taille des tables et les dépenses réellement consommées avant d’augmenter le budget.
 
 Le piège, c'est la mesure. Un restaurant, ce n'est pas une boutique en ligne : la personne voit ta pub le mardi et pousse ta porte le samedi. Trois façons simples de compter, sans logiciel :
 
@@ -47,7 +44,7 @@ Ce n'est pas parfait. C'est largement suffisant pour décider si tu continues.
 
 C'est là que la plupart des restaurateurs brûlent leur argent — et souvent, ce n'est pas la faute de la pub.
 
-**1. Ta fiche Google n'est pas au propre.** La pub crée l'envie, mais 8 personnes sur 10 vont ensuite taper le nom de ton restaurant sur Google avant de réserver. Si elles tombent sur des horaires faux, trois photos de 2019 et 2,9 étoiles, tu as payé pour les envoyer chez le voisin. Remets ta fiche d'aplomb d'abord — [on détaille les 7 étapes ici](/blog/fiche-google-restaurant-position-1).
+**1. Ta fiche Google n’est pas au propre.** Les clients peuvent vérifier ton restaurant avant de réserver. Corrige les horaires, les photos et les liens : [voici les contrôles utiles](/blog/fiche-google-restaurant-position-1).
 
 **2. Tu n'as rien à annoncer.** Une pub qui dit "Venez découvrir notre cuisine généreuse dans un cadre chaleureux", ça ne marche pas. Une pub a besoin d'un motif daté : une nouvelle carte, une soirée, un menu de saison, une terrasse qui rouvre. Pas d'événement, pas de raison de cliquer.
 
@@ -57,7 +54,7 @@ Règle simple : la pub amplifie ce qui existe. Elle ne répare rien.
 
 ## Les 4 campagnes qui marchent pour un restaurant
 
-Pas besoin d'en faire dix. Ces quatre-là couvrent 90 % des besoins.
+Voici quatre pistes à tester selon ton objectif, sans les lancer toutes à la fois.
 
 ### 1. La pub de proximité (ta campagne de base)
 
@@ -69,7 +66,7 @@ Une soirée, un menu spécial, une réouverture. Tu lances 10 à 14 jours avant,
 
 ### 3. La relance de ceux qui t'ont déjà vu
 
-Meta peut remontrer ta pub aux personnes qui ont regardé ta vidéo ou visité ton profil. Elles te connaissent déjà, elles coûtent 2 à 3 fois moins cher à convaincre. C'est presque toujours la campagne au meilleur coût par réservation.
+Une audience qui te connaît déjà mérite un test distinct. Compare son coût par réservation aux autres campagnes avec la même période et les mêmes règles de comptage ; aucune économie fixe n’est garantie.
 
 ### 4. La pub vers ton menu
 
@@ -79,19 +76,19 @@ Pour les formats, les tailles d'image et les règles de Meta, tout est dans le [
 
 ## Les 5 erreurs qui font exploser ton coût
 
-1. **Cliquer sur "Booster la publication".** C'est le raccourci le plus cher de Meta. Il va te chercher des likes, pas des réservations. Passe par le gestionnaire de publicités, même si l'interface fait peur les deux premières fois.
+1. **Choisir un objectif sans lien avec ton besoin.** Une campagne visant des interactions ne mesure pas à elle seule des réservations. Vérifie l’objectif et les événements suivis dans le gestionnaire.
 2. **Viser trop large.** "Toute la France" pour un restaurant de quartier, c'est de l'argent jeté. Ton client habite ou travaille à moins de 15 minutes.
 3. **Une seule image.** Mets-en trois ou quatre différentes dans la même campagne et laisse Meta trouver celle qui marche. Souvent, ce n'est pas celle que tu aurais choisie.
-4. **Changer de réglages tous les jours.** Une campagne a besoin de 4 à 5 jours pour se stabiliser. Si tu la modifies chaque matin, elle repart de zéro à chaque fois.
+4. **Changer de réglages trop vite.** Laisse assez de données s’accumuler pour comparer, sauf erreur de diffusion ou de suivi. Le délai dépend du volume, pas d’un nombre de jours universel.
 5. **Envoyer les gens sur ta page Facebook.** Envoie-les là où ils peuvent réserver. Chaque clic en plus, c'est du monde perdu.
 
 ## Ce que ça donne en vrai
 
 > "Il y a beaucoup de visibilité je vois ça, mais ça rapporte rien la visibilité."
 
-C'est exactement pour ça qu'on ne suit que le coût par réservation. Sur nos clients So MIAM, la moyenne s'établit à **5 € dépensés pour une réservation**, avec des mois à 2,50 € sur les campagnes de relance et des pics à 6 € en période chargée comme décembre.
+Suis tes dépenses et tes réservations avec la même méthode d’un mois à l’autre. Les moyennes d’autres restaurants ne remplacent pas tes propres observations.
 
-Le reste des résultats ne vient d'ailleurs pas que de la pub. Le Café de Paris fait environ **+100 % de réservations chaque mois par rapport à l'année précédente**, et Bouillon Pignol tourne à **8 000 couverts par mois**. Dans les deux cas, la pub n'est qu'une pièce : la fiche Google en position 1 et les réseaux travaillent en même temps. La pub allume la mèche, la fiche Google encaisse.
+Compare tes propres chiffres sur des périodes comparables, en distinguant réservations, couverts et dépenses. Un résultat observé ne permet pas d’isoler automatiquement l’effet d’une seule action.
 
 Si tu veux vérifier les ordres de grandeur du secteur avant d'engager un budget, l'[INSEE publie les données de la restauration en France](https://www.insee.fr/fr/statistiques?q=restauration), et [France Num](https://www.francenum.gouv.fr) recense les aides à la numérisation auxquelles tu as parfois droit sans le savoir.
 
@@ -101,7 +98,7 @@ Une campagne bien montée, c'est 1 heure de mise en place, puis 10 minutes par s
 
 > "Les journées font que 24 heures."
 
-C'est le moment où la plupart des restaurateurs abandonnent — pas parce que la pub ne marche pas, mais parce que personne ne rouvre le gestionnaire de publicités le mardi soir à 23h. Des outils comme [Gusto](/gusto) préparent les visuels et les textes de tes campagnes à partir de tes photos et suivent ton coût par réservation, pour que la décision se résume à "je continue" ou "je coupe".
+Pour préparer tes publications habituelles, [Gusto](/gusto) peut aider à rédiger à partir de tes photos. Le suivi des dépenses publicitaires et des réservations doit être vérifié dans les outils concernés ; ne le confonds pas avec la rédaction de posts.
 
 ## Ta checklist pour cette semaine
 
@@ -110,6 +107,6 @@ C'est le moment où la plupart des restaurateurs abandonnent — pas parce que l
 - [ ] Choisis **un** motif daté à annoncer dans les 3 semaines (carte d'automne, soirée, menu spécial).
 - [ ] Fixe un budget test : 150 € sur un mois. Pas plus tant que tu ne connais pas ton coût par réservation.
 - [ ] Ajoute une colonne "vous nous avez connus comment ?" sur ton cahier de résa pendant 2 semaines.
-- [ ] Au bout d'un mois, fais le calcul : budget ÷ réservations. En dessous de 8 €, tu continues et tu montes le budget. Au-dessus de 15 €, tu coupes et tu regardes d'abord ta fiche Google.
+- [ ] Au bout d’un mois, calcule budget ÷ réservations attribuées. Compare ce coût à ta marge et vérifie le suivi avant de poursuivre ou couper.
 
 La pub n'est pas une roulette. C'est un calcul. Tant que le coût par réservation est inférieur à ta marge sur un couvert, tu as le droit de continuer à dépenser.

@@ -1,10 +1,12 @@
 ---
 title: "Restaurant vide le midi : comment remplir ton service déjeuner"
 description: "Ta salle tourne le soir mais elle est vide le midi ? Voici 8 leviers concrets pour remplir ton service déjeuner, avec les chiffres et les méthodes du terrain."
+updated: 2026-10-07
 date: 2026-08-24
 author: "Thomas Vandeweghe"
 category: "Gestion"
 tags: ["remplir restaurant midi", "service déjeuner", "formule midi", "jours creux", "restaurant"]
+offer: formation
 gusto_cta: true
 ---
 
@@ -14,9 +16,9 @@ Ce restaurateur ne rate pas sa cuisine. Il ne rate pas non plus son service. Il 
 
 > "Passage de 30 couverts à 4 couverts en moyenne au midi."
 
-Le midi, c'est le service que la plupart des restaurateurs subissent au lieu de le travailler. Et c'est pourtant celui où il y a le plus à récupérer : tu es déjà ouvert, ton personnel est déjà là, tes charges tournent déjà. Chaque couvert que tu ajoutes au midi tombe presque intégralement dans ta marge.
+Un service déjà ouvert peut accueillir davantage de clients, mais chaque couvert garde des coûts : matières, personnel supplémentaire éventuel, frais de paiement. Calcule la marge de ta formule avant de chercher du volume.
 
-Fin août, c'est le bon moment pour t'y mettre. Les bureaux se remplissent, les habitudes de déjeuner se reforment en deux ou trois semaines, et celui qui est visible début septembre récupère les réflexes de l'année entière.
+À la rentrée comme pendant une période creuse, commence par les entreprises et les habitudes de déjeuner autour de toi. Vérifie ce qui motive leurs choix au lieu de supposer qu’ils ont tous le même budget.
 
 Voici 8 leviers, dans l'ordre où il faut les attaquer.
 
@@ -29,9 +31,9 @@ Le client du midi n'est pas le client du soir. Il ne choisit pas le même jour, 
 - **Le soir**, on choisit à l'avance, on cherche une expérience, on accepte d'attendre.
 - **Le midi**, on décide 20 minutes avant, on cherche du rapide et du lisible, et on tape « restaurant autour de moi » sur son téléphone.
 
-Selon [l'enquête Edenred/Ifop sur la pause déjeuner des Français](https://media.edenred.com/edenred-et-lifop-publient-la-premiere-grande-enquete-sur-la-pause-dejeuner-des-francais/), le budget moyen d'un actif pour son déjeuner est d'environ **8,30 €** — et monte à **10 €** chez ceux qui ont des titres-restaurant. La [durée moyenne d'une pause déjeuner en France est de 31 minutes](https://fr.statista.com/statistiques/727759/duree-moyenne-pause-dejeuner-salaries-francais).
+Demande à quelques clients du midi leur budget habituel et le temps dont ils disposent. Compare ces réponses aux prix des offres voisines et aux temps de service que ton équipe tient réellement.
 
-Retiens ces deux chiffres. Tout ce qui suit en découle : ton offre du midi doit être **rapide**, **lisible avant même d'entrer**, et **calée sur un budget contraint**.
+Ton offre doit être rapide, lisible avant d’entrer et économiquement viable pour ton restaurant.
 
 ---
 
@@ -41,32 +43,32 @@ C'est le levier n°1 et de loin. À 11h50, le salarié ou l'artisan qui cherche 
 
 Ce qu'il faut vérifier aujourd'hui sur ta fiche Google :
 
-1. **Tes horaires du midi sont exacts.** Si Google affiche « ouvre à 12h00 » alors que tu sers à 11h45, tu perds les premiers. Et si un horaire est faux, Google baisse la confiance qu'il accorde à ta fiche.
+1. **Tes horaires du midi sont exacts.** Si Google affiche « ouvre à 12h00 » alors que tu sers à 11h45, tu perds les premiers. Un horaire faux peut faire déplacer un client inutilement.
 2. **Ton menu du midi est en ligne**, avec les prix. Pas un PDF illisible : le champ menu de ta fiche.
 3. **Tu as des photos prises en journée.** Beaucoup de restaurants n'ont que des photos du soir, en lumière tamisée. Le client du midi veut voir une salle claire, une terrasse, un plat du jour.
-4. **Tu publies un post Google par semaine avec ton plat du jour.** C'est gratuit, ça prend 2 minutes, et ça alimente ta fiche en signaux de fraîcheur.
+4. **Tu publies un post Google par semaine avec ton plat du jour.** Cela informe les clients ; ce n’est pas une garantie de classement.
 
-Les règles officielles et les champs disponibles sont détaillés dans le [centre d'aide officiel de Google](https://support.google.com/business). Et si ta fiche est enterrée en page 2, commence par lire notre article sur [comment faire remonter ta fiche Google en position 1](/blog/fiche-google-restaurant-position-1) — sans ça, tous les autres leviers travaillent à moitié.
+Les règles officielles et les champs disponibles sont détaillés dans le [centre d'aide officiel de Google](https://support.google.com/business/answer/7091?hl=fr). Et si ta fiche est enterrée en page 2, commence par lire notre article sur [améliorer ta fiche Google](/blog/fiche-google-restaurant-position-1) — sans ça, tous les autres leviers travaillent à moitié.
 
-Un exemple concret : Le Paradoxe est passé de la position 5 à la position 1 sur « restaurant tourcoing ». Le Café de Paris de la position 15 à la position 1 sur « entrecôte frites lille ». Sur des requêtes tapées majoritairement entre 11h30 et 12h30, ce déplacement change tout le service.
+Nos relevés internes mentionnent des progressions historiques pour Le Paradoxe et le Café de Paris. Ils ne fournissent pas les horaires des recherches ni une mesure actuelle : on ne peut pas en déduire un gain précis sur le service du midi.
 
 ---
 
 ## 2. Construis une formule midi qui tient dans un titre-restaurant
 
-C'est le détail que 80% des restaurateurs ignorent, et c'est purement arithmétique.
+Fixe ton prix à partir de tes coûts et du budget observé dans ton quartier.
 
-Depuis le 1er janvier 2026, la participation de l'employeur au titre-restaurant est exonérée de cotisations jusqu'à **7,32 € par titre**, ce qui place la valeur des titres qui ouvrent droit à l'exonération maximale **entre 12,20 € et 14,64 €** ([barème Urssaf](https://www.urssaf.fr/portail/home/taux-et-baremes/frais-professionnels/les-titres-restaurant.html), voir aussi [economie.gouv.fr](https://www.economie.gouv.fr/entreprises/gerer-ses-ressources-humaines-et-ses-salaries/titres-restaurant-les-5-informations-connaitre)).
+La valeur d’un titre-restaurant ne constitue pas un budget déjeuner universel. Vérifie les modalités de paiement applicables auprès de ton prestataire et affiche clairement les moyens acceptés.
 
-Traduction pour ta carte : une formule à **14,50 €** est payée intégralement en titres par une grosse partie des salariés du quartier. Une formule à 19 €, non — il faut sortir la carte bancaire, et c'est exactement là que la décision bascule vers la boulangerie d'en face.
+Tu peux tester deux formules, mais leur prix doit préserver ta marge. Les montants ci-dessous sont des exemples, pas un seuil de rentabilité ni une règle liée aux titres-restaurant.
 
 Ce que tu fais :
 
-- Une formule d'entrée de gamme **sous la barre de 14,50 €** (plat + café, ou entrée + plat)
+- Une formule d'entrée de gamme **à un prix compatible avec tes coûts** (plat + café, ou entrée + plat)
 - Une formule au-dessus pour ceux qui veulent plus
 - **Deux formules maximum.** Trois choix de plats, pas dix. Le midi, trop de choix = temps de décision qui explose = table qui tourne moins vite.
 
-Et accepte les titres-restaurant en dématérialisé si ce n'est pas déjà fait. C'est aujourd'hui la majorité du parc.
+Et accepte les titres-restaurant en dématérialisé si ce n'est pas déjà fait. Vérifie les coûts et conditions de ton contrat.
 
 ---
 
@@ -88,7 +90,7 @@ Le passage piéton du matin, ce sont tes couverts de midi.
 
 Même logique, autre canal. Le créneau **11h – 11h30** est le moment où les gens commencent à se demander où ils vont manger. Une photo du plat du jour, le prix, l'adresse. C'est tout.
 
-Ça semble trivial. C'est pourtant le post le plus rentable de la semaine pour un restaurant qui sert le midi, parce que c'est le seul qui déclenche une venue dans l'heure. On détaille les formats qui marchent dans notre article sur [quoi poster sur Instagram quand on est restaurateur](/blog/quoi-poster-instagram-restaurateur).
+Teste cette publication pendant quelques semaines, puis demande aux clients comment ils ont connu la formule. Tu trouveras des formats dans notre guide [quoi poster sur Instagram](/blog/quoi-poster-instagram-restaurateur).
 
 Une story par jour à 11h suffit. Régularité > perfection.
 
@@ -102,15 +104,15 @@ Ensuite, trois actions dans l'ordre de difficulté :
 
 1. **Le mail aux offices managers.** Un mail court avec ta formule et tes horaires. Pas une plaquette. Un mail de 5 lignes.
 2. **La carte de fidélité entreprise.** 10 déjeuners = 1 offert. Ça marche parce que le déjeuner du midi est un acte répété, pas un acte exceptionnel.
-3. **Le déjeuner de groupe pré-réservé.** Propose aux entreprises voisines une table réservée à heure fixe avec service en 45 minutes garanti. C'est le seul argument qui compte pour un salarié qui a 1h de pause.
+3. **Le déjeuner de groupe pré-réservé.** Propose aux entreprises voisines une table réservée à heure fixe avec une durée de service que ton équipe peut réellement tenir. C'est le seul argument qui compte pour un salarié qui a 1h de pause.
 
-Un restaurant qui capte trois entreprises de 30 personnes n'a plus de problème de midi.
+Mesure les visites réellement apportées par ces entreprises avant de développer cette démarche.
 
 ---
 
 ## 6. Garantis un temps de service
 
-31 minutes de pause moyenne. Si le salarié ne sait pas combien de temps il va rester chez toi, il ne prend pas le risque.
+Un client pressé a besoin de savoir si le déjeuner tient dans sa pause. Mesure le temps entre commande, service et encaissement avant d’annoncer une durée.
 
 Affiche-le. Sur l'ardoise, sur la fiche Google, dans ta story :
 
@@ -168,7 +170,7 @@ Et surtout : ne solde jamais tout le midi. Un -50% permanent attire des clients 
 
 Tout ça, c'est faisable. Le problème, c'est que ça fait 8 choses de plus à gérer quand tu es déjà en cuisine à 7h et que tu fermes à 23h.
 
-Des outils comme [Gusto](/gusto) permettent de générer le post du plat du jour à partir d'une simple photo, de répondre aux avis Google et de garder ta fiche à jour, sans y passer ton service. Ce qui te prendrait 20 minutes chaque matin en prend 2.
+[Gusto](/gusto) peut préparer le texte du post du jour et des réponses aux avis. Tu vérifies les plats, prix et horaires avant publication ; aucun gain de temps identique n’est garanti pour tous.
 
 Le reste — la formule, l'ardoise, le mail aux entreprises — c'est du travail de fond que personne ne peut faire à ta place. Mais tu le fais une fois, pas tous les jours.
 
@@ -179,13 +181,13 @@ Le reste — la formule, l'ardoise, le mail aux entreprises — c'est du travail
 Dans l'ordre, sans en sauter :
 
 1. **Aujourd'hui** — Ouvre ta fiche Google. Vérifie les horaires du midi, ajoute 3 photos prises en journée, mets ton menu du midi avec les prix.
-2. **Demain** — Recalcule ta formule midi pour qu'elle passe sous 14,50 €. Réduis à 3 plats au choix.
+2. **Demain** — Recalcule la marge de ta formule midi. Réduis à 3 plats au choix.
 3. **Mercredi** — Fais la liste des entreprises à moins de 10 minutes à pied. Écris un mail de 5 lignes. Envoie-le à 10 d'entre elles.
 4. **Jeudi** — Regarde tes chiffres des 3 derniers mois, identifie tes 2 pires jours au midi, décide de ce que tu y mets.
 5. **Chaque matin** — Ardoise sortie à 11h15, photo du plat du jour postée à 11h.
 
 Cinq actions. Aucune ne demande d'agence, aucune ne demande de budget publicitaire.
 
-Sur l'ensemble des restaurants qu'on suit chez So MIAM, la moyenne est de **+30% de réservations par mois par rapport à l'année précédente**. Le Café de Paris tourne autour de **+100% chaque mois** face à N-1. Ce n'est pas une recette magique : c'est ce genre de fondamentaux, appliqués sans les lâcher au bout de trois semaines.
+D’après nos relevés internes « Résultats clients », consultés le 7 octobre 2026, le Café de Paris comptait **2 120 réservations en mai 2026 contre 1 688 en mai 2025**, soit **+25,6 %**. Il s’agit de réservations, pas de couverts. Cette comparaison ne permet pas d’isoler l’effet d’un canal ou d’une action.
 
-Le midi ne se remplit pas tout seul. Mais c'est le service où l'effort rapporte le plus vite — parce que tout est déjà payé.
+Cette semaine, teste une action sur tes jours creux et note les couverts, le panier et la marge. Compare ensuite des services comparables avant de généraliser.

@@ -7,6 +7,8 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    offer: z.enum(['gusto', 'formation', 'agence']).default('gusto'),
     author: z.string().default('Thomas Vandeweghe'),
     category: z.string(),
     tags: z.array(z.string()),

@@ -5,6 +5,7 @@ date: 2026-10-01
 author: "Thomas Vandeweghe"
 category: "Google"
 tags: ["horaires exceptionnels Google", "jours fériés restaurant", "fiche Google restaurant"]
+offer: gusto
 gusto_cta: true
 ---
 

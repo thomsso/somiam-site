@@ -5,6 +5,7 @@ date: 2026-09-21
 author: "Thomas Vandeweghe"
 category: "Google"
 tags: ["lien de réservation Google", "réservation restaurant", "fiche Google"]
+offer: gusto
 gusto_cta: true
 ---
 

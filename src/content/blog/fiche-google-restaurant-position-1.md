@@ -1,10 +1,12 @@
 ---
-title: "Fiche Google restaurant : comment passer de la page 3 à la position 1"
-description: "Ton restaurant est invisible sur Google Maps ? Voici les 7 étapes concrètes pour remonter en position 1 — avec des exemples de restaurants passés de la page 3 au top."
+title: "Fiche Google restaurant : 7 actions pour mieux être trouvé"
+description: "Améliore ta fiche Google restaurant : horaires, menu, photos, avis et réservation. Sept actions concrètes pour aider les clients à te trouver et à réserver."
+updated: 2026-10-07
 date: 2026-08-21
 author: "Thomas Vandeweghe"
 category: "Google"
 tags: ["google maps", "seo local", "fiche google", "google my business", "restaurant"]
+offer: gusto
 gusto_cta: true
 ---
 
@@ -12,9 +14,7 @@ gusto_cta: true
 
 Ouvre une fenêtre de navigation privée. Tape "restaurant + ta ville". Regarde les 3 premiers résultats sur Google Maps.
 
-Tu y es ? Non ? Alors pour les clients qui cherchent où manger ce soir, tu n'existes pas.
-
-C'est pas une opinion. C'est comme ça que fonctionne Google Maps. Les 3 premiers résultats du "pack local" captent la quasi-totalité des clics. À partir de la 4ème position, le taux de clic s'effondre. Page 2 ou 3 ? Autant être invisible.
+Si ton restaurant apparaît peu, vérifie d’abord les informations de ta fiche. La position dépend aussi de la requête et du lieu de recherche ; la navigation privée ne supprime pas la géolocalisation.
 
 > "J'ai regardé sur Google, je suis à peu près à la 60ème position. Après les 3-4-5, tu n'existes plus."
 
@@ -28,18 +28,13 @@ Les réseaux sociaux, c'est bien. Mais soyons clairs : quelqu'un qui tape "resta
 
 Google Maps, c'est le premier réflexe. Avant TripAdvisor, avant Instagram, avant le bouche-à-oreille. Surtout pour les gens qui ne sont pas du coin.
 
-Quelques chiffres :
-- **46% des recherches Google** ont une intention locale
-- **76% des personnes** qui cherchent un commerce à proximité s'y rendent dans les 24h
-- **28% de ces recherches** aboutissent à un achat (ou une réservation)
+[Google explique que le classement local repose principalement sur la pertinence, la distance et la popularité](https://support.google.com/business/answer/7091?hl=fr). Aucune série d’actions ne garantit la première place. Le travail ci-dessous sert à mieux présenter ton restaurant et à faciliter la venue des clients.
 
-Ta fiche Google, c'est ta vitrine sur le trottoir le plus fréquenté du monde. Et contrairement à un beau local en centre-ville, elle est gratuite.
-
-## Les 7 étapes pour passer en position 1
+## Les 7 actions à vérifier sur ta fiche Google
 
 ### 1. Remplis CHAQUE champ de ta fiche Google Business Profile
 
-Google favorise les fiches complètes. Chaque champ vide, c'est un signal envoyé à Google : "cette fiche n'est pas fiable."
+Renseigne les informations exactes et les champs qui correspondent réellement à ton activité. N’invente pas un service pour remplir une case.
 
 Voici ce que tu dois remplir :
 - **Nom exact** de ton restaurant (pas de mots-clés ajoutés, c'est interdit par Google)
@@ -52,54 +47,50 @@ Voici ce que tu dois remplir :
 - **Lien de réservation** (ZenChef, TheFork, ton propre système)
 - **Description** de 750 caractères max — on y revient plus bas
 
-La plupart des restaurateurs remplissent le nom, l'adresse et les horaires. C'est 30% du travail. Les 70% restants font la différence entre page 3 et position 1.
+Vérifie ensuite le résultat côté client, notamment le menu et le lien de réservation sur mobile.
 
 ### 2. Publie des Google Posts chaque semaine
 
 Peu de restaurateurs le savent : ta fiche Google a une fonction "posts" qui ressemble à un mini réseau social. Tu peux y publier des photos avec un court texte — un plat du jour, un événement, une nouvelle carte.
 
 Pourquoi c'est puissant :
-- Google voit que ta fiche est **active** et la remonte dans les résultats
-- Les posts apparaissent directement sur ta fiche quand quelqu'un la consulte
-- C'est un signal de fraîcheur : un restaurant qui publie est un restaurant qui tourne
+- Les clients peuvent consulter une actualité pertinente quand ils ouvrent ta fiche ; ce n’est pas une promesse de hausse de classement.
 
-**Fréquence minimum :** 1 post par semaine. L'idéal, c'est 2 à 3. Un plat du jour le mardi, une photo de la salle le jeudi, une promo week-end le vendredi.
+**Rythme de travail proposé :** vérifie une fois par semaine si tu as une information utile à publier. Aucun minimum de publications ne garantit une meilleure position.
 
-Pas besoin de textes littéraires. "Plat du jour : souris d'agneau confite 7h, purée maison. 14,90€. Réserve ta table." C'est suffisant.
+Exemple fictif, à adapter à ta carte réelle : "Plat du jour : souris d'agneau confite 7h, purée maison. 14,90€. Réserve ta table." C'est suffisant.
 
 ### 3. Obtiens plus d'avis Google (et régulièrement)
 
-Le nombre d'avis et la note moyenne sont deux des critères les plus importants pour le classement Google Maps. Un restaurant avec 200 avis à 4.5 étoiles sera toujours devant un restaurant avec 15 avis à 4.8.
+Le nombre d’avis et les notes participent à la popularité de la fiche. Ils ne suffisent pas à prédire laquelle apparaîtra en premier : la distance et la pertinence comptent aussi.
 
-Mais attention : Google veut de la **régularité**. 50 avis d'un coup puis plus rien pendant 6 mois, c'est suspect. 5 avis par semaine, chaque semaine, c'est le signal idéal.
+Demande des retours authentiques après les visites, sans quota magique ni contrepartie. Propose la même possibilité aux clients satisfaits et insatisfaits.
 
 Comment faire concrètement :
 - **QR code sur table** qui mène directement à la page d'avis Google (pas à ta fiche, directement aux avis)
-- **Demander à la fin d'un bon service** — quand le client te dit "c'était super", c'est le moment : "Ça me ferait plaisir si tu pouvais laisser un petit avis Google, ça nous aide énormément"
-- **Ajouter le lien dans le ticket** ou dans le SMS de confirmation de réservation
-- **Former ton équipe en salle** — c'est eux qui ont le contact client, pas toi en cuisine
+- **Proposer à tous les clients de donner leur avis**, sans trier selon leur satisfaction, sans insister et sans dicter la note.
+- **Ajouter le lien au ticket** pour faciliter le geste.
+- **Former ton équipe en salle** à proposer un retour libre, sans pression.
 
 > "Je suis très mal référencé même si on est là depuis plus de 40 ans."
 
-40 ans de présence ne remplacent pas 200 avis Google récents. Google ne mesure pas l'ancienneté. Il mesure l'activité.
+L’ancienneté ne suffit pas à expliquer un classement. Regarde aussi les informations disponibles, les avis et les recherches réellement pertinentes pour ton restaurant.
 
-### 4. Réponds à TOUS les avis — positifs et négatifs
+### 4. Apporte des réponses utiles aux avis
 
-Répondre aux avis, c'est un double bénéfice :
-1. **Google le prend en compte** dans son classement. Un restaurant qui répond à ses avis est considéré comme engagé et fiable.
-2. **Les futurs clients lisent tes réponses.** Un avis négatif avec une réponse pro et calme rassure plus qu'un avis 5 étoiles sans réponse.
+Répondre aux avis permet de **donner du contexte aux lecteurs**, notamment lorsqu’un retour décrit un problème.
 
 Règles de base :
-- Réponds dans les **48h** maximum
+- Prévois un créneau régulier ; **48h** peut servir de repère interne, sans être une règle Google
 - Remercie les avis positifs avec une touche perso (cite le plat mentionné)
 - Pour les avis négatifs : reconnais le problème, propose de rectifier, reste factuel
 - Ne te justifie jamais de manière agressive — les futurs clients te jugent sur ta réponse
 
 Pour aller plus loin sur ce sujet, j'ai écrit un guide complet : [Comment répondre aux avis Google de ton restaurant](/blog/repondre-avis-google-restaurant).
 
-### 5. Ajoute des photos régulièrement (minimum 5 par mois)
+### 5. Actualise les photos quand ton restaurant change
 
-Les fiches avec plus de 100 photos reçoivent **520% plus d'appels** et **2 717% plus de demandes d'itinéraire** que les fiches sans photos (données Google).
+Des photos récentes aident les clients à reconnaître le lieu et ce qui est servi. Aucun nombre de photos ne garantit un volume d’appels ou de demandes d’itinéraire.
 
 Ce qu'il faut poster :
 - **Tes plats** — les best-sellers, les nouveautés de la carte, le plat du jour
@@ -118,7 +109,7 @@ Ce qu'il ne faut PAS poster :
 
 NAP = Name, Address, Phone (nom, adresse, téléphone). Google croise les informations de ta fiche avec toutes les autres sources sur internet : PagesJaunes, TripAdvisor, TheFork, ton site web, tes réseaux sociaux.
 
-Si ton numéro de téléphone est différent sur TheFork et sur ta fiche Google, Google doute. Si ton adresse est écrite "12 rue de la Paix" sur ta fiche et "12 r. de la Paix" sur PagesJaunes, Google doute. Et quand Google doute, il te fait descendre.
+Corrige les erreurs qui empêchent un client de te contacter ou de venir : ancien numéro, mauvaise adresse, horaires périmés. Une simple abréviation de rue n’est pas une preuve de pénalité.
 
 **Checklist NAP :**
 - Ta fiche Google
@@ -129,16 +120,15 @@ Si ton numéro de téléphone est différent sur TheFork et sur ta fiche Google,
 - PagesJaunes / Yelp
 - ZenChef / tout système de réservation
 
-Le même nom. La même adresse. Le même numéro. Partout. Pas d'abréviation, pas de variante.
+Le même restaurant doit être identifiable partout avec des coordonnées actuelles.
 
 ### 7. Choisis les bonnes catégories et travaille ta description
 
-La catégorie principale de ta fiche est le critère n°1 pour Google. "Restaurant" tout seul, c'est trop vague. "Restaurant italien", "Restaurant libanais", "Brasserie" — c'est ce qui permet à Google de te montrer quand quelqu'un cherche exactement ce type de cuisine.
+Choisis la catégorie principale qui décrit le mieux ton activité réelle. N’ajoute des catégories secondaires que si elles correspondent à des services que tu proposes.
 
 **Règles pour les catégories :**
 - 1 catégorie principale = ton type de cuisine exact
-- 2 à 5 catégories secondaires = les services que tu proposes (livraison, traiteur, brunch…)
-- Ne mets PAS des catégories qui ne correspondent pas à ton restaurant — Google détecte les incohérences
+- Des catégories secondaires uniquement lorsqu’elles sont pertinentes ; aucun quota à remplir.
 
 **Pour la description :**
 - 750 caractères maximum
@@ -149,24 +139,7 @@ La catégorie principale de ta fiche est le critère n°1 pour Google. "Restaura
 Exemple :
 > "Restaurant libanais au cœur du Vieux-Lille. Cuisine familiale préparée chaque jour avec des produits frais. Spécialités : mezzé, grillades au charbon, houmous maison. Terrasse 40 places. Ouvert midi et soir du mardi au dimanche."
 
-C'est naturel, informatif, et ça contient les bons mots-clés.
-
-## Les résultats : des restaurants passés de la page 3 au top 1
-
-La théorie c'est bien. Les résultats c'est mieux. Voici 4 restaurants qu'on accompagne chez So MIAM et leur progression sur Google Maps :
-
-| Restaurant | Requête | Avant | Après |
-|---|---|---|---|
-| **Le Paradoxe** | "restaurant tourcoing" | Position 5 | **Position 1** |
-| **Maison L** | "restaurant libanais lille" | Position 20 | **Position 1** |
-| **Bouillon Pignol** | "restaurant lesquin" | Position 20 | **Position 1** |
-| **Café de Paris** | "entrecôte frites lille" | Position 15 | **Position 1** |
-
-Maison L était en position 20 — autant dire invisible. Personne ne scrolle jusqu'à la 20ème position sur Google Maps. Après avoir appliqué ces 7 étapes de manière systématique, ils sont passés premiers. Résultat concret : le restaurant qui était au bord de la fermeture a enchaîné ses meilleurs mois ever et a dû recruter.
-
-Bouillon Pignol, même scénario. Position 20 sur "restaurant lesquin", personne ne les trouvait. Aujourd'hui position 1, 8 000 couverts par mois, environ 250 000€ de CA mensuel.
-
-Ce ne sont pas des exceptions. C'est ce qui se passe quand tu travailles ta fiche Google de manière sérieuse et régulière.
+Cet exemple de description est fictif : vérifie chaque plat, horaire et capacité avant de l’utiliser.
 
 ## Comment suivre ta position sur Google Maps
 
@@ -174,7 +147,7 @@ Le problème avec Google Maps, c'est que ta position change selon l'endroit où 
 
 Pour suivre ta vraie position, tu as besoin d'un outil qui vérifie ton classement depuis plusieurs points géographiques autour de ton restaurant.
 
-C'est exactement ce que fait le **Health Score de Gusto** : il suit ta position Google Maps automatiquement, chaque semaine, et te donne un score de santé global de ta présence en ligne. Tu vois si tu montes, si tu descends, et ce qu'il faut corriger — sans passer des heures à faire des recherches en navigation privée. Gusto, c'est la plateforme So MIAM pour les restaurateurs qui veulent piloter leur com eux-mêmes, à 59€/mois.
+Pour la rédaction des posts et des réponses aux avis, [Gusto](/gusto) est proposé à 59 €/mois sans la formation. Vérifie séparément tes positions et les informations de ta fiche ; l’outil ne dispense pas de ce contrôle.
 
 ## Checklist : tes actions pour cette semaine
 
@@ -191,4 +164,6 @@ Pas besoin de tout faire en un jour. Commence par ces actions cette semaine :
 
 Ensuite, tiens le rythme : 1 Google Post par semaine, 5 photos par mois, réponses aux avis dans les 48h.
 
-Dans 2 à 3 mois, refais le test en navigation privée. Tu verras la différence.
+Après quelques semaines, compare les mêmes requêtes aux mêmes endroits et les actions des clients dans ta fiche. Une variation isolée ne prouve pas l’effet d’une modification.
+
+Pour organiser la demande d’avis sans contrepartie, consulte les [recommandations officielles de Google](https://support.google.com/business/answer/3474122?hl=fr).

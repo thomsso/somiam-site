@@ -5,6 +5,7 @@ date: 2026-09-24
 author: "Thomas Vandeweghe"
 category: "Gestion"
 tags: ["repas de groupe", "restaurant entreprise", "réservation groupe restaurant"]
+offer: formation
 gusto_cta: true
 ---
 

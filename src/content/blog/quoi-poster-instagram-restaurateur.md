@@ -1,10 +1,12 @@
 ---
-title: "Quoi poster sur Instagram quand on est restaurateur (et qu'on a pas le temps)"
-description: "Tu sais que tu devrais poster mais tu sais pas quoi. Voici 15 idées de posts Instagram pour ton restaurant — faisables entre deux services, sans photographe ni agence."
+title: "Quoi poster sur Instagram : 15 idées pour ton restaurant"
+description: "Tu ne sais pas quoi poster sur Instagram pour ton restaurant ? Voici 15 idées concrètes à préparer entre deux services, avec tes photos et sans agence."
+updated: 2026-10-07
 date: 2026-08-21
 author: "Thomas Vandeweghe"
 category: "Instagram"
 tags: ["instagram", "réseaux sociaux", "contenu restaurant", "idées posts"]
+offer: gusto
 gusto_cta: true
 ---
 
@@ -139,7 +141,7 @@ Deux créneaux fonctionnent mieux que les autres :
 - **11h30 – 12h30** : les gens commencent à avoir faim, ils scrollent, ils cherchent où manger. C'est le moment de poster ton plat du jour.
 - **18h – 19h** : pareil pour le soir. "Qu'est-ce qu'on fait ce soir ?" C'est là que ton post doit apparaître.
 
-Le minimum pour que ça fonctionne : **3 à 4 posts par semaine**. Pas besoin de poster tous les jours. Mais en dessous de 3 fois par semaine, l'algorithme t'oublie et tes abonnés aussi.
+Choisis un rythme que tu peux tenir, par exemple deux ou trois publications par semaine, puis observe les résultats sur plusieurs semaines. Aucun seuil de trois posts ne déclenche à lui seul une pénalité automatique.
 
 ---
 
@@ -151,7 +153,7 @@ En réalité, le système d'Instagram est assez simple. Ce qui bloque la plupart
 
 La légende, c'est ce qui transforme une jolie photo en réservation. C'est elle qui dit où tu es, ce qu'on mange, et pourquoi il faut venir maintenant.
 
-Si tu bloques systématiquement à cette étape, des outils comme [Gusto](https://so-miam.com/gusto) permettent de générer une légende à partir d'une simple photo de ton plat. Tu prends la photo, l'IA écrit le texte. Tu ajustes si tu veux, tu publies. Le post qui aurait pris 20 minutes en prend 2.
+[Gusto](/gusto) peut préparer une légende à partir de ta photo. Relis les ingrédients, les prix et la disponibilité : une image ne suffit pas à connaître toute ta carte.
 
 ---
 

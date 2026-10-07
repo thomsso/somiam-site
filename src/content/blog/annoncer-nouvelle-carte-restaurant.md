@@ -5,6 +5,7 @@ date: 2026-09-17
 author: "Thomas Vandeweghe"
 category: "Gestion"
 tags: ["nouvelle carte restaurant", "annoncer nouvelle carte", "menu automne restaurant"]
+offer: gusto
 gusto_cta: true
 ---
 
