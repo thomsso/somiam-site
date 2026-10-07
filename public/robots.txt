@@ -1,4 +1,6 @@
 User-agent: *
+# Server endpoints are not public pages (checkout accepts POST only).
+Disallow: /api/
 Allow: /
 
 Sitemap: https://www.so-miam.com/sitemap.xml

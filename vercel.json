@@ -8,6 +8,21 @@
       "permanent": true
     },
     {
+      "source": "/conditions-generales-dutilisation",
+      "destination": "/cgu",
+      "permanent": true
+    },
+    {
+      "source": "/conditions-generales-de-vente",
+      "destination": "/cgv",
+      "permanent": true
+    },
+    {
+      "source": "/politique-de-confidentialite",
+      "destination": "/politique-confidentialite",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "so-miam.com" }],
       "destination": "https://www.so-miam.com/:path*",
