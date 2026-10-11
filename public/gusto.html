@@ -181,6 +181,17 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--w); }
+.nav-login {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px;
+  color: var(--w); font-size: 13px; font-weight: 500; text-decoration: none; white-space: nowrap;
+}
+.nav-login:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+.nav-login:focus-visible { outline: 2px solid var(--y); outline-offset: 4px; }
+@media (min-width: 769px) and (max-width: 1100px) {
+  nav { padding: 0 24px; gap: 12px; }
+  .nav-links { gap: 16px; }
+}
 .nav-cta {
   background: var(--y); color: var(--k);
   font-family: 'Space Grotesk', sans-serif;
@@ -1058,6 +1069,7 @@ footer {
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
+  .nav-login { margin-left: auto; margin-right: 8px; }
 
   /* ── HERO MOBILE ── */
   #hero {
@@ -1370,6 +1382,7 @@ footer {
     <li><a href="#prix">Tarifs</a></li>
     <li><a href="/avis">Avis</a></li>
   </ul>
+  <a href="https://app.so-miam.com/" class="nav-login">Se connecter</a>
   <a href="#" onclick="event.preventDefault();startCheckout()" class="nav-cta">Essayer Gusto</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
