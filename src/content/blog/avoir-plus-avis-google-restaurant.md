@@ -1,7 +1,7 @@
 ---
 title: "Avoir plus d'avis Google restaurant : la méthode qui marche"
 description: "Comment avoir plus d’avis Google pour ton restaurant ? Lien direct, QR code, demande en salle et suivi : les étapes à appliquer sans offrir de contrepartie."
-updated: 2026-10-07
+updated: 2026-10-12
 date: 2026-09-07
 author: "Thomas Vandeweghe"
 category: "Google"
@@ -12,9 +12,7 @@ gusto_cta: true
 
 > "J'ai regardé sur Google, je suis à peu près à la 60ème position. Après les 3-4-5, tu n'existes plus."
 
-Tu as 40 avis. Ton voisin en a 380. Même cuisine, même rue, même ticket moyen. Et c'est lui qui sort en premier quand quelqu'un tape "restaurant + ta ville" à 12h15.
-
-Ce n'est pas de la malchance. C'est juste qu'il demande, et toi non.
+Tu aimerais recevoir davantage de retours après les repas, mais la demande passe souvent après le service. Commence par rendre ce geste simple et régulier. Le nombre d’avis peut compter dans la visibilité locale ; il ne suffit pas à expliquer pourquoi un voisin apparaît devant toi.
 
 ## Comment avoir plus d'avis Google sur son restaurant : la réponse courte
 
@@ -70,26 +68,26 @@ Ce qui tient dans la durée, sans quota :
 
 Le QR code doit être là où le client a déjà les mains libres et le téléphone sorti : le porte-addition, un petit chevalet de table, le ticket de caisse imprimé, l'écran du terminal de paiement si ton prestataire le permet.
 
-Pour la vente à emporter : un flyer format carte de visite dans le sac. C'est le canal le plus rentable — le client ouvre le sac chez lui, encore dans l'expérience, téléphone en main.
+Pour la vente à emporter : un flyer format carte de visite dans le sac. Le client peut ainsi retrouver le lien une fois chez lui. Vérifie simplement que le QR code reste lisible et conduit à la bonne fiche.
 
 ### 5. Relance par SMS, mais une seule fois
 
-Si tu prends les réservations avec un numéro de téléphone, tu as déjà tout ce qu'il te faut.
+Un numéro donné pour réserver ne t’autorise pas automatiquement à l’utiliser pour toute relance. Vérifie la finalité annoncée lors de sa collecte et les règles applicables avant d’envoyer un message.
 
 > "On a une base de données clients qu'on n'utilise pas parce qu'on n'a jamais relancé un seul client alors qu'ils nous donnent leur numéro de téléphone pour réserver."
 
-Le SMS du lendemain matin, entre 10h et 11h, fonctionne mieux qu'un envoi à chaud le soir même : le client est au calme et se souvient encore.
+Tu peux tester un message le lendemain si cet usage est prévu et autorisé. Il n’existe pas ici de preuve qu’un créneau précis fonctionne mieux pour tous les restaurants. Voici un exemple fictif à adapter :
 
 > "Bonjour Marie, merci d'être venue hier soir au [nom]. Votre avis Google nous aiderait beaucoup, ça prend 30 secondes : [lien]. Bonne journée — Thomas"
 
-Une relance. Jamais deux. Et cadre la collecte : la [CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique-sms-mms-et-automate-dappel) impose d'informer la personne quand tu prends son numéro et de lui laisser un moyen simple de refuser. Une case à cocher, décochée par défaut, sur ton formulaire de réservation. Réglé en une fois.
+Limite cette démarche à un message, sans insister. La [CNIL précise les règles de prospection commerciale par SMS](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique-sms-mms-et-automate-dappel) : pour les particuliers, le consentement préalable est le principe, avec des exceptions encadrées, notamment pour certains clients existants. La qualification dépend du contenu et de la finalité de ton message ; ajouter une promotion change la question. Prévois l’information nécessaire et un moyen simple et gratuit de s’opposer. Une case sur le formulaire ne règle pas, à elle seule, tous les usages de ton fichier.
 
 ### 6. Les 4 choses que tu n'as pas le droit de faire
 
 Ces quatre pratiques sont conseillées à peu près partout, et elles sont toutes interdites par les [règles Google sur les contenus publiés](https://support.google.com/contributionpolicy/answer/7400114). Google supprime les avis concernés, et en cas de récidive, restreint la fiche.
 
 1. **Offrir une contrepartie.** Un café offert, une remise, un tirage au sort. Interdit, y compris pour faire modifier ou retirer un avis négatif.
-2. **Ne demander qu'aux clients contents.** Sonder d'abord, puis n'envoyer vers Google que ceux qui se déclarent satisfaits. C'est interdit par Google, et c'est aussi une pratique commerciale trompeuse au sens du droit de la consommation.
+2. **Ne demander qu'aux clients contents.** Sonder d'abord, puis n'envoyer vers Google que ceux qui se déclarent satisfaits. C’est interdit par Google. Laisse chaque client raconter librement son expérience.
 3. **Imposer un quota d'avis à ton équipe.** Interdit explicitement. La parade n'est pas d'arrêter de demander : c'est d'en faire une étape du service plutôt qu'un objectif.
 4. **Dicter le contenu.** Demander qu'un plat, un serveur ou un mot-clé soit cité. Nommément interdit, y compris quand ça part d'une bonne intention ("citez le prénom de votre serveur").
 
@@ -105,7 +103,7 @@ Répondre alimente le cercle : ceux qui lisent tes réponses voient une salle vi
 
 > "J'ai pas osé répondre."
 
-C'est la phrase qu'on entend le plus. Répondre à un avis à 2 étoiles n'est pas un aveu. C'est la seule réponse que les 200 personnes suivantes vont lire.
+Répondre à un avis à 2 étoiles n’est pas un aveu. Ta réponse peut aussi aider les personnes qui consultent la fiche à comprendre ce que tu as fait pour traiter le problème.
 
 ## Et les recommandations par les IA ?
 
@@ -128,9 +126,9 @@ Le blocage n'est jamais la méthode. Il est toujours le même.
 3. Compte ton nombre d'avis aujourd'hui et note-le au tableau en cuisine
 4. Ajoute la phrase au script de service, juste après la proposition de café
 5. Rappelle-le en briefing avant chaque service pendant deux semaines
-6. Réponds à tous les avis en retard, en commençant par les négatifs
+6. Traite en priorité les avis qui demandent une explication ou un suivi
 7. Recompte dans 30 jours
 
-L'objectif n'est pas d'avoir 500 avis. Il est d'en avoir dix ou quinze de plus chaque mois, indéfiniment. C'est ce flux qui te fait passer devant, pas le stock.
+Observe les retours reçus et la régularité de ta demande, sans imposer un quota d’avis. Ce suivi ne garantit ni un rythme mensuel ni une place devant tes concurrents.
 
 Et si tu ne fais qu'une seule chose : demande, à voix haute, à la fin du repas. C'est la seule étape que rien ne remplace.
