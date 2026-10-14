@@ -147,7 +147,7 @@ Le problème avec Google Maps, c'est que ta position change selon l'endroit où 
 
 Pour suivre ta vraie position, tu as besoin d'un outil qui vérifie ton classement depuis plusieurs points géographiques autour de ton restaurant.
 
-Pour la rédaction des posts et des réponses aux avis, [Gusto](/gusto) est proposé à 59 €/mois sans la formation. Vérifie séparément tes positions et les informations de ta fiche ; l’outil ne dispense pas de ce contrôle.
+Pour la rédaction des posts et des réponses aux avis, [Gusto](/gusto) est proposé à 69 € HT/mois sans la formation. Vérifie séparément tes positions et les informations de ta fiche ; l’outil ne dispense pas de ce contrôle.
 
 ## Checklist : tes actions pour cette semaine
 

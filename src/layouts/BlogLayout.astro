@@ -15,8 +15,8 @@ interface Props {
 const { title, description, date, author, category, image, imageAlt, updated, offer = 'gusto', gusto_cta = true } = Astro.props;
 const formattedDate = date ? new Date(date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
 const offers = {
-  gusto: { name: 'Gusto', title: 'Prépare tes posts et tes réponses aux avis', text: 'L’abonnement Gusto à 59 €/mois, sans la formation. Tu gardes la main sur les informations de ton restaurant.', href: '/gusto', label: 'Découvrir Gusto — 59 €/mois →' },
-  formation: { name: 'La Recette So MIAM', title: 'Apprends à gérer la communication de ton restaurant', text: 'Inscris-toi pour voir la présentation vidéo, puis échanger lors d’un appel de vente. La formation coûte 1 400 € et s’articule avec l’abonnement à 59 €/mois.', href: 'https://recette.so-miam.com/', label: 'Voir la présentation de la formation →' },
+  gusto: { name: 'Gusto', title: 'Prépare tes posts et tes réponses aux avis', text: 'L’abonnement Gusto à 69 € HT/mois, sans la formation. Tu gardes la main sur les informations de ton restaurant.', href: '/gusto', label: 'Découvrir Gusto — 69 € HT/mois →' },
+  formation: { name: 'La Recette So MIAM', title: 'Apprends à gérer la communication de ton restaurant', text: 'Inscris-toi pour voir la présentation vidéo, puis échanger lors d’un appel de vente. Découvre la méthode et les modalités de l’accompagnement.', href: 'https://recette.so-miam.com/', label: 'Voir la présentation de la formation →' },
   agence: { name: 'Agence So MIAM', title: 'Tu veux confier ta communication à une équipe ?', text: 'Parlons de ton restaurant, de tes services à remplir et du travail à prévoir.', href: '/contact', label: 'Contacter So MIAM →' },
 };
 const selectedOffer = offers[offer];
