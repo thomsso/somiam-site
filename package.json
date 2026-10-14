@@ -6,7 +6,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "seo:check": "node scripts/seo-check.mjs",
-    "seo:opportunities": "node scripts/seo-opportunities.mjs"
+    "seo:opportunities": "node scripts/seo-opportunities.mjs",
+    "prebuild": "node scripts/version-gusto-assets.mjs"
   },
   "dependencies": {
     "astro": "^5.9.0",
