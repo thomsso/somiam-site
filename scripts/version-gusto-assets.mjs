@@ -12,3 +12,10 @@ for (const extension of ['css', 'js']) {
   html = html.replace(new RegExp(`${attribute}="/(?:gusto\\.${extension}|assets/gusto-[a-f0-9]+\\.${extension})"`), `${attribute}="${url}"`);
 }
 writeFileSync('public/gusto.html', html);
+// Apply the same cache-safe delivery to the homepage hero stylesheet.
+const homeCss = readFileSync('public/home-v2.css');
+const homeHash = createHash('sha256').update(homeCss).digest('hex').slice(0, 12);
+const homeUrl = `/assets/home-v2-${homeHash}.css`;
+writeFileSync(`public${homeUrl}`, homeCss);
+const home = readFileSync('public/index.html', 'utf8').replace(/href="\/(?:home-v2\.css|assets\/home-v2-[a-f0-9]+\.css)"/, `href="${homeUrl}"`);
+writeFileSync('public/index.html', home);
