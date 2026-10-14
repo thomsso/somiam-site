@@ -86,3 +86,26 @@ html{scroll-behavior:smooth}a{color:inherit;text-decoration:none}button{font:inh
 
 .hero-nav div>a.hero-login{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:#e4e7dc;white-space:nowrap}
 @media(max-width:760px){.hero-nav div>a.hero-login{display:inline-flex;font-size:12px}}
+
+.mobile-product-scene{display:none}
+@media(max-width:760px){
+ .mobile-product-scene{display:block;position:relative;isolation:isolate;padding:24px 20px 30px;overflow:hidden;background:#101310;scroll-margin-top:12px}
+ .mobile-product-scene::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(#101310,#10131088 25%,#10131099 75%,#101310),url('/images/gusto/hero-restaurant.png') center/cover;opacity:.85}
+ .landing .mobile-product-scene>.hero-collage{display:block;position:relative;inset:auto;width:100%;max-width:430px;height:clamp(350px,105vw,440px);min-height:0;margin:0 auto;transform:none;overflow:visible}
+ .mobile-product-scene .hero-collage .phone{left:4%!important;top:24px!important;width:56%;height:76%;border:5px solid #30362c;border-radius:24px;transform:rotate(-7deg)!important;background:#fbfaf6;overflow:hidden}
+ .mobile-product-scene .hero-collage .phone-head{height:30px;font-size:8px;padding:5px 8px;gap:5px}
+ .mobile-product-scene .phone .avatar{width:19px;height:19px;font-size:12px}
+ .mobile-product-scene .hero-collage .phone>img{height:70%;object-fit:cover}
+ .mobile-product-scene .hero-collage .phone-body{display:block;font-size:8px;padding:8px;line-height:1.5}
+ .mobile-product-scene .hero-calendar{display:block;left:auto;right:1%;top:16px;width:66%;padding:15px;border-radius:14px;transform:rotate(6deg);z-index:2}
+ .mobile-product-scene .hero-calendar strong{font-size:11px}
+ .mobile-product-scene .hero-calendar .week{margin-top:13px;gap:3px}
+ .mobile-product-scene .hero-calendar .week b{padding:8px 0;font-size:10px}
+ .mobile-product-scene .hero-calendar .muted{font-size:9px!important;line-height:1.4;margin-top:12px!important}
+ .mobile-product-scene .hero-collage .hero-caption{display:block;left:auto;right:1%;top:63%;width:86%;padding:16px;border-radius:14px;transform:rotate(-3deg);z-index:3}
+ .mobile-product-scene .hero-caption strong{font-size:11px;display:block;padding-right:22px;line-height:1.4}
+ .mobile-product-scene .hero-caption p{font-size:10px;line-height:1.5;margin-top:9px}
+ .mobile-product-scene .hero-caption p br{display:none}
+ .mobile-product-scene .hero-collage .hero-notice{display:block;left:0;right:0;top:auto;bottom:0;text-align:center;transform:none}
+ .mobile-product-scene .hero-notice .pill{font-size:10px;padding:9px 12px;white-space:nowrap}
+}

@@ -5,10 +5,10 @@ filters.forEach(button=>button.addEventListener('click',()=>{
  document.querySelector('.filter-status').textContent=`${count} photos · ${button.textContent==='Tout'?'classées par Gusto':button.textContent}`;
 }));
 
-const demoValues=[1800, 2450, 3000, 4100, 4800, 6100, 7050, 8300, 9400, 10100, 11600, 12800, 14200, 15400, 16600, 18000, 19400, 21000, 22200, 23500, 25000, 26700, 27800, 29100, 30700, 32100, 33700, 35200, 36200, 37370];
+const demoValues=[1800, 2450, 3000, 4100, 4800, 6100, 7050, 8300, 9400, 10100, 11600, 12800, 14200, 15400, 16600, 18000, 19400, 21000, 22200, 23500, 25000, 26700, 27800, 29100, 30700, 32100, 33700, 35200, 36200, 37370].map(value => value * 10);
 const chart=document.querySelector('.interactive-chart');
 let point=29;
-function showPoint(i){point=Math.max(0,Math.min(29,i));const x=point*700/29,y=180-(demoValues[point]-1800)/35570*155;
+function showPoint(i){point=Math.max(0,Math.min(29,i));const x=point*700/29,y=180-(demoValues[point]-demoValues[0])/(demoValues[29]-demoValues[0])*155;
 chart.querySelector('.chart-cross').setAttribute('x1',x);chart.querySelector('.chart-cross').setAttribute('x2',x);chart.querySelector('.chart-dot').setAttribute('cx',x);chart.querySelector('.chart-dot').setAttribute('cy',y);
 const text=`Jour ${point+1} · ${demoValues[point].toLocaleString('fr-FR')} vues`;chart.querySelector('output').textContent=text;chart.setAttribute('aria-valuenow',point+1);chart.setAttribute('aria-valuetext',text);
 chart.querySelector('output').style.left=`${Math.max(0,Math.min(chart.clientWidth-165,chart.clientWidth*point/29-70))}px`;}
