@@ -67,3 +67,14 @@ async function startCheckout() {
   }
 }
 checkoutButtons.forEach(button => button.addEventListener('click', startCheckout));
+
+const demoPlay = document.querySelector('.demo-play');
+demoPlay?.addEventListener('click', () => {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.tella.tv/video/vid_cmv8b63b600oy02kz8bop4zu6/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&autoPlay=true';
+  iframe.title = 'Découvre Gusto en 90 secondes';
+  iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+  iframe.allowFullscreen = true;
+  demoPlay.replaceWith(iframe);
+  iframe.focus();
+}, { once: true });
