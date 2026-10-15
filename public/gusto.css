@@ -182,3 +182,13 @@ html{scroll-behavior:smooth}a{color:inherit;text-decoration:none}button{font:inh
 }
 .mobile-conversion .hero-desktop-copy{display:none}.mobile-conversion .hero-mobile-copy{display:inline}.mobile-conversion>.cta{background:#ffcf00;opacity:1;justify-content:center}.mobile-conversion{position:relative;z-index:3}@media(max-width:760px){.landing .hero>.mobile-product-scene>.hero-collage{scale:.85}.hero>.mobile-product-scene{min-height:228px;padding:10px 0 4px}}@media(max-width:760px){.landing .hero-copy{padding-top:46px}.hero>.mobile-product-scene{padding-top:0}}
 @media(max-width:760px){.mobile-conversion{display:block}.hero-copy>.cta,.hero-copy>.small{display:none}}
+
+
+/* Parcours partenaire : diagnostic principal dans chaque zone de conversion. */
+.gusto-affiliate-arrival .affiliate-primary{display:inline-flex;align-items:center;justify-content:center;text-align:center;background:#F5C400;color:#111;border:1px solid #F5C400;font-weight:800;text-decoration:none;border-radius:12px;padding:15px 22px;font-size:15px;line-height:1.35;margin:10px 0}
+.gusto-affiliate-arrival .affiliate-primary:hover{background:#ffe054}
+.gusto-affiliate-arrival [data-checkout]{background:transparent;color:inherit;border:1px solid currentColor;box-shadow:none;font-size:13px}
+.gusto-affiliate-arrival .affiliate-description{font-size:14px;line-height:1.5;margin:18px 0 4px;max-width:440px}
+.gusto-affiliate-arrival .hero-nav .affiliate-primary{font-size:12px;padding:10px}
+.gusto-affiliate-arrival .price .affiliate-primary{display:flex}
+@media(max-width:760px){.gusto-affiliate-arrival .hero-copy>.affiliate-primary,.gusto-affiliate-arrival .hero-copy>.affiliate-description{display:none}.gusto-affiliate-arrival .mobile-conversion .affiliate-primary{display:flex;width:100%}.gusto-affiliate-arrival .hero-nav .affiliate-primary{display:none}}

@@ -32,7 +32,29 @@ window.addEventListener('blur',()=>setPaused(true));new IntersectionObserver(ent
 proofRail.addEventListener('scroll',()=>{const step=proofRail.children[0].getBoundingClientRect().width+parseFloat(getComputedStyle(proofRail).gap);document.querySelector('.proof-position').textContent=`${Math.round(proofRail.scrollLeft/step)+1} / ${proofRail.children.length}`;},{passive:true});
 setInterval(()=>{if(!paused&&!hovered&&visible&&!document.hidden)advance(1);},7000);setPaused(paused);
 
-// All entry points use the same existing Stripe checkout endpoint.
+// Le code reste dans l'URL : aucune attribution anonyme persistante.
+const affiliateRef = new URLSearchParams(window.location.search).get('ref');
+const affiliateCode = affiliateRef && /^[a-z0-9]{12}$/.test(affiliateRef) ? affiliateRef : null;
+if (affiliateCode) {
+  document.body.classList.add('gusto-affiliate-arrival');
+  document.querySelectorAll('[data-checkout]').forEach(trialButton => {
+    const diagnosticLink = document.createElement('a');
+    diagnosticLink.className = 'affiliate-primary';
+    diagnosticLink.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);
+    diagnosticLink.textContent = 'Réserver mon diagnostic ↗';
+    trialButton.before(diagnosticLink);
+    trialButton.textContent = 'Essayer Gusto · puis 69 € HT/mois';
+  });
+  const description = document.createElement('p');
+  description.className = 'affiliate-description';
+  description.textContent = 'Ton restaurant, tes objectifs et une méthode sur mesure. Un accompagnement payant pourra être proposé après l’échange.';
+  document.querySelector('.hero-copy .affiliate-primary')?.before(description);
+  document.querySelectorAll('a[href="https://recette.so-miam.com/"]').forEach(link => {
+    link.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);
+  });
+}
+
+// Tous les essais utilisent le même endpoint Stripe.
 let checkoutPending = false;
 const checkoutButtons = [...document.querySelectorAll('[data-checkout]')];
 async function startCheckout() {
@@ -48,7 +70,7 @@ async function startCheckout() {
     const response = await fetch('/api/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ restaurantName: '' }),
+      body: JSON.stringify({ restaurantName: '', affiliateCode }),
       signal: AbortSignal.timeout(20000)
     });
     if (!response.ok) throw new Error('Checkout unavailable');

@@ -9,7 +9,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { restaurantName } = req.body || {};
+    const { restaurantName, affiliateCode } = req.body || {};
+    const partnerCode = typeof affiliateCode === 'string' && /^[a-z0-9]{12}$/.test(affiliateCode) ? affiliateCode : null;
 
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
@@ -22,15 +23,17 @@ export default async function handler(req, res) {
       subscription_data: {
         trial_period_days: 14,
         metadata: {
-          restaurant_name: restaurantName || '',
+          restaurant_name: typeof restaurantName === 'string' ? restaurantName.trim().slice(0, 200) : '',
           source: 'gusto-landing-page',
+          ...(partnerCode ? { affiliate_code: partnerCode } : {}),
         },
       },
       metadata: {
-        restaurant_name: restaurantName || '',
+        restaurant_name: typeof restaurantName === 'string' ? restaurantName.trim().slice(0, 200) : '',
+        ...(partnerCode ? { affiliate_code: partnerCode } : {}),
       },
       success_url: `${process.env.SITE_URL || 'https://www.so-miam.com'}/gusto-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.SITE_URL || 'https://www.so-miam.com'}/gusto`,
+      cancel_url: `${process.env.SITE_URL || 'https://www.so-miam.com'}/gusto${partnerCode ? '?ref=' + encodeURIComponent(partnerCode) : ''}`,
       locale: 'fr',
       allow_promotion_codes: true,
       // 69 EUR HT : Stripe Tax ajoute la TVA d'apres l'adresse de facturation

@@ -32,6 +32,14 @@ Scrape Shield obfusque les emails du HTML servi (`[email protected]` + décodeur
 - **Redirections apex → www** : configurées au niveau du domaine dans le dashboard Vercel, exécutées AVANT le routage du projet. Une règle `vercel.json` avec `has: host` reste donc inerte — le status code (307/308) se change dans Settings → Domains.
 
 ### Stripe
-- Checkout Session : 59€/mois, 14j essai gratuit
+- Checkout Session : 69 € HT/mois, 14 jours d’essai avec carte (nouvelles ventes ; tarifs historiques préservés)
 - Webhook `/api/webhook` → crée compte sur app.so-miam.com via invite-restaurateur (hasFormation: false)
 - Price ID : dans env var `STRIPE_PRICE_ID`
+
+### Affiliation Gusto — 15/10/2026
+- `/gusto?ref=CODE` : diagnostic prioritaire, essai secondaire. Pas de cookie de tracking ; 180 jours après identification serveur.
+- Page `/gusto/partenaires` et dashboard gratuit sur app.so-miam.com. Vrai personnage Gusto conservé.
+- Checkout transmet `affiliate_code` dans metadata ; webhook signé transmet `session.id` et `event.created` pour déduplication durable. Aucun droit à commission sur Gusto seul.
+- Échec temporaire invitation/attribution : réponse 503 pour rejeu Stripe. Code partenaire inactif/inconnu : 404 terminal sans bloquer l’achat.
+- Paiements via Gusto/Stripe exclusivement. GHL : contacts et calendrier diagnostic. Commission La Recette manuelle dans panel Gusto.
+- Validation : `node --test tests/affiliate-webhook.test.mjs`, build, seo:check, QA navigateur 390/768/1440. Déployer la plateforme avant le site.
