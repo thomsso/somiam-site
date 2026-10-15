@@ -9,7 +9,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { restaurantName } = req.body || {};
+    const { restaurantName, affiliateCode } = req.body || {};
+    const partnerCode = typeof affiliateCode === 'string' && /^[a-z0-9]{12}$/.test(affiliateCode) ? affiliateCode : null;
 
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
@@ -24,10 +25,12 @@ export default async function handler(req, res) {
         metadata: {
           restaurant_name: restaurantName || '',
           source: 'gusto-landing-page',
+          ...(partnerCode ? { affiliate_code: partnerCode } : {}),
         },
       },
       metadata: {
         restaurant_name: restaurantName || '',
+        ...(partnerCode ? { affiliate_code: partnerCode } : {}),
       },
       success_url: `${process.env.SITE_URL || 'https://www.so-miam.com'}/gusto-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.SITE_URL || 'https://www.so-miam.com'}/gusto`,
