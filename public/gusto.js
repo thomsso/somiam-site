@@ -32,7 +32,7 @@ window.addEventListener('blur',()=>setPaused(true));new IntersectionObserver(ent
 proofRail.addEventListener('scroll',()=>{const step=proofRail.children[0].getBoundingClientRect().width+parseFloat(getComputedStyle(proofRail).gap);document.querySelector('.proof-position').textContent=`${Math.round(proofRail.scrollLeft/step)+1} / ${proofRail.children.length}`;},{passive:true});
 setInterval(()=>{if(!paused&&!hovered&&visible&&!document.hidden)advance(1);},7000);setPaused(paused);
 
-// All entry points use the same existing Stripe checkout endpoint.
+// Un lien partenaire ajoute un diagnostic prioritaire, sans modifier le tunnel classique.\nconst affiliateRef = new URLSearchParams(window.location.search).get('ref');\nconst affiliateCode = affiliateRef && /^[a-z0-9]{12}$/.test(affiliateRef) ? affiliateRef : null;\nif (affiliateCode) {\n  document.body.classList.add('gusto-affiliate-arrival');\n  const trialButton = document.querySelector('.hero-copy [data-checkout]');\n  if (trialButton) {\n    const offer = document.createElement('div');\n    offer.className = 'affiliate-offer';\n    const diagnosticLink = document.createElement('a');\n    diagnosticLink.className = 'affiliate-primary';\n    diagnosticLink.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);\n    diagnosticLink.textContent = 'Réserver mon diagnostic stratégique ↗';\n    const description = document.createElement('p');\n    description.textContent = 'Votre restaurant, vos objectifs, et une méthode sur mesure. Un accompagnement payant pourra être proposé après l’échange.';\n    offer.append(diagnosticLink, description);\n    trialButton.before(offer);\n  }\n}\n\n// All entry points use the same existing Stripe checkout endpoint.
 let checkoutPending = false;
 const checkoutButtons = [...document.querySelectorAll('[data-checkout]')];
 async function startCheckout() {
@@ -48,7 +48,7 @@ async function startCheckout() {
     const response = await fetch('/api/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ restaurantName: '' }),
+      body: JSON.stringify({ restaurantName: '', affiliateCode }),
       signal: AbortSignal.timeout(20000)
     });
     if (!response.ok) throw new Error('Checkout unavailable');
