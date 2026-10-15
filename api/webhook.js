@@ -86,6 +86,24 @@ export default async function handler(req, res) {
     } catch (err) {
       console.error('Failed to call invite API:', err.message);
     }
+
+    // Attribution seulement : aucune commission sur l'abonnement Gusto.
+    const affiliateCode = session.metadata?.affiliate_code;
+    if (typeof affiliateCode === 'string' && /^[a-z0-9]{12}$/.test(affiliateCode)) {
+      try {
+        const attributionRes = await fetch(
+          `${process.env.PLATFORM_URL || 'https://app.so-miam.com'}/api/public/affiliate/register-checkout`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'x-invite-secret': process.env.INVITE_SECRET },
+            body: JSON.stringify({ email, affiliateCode, restaurantName }),
+          }
+        );
+        if (!attributionRes.ok) console.error('Partner attribution failed:', attributionRes.status);
+      } catch (err) {
+        console.error('Partner attribution error:', err.message);
+      }
+    }
   }
 
   return res.status(200).json({ received: true });
