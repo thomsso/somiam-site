@@ -20,7 +20,8 @@ h1,h2,h3{font-family:'Syne',sans-serif}h1{font-size:clamp(36px,5vw,62px);line-he
 .hero p{font-size:18px;color:#555;max-width:620px}.accent{box-shadow:inset 0 -.22em var(--yellow)}
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;background:var(--yellow);padding:15px 23px;font-weight:800;text-decoration:none;transition:transform .15s,background .15s}.cta:hover{background:#ebbc00;transform:translateY(-1px)}
 .micro{font-size:13px!important;color:#777!important;margin-top:12px!important}
-.gusto-portrait{display:block;width:100%;max-width:350px;margin:auto;filter:drop-shadow(0 20px 25px rgba(0,0,0,.08))}
+.gusto-portrait{display:block;width:100%;max-width:310px;height:auto;object-fit:contain;margin:auto}
+.offer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}.card.offer-main{border:2px solid var(--yellow)}.offer-grid h3{font-size:24px}.offer-grid ul{padding-left:20px;font-size:15px}.offer-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}.offer-choice{display:block;padding:13px 16px;margin-top:20px;border-radius:10px;background:#f3f2ef;font-weight:700}.offer-main .offer-choice{background:var(--yellow)}.route-link{display:inline-block;margin-top:14px;font-size:14px;text-underline-offset:4px}
 section{padding:30px 0 60px}h2{font-size:29px;letter-spacing:-.03em}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
 .card{background:#fff;border:1px solid #e6e3dd;border-radius:16px;padding:24px;min-height:205px}
@@ -29,7 +30,7 @@ section{padding:30px 0 60px}h2{font-size:29px;letter-spacing:-.03em}
 .highlight{background:#111;color:#fff;border-radius:20px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:26px;margin:15px 0 70px}
 .highlight h2{margin:0 0 6px}.highlight p{color:#aaa;margin:0}
 footer{padding:25px 0;border-top:1px solid #ddd;font-size:13px;color:#777}
-@media(max-width:700px){.hero{grid-template-columns:1fr;padding:45px 24px 35px}.gusto-portrait{max-height:270px;object-fit:contain}.grid{grid-template-columns:1fr}.highlight{flex-direction:column;align-items:flex-start}nav{gap:12px}.card{min-height:0}}
+@media(max-width:700px){.hero{grid-template-columns:1fr;padding:45px 24px 35px}.gusto-portrait{max-width:180px;height:auto}.grid,.offer-grid{grid-template-columns:1fr}.highlight{flex-direction:column;align-items:flex-start}nav{gap:12px}.card{min-height:0}}
 </style>
 </head>
 <body>
@@ -40,8 +41,9 @@ footer{padding:25px 0;border-top:1px solid #ddd;font-size:13px;color:#777}
  <h1>Vous connaissez des restaurateurs ? <span class="accent">Transformez vos recommandations en revenus.</span></h1>
  <p>Avec Gusto et La Recette So MIAM, les restaurateurs découvrent une méthode et des outils pour développer leur communication. Vous recommandez, nous assurons les rendez-vous et la vente.</p>
  <a class="cta" href="https://app.so-miam.com/partenaires/inscription">Devenir partenaire gratuitement →</a>
+ <a class="route-link" href="#parcours-restaurateur">Voir les deux parcours proposés aux restaurateurs ↓</a>
  <p class="micro">200 € par accompagnement La Recette vendu et encaissé grâce à vous. Aucun abonnement à acheter.</p></div>
- <div><img class="gusto-portrait" src="https://app.so-miam.com/images/gusto/gusto-standing.png" alt="Gusto, le chef à barbe blanche et toque de cuisinier" width="400" height="500"></div>
+ <div><img class="gusto-portrait" src="/images/gusto/gusto-standing-partners.png" alt="Gusto, le chef à barbe blanche et toque de cuisinier" width="1024" height="1536"></div>
 </div>
 <section class="wrap">
 <h2>Un programme simple, en trois étapes</h2>
@@ -50,6 +52,17 @@ footer{padding:25px 0;border-top:1px solid #ddd;font-size:13px;color:#777}
  <article class="card"><span class="num">2</span><h3>Vous le partagez</h3><p>Auprès de vos clients restaurateurs, confrères ou contacts professionnels. Ils découvrent Gusto et peuvent réserver un diagnostic avec So MIAM.</p></article>
  <article class="card"><span class="num">3</span><h3>Nous concluons la vente</h3><p>Pour chaque accompagnement La Recette vendu et encaissé grâce à votre recommandation, 200 € de commission sont enregistrés à votre nom.</p></article>
 </div>
+</section>
+<section class="wrap" id="parcours-restaurateur" aria-labelledby="parcours-title">
+<span class="overline">Ce que votre lien propose</span>
+<h2 id="parcours-title">Un restaurateur. Deux façons d’avancer.</h2>
+<p>Votre lien personnel ouvre la page Gusto avec deux choix : un diagnostic stratégique en priorité, ou un essai du logiciel pour avancer en autonomie.</p>
+<div class="offer-grid">
+<article class="card offer-main"><span class="offer-label">Le choix principal · La Recette + Gusto</span><h3>Un diagnostic pour savoir par où commencer</h3><p>Un échange sur le restaurant, ses objectifs et sa communication. Si l’accompagnement convient, So MIAM présente La Recette : une méthode, des ressources et Gusto pour passer à l’action.</p><ul><li>Un court formulaire avant le rendez-vous</li><li>Un calendrier dédié avec So MIAM</li><li>Un accompagnement payant peut être proposé, sans obligation d’achat</li></ul><span class="offer-choice">Choix affiché : Réserver mon diagnostic ↗</span><p class="micro">Votre commission : 200 € uniquement si La Recette est vendue et encaissée, après validation par So MIAM.</p></article>
+<article class="card"><span class="offer-label">L’alternative · Gusto seul</span><h3>Le logiciel, en autonomie</h3><p>Pour les restaurateurs qui veulent directement utiliser Gusto pour leur communication, sans passer par un appel.</p><ul><li>14 jours d’essai avec carte bancaire</li><li>Puis 69 € HT/mois</li><li>Aucune commission sur cet abonnement seul</li></ul><span class="offer-choice">Choix affiché : Essayer Gusto ↗</span><p class="micro">L’essai est accessible directement, sans rendez-vous.</p></article>
+</div>
+<p class="micro">Ces deux choix apparaissent sur votre lien personnel, disponible dans votre espace partenaire gratuit. Cette page présente le programme ; elle ne réserve pas de diagnostic.</p>
+<a class="cta" href="https://app.so-miam.com/partenaires/inscription">Obtenir mon lien personnel →</a>
 </section>
 <section class="wrap">
 <h2>Vous gardez le suivi, sans faire de commercial</h2>

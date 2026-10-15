@@ -192,3 +192,12 @@ html{scroll-behavior:smooth}a{color:inherit;text-decoration:none}button{font:inh
 .gusto-affiliate-arrival .hero-nav .affiliate-primary{font-size:12px;padding:10px}
 .gusto-affiliate-arrival .price .affiliate-primary{display:flex}
 @media(max-width:760px){.gusto-affiliate-arrival .hero-copy>.affiliate-primary,.gusto-affiliate-arrival .hero-copy>.affiliate-description{display:none}.gusto-affiliate-arrival .mobile-conversion .affiliate-primary{display:flex;width:100%}.gusto-affiliate-arrival .hero-nav .affiliate-primary{display:none}}
+/* L'arrivée partenaire garde ses deux choix lisibles sur tablette. */
+@media(min-width:761px) and (max-width:1100px){
+.gusto-affiliate-arrival .hero-nav div{gap:16px}
+.gusto-affiliate-arrival .hero-nav a[href="#decouvrir"],.gusto-affiliate-arrival .hero-nav a[href="#tarif"]{display:none}
+.gusto-affiliate-arrival .hero-nav [data-checkout]{max-width:180px}
+.gusto-affiliate-arrival .hero-collage{right:1vw;top:260px;transform:scale(.5);transform-origin:right top}
+.gusto-affiliate-arrival .hero-copy{width:50%}
+.gusto-affiliate-arrival .hero-copy .affiliate-primary{margin-right:8px}
+}

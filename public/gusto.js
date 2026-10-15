@@ -47,8 +47,10 @@ if (affiliateCode) {
   });
   const description = document.createElement('p');
   description.className = 'affiliate-description';
-  description.textContent = 'Ton restaurant, tes objectifs et une méthode sur mesure. Un accompagnement payant pourra être proposé après l’échange.';
+  description.textContent = 'La Recette + Gusto : une méthode et des outils pour développer la communication de ton restaurant. Commence par un diagnostic stratégique. Un accompagnement payant pourra être proposé après l’échange, sans obligation d’achat.';
   document.querySelector('.hero-copy .affiliate-primary')?.before(description);
+  const mobileDescription = description.cloneNode(true);
+  document.querySelector('.mobile-conversion .affiliate-primary')?.before(mobileDescription);
   document.querySelectorAll('a[href="https://recette.so-miam.com/"]').forEach(link => {
     link.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);
   });
