@@ -68,6 +68,7 @@ export default async function handler(req, res) {
             email,
             hasFormation: false,
           }),
+          signal: AbortSignal.timeout(15000),
         }
       );
 
@@ -78,13 +79,15 @@ export default async function handler(req, res) {
         if (inviteRes.status === 409) {
           console.log(`User already exists: ${email}`);
         } else {
-          console.error('Invite failed:', result);
+          console.error('Invite failed:', inviteRes.status);
+          return res.status(503).json({ error: 'Invitation temporarily unavailable' });
         }
       } else {
         console.log(`Invited ${email} (Gusto-only) — userId: ${result.userId}`);
       }
     } catch (err) {
       console.error('Failed to call invite API:', err.message);
+      return res.status(503).json({ error: 'Invitation temporarily unavailable' });
     }
 
     // Attribution seulement : aucune commission sur l'abonnement Gusto.
@@ -96,12 +99,17 @@ export default async function handler(req, res) {
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'x-invite-secret': process.env.INVITE_SECRET },
-            body: JSON.stringify({ email, affiliateCode, restaurantName }),
+            body: JSON.stringify({ email, affiliateCode, restaurantName, checkoutSessionId: session.id, occurredAt: new Date(event.created * 1000).toISOString() }),
+            signal: AbortSignal.timeout(15000),
           }
         );
-        if (!attributionRes.ok) console.error('Partner attribution failed:', attributionRes.status);
+        if (!attributionRes.ok && attributionRes.status !== 404) {
+          console.error('Partner attribution failed:', attributionRes.status);
+          return res.status(503).json({ error: 'Attribution temporarily unavailable' });
+        }
       } catch (err) {
         console.error('Partner attribution error:', err.message);
+        return res.status(503).json({ error: 'Attribution temporarily unavailable' });
       }
     }
   }
