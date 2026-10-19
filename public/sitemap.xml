@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://www.so-miam.com/blog</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -175,4 +175,8 @@
     <priority>0.7</priority>
   </url>
   <url><loc>https://www.so-miam.com/gusto/partenaires</loc></url>
+  <url>
+    <loc>https://www.so-miam.com/blog/photos-fiche-google-restaurant</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 </urlset>
