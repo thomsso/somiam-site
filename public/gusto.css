@@ -201,3 +201,47 @@ html{scroll-behavior:smooth}a{color:inherit;text-decoration:none}button{font:inh
 .gusto-affiliate-arrival .hero-copy{width:50%}
 .gusto-affiliate-arrival .hero-copy .affiliate-primary{margin-right:8px}
 }
+
+/* La Recette : priorité à la méthode, logiciel disponible en autonomie. */
+.hero-nav .cta,.hero-copy>.cta,.mobile-conversion>.cta{text-decoration:none}
+.software-option{display:block;color:#deded2;font-size:12px;margin-top:12px;text-underline-offset:4px}
+.recette-intro,.offer-section,.diagnostic-section{padding:90px max(6vw,24px);scroll-margin-top:24px;background:#f4f1e8;color:#171917}
+.recette-heading{max-width:850px;margin-bottom:38px}
+.recette-heading h2,.diagnostic-section h2{font-size:clamp(32px,4.4vw,64px);line-height:1.08;letter-spacing:-.045em;margin:22px 0}
+.recette-heading h2 em,.diagnostic-section h2 em{font-style:normal;color:#64704e}
+.recette-heading p,.diagnostic-section p{font-size:17px;line-height:1.65;max-width:680px}
+.recette-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:32px}
+.recette-pillars article{border-top:1px solid #b9bcae;padding-top:24px}
+.recette-pillars article>span,.offer-tag{font-size:11px;font-weight:800;letter-spacing:.06em}
+.recette-pillars h3{font-size:24px;line-height:1.25;margin:18px 0 12px}
+.recette-pillars p{font-size:15px;line-height:1.7;color:#50554a}
+.recette-intro>.cta,.offer-grid .cta,.qualification-card .cta{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;line-height:1.4;text-align:center;white-space:normal;min-height:52px}
+.recette-note{font-size:12px!important;line-height:1.6!important;max-width:680px;margin-top:16px;color:#565c50}
+.offer-section{background:#e8e9dd}
+.offer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:stretch}
+.offer-grid article{padding:36px;border-radius:20px;display:flex;flex-direction:column;align-items:flex-start}
+.offer-main{background:#171b16;color:#f6f3e9;border:2px solid #ffcf00}
+.offer-main .offer-tag{background:#ffcf00;color:#171917;padding:8px 12px;border-radius:6px}
+.offer-grid h3{font-size:clamp(26px,3vw,42px);line-height:1.15;margin:24px 0 16px;letter-spacing:-.03em}
+.offer-grid p{font-size:16px;line-height:1.6;margin-bottom:10px}
+.offer-grid ul{list-style:disc;padding-left:20px;line-height:1.7;font-size:15px;margin:14px 0 28px}
+.offer-grid .cta{margin-top:auto;width:100%}
+.offer-grid small{font-size:12px;line-height:1.65;display:block;margin-top:16px;opacity:.8}
+.offer-software{background:#f8f6ef;border:1px solid #c8ccbd}
+.offer-software .cta{background:transparent;border:1px solid #171917;color:#171917}
+.software-price strong{font-size:40px;letter-spacing:-.04em}
+.diagnostic-section{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.diagnostic-section>div>a{display:inline-block;color:#353d2a;font-size:14px;margin-top:20px;text-underline-offset:4px}
+.qualification-card{padding:32px;background:#fffdf6;border:1px solid #c8ccbd;border-radius:20px}
+.qualification-card h3{font-size:25px;line-height:1.3;margin:0 0 24px}
+.qualification-card label{display:block;font-size:14px;font-weight:700;margin-bottom:22px;line-height:1.5}
+.qualification-card select{display:block;width:100%;min-height:52px;padding:12px;margin-top:8px;background:#fff;color:#171917;border:1px solid #9da58e;border-radius:8px;font:inherit;font-weight:400;font-size:16px;white-space:normal}
+.qualification-card .cta{width:100%;font-size:14px}
+.qualification-card p{font-size:15px;margin-bottom:20px}
+.qualification-reset{display:block;background:none;border:0;text-decoration:underline;text-underline-offset:4px;cursor:pointer;margin-top:22px;padding:4px;color:#454d39;font:inherit;font-size:13px}
+.qualification-card [hidden]{display:none!important}
+.qualification-card :focus-visible,.recette-intro a:focus-visible,.offer-grid a:focus-visible{outline:3px solid #768b4a;outline-offset:4px}
+@media(min-width:761px){.hero-copy h1{font-size:clamp(46px,5.2vw,80px)}.hero-copy .lead{max-width:490px}.hero-nav .cta{font-size:13px}.hero-copy .small{max-width:460px;line-height:1.5}.hero-copy .software-option{margin-bottom:24px}}
+@media(max-width:1100px) and (min-width:761px){.hero-nav div{gap:14px}.hero-nav a[href="#la-recette"]{display:none}.hero-copy{width:56%}.hero-collage{right:0;transform:scale(.62);transform-origin:right top}.hero-copy h1{font-size:48px}.diagnostic-section{gap:24px}}
+@media(max-width:760px){.recette-intro,.offer-section,.diagnostic-section{padding:56px 24px}.recette-pillars,.offer-grid,.diagnostic-section{grid-template-columns:1fr;gap:24px}.recette-heading h2,.diagnostic-section h2{font-size:34px}.recette-heading p,.diagnostic-section p{font-size:15px}.recette-pillars h3{font-size:23px}.offer-grid article,.qualification-card{padding:24px}.offer-grid .cta{font-size:14px}.hero-copy>.software-option{display:none}.mobile-conversion>.cta{font-size:13px;padding:15px 8px}.mobile-conversion>.small{font-size:10px}.mobile-conversion .software-option{font-size:11px;margin:10px 0}.landing .hero-copy{padding-top:28px}.hero-nav a[data-diagnostic]{display:none}.recette-intro>.cta{width:100%;font-size:13px}.hero-copy h1{font-size:clamp(29px,8vw,36px)}}
+@media(min-width:761px) and (max-width:1100px){.landing .hero>.hero-collage{display:none}.landing .hero-copy{width:calc(100% - 80px);max-width:670px}.landing .hero-copy h1{font-size:clamp(44px,6.5vw,66px)}.landing .hero-copy .lead{max-width:620px}.landing .hero-copy{padding-top:80px}.landing .hero-nav{gap:20px}.offer-grid{grid-template-columns:1fr}.diagnostic-section{grid-template-columns:1fr}}
