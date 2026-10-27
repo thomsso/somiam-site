@@ -36,57 +36,26 @@ setInterval(()=>{if(!paused&&!hovered&&visible&&!document.hidden)advance(1);},70
 const affiliateRef = new URLSearchParams(window.location.search).get('ref');
 const affiliateCode = affiliateRef && /^[a-z0-9]{12}$/.test(affiliateRef) ? affiliateRef : null;
 if (affiliateCode) {
-  document.querySelectorAll('[data-diagnostic]').forEach(link => {
+  document.body.classList.add('gusto-affiliate-arrival');
+  document.querySelector('[data-recette-diagnostic]').href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);
+  document.querySelectorAll('[data-checkout]').forEach(trialButton => {
+    const diagnosticLink = document.createElement('a');
+    diagnosticLink.className = 'affiliate-primary';
+    diagnosticLink.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);
+    diagnosticLink.textContent = 'Réserver mon diagnostic ↗';
+    trialButton.before(diagnosticLink);
+    trialButton.textContent = 'Essayer Gusto · puis 69 € HT/mois';
+  });
+  const description = document.createElement('p');
+  description.className = 'affiliate-description';
+  description.textContent = 'La Recette + Gusto : une méthode et des outils pour développer la communication de ton restaurant. Commence par un diagnostic stratégique. Un accompagnement payant pourra être proposé après l’échange, sans obligation d’achat.';
+  document.querySelector('.hero-copy .affiliate-primary')?.before(description);
+  const mobileDescription = description.cloneNode(true);
+  document.querySelector('.mobile-conversion .affiliate-primary')?.before(mobileDescription);
+  document.querySelectorAll('a[href="https://recette.so-miam.com/"]').forEach(link => {
     link.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);
   });
 }
-
-// Qualification sans collecte de coordonnées ; le parcours partenaire conserve
-// son formulaire et son attribution serveur avant l'ouverture du même calendrier.
-const qualificationForm = document.querySelector('#diagnostic-form');
-qualificationForm.elements.investment.addEventListener('change', () => {
-  const needsQualification = qualificationForm.elements.investment.value !== 'free';
-  qualificationForm.elements.role.required = needsQualification;
-  qualificationForm.elements.goal.required = needsQualification;
-});
-qualificationForm.addEventListener('submit', event => {
-  event.preventDefault();
-  const answers = new FormData(qualificationForm);
-  const result = document.querySelector('#diagnostic-result');
-  const free = answers.get('investment') === 'free';
-  const software = answers.get('goal') === 'software';
-  const other = answers.get('role') === 'other';
-  result.replaceChildren();
-  const heading = document.createElement('h3');
-  const text = document.createElement('p');
-  const link = document.createElement('a');
-  link.className = 'cta';
-  if (free) {
-    heading.textContent = 'Commence par nos guides gratuits.';
-    text.textContent = 'Le blog So MIAM te donne des conseils concrets à appliquer dans ton restaurant, sans réserver un appel commercial.';
-    link.href = '/blog'; link.textContent = 'Accéder au blog gratuit ↗';
-  } else if (software) {
-    heading.textContent = 'Gusto seul correspond à ton besoin.';
-    text.textContent = 'Découvre le logiciel pendant 14 jours, puis 69 € HT/mois sans engagement. Aucun diagnostic commercial nécessaire.';
-    link.href = '#gusto-seul'; link.textContent = 'Voir l’offre Gusto seul ↗';
-  } else if (other) {
-    heading.textContent = 'Prépare l’échange avec le décisionnaire.';
-    text.textContent = 'Invite le dirigeant ou ton associé à compléter ce formulaire pour discuter ensemble des priorités et d’un éventuel accompagnement payant.';
-    link.href = '/blog'; link.textContent = 'Consulter les conseils So MIAM ↗';
-  } else {
-    heading.textContent = 'Choisis ton créneau de diagnostic.';
-    text.textContent = 'Tu vas renseigner tes coordonnées et choisir un rendez-vous de 45 minutes en visioconférence. La réservation sera confirmée par GoHighLevel.';
-    link.href = affiliateCode
-      ? 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode)
-      : 'https://api.leadconnectorhq.com/widget/booking/7HVaYjLFFiKpS6RwuXXd';
-    link.textContent = 'Choisir mon créneau ↗';
-  }
-  const reset = document.createElement('button');
-  reset.type = 'button'; reset.className = 'qualification-reset'; reset.textContent = 'Modifier mes réponses';
-  reset.addEventListener('click', () => { result.hidden = true; qualificationForm.hidden = false; qualificationForm.querySelector('select').focus(); });
-  result.append(heading, text, link, reset);
-  qualificationForm.hidden = true; result.hidden = false; result.focus();
-});
 
 // Tous les essais utilisent le même endpoint Stripe.
 let checkoutPending = false;
