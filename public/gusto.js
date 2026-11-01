@@ -37,7 +37,7 @@ const affiliateRef = new URLSearchParams(window.location.search).get('ref');
 const affiliateCode = affiliateRef && /^[a-z0-9]{12}$/.test(affiliateRef) ? affiliateRef : null;
 if (affiliateCode) {
   document.body.classList.add('gusto-affiliate-arrival');
-  document.querySelector('[data-recette-diagnostic]').href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode);
+  document.querySelectorAll('[data-recette-diagnostic]').forEach(link => { link.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode); });
   document.querySelectorAll('[data-checkout]').forEach(trialButton => {
     const diagnosticLink = document.createElement('a');
     diagnosticLink.className = 'affiliate-primary';
