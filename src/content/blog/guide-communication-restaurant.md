@@ -1,7 +1,7 @@
 ---
 title: "Communication restaurant : le guide pour passer à l’action"
 description: "Google, Instagram, avis et publicité : organise la communication de ton restaurant avec des actions concrètes, des exemples et une checklist utile."
-updated: 2026-10-07
+updated: 2026-11-02
 date: 2026-08-21
 author: "Thomas Vandeweghe"
 category: "Guide"
@@ -205,7 +205,7 @@ La saisonnalité touche tout le monde. Mais ceux qui la préparent s'en sortent 
 
 ### Le vrai levier anti-saisonnalité
 
-**Exploite ta base clients.** Si tu utilises un outil de réservation (Zenchef, TheFork, carnet maison), tu as des numéros de téléphone et des emails. Envoie un SMS à tes anciens clients en janvier : "La nouvelle carte d'hiver est là. On t'a gardé ta table." Coût : quasi zéro. Impact : des couverts en période creuse.
+**Exploite ta base clients.** Si tu utilises un outil de réservation (Zenchef, TheFork, carnet maison), tu as des numéros de téléphone et des emails. Prépare un message pour tes anciens clients en janvier : "La nouvelle carte d'hiver est là. On t'a gardé ta table." Avant tout envoi par SMS, vérifie le consentement : la [CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-sms-mms) pose le consentement préalable comme règle, avec une exception limitée pour les clients existants. Un numéro laissé pour réserver ne vaut pas, à lui seul, accord pour recevoir des promotions. Si tu as un doute, affiche la formule en salle ou invite tes clients à s'inscrire eux-mêmes à ta liste. Le détail de la préparation de janvier est dans notre article sur le [restaurant vide en janvier](/blog/restaurant-vide-janvier).
 
 > "On a une base de données clients qu'on n'utilise pas parce qu'on n'a jamais relancé un seul client."
 
