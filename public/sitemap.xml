@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://www.so-miam.com/blog</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -184,4 +184,5 @@
   <url><loc>https://www.so-miam.com/blog/restaurant-vide-janvier</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.so-miam.com/blog/reservations-non-honorees-restaurant</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.so-miam.com/blog/bons-cadeaux-restaurant-noel</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.so-miam.com/blog/menu-reveillon-restaurant</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
