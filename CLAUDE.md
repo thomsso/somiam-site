@@ -17,9 +17,10 @@ Avant de commit/push toute modification d'un fichier HTML ou CSS :
 
 ### SEO & contenu
 - **Email de contact officiel : `thomas@so-miam.com`** — partout (pages, CTA, schémas JSON-LD). Ne jamais réintroduire `thomas@so-media.fr` : deux adresses concurrentes cassent le NAP que Google recoupe entre le site, les données structurées et la fiche Google Business.
-- **Téléphone (06 99 29 77 56) : discret uniquement.** Présent dans les schémas JSON-LD + en texte brut (subfooter home, coordonnées `/contact`). **Jamais de lien `tel:`, jamais de bouton, jamais de CTA.** Thomas ne veut pas d'appels entrants.
+- **Téléphone (06 99 29 77 56) : discret uniquement.** Présent dans les schémas JSON-LD + en texte brut (barre du bas du pied de page, coordonnées `/contact`). **Jamais de lien `tel:`, jamais de bouton, jamais de CTA.** Thomas ne veut pas d'appels entrants.
 - **Un schéma `FAQPage` exige un rendu visible** de ses questions/réponses sur la page. Baliser du contenu invisible viole les guidelines Google (risque d'action manuelle). Vérifier avant d'ajouter ou de déplacer un bloc FAQ.
-- **Toute nouvelle page** → l'ajouter à `public/sitemap.xml` ET la lier depuis le footer de toutes les pages (`public/*.html` + `src/layouts/BlogLayout.astro` + `src/pages/blog/index.astro`).
+- **Toute nouvelle page** → l'ajouter à `public/sitemap.xml`. Un **article de blog** est lié depuis `/blog` (automatique) : il ne va **plus** dans le pied de page.
+- **Pied de page (maquette validée par Thomas le 16/11/2026)** : contenu FIGÉ, identique sur toutes les pages (`public/*.html` + `src/layouts/BlogLayout.astro` + `src/pages/blog/index.astro`), styles dans `public/site-footer.css` (préfixe `.smf`), « Gérer les cookies » via `public/site-footer.js`. Ne rien y ajouter ni retirer sans l'accord de Thomas ; une modification se reporte dans les 16 fichiers.
 - Cibles à ne pas cannibaliser : la home vise « communication restaurant » (national), `/agence-communication-restaurant-lille` vise la requête locale.
 
 ### Cloudflare
