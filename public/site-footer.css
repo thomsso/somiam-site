@@ -1,0 +1,117 @@
+/* Pied de page commun à toutes les pages (maquette validée par Thomas le 16/11/2026).
+   Préfixe .smf : les pages ont chacune leurs règles `footer {}` ; tout est redéfini ici. */
+footer.smf {
+  display: block;
+  position: static;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #111111;
+  color: #CCCCCC;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+footer.smf * { box-sizing: border-box; text-align: left; float: none; }
+footer.smf .smf-col { display: block; position: static; }
+footer.smf .smf-inner { max-width: 1200px; margin: 0 auto; padding: 44px 40px 0; }
+footer.smf .smf-cols {
+  display: grid;
+  grid-template-columns: minmax(240px, 300px) repeat(3, minmax(140px, 1fr));
+  gap: 36px;
+  justify-content: space-between;
+}
+footer.smf .smf-logo {
+  display: inline-block;
+  font-family: 'Syne', 'Arial Black', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: #fff;
+  text-decoration: none;
+}
+footer.smf .smf-logo span { color: #F5C400; }
+footer.smf .smf-tagline { font-size: 14px; line-height: 1.5; margin: 12px 0 18px; color: #CCCCCC; }
+footer.smf .smf-ctas { display: flex; flex-direction: column; gap: 10px; }
+footer.smf a.smf-btn {
+  display: block;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 11px 16px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+footer.smf a.smf-btn-primary { background: #F5C400; color: #111; font-weight: 700; border: 1px solid #F5C400; }
+footer.smf a.smf-btn-primary:hover, footer.smf a.smf-btn-primary:focus-visible { background: #FFD633; border-color: #FFD633; color: #111; }
+footer.smf a.smf-btn-ghost { border: 1px solid #444; color: #fff; font-weight: 600; padding: 10px 16px; }
+footer.smf a.smf-btn-ghost:hover, footer.smf a.smf-btn-ghost:focus-visible { border-color: #F5C400; color: #F5C400; }
+footer.smf .smf-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F5C400;
+  font-weight: 700;
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+footer.smf .smf-links { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+footer.smf .smf-links li { margin: 0; padding: 0; }
+footer.smf a.smf-link {
+  font-size: 14px;
+  color: #CCCCCC;
+  text-decoration: none;
+  transition: color .2s;
+}
+footer.smf a.smf-link:hover, footer.smf a.smf-link:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+footer.smf a.smf-link-accent { color: #F5C400; }
+footer.smf a.smf-link-accent:hover, footer.smf a.smf-link-accent:focus-visible { color: #FFD633; }
+footer.smf .smf-bottom {
+  border-top: 1px solid #2D2D2D;
+  margin-top: 40px;
+  padding: 18px 0 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #888;
+}
+footer.smf .smf-legal { display: flex; flex-wrap: wrap; gap: 16px; }
+footer.smf .smf-bottom a, footer.smf .smf-bottom button {
+  font: inherit;
+  font-size: 12px;
+  color: #888;
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: color .2s;
+}
+footer.smf .smf-bottom a:hover, footer.smf .smf-bottom a:focus-visible,
+footer.smf .smf-bottom button:hover, footer.smf .smf-bottom button:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+footer.smf a:focus-visible, footer.smf button:focus-visible { outline: 2px solid #F5C400; outline-offset: 3px; }
+
+@media (max-width: 960px) {
+  footer.smf .smf-cols { grid-template-columns: 1fr 1fr; }
+  footer.smf .smf-brand { grid-column: 1 / -1; max-width: 360px; }
+}
+@media (max-width: 600px) {
+  footer.smf .smf-inner { padding: 40px 24px 0; }
+  footer.smf .smf-cols { grid-template-columns: 1fr; gap: 32px; }
+  footer.smf .smf-brand { max-width: none; }
+  footer.smf a.smf-btn { padding-top: 13px; padding-bottom: 13px; }
+  footer.smf a.smf-btn-ghost { padding-top: 12px; padding-bottom: 12px; }
+  footer.smf .smf-links { gap: 4px; }
+  footer.smf a.smf-link { display: inline-block; padding: 7px 0; font-size: 15px; }
+  footer.smf .smf-bottom { flex-direction: column; gap: 12px; margin-top: 32px; padding-bottom: 28px; }
+  footer.smf .smf-legal { gap: 4px 18px; }
+  footer.smf .smf-bottom .smf-legal a, footer.smf .smf-bottom .smf-legal button { padding: 6px 0; }
+}
