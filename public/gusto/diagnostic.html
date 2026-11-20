@@ -20,7 +20,7 @@
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:#080808;color:var(--blanc);font:400 16px/1.45 var(--texte);min-height:100dvh;display:flex;flex-direction:column;align-items:center}
 [hidden]{display:none!important}
-.app{width:100%;max-width:460px;min-height:calc(100dvh - 44px);background:var(--nuit);display:flex;flex-direction:column}
+.app{width:100%;max-width:460px;min-height:calc(100dvh - 44px);background:radial-gradient(130% 46% at 50% -8%,rgba(255,207,0,.13),transparent 62%),var(--nuit);display:flex;flex-direction:column}
 @media(min-width:520px){body{padding:24px 0}.app{min-height:calc(100dvh - 92px);border:1px solid var(--trait);border-radius:28px;overflow:clip}}
 .haut{display:flex;align-items:center;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px));min-height:58px}
 .logo{font:800 22px/1.1 var(--titre);border-bottom:3px solid var(--jaune);color:var(--blanc);text-decoration:none}
@@ -40,7 +40,8 @@ p{margin:0;color:var(--gris)}
 a{color:inherit}
 .petit{font-size:12px;line-height:1.45;color:var(--gris);text-align:center}
 .petit.g{text-align:left}
-.cta{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--jaune);color:#161714;font:700 16px/1.2 var(--texte);border:0;border-radius:12px;padding:16px;cursor:pointer;width:100%;min-height:54px;text-decoration:none}
+.cta{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--jaune);color:#161714;font:700 16px/1.2 var(--texte);border:0;border-radius:12px;padding:16px;cursor:pointer;width:100%;min-height:54px;text-decoration:none;box-shadow:0 10px 30px -12px rgba(255,207,0,.65);transition:transform .15s}
+.cta:active{transform:scale(.98)}
 .cta[disabled]{opacity:.55;cursor:default}
 .second{display:inline-flex;align-items:center;justify-content:center;background:var(--carte);color:var(--blanc);border:1px solid var(--trait);border-radius:12px;padding:12px 16px;font:500 15px/1.2 var(--texte);cursor:pointer;min-height:48px;text-decoration:none;text-align:center}
 .lien{background:none;border:0;color:var(--gris);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:44px;padding:0 8px;align-self:center}
@@ -87,7 +88,27 @@ input[aria-invalid=true]{border-color:var(--rouge)}
 .etape.fait i{background:var(--jaune);border-color:var(--jaune);color:#161714}
 .etape span{min-width:0}
 @keyframes tour{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.etape.cours i{animation:none}.barre i{transition:none}}
+.ecran>*{animation:monte .5s cubic-bezier(.2,.8,.2,1) both}
+.ecran>:nth-child(2){animation-delay:.06s}.ecran>:nth-child(3){animation-delay:.12s}.ecran>:nth-child(4){animation-delay:.18s}.ecran>:nth-child(n+5){animation-delay:.24s}
+@keyframes monte{from{opacity:0;transform:translateY(14px)}}
+.ecran.analyse{gap:14px}
+.ecran.analyse .etapes{gap:10px;margin-top:0;font-size:14px;line-height:1.35}
+.radar{position:relative;flex:none;overflow:hidden;width:min(100%,34dvh,300px);aspect-ratio:1;margin:auto;border-radius:50%;border:1px solid rgba(255,207,0,.28);background:radial-gradient(circle,rgba(255,207,0,.16),rgba(255,207,0,.04) 55%,transparent 72%);box-shadow:0 0 60px -10px rgba(255,207,0,.35)}
+.radar .onde{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,207,0,.55);opacity:0;animation:onde 2.7s ease-out infinite}
+.radar .onde:nth-child(2){animation-delay:.9s}.radar .onde:nth-child(3){animation-delay:1.8s}
+@keyframes onde{from{transform:scale(.12);opacity:.9}to{transform:scale(1);opacity:0}}
+.radar .balai{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 72%,rgba(255,207,0,.5));animation:tour 2.4s linear infinite}
+.radar .points{position:absolute;inset:18%;display:grid;grid-template-columns:repeat(5,1fr);gap:7%;place-items:center}
+.radar .points i{width:100%;aspect-ratio:1;border-radius:50%;background:#4a4c3f;transform:scale(.4);transition:transform .4s cubic-bezier(.3,1.7,.5,1),background .3s,box-shadow .3s}
+.radar .points i.vu{background:var(--jaune);transform:scale(.82);box-shadow:0 0 14px rgba(255,207,0,.75)}
+.radar .points i.moi{background:var(--blanc);transform:scale(1);box-shadow:0 0 0 5px rgba(255,255,255,.16),0 0 18px rgba(255,255,255,.6)}
+@media(max-height:720px){.radar{width:min(100%,27dvh,300px)}.ecran.analyse{gap:10px;padding-top:12px}.ecran.analyse .etapes{gap:7px;font-size:13px}.ecran.analyse .etape i{width:20px;height:20px;font-size:11px}}
+.score b{text-shadow:0 0 34px color-mix(in srgb,currentColor 45%,transparent)}
+.pense{text-align:center;color:var(--blanc);font-size:15px;line-height:1.4;min-height:2.8em;display:grid;place-items:center;transition:opacity .25s}
+.pense.change{opacity:0}
+.grille.pop i{animation:pop .45s cubic-bezier(.3,1.7,.5,1) both;animation-delay:calc(var(--n) * 28ms + .2s)}
+@keyframes pop{from{transform:scale(0);opacity:0}}
+@media(prefers-reduced-motion:reduce){.etape.cours i,.ecran>*,.radar .onde,.radar .balai,.grille.pop i{animation:none}.barre i,.radar .points i,.pense,.cta{transition:none}.radar .balai{display:none}}
 .bloc{background:var(--carte);border:1px solid var(--trait);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
 .tete{display:flex;justify-content:space-between;gap:10px;align-items:center}
 .etat{font:500 12px/1 var(--texte);padding:5px 9px;border-radius:20px;white-space:nowrap;flex:none}
@@ -172,6 +193,13 @@ input[aria-invalid=true]{border-color:var(--rouge)}
     B.style.width = pct + '%'; barre.setAttribute('aria-valuenow', String(pct));
     window.scrollTo(0, 0);
     const titre = E.querySelector('h1,h2'); if (titre) { titre.tabIndex = -1; titre.focus({ preventScroll: true }); }
+    // Le score monte jusqu'a sa vraie valeur.
+    const chiffre = E.querySelector('.score b'), noeud = chiffre && chiffre.firstChild, cible = noeud ? Number(noeud.textContent) : NaN;
+    if (noeud && cible > 0 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const moi = jeton, t0 = performance.now();
+      const pas = (t) => { if (moi !== jeton) return; const x = Math.min(1, (t - t0) / 900); noeud.textContent = String(Math.round(cible * (1 - Math.pow(1 - x, 3)))); if (x < 1) requestAnimationFrame(pas); };
+      noeud.textContent = '0'; requestAnimationFrame(pas);
+    }
   }
   const erreur = (msg) => { let z = document.getElementById('err'); if (!z) { z = document.createElement('p'); z.id = 'err'; z.className = 'erreur'; z.setAttribute('role', 'alert'); E.appendChild(z); } z.textContent = msg; z.scrollIntoView({ block: 'nearest' }); };
   const sansErreur = () => { const z = document.getElementById('err'); if (z) z.remove(); };
@@ -275,10 +303,35 @@ input[aria-invalid=true]{border-color:var(--rouge)}
       'Comparaison avec les restaurants qui passent devant',
       'Préparation de ton plan pour remplir tes tables',
     ];
-    montrer('analyse', `<h2>Gusto analyse <em>${esc(nom)}</em>…</h2><div class="etapes">${etapes.map((t) => `<div class="etape"><i></i><span>${t}</span></div>`).join('')}</div>`, '', null);
+    // Ce que Gusto fait vraiment pendant le scan, dit a la premiere personne.
+    const pensees = [
+      'Je me place à 25 endroits autour de ton restaurant…',
+      `Je cherche «\u00a0${esc(d.keyword)}\u00a0», comme un client qui a faim…`,
+      'Je note qui apparaît avant toi sur Google…',
+      'Je compare tes avis et tes photos aux leurs…',
+      'J\'écris ton plan pour remonter…',
+    ];
+    montrer('analyse', `<h2>Gusto analyse <em>${esc(nom)}</em>…</h2>
+      <div class="radar" aria-hidden="true"><span class="onde"></span><span class="onde"></span><span class="onde"></span><span class="balai"></span><div class="points">${'<i></i>'.repeat(25)}</div></div>
+      <p class="pense" id="pense">${pensees[0]}</p>
+      <div class="etapes">${etapes.map((t) => `<div class="etape"><i></i><span>${t}</span></div>`).join('')}</div>`, '', null);
     const moi = jeton, lignes = [...E.querySelectorAll('.etape')];
     let k = 0, fini = false;
     lignes[0].className = 'etape cours';
+    // Animation d'attente : les points s'allument un a un, la pensee change.
+    const points = [...E.querySelectorAll('.radar .points i')], zone = document.getElementById('pense');
+    points[12].className = 'moi';
+    const ordre = points.map((_, i) => i).filter((i) => i !== 12).sort(() => Math.random() - 0.5);
+    let vu = 0, idee = 0;
+    const allume = () => { if (moi !== jeton || ecran !== 'analyse' || vu >= ordre.length) return; points[ordre[vu++]].className = 'vu'; setTimeout(allume, fini ? 60 : 520); };
+    setTimeout(allume, 900);
+    const pense = () => {
+      if (moi !== jeton || ecran !== 'analyse' || !zone.isConnected) return;
+      idee = Math.min(idee + 1, pensees.length - 1); zone.classList.add('change');
+      setTimeout(() => { if (moi === jeton && zone.isConnected) { zone.innerHTML = pensees[idee]; zone.classList.remove('change'); } }, 250);
+      if (idee < pensees.length - 1) setTimeout(pense, 2600);
+    };
+    setTimeout(pense, 2600);
     const avance = () => {
       if (moi !== jeton) return;
       // La derniere etape ne se coche que lorsque le resultat est vraiment la.
@@ -369,7 +422,7 @@ input[aria-invalid=true]{border-color:var(--rouge)}
     const phrase = s < 50 ? 'Voilà pourquoi des clients qui te cherchent vont manger ailleurs.'
       : s < 75 ? 'Tu es visible, mais tu laisses encore des clients à tes concurrents.'
       : 'Ta fiche est solide. Voilà comment garder ton avance.';
-    const cellule = (g) => (g === -1 ? '<i class="n" title="Point non mesuré">?</i>' : g === null || g > 20 ? '<i class="r">20+</i>' : `<i class="${g <= 3 ? 'v' : g <= 10 ? 'o' : 'r'}">${g}</i>`);
+    const cellule = (g, i) => (g === -1 ? `<i class="n" style="--n:${i}" title="Point non mesuré">?</i>` : g === null || g > 20 ? `<i class="r" style="--n:${i}">20+</i>` : `<i class="${g <= 3 ? 'v' : g <= 10 ? 'o' : 'r'}" style="--n:${i}">${g}</i>`);
     const etatPos = m.measured && m.top3 / m.measured >= 0.6 ? ['v', 'Solide'] : m.measured && m.top3 / m.measured >= 0.2 ? ['o', 'À renforcer'] : ['r', 'À corriger'];
     const lignes = [
       `<div class="ligne"><span>Position moyenne</span><b>${m.avgRank === null ? 'Absent' : rang(Math.round(m.avgRank))}</b></div>`,
@@ -391,7 +444,7 @@ input[aria-invalid=true]{border-color:var(--rouge)}
       <p>${phrase}</p>
       <div class="bloc"><div class="tete"><h3>Ta position sur Google</h3><span class="etat ${etatPos[0]}">${etatPos[1]}</span></div>
         <p style="font-size:13px">Ta place sur «\u00a0${esc(r.keyword)}\u00a0», vue depuis 25 endroits dans un rayon de ${r.radiusKm} km.</p>
-        <div class="grille" role="img" aria-label="Carte de tes positions, du nord-ouest au sud-est">${r.grid.map(cellule).join('')}</div>
+        <div class="grille pop" role="img" aria-label="Carte de tes positions, du nord-ouest au sud-est">${r.grid.map(cellule).join('')}</div>
         <div class="legende"><span style="--c:var(--vert)">1 à 3</span><span style="--c:var(--orange)">4 à 10</span><span style="--c:var(--rouge)">11 et plus</span></div>
         ${lignes.join('')}</div>
       ${rivaux ? `<div class="bloc"><h3>Ceux qui passent devant toi</h3>${rivaux}</div>` : ''}
