@@ -2,24 +2,30 @@
 (() => {
   'use strict';
   const measurementId = 'G-HJNNL9B0CF';
+  const pixelId = '1536675787597678';
   const consentKey = 'somiam-audience-consent-v1';
   const consentLifetime = 180 * 24 * 60 * 60 * 1000;
   let started = false;
+  let pixelStarted = false;
   let previousFocus;
 
-  function readChoice() {
+  function readSaved() {
     try {
       const saved = JSON.parse(localStorage.getItem(consentKey));
       if (saved && ['accepted', 'refused'].includes(saved.choice) &&
-          saved.expires > Date.now()) return saved.choice;
+          saved.expires > Date.now()) return saved;
     } catch { /* Storage may be unavailable; default to no tracking. */ }
     return null;
   }
+  const readChoice = () => readSaved()?.choice ?? null;
+  // The shared key may hold an older "accepted" given for Google Analytics only.
+  // The Meta pixel needs a choice made on a banner that names Meta.
+  const metaAccepted = () => { const saved = readSaved(); return !!saved && saved.choice === 'accepted' && saved.meta === true; };
 
   function clearAnalyticsCookies() {
     for (const cookie of document.cookie.split(';')) {
       const name = cookie.split('=')[0].trim();
-      if (!/^_ga(?:_|$)/.test(name)) continue;
+      if (!/^_ga(?:_|$)/.test(name) && !/^_fb[pc]$/.test(name)) continue;
       for (const domain of ['', location.hostname, '.so-miam.com']) {
         document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax${domain ? `; Domain=${domain}` : ''}`;
       }
@@ -62,11 +68,28 @@
     document.head.append(script);
   }
 
+  function startPixel() {
+    if (pixelStarted) return;
+    if (!['www.so-miam.com', 'so-miam.com'].includes(location.hostname)) return;
+    pixelStarted = true;
+    const fbq = window.fbq = function () { fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments); };
+    if (!window._fbq) window._fbq = fbq;
+    fbq.push = fbq; fbq.loaded = true; fbq.version = '2.0'; fbq.queue = [];
+    // No automatic capture of buttons, form fields or page metadata.
+    fbq('set', 'autoConfig', false, pixelId);
+    fbq('init', pixelId);
+    fbq('track', 'PageView');
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.append(script);
+  }
+
   const banner = document.createElement('section');
   banner.id = 'audience-consent';
   banner.setAttribute('aria-label', 'Choix de mesure d’audience');
   banner.hidden = true;
-  banner.innerHTML = `<p>Des cookies Google Analytics pour mesurer les visites ? <a href="/politique-confidentialite">En savoir plus</a>.<span class="audience-more"> Choix modifiable à tout moment.</span></p><div class="audience-actions"><button type="button" data-choice="refused">Refuser</button><button type="button" data-choice="accepted">Accepter</button></div>`;
+  banner.innerHTML = `<p>Des cookies Google Analytics et Meta pour mesurer les visites et nos publicités ? <a href="/politique-confidentialite">En savoir plus</a>.<span class="audience-more"> Choix modifiable à tout moment.</span></p><div class="audience-actions"><button type="button" data-choice="refused">Refuser</button><button type="button" data-choice="accepted">Accepter</button></div>`;
   const preferences = document.createElement('div');
   preferences.className = 'audience-preferences';
   const settingsButton = document.createElement('button');
@@ -90,17 +113,17 @@
     const choice = event.target.closest('button[data-choice]')?.dataset.choice;
     if (!choice) return;
     try {
-      localStorage.setItem(consentKey, JSON.stringify({ choice, expires: Date.now() + consentLifetime }));
+      localStorage.setItem(consentKey, JSON.stringify({ choice, meta: choice === 'accepted', expires: Date.now() + consentLifetime }));
     } catch { /* Honor the choice for this page even without persistence. */ }
     banner.hidden = true;
     settingsButton.setAttribute('aria-expanded', 'false');
     (previousFocus || settingsButton).focus({ preventScroll: true });
-    if (choice === 'accepted') startAnalytics();
+    if (choice === 'accepted') { startAnalytics(); startPixel(); }
     else {
       window[`ga-disable-${measurementId}`] = true;
       clearAnalyticsCookies();
-      // Unload the tag completely after withdrawal; no cookieless pings.
-      if (started) location.reload();
+      // Unload the tags completely after withdrawal; no cookieless pings.
+      if (started || pixelStarted) location.reload();
     }
   });
   window.addEventListener('storage', (event) => {
@@ -108,11 +131,13 @@
     if (readChoice() !== 'accepted') {
       window[`ga-disable-${measurementId}`] = true;
       clearAnalyticsCookies();
-      if (started) location.reload();
+      if (started || pixelStarted) location.reload();
     }
   });
-  if (readChoice() === 'accepted') startAnalytics();
-  else {
+  if (readChoice() === 'accepted') {
+    startAnalytics();
+    if (metaAccepted()) startPixel(); else showChoices(false);
+  } else {
     window[`ga-disable-${measurementId}`] = true;
     clearAnalyticsCookies();
     if (!readChoice()) showChoices(false);
