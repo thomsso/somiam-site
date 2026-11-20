@@ -37,6 +37,18 @@ const affiliateRef = new URLSearchParams(window.location.search).get('ref');
 const affiliateCode = affiliateRef && /^[a-z0-9]{12}$/.test(affiliateRef) ? affiliateRef : null;
 if (affiliateCode) {
   document.body.classList.add('gusto-affiliate-arrival');
+  // Arrivee par un partenaire : le haut de page garde le parcours partenaire
+  // (diagnostic strategique + essai), pas le diagnostic gratuit en ligne.
+  document.querySelectorAll('a[data-diagnostic]').forEach(link => {
+    const trialButton = document.createElement('button');
+    trialButton.className = 'cta';
+    trialButton.type = 'button';
+    trialButton.dataset.checkout = '';
+    trialButton.innerHTML = '<span class="hero-desktop-copy">Démarrer mes 14 jours gratuits ↗</span><span class="hero-mobile-copy">Essayer 14 jours gratuitement</span>';
+    const small = link.nextElementSibling;
+    if (small?.classList.contains('small')) small.textContent = 'Puis 69 € HT/mois · Sans engagement';
+    link.replaceWith(trialButton);
+  });
   document.querySelectorAll('[data-recette-diagnostic]').forEach(link => { link.href = 'https://app.so-miam.com/partenaires/diagnostic?ref=' + encodeURIComponent(affiliateCode); });
   document.querySelectorAll('[data-checkout]').forEach(trialButton => {
     const diagnosticLink = document.createElement('a');
@@ -103,3 +115,26 @@ demoPlay?.addEventListener('click', () => {
   demoPlay.replaceWith(iframe);
   iframe.focus();
 }, { once: true });
+
+// Telephone : une fois le haut de page passe, le bouton du diagnostic reste
+// sous le pouce. Pas pour une arrivee partenaire (son parcours est different).
+if (!affiliateCode) {
+  const heroLinks = [...document.querySelectorAll('.art.hero a[data-diagnostic]')];
+  if (heroLinks.length && 'IntersectionObserver' in window) {
+    const bar = document.createElement('div');
+    bar.className = 'sticky-diag';
+    bar.innerHTML = '<a class="cta" href="/gusto/diagnostic">Analyser mon restaurant gratuitement</a>';
+    document.body.append(bar);
+    document.body.classList.add('has-sticky-diag');
+    // La barre apparait des qu'aucun bouton du haut de page n'est a l'ecran
+    // (y compris au chargement sur un tres petit telephone).
+    const seen = new Set();
+    const watcher = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) seen.add(entry.target); else seen.delete(entry.target); });
+      bar.classList.toggle('on', seen.size === 0);
+      bar.querySelector('a').tabIndex = seen.size === 0 ? 0 : -1;
+    }, { threshold: 0.6 });
+    heroLinks.forEach(link => watcher.observe(link));
+  }
+}
+

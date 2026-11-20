@@ -18,3 +18,13 @@
 
 #audience-consent :focus-visible,.audience-preferences button:focus-visible{outline:3px solid #806000;outline-offset:3px}
 
+
+/* Telephone : une barre fine tout en haut. En bas, elle recouvrait le bouton
+   principal de la page ; en haut, elle ne couvre que le menu. */
+@media(max-width:760px){
+#audience-consent{top:0;bottom:auto;left:0;width:100%;max-width:none;border-width:0 0 1px;border-radius:0 0 12px 12px;padding:calc(8px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:10px}
+#audience-consent p{margin:0;flex:1;min-width:0;font-size:11.5px;line-height:1.35}
+#audience-consent .audience-actions{flex:none;gap:6px}
+#audience-consent button{flex:none;min-height:40px;padding:6px 10px}
+#audience-consent .audience-more{display:none}
+}

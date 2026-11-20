@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diagnostic gratuit de ton restaurant · Gusto</title>
+<meta name="description" content="Pourquoi tes tables restent vides certains soirs ? Gusto mesure ta visibilité sur Google autour de ton restaurant. Gratuit, 30 secondes.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#111111">
+<link rel="canonical" href="https://www.so-miam.com/gusto/diagnostic">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/gusto-consent.css">
+<style>
+/* Une question par ecran, le bouton toujours en bas sous le pouce. Pense pour 320 a 430 px ; au-dela, la meme colonne centree. */
+:root{--nuit:#111;--carte:#1b1c17;--trait:#34362c;--blanc:#f8f6ef;--gris:#b7bcab;--jaune:#ffcf00;--rouge:#ff6b4a;--orange:#ffa53a;--vert:#7fce7a;--titre:'Syne',system-ui,sans-serif;--texte:'Space Grotesk',system-ui,sans-serif;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#080808;color:var(--blanc);font:400 16px/1.45 var(--texte);min-height:100dvh;display:flex;flex-direction:column;align-items:center}
+[hidden]{display:none!important}
+.app{width:100%;max-width:460px;min-height:100dvh;background:var(--nuit);display:flex;flex-direction:column}
+@media(min-width:520px){body{padding:24px 0}.app{min-height:calc(100dvh - 48px);border:1px solid var(--trait);border-radius:28px;overflow:clip}}
+.haut{display:flex;align-items:center;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px));min-height:58px}
+.logo{font:800 22px/1.1 var(--titre);border-bottom:3px solid var(--jaune);color:var(--blanc);text-decoration:none}
+.barre{flex:1;min-width:0;height:4px;background:var(--trait);border-radius:4px;overflow:hidden}
+.barre i{display:block;height:100%;width:0;background:var(--jaune);transition:width .4s}
+.retour{background:none;color:var(--gris);font:inherit;font-size:13px;border:0;cursor:pointer;padding:8px 0;min-height:44px;white-space:nowrap}
+.ecran{flex:1;min-width:0;padding:22px max(20px,env(safe-area-inset-right,0px)) 16px max(20px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:16px}
+.ecran>*,.bloc>*{min-width:0;max-width:100%}
+.ecran,.bloc{overflow-wrap:anywhere}
+.pied{position:sticky;bottom:0;background:var(--nuit);padding:12px max(20px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));border-top:1px solid var(--trait);display:flex;flex-direction:column;gap:8px}
+h1{font:800 clamp(26px,8vw,32px)/1.08 var(--titre);letter-spacing:-.03em;text-wrap:balance;margin:0}
+h2{font:800 clamp(20px,6vw,24px)/1.15 var(--titre);letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1 em,h2 em{font-style:normal;color:var(--jaune)}
+h1:focus,h2:focus{outline:none}
+h3{font:700 15px/1.3 var(--texte);margin:0}
+p{margin:0;color:var(--gris)}
+a{color:inherit}
+.petit{font-size:12px;line-height:1.45;color:var(--gris);text-align:center}
+.petit.g{text-align:left}
+.cta{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--jaune);color:#161714;font:700 16px/1.2 var(--texte);border:0;border-radius:12px;padding:16px;cursor:pointer;width:100%;min-height:54px;text-decoration:none}
+.cta[disabled]{opacity:.55;cursor:default}
+.second{display:inline-flex;align-items:center;justify-content:center;background:var(--carte);color:var(--blanc);border:1px solid var(--trait);border-radius:12px;padding:12px 16px;font:500 15px/1.2 var(--texte);cursor:pointer;min-height:48px;text-decoration:none;text-align:center}
+.lien{background:none;border:0;color:var(--gris);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:44px;padding:0 8px;align-self:center}
+:focus-visible{outline:3px solid #e091ff;outline-offset:3px}
+label{font-size:13px;color:var(--gris);display:flex;flex-direction:column;gap:6px}
+input[type=text],input[type=email],input[type=tel],input[type=search]{font:500 17px/1.2 var(--texte);background:var(--carte);color:var(--blanc);border:1px solid var(--trait);border-radius:12px;padding:15px;width:100%;min-width:0;-webkit-appearance:none;appearance:none}
+input::placeholder{color:#7d8173}
+input[aria-invalid=true]{border-color:var(--rouge)}
+.erreur{color:var(--rouge);font-size:14px}
+.piege{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.liste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.liste button{width:100%;text-align:left;background:var(--carte);color:var(--blanc);border:1px solid var(--trait);border-radius:12px;padding:12px 14px;font:inherit;cursor:pointer;min-height:56px;display:flex;flex-direction:column;gap:2px}
+.liste button small{color:var(--gris);font-size:13px}
+.choisi{background:var(--carte);border:1px solid var(--jaune);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.choisi div{min-width:0}
+.choisi strong{display:block}
+.choisi small{color:var(--gris);font-size:13px}
+.puces{display:flex;flex-wrap:wrap;gap:8px}
+.puce{background:var(--carte);color:var(--blanc);border:1px solid var(--trait);border-radius:22px;padding:10px 14px;font:inherit;font-size:14px;cursor:pointer;min-height:44px;max-width:100%;text-align:left}
+.puce[aria-pressed=true]{background:var(--jaune);color:#161714;border-color:var(--jaune)}
+.preuve{display:flex;gap:12px;align-items:center;font-size:13px;line-height:1.4;color:var(--gris)}
+.preuve b{font:800 20px/1 var(--titre);color:var(--blanc);white-space:nowrap;flex:none;min-width:58px}
+.etapes{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+.etape{display:flex;gap:12px;align-items:center;color:var(--gris);opacity:.35;transition:opacity .3s}
+.etape.fait,.etape.cours{opacity:1}
+.etape.fait{color:var(--blanc)}
+.etape i{width:24px;height:24px;border-radius:50%;border:2px solid var(--trait);display:grid;place-items:center;font:700 13px var(--texte);font-style:normal;flex:none}
+.etape.cours i{border-color:var(--jaune);border-top-color:transparent;animation:tour .8s linear infinite}
+.etape.fait i{background:var(--jaune);border-color:var(--jaune);color:#161714}
+.etape span{min-width:0}
+@keyframes tour{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.etape.cours i{animation:none}.barre i{transition:none}}
+.bloc{background:var(--carte);border:1px solid var(--trait);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.tete{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.etat{font:500 12px/1 var(--texte);padding:5px 9px;border-radius:20px;white-space:nowrap;flex:none}
+.etat.r{background:#3a1d15;color:var(--rouge)}.etat.o{background:#3a2a12;color:var(--orange)}.etat.v{background:#1c3320;color:var(--vert)}
+.score{display:flex;flex-direction:column;gap:8px}
+.score b{font:800 64px/1 var(--titre);font-variant-numeric:tabular-nums}
+.score b small{font-size:20px;color:var(--gris)}
+.c-r{color:var(--rouge)}.c-o{color:var(--orange)}.c-v{color:var(--vert)}
+.grille{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;width:100%;max-width:230px;margin:4px auto}
+.grille i{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:700 12px/1 var(--texte);font-style:normal;color:#161714;font-variant-numeric:tabular-nums}
+.grille .r{background:var(--rouge)}.grille .o{background:var(--orange)}.grille .v{background:var(--vert)}.grille .n{background:var(--trait);color:var(--gris)}
+.legende{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:12px;color:var(--gris)}
+.legende span{display:inline-flex;align-items:center;gap:6px}
+.legende span::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+.ligne{display:flex;justify-content:space-between;gap:12px;font-size:14px;border-top:1px solid var(--trait);padding-top:9px}
+.ligne span{min-width:0}
+.ligne b{white-space:nowrap;font-variant-numeric:tabular-nums;flex:none}
+.rival{border-top:1px solid var(--trait);padding-top:9px;font-size:14px}
+.rival small{display:block;color:var(--gris);font-size:13px}
+.plan{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--blanc)}
+.verrou{display:flex;flex-direction:column;gap:8px}
+.verrou i{display:block;height:14px;border-radius:7px;background:#4a4c40;filter:blur(3px)}
+.verrou i:nth-child(2){width:78%}
+.recap{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:10px 0;border-top:1px solid var(--trait)}
+.recap:first-child{border:0;padding-top:0}
+.recap b{font-variant-numeric:tabular-nums;text-align:right}
+.audience-preferences{width:100%;max-width:460px;background:none!important}
+</style>
+</head>
+<body>
+<main class="app" id="app">
+  <div class="haut">
+    <a class="logo" href="/gusto" aria-label="Gusto, retour à la présentation">Gusto</a>
+    <div class="barre" role="progressbar" aria-label="Avancement du diagnostic" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="prog"></i></div>
+    <button class="retour" id="retour" type="button" hidden>← Retour</button>
+  </div>
+  <div class="ecran" id="ecran" aria-live="polite">
+    <h1>Pourquoi tes tables restent vides <em>certains soirs ?</em></h1>
+    <p>Gusto mesure ta visibilité sur Google autour de ton restaurant. Tu as la réponse en 30 secondes.</p>
+    <noscript><p class="erreur">Le diagnostic a besoin de JavaScript. Active-le dans ton navigateur, ou <a href="/gusto">reviens à la présentation de Gusto</a>.</p></noscript>
+  </div>
+  <div class="pied" id="pied" hidden></div>
+</main>
+<script>
+(() => {
+  'use strict';
+  const E = document.getElementById('ecran'), P = document.getElementById('pied'), B = document.getElementById('prog'), R = document.getElementById('retour');
+  const barre = B.parentElement;
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+  const APPEL = 'https://app.iclosed.io/e/somiam/audit';
+  const d = { place: null, city: '', keyword: '', instagram: '', id: null, teaser: null, result: null, deferred: false };
+  let ecran = '', jeton = 0;
+
+  // ── Mesure (seulement si le visiteur a accepte les cookies) ──
+  function suivi(nom) {
+    try { if (typeof window.gtag === 'function') window.gtag('event', nom); } catch {}
+    try { if (typeof window.fbq === 'function') window.fbq('trackCustom', nom); } catch {}
+  }
+
+  async function api(method, query, body) {
+    let res;
+    try {
+      res = await fetch('/api/diagnostic' + (query || ''), {
+        method, headers: body ? { 'Content-Type': 'application/json' } : undefined,
+        body: body ? JSON.stringify(body) : undefined, signal: AbortSignal.timeout(25000),
+      });
+    } catch { throw new Error('La connexion a coupé. Vérifie ton réseau et réessaie.'); }
+    const data = await res.json().catch(() => null);
+    if (!res.ok || !data) { const e = new Error((data && data.error) || 'Le diagnostic ne répond pas. Réessaie dans un instant.'); e.field = data && data.field; e.status = res.status; throw e; }
+    return data;
+  }
+
+  const ORDRE = ['intro', 'resto', 'mot', 'insta', 'analyse', 'contact', 'resultat', 'paiement'];
+  function montrer(nom, html, pied, retour) {
+    ecran = nom; jeton++;
+    E.innerHTML = html;
+    P.innerHTML = pied || ''; P.hidden = !pied;
+    R.hidden = !retour; R.onclick = retour || null;
+    const pct = Math.round(Math.max(0, ORDRE.indexOf(nom)) / (ORDRE.length - 1) * 100);
+    B.style.width = pct + '%'; barre.setAttribute('aria-valuenow', String(pct));
+    window.scrollTo(0, 0);
+    const titre = E.querySelector('h1,h2'); if (titre) { titre.tabIndex = -1; titre.focus({ preventScroll: true }); }
+  }
+  const erreur = (msg) => { let z = document.getElementById('err'); if (!z) { z = document.createElement('p'); z.id = 'err'; z.className = 'erreur'; z.setAttribute('role', 'alert'); E.appendChild(z); } z.textContent = msg; z.scrollIntoView({ block: 'nearest' }); };
+  const sansErreur = () => { const z = document.getElementById('err'); if (z) z.remove(); };
+
+  // ── 1. Entree ──
+  function intro() {
+    montrer('intro', `
+      <h1>Pourquoi tes tables restent vides <em>certains soirs ?</em></h1>
+      <p>Gusto mesure ta visibilité sur Google autour de ton restaurant. Tu as la réponse en 30 secondes.</p>
+      <div class="bloc">
+        <div class="preuve"><b>+30 %</b><span>de réservations en moyenne chez les restaurants suivis par So MIAM</span></div>
+        <div class="preuve"><b>+50</b><span>restaurants accompagnés par So MIAM, partout en France</span></div>
+        <div class="preuve"><b>N°1</b><span>sur Google Maps dans leur ville : de la 20<sup>e</sup> place à la 1<sup>re</sup></span></div>
+      </div>`,
+      `<button class="cta" id="go" type="button">Analyser mon restaurant</button><p class="petit">Gratuit · 30 secondes · sans carte bancaire</p>`);
+    document.getElementById('go').onclick = () => { suivi('diagnostic_debut'); resto(); };
+  }
+
+  // ── 2. Restaurant ──
+  function resto() {
+    montrer('resto', `
+      <h2>C'est quoi, ton restaurant ?</h2>
+      <p>Écris son nom et sa ville, puis touche ta fiche Google.</p>
+      <div id="zone"></div>`,
+      `<button class="cta" id="suite" type="button" disabled>Continuer</button>`, intro);
+    const zone = document.getElementById('zone'), suite = document.getElementById('suite');
+    suite.onclick = () => { if (d.place) mot(); };
+    const choisi = () => {
+      zone.innerHTML = `<div class="choisi"><div><strong>${esc(d.place.name)}</strong><small>${esc(d.place.address)}</small></div><button class="lien" id="changer" type="button">Changer</button></div>`;
+      suite.disabled = false;
+      document.getElementById('changer').onclick = () => { d.place = null; saisie(''); };
+    };
+    const saisie = (valeur) => {
+      suite.disabled = true;
+      zone.innerHTML = `<label>Nom du restaurant et ville<input id="q" type="search" inputmode="search" enterkeyhint="search" autocomplete="off" autocapitalize="words" spellcheck="false" placeholder="Chez Marcel Lille" value="${esc(valeur)}"></label><ul class="liste" id="liste" style="margin-top:12px"></ul>`;
+      const q = document.getElementById('q'), liste = document.getElementById('liste');
+      let minuteur = 0, tour = 0;
+      const chercher = async () => {
+        const v = q.value.trim(); const moi = ++tour;
+        if (v.length < 3) { liste.innerHTML = ''; sansErreur(); return; }
+        try {
+          const { places } = await api('GET', '?places=' + encodeURIComponent(v));
+          if (moi !== tour || ecran !== 'resto' || d.place) return;
+          sansErreur();
+          liste.innerHTML = places.length
+            ? places.map((p, i) => `<li><button type="button" data-i="${i}"><strong>${esc(p.name)}</strong><small>${esc(p.address)}</small></button></li>`).join('')
+            : `<li><p class="petit g">Aucune fiche Google à ce nom. Ajoute la ville, ou vérifie l'orthographe.</p></li>`;
+          liste.querySelectorAll('button').forEach((b) => b.onclick = () => { d.place = places[+b.dataset.i]; d.city = villeDe(d.place.address); choisi(); });
+        } catch (e) { if (moi === tour && ecran === 'resto') erreur(e.message); }
+      };
+      q.oninput = () => { clearTimeout(minuteur); minuteur = setTimeout(chercher, 280); };
+      if (valeur) chercher();
+    };
+    if (d.place) choisi(); else saisie('');
+  }
+  const villeDe = (adresse) => { const parts = String(adresse || '').split(',').map((x) => x.trim()).filter(Boolean); return (parts[parts.length - 1] || '').replace(/^\d{5}\s*/, ''); };
+
+  // ── 3. Recherche visee ──
+  function mot() {
+    const v = d.city.toLowerCase();
+    const idees = ['restaurant', 'restaurant italien', 'pizzeria', 'brasserie', 'burger', 'brunch', 'restaurant terrasse'].map((m) => (v ? m + ' ' + v : m));
+    montrer('mot', `
+      <h2>Un client te cherche sur Google. <em>Il tape quoi ?</em></h2>
+      <p>Choisis la recherche où tu veux sortir en premier.</p>
+      <div class="puces" id="mots">${idees.map((m) => `<button type="button" class="puce" aria-pressed="${m === d.keyword}">${esc(m)}</button>`).join('')}</div>
+      <label>Ou écris la tienne<input id="mot" type="text" autocomplete="off" autocapitalize="none" enterkeyhint="done" maxlength="60" placeholder="${esc(v ? 'crêperie ' + v : 'crêperie lille')}" value="${esc(d.keyword)}"></label>`,
+      `<button class="cta" id="suite" type="button">Continuer</button>`, resto);
+    const champ = document.getElementById('mot'), puces = [...document.querySelectorAll('#mots .puce')];
+    const marque = () => puces.forEach((p) => p.setAttribute('aria-pressed', String(p.textContent === champ.value.trim().toLowerCase())));
+    puces.forEach((p) => p.onclick = () => { champ.value = p.textContent; marque(); sansErreur(); });
+    champ.oninput = marque;
+    document.getElementById('suite').onclick = () => {
+      const k = champ.value.trim().toLowerCase();
+      if (k.length < 3) { champ.setAttribute('aria-invalid', 'true'); return erreur('Choisis une recherche, ou écris la tienne.'); }
+      d.keyword = k; insta();
+    };
+  }
+
+  // ── 4. Instagram ──
+  function insta() {
+    montrer('insta', `
+      <h2>Et ton Instagram ?</h2>
+      <p>Donne ton compte pour que Gusto le prépare. Tu peux passer si tu n'en as pas.</p>
+      <label>Ton compte Instagram<input id="insta" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go" maxlength="60" placeholder="chezmarcel.lille" value="${esc(d.instagram)}"></label>`,
+      `<button class="cta" id="suite" type="button">Lancer l'analyse</button><button class="lien" id="passer" type="button">Passer cette étape</button>`, mot);
+    const champ = document.getElementById('insta');
+    document.getElementById('suite').onclick = () => { d.instagram = champ.value.trim(); analyse(true); };
+    document.getElementById('passer').onclick = () => { d.instagram = ''; analyse(true); };
+  }
+
+  // ── 5. Analyse (le vrai scan tourne pendant cet ecran) ──
+  async function analyse(lancer) {
+    const nom = d.place ? d.place.name : (d.teaser && d.teaser.place.name) || 'ton restaurant';
+    const etapes = [
+      `Recherche de ta fiche Google${d.city ? ' à ' + esc(d.city) : ''}`,
+      `Position sur «\u00a0${esc(d.keyword)}\u00a0» dans 25 points autour de toi`,
+      'Comparaison avec les restaurants qui passent devant',
+      'Préparation de ton plan pour remplir tes tables',
+    ];
+    montrer('analyse', `<h2>Gusto analyse <em>${esc(nom)}</em>…</h2><div class="etapes">${etapes.map((t) => `<div class="etape"><i></i><span>${t}</span></div>`).join('')}</div>`, '', null);
+    const moi = jeton, lignes = [...E.querySelectorAll('.etape')];
+    let k = 0, fini = false;
+    lignes[0].className = 'etape cours';
+    const avance = () => {
+      if (moi !== jeton) return;
+      // La derniere etape ne se coche que lorsque le resultat est vraiment la.
+      if (k < lignes.length - 1 || fini) { lignes[k].className = 'etape fait'; lignes[k].firstChild.textContent = '✓'; k++; if (k < lignes.length) lignes[k].className = 'etape cours'; }
+      if (k < lignes.length) setTimeout(avance, 1300);
+    };
+    setTimeout(avance, 1300);
+    const echec = (msg) => {
+      if (moi !== jeton) return;
+      montrer('analyse', `<h2>L'analyse n'a pas abouti.</h2><p class="erreur" role="alert">${esc(msg)}</p>`,
+        `<button class="cta" id="re" type="button">Réessayer</button>`, d.place ? insta : null);
+      document.getElementById('re').onclick = () => (d.place ? analyse(true) : intro());
+    };
+    try {
+      if (lancer) {
+        suivi('diagnostic_scan');
+        const depart = await api('POST', '', { action: 'start', placeId: d.place.placeId, keyword: d.keyword, instagram: d.instagram, website: '' });
+        if (moi !== jeton) return;
+        d.id = depart.id; garder();
+        if (depart.place && depart.place.city) d.city = depart.place.city;
+        if (depart.status === 'deferred') { d.deferred = true; return contact(); }
+      }
+      const debut = Date.now();
+      for (;;) {
+        const etat = await api('GET', '?id=' + d.id);
+        if (moi !== jeton) return;
+        if (etat.status === 'done') {
+          fini = true;
+          d.teaser = etat.teaser || null; d.result = etat.result || null;
+          const attendre = () => { if (moi !== jeton) return; if (k >= lignes.length) setTimeout(() => moi === jeton && (d.result ? resultat() : contact()), 500); else setTimeout(attendre, 300); };
+          return attendre();
+        }
+        if (etat.status === 'deferred') { d.deferred = true; return contact(); }
+        if (etat.status === 'error') return echec('Google n\'a pas répondu à toutes nos recherches. Relance l\'analyse, ça prend 30 secondes.');
+        if (Date.now() - debut > 120000) return echec('L\'analyse prend plus de temps que prévu. Relance-la dans un instant.');
+        await new Promise((r) => setTimeout(r, 1500));
+      }
+    } catch (e) { echec(e.message); }
+  }
+
+  // ── 6. Contact (le score est montre, le detail s'ouvre apres) ──
+  const couleur = (s) => (s < 50 ? 'r' : s < 75 ? 'o' : 'v');
+  function contact() {
+    const t = d.teaser;
+    const tete = d.deferred
+      ? `<h2>Beaucoup de demandes aujourd'hui.</h2><p>Laisse ton contact : on t'envoie le diagnostic de ton restaurant demain.</p>`
+      : `<h2>C'est prêt. <em>Où on t'envoie ton diagnostic ?</em></h2>
+         <div class="bloc"><div class="score"><b class="c-${couleur(t.score.total)}">${t.score.total}<small>/100</small></b><p>Score de visibilité de ${esc(t.place.name)} sur Google.</p></div></div>`;
+    montrer('contact', `${tete}
+      <form id="f" novalidate style="display:flex;flex-direction:column;gap:16px">
+        <label>Ton prénom<input id="prenom" type="text" autocomplete="given-name" autocapitalize="words" enterkeyhint="next" maxlength="60"></label>
+        <label>Ton e-mail<input id="mail" type="email" inputmode="email" autocomplete="email" autocapitalize="none" enterkeyhint="next" maxlength="254"></label>
+        <label>Ton portable<input id="tel" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="done" maxlength="20" placeholder="06 12 34 56 78"></label>
+        <label class="piege" aria-hidden="true">Site web<input id="site" type="text" tabindex="-1" autocomplete="off"></label>
+      </form>
+      <p class="petit g">On t'envoie ton diagnostic et on peut t'appeler pour en parler. Tes coordonnées ne sont jamais revendues. <a href="/politique-confidentialite" target="_blank" rel="noopener">Confidentialité</a></p>`,
+      `<button class="cta" id="voir" type="submit" form="f">${d.deferred ? 'Recevoir mon diagnostic' : 'Voir mon diagnostic'}</button>`, null);
+    const f = document.getElementById('f'), bouton = document.getElementById('voir');
+    f.onsubmit = async (ev) => {
+      ev.preventDefault(); sansErreur();
+      const champs = { firstName: document.getElementById('prenom'), email: document.getElementById('mail'), phone: document.getElementById('tel') };
+      Object.values(champs).forEach((c) => c.removeAttribute('aria-invalid'));
+      bouton.disabled = true; const texte = bouton.textContent; bouton.textContent = 'Un instant…';
+      try {
+        const etat = await api('POST', '', { action: 'contact', id: d.id, firstName: champs.firstName.value, email: champs.email.value, phone: champs.phone.value, website: document.getElementById('site').value });
+        suivi('diagnostic_contact');
+        try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead'); } catch {}
+        if (etat.result) { d.result = etat.result; resultat(); } else attente();
+      } catch (e) {
+        bouton.disabled = false; bouton.textContent = texte;
+        if (e.field && champs[e.field]) { champs[e.field].setAttribute('aria-invalid', 'true'); champs[e.field].focus(); }
+        erreur(e.message);
+      }
+    };
+  }
+  function attente() {
+    montrer('resultat', `<h2>C'est noté.</h2><p>Ton diagnostic part par e-mail demain. Si tu veux avancer tout de suite, réserve un appel : on regarde ton restaurant ensemble, en visio. Offert, sans obligation d'achat.</p>
+      <a class="second" href="${APPEL}" target="_blank" rel="noopener">Réserver un appel avec Thomas</a>`,
+      `<a class="cta" href="/gusto">Découvrir Gusto</a>`, null);
+  }
+
+  // ── 7. Diagnostic ──
+  const rang = (n) => (n === 1 ? '1<sup>re</sup>' : n + '<sup>e</sup>');
+  const nombre = (n) => Number(n).toLocaleString('fr-FR');
+  function resultat() {
+    const r = d.result, s = r.score.total, m = r.metrics;
+    suivi('diagnostic_resultat');
+    const phrase = s < 50 ? 'Voilà pourquoi des clients qui te cherchent vont manger ailleurs.'
+      : s < 75 ? 'Tu es visible, mais tu laisses encore des clients à tes concurrents.'
+      : 'Ta fiche est solide. Voilà comment garder ton avance.';
+    const cellule = (g) => (g === -1 ? '<i class="n" title="Point non mesuré">?</i>' : g === null || g > 20 ? '<i class="r">20+</i>' : `<i class="${g <= 3 ? 'v' : g <= 10 ? 'o' : 'r'}">${g}</i>`);
+    const etatPos = m.measured && m.top3 / m.measured >= 0.6 ? ['v', 'Solide'] : m.measured && m.top3 / m.measured >= 0.2 ? ['o', 'À renforcer'] : ['r', 'À corriger'];
+    const lignes = [
+      `<div class="ligne"><span>Position moyenne</span><b>${m.avgRank === null ? 'Absent' : rang(Math.round(m.avgRank))}</b></div>`,
+      `<div class="ligne"><span>Points où tu es dans les 3 premiers</span><b>${m.top3} sur ${m.measured}</b></div>`,
+    ];
+    if (m.found < m.measured) lignes.push(`<div class="ligne"><span>Points où tu n'apparais pas du tout</span><b>${m.measured - m.found} sur ${m.measured}</b></div>`);
+    const avis = [];
+    if (r.place.votes !== null) avis.push(`<div class="ligne" style="border:0;padding:0"><span>Tes avis Google</span><b>${nombre(r.place.votes)}${r.place.rating !== null ? ' · ' + String(r.place.rating).replace('.', ',') + ' ★' : ''}</b></div>`);
+    if (r.reference.votes !== null) avis.push(`<div class="ligne"${avis.length ? '' : ' style="border:0;padding:0"'}><span>Avis chez tes concurrents de tête</span><b>${nombre(r.reference.votes)}</b></div>`);
+    if (r.place.photos !== null) avis.push(`<div class="ligne"><span>Photos sur ta fiche</span><b>${nombre(r.place.photos)}</b></div>`);
+    if (r.place.photos !== null && r.reference.photos !== null) avis.push(`<div class="ligne"><span>Photos chez tes concurrents de tête</span><b>${nombre(r.reference.photos)}</b></div>`);
+    const etatAvis = r.score.reviews + r.score.listing >= 32 ? ['v', 'Solide'] : r.score.reviews + r.score.listing >= 20 ? ['o', 'À renforcer'] : ['r', 'À corriger'];
+    const rivaux = r.competitors.map((c) => `<div class="rival"><strong>${esc(c.name)}</strong><small>Dans les 3 premiers sur ${c.top3Points} point${c.top3Points > 1 ? 's' : ''} sur ${m.measured}${c.votes !== null ? ' · ' + nombre(c.votes) + ' avis' : ''}${c.rating !== null ? ' · ' + String(c.rating).replace('.', ',') + ' ★' : ''}</small></div>`).join('');
+    const ig = r.instagram.username
+      ? `<p style="font-size:14px">Gusto n'a pas pu lire <strong style="color:var(--blanc)">@${esc(r.instagram.username)}</strong> depuis l'extérieur. Il l'analyse dès que tu relies ton compte, à la première étape de ton essai : ta régularité, tes heures de publication, ce qui marche chez toi.</p>`
+      : `<p style="font-size:14px">Tu n'as pas donné de compte. Gusto gère aussi Instagram et Facebook : tes publications, tes stories et ton calendrier, depuis tes photos.</p>`;
+    montrer('resultat', `
+      <h2>${esc(r.place.name)}<br><em>${s} sur 100</em></h2>
+      <p>${phrase}</p>
+      <div class="bloc"><div class="tete"><h3>Ta position sur Google</h3><span class="etat ${etatPos[0]}">${etatPos[1]}</span></div>
+        <p style="font-size:13px">Ta place sur «\u00a0${esc(r.keyword)}\u00a0», vue depuis 25 endroits dans un rayon de ${r.radiusKm} km.</p>
+        <div class="grille" role="img" aria-label="Carte de tes positions, du nord-ouest au sud-est">${r.grid.map(cellule).join('')}</div>
+        <div class="legende"><span style="--c:var(--vert)">1 à 3</span><span style="--c:var(--orange)">4 à 10</span><span style="--c:var(--rouge)">11 et plus</span></div>
+        ${lignes.join('')}</div>
+      ${rivaux ? `<div class="bloc"><h3>Ceux qui passent devant toi</h3>${rivaux}</div>` : ''}
+      ${avis.length ? `<div class="bloc"><div class="tete"><h3>Tes avis et tes photos</h3><span class="etat ${etatAvis[0]}">${etatAvis[1]}</span></div>${avis.join('')}</div>` : ''}
+      <div class="bloc"><div class="tete"><h3>Ton Instagram</h3><span class="etat o">Pas encore lu</span></div>${ig}</div>
+      <div class="bloc"><h3>Ce que Gusto fait dès cette semaine</h3>
+        <ol class="plan">${r.actions.map((a) => `<li>${esc(a.text)}</li>`).join('')}</ol>
+        ${r.lockedActions ? `<div class="verrou" aria-hidden="true">${'<i></i>'.repeat(r.lockedActions)}</div><p class="petit">${r.lockedActions} action${r.lockedActions > 1 ? 's' : ''} de plus dans ton plan complet, visible dès que ton essai démarre.</p>` : ''}</div>
+      <div class="bloc"><h3>Tu préfères en parler ?</h3><p style="font-size:14px">Thomas regarde ton diagnostic avec toi, en visio. Offert, sans obligation d'achat.</p>
+        <a class="second" id="appel" href="${APPEL}" target="_blank" rel="noopener">Réserver un appel avec Thomas</a></div>`,
+      `<button class="cta" id="essai" type="button">Lancer Gusto sur mon restaurant</button><p class="petit">14 jours gratuits · puis 69 € HT/mois · sans engagement</p>`, null);
+    document.getElementById('essai').onclick = paiement;
+    document.getElementById('appel').onclick = () => suivi('diagnostic_appel');
+  }
+
+  // ── 8. Avant le paiement ──
+  function paiement() {
+    const r = d.result;
+    suivi('diagnostic_essai');
+    montrer('paiement', `
+      <h2>Tes 14 jours gratuits <em>commencent maintenant.</em></h2>
+      <div class="bloc">
+        <div class="recap"><span>À payer aujourd'hui</span><b>0 €</b></div>
+        <div class="recap"><span>Rappel par e-mail</span><b>avant la fin de l'essai</b></div>
+        <div class="recap"><span>Ensuite</span><b>69 € HT / mois</b></div>
+        <div class="recap"><span>Arrêt</span><b>1 clic, quand tu veux</b></div>
+      </div>
+      <p>Tu arrêtes en 1 clic depuis ton compte, sans appeler personne. Si tu arrêtes avant la fin des 14 jours, tu ne paies rien.</p>
+      <p class="petit g">Ta carte sert à démarrer l'essai. Aucun prélèvement pendant 14 jours.</p>`,
+      `<button class="cta" id="payer" type="button">Démarrer mon essai</button><p class="petit">Paiement sécurisé par Stripe</p>`, resultat);
+    const bouton = document.getElementById('payer');
+    bouton.onclick = async () => {
+      sansErreur(); bouton.disabled = true; bouton.textContent = 'Ouverture de l\'essai…';
+      try {
+        const res = await fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ restaurantName: r.place.name, diagnosticId: d.id }), signal: AbortSignal.timeout(25000) });
+        if (!res.ok) throw new Error();
+        const url = new URL((await res.json()).url);
+        if (url.protocol !== 'https:' || url.hostname !== 'checkout.stripe.com') throw new Error();
+        suivi('diagnostic_paiement');
+        try { if (typeof window.fbq === 'function') window.fbq('track', 'InitiateCheckout'); } catch {}
+        window.location.assign(url.href);
+      } catch {
+        bouton.disabled = false; bouton.textContent = 'Démarrer mon essai';
+        erreur('L\'essai n\'a pas pu s\'ouvrir. Réessaie dans un instant. Aucun paiement n\'a été effectué.');
+      }
+    };
+  }
+
+  // ── Reprise : lien d'une relance (?d=…) ou retour depuis Stripe ──
+  const garder = () => { try { sessionStorage.setItem('gusto-diagnostic', d.id); } catch {} };
+  async function reprendre(id) {
+    d.id = id;
+    try {
+      const etat = await api('GET', '?id=' + id);
+      d.keyword = etat.keyword || ''; d.city = (etat.place && etat.place.city) || '';
+      if (etat.status === 'done' && etat.result) { d.result = etat.result; return resultat(); }
+      if (etat.status === 'done' && etat.teaser) { d.teaser = etat.teaser; return contact(); }
+      if (etat.status === 'running') { d.teaser = { place: etat.place }; return analyse(false); }
+      if (etat.status === 'deferred' && !etat.hasContact) { d.deferred = true; return contact(); }
+    } catch {}
+    intro();
+  }
+
+  let depart = new URLSearchParams(location.search).get('d');
+  if (!depart || !UUID.test(depart)) { try { depart = sessionStorage.getItem('gusto-diagnostic'); } catch { depart = null; } }
+  // Un diagnostic repris depuis la session ne s'impose que si l'adresse le demande.
+  if (new URLSearchParams(location.search).get('d') && depart && UUID.test(depart)) reprendre(depart); else intro();
+})();
+</script>
+<script defer src="/gusto-consent.js"></script>
+</body>
+</html>

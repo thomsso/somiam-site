@@ -66,7 +66,7 @@
   banner.id = 'audience-consent';
   banner.setAttribute('aria-label', 'Choix de mesure d’audience');
   banner.hidden = true;
-  banner.innerHTML = `<p>Des cookies Google Analytics pour mesurer les visites ? <a href="/politique-confidentialite">En savoir plus</a>. Choix modifiable à tout moment.</p><div class="audience-actions"><button type="button" data-choice="refused">Refuser</button><button type="button" data-choice="accepted">Accepter</button></div>`;
+  banner.innerHTML = `<p>Des cookies Google Analytics pour mesurer les visites ? <a href="/politique-confidentialite">En savoir plus</a>.<span class="audience-more"> Choix modifiable à tout moment.</span></p><div class="audience-actions"><button type="button" data-choice="refused">Refuser</button><button type="button" data-choice="accepted">Accepter</button></div>`;
   const preferences = document.createElement('div');
   preferences.className = 'audience-preferences';
   const settingsButton = document.createElement('button');
