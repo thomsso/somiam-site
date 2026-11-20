@@ -20,8 +20,8 @@
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:#080808;color:var(--blanc);font:400 16px/1.45 var(--texte);min-height:100dvh;display:flex;flex-direction:column;align-items:center}
 [hidden]{display:none!important}
-.app{width:100%;max-width:460px;min-height:100dvh;background:var(--nuit);display:flex;flex-direction:column}
-@media(min-width:520px){body{padding:24px 0}.app{min-height:calc(100dvh - 48px);border:1px solid var(--trait);border-radius:28px;overflow:clip}}
+.app{width:100%;max-width:460px;min-height:calc(100dvh - 44px);background:var(--nuit);display:flex;flex-direction:column}
+@media(min-width:520px){body{padding:24px 0}.app{min-height:calc(100dvh - 92px);border:1px solid var(--trait);border-radius:28px;overflow:clip}}
 .haut{display:flex;align-items:center;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px));min-height:58px}
 .logo{font:800 22px/1.1 var(--titre);border-bottom:3px solid var(--jaune);color:var(--blanc);text-decoration:none}
 .barre{flex:1;min-width:0;height:4px;background:var(--trait);border-radius:4px;overflow:hidden}
@@ -61,8 +61,23 @@ input[aria-invalid=true]{border-color:var(--rouge)}
 .puces{display:flex;flex-wrap:wrap;gap:8px}
 .puce{background:var(--carte);color:var(--blanc);border:1px solid var(--trait);border-radius:22px;padding:10px 14px;font:inherit;font-size:14px;cursor:pointer;min-height:44px;max-width:100%;text-align:left}
 .puce[aria-pressed=true]{background:var(--jaune);color:#161714;border-color:var(--jaune)}
-.preuve{display:flex;gap:12px;align-items:center;font-size:13px;line-height:1.4;color:var(--gris)}
-.preuve b{font:800 20px/1 var(--titre);color:var(--blanc);white-space:nowrap;flex:none;min-width:58px}
+.ecran.intro{justify-content:space-between}
+.ecran.paiement{justify-content:center;gap:22px}
+@media(min-height:700px){.ecran.paiement{padding-bottom:10dvh}}
+.bloc.apercu{flex-direction:row;align-items:center;gap:16px;padding:16px}
+.bloc.apercu .grille{flex:none;width:clamp(80px,15dvh,150px);max-width:none;margin:0;gap:4px}
+.bloc.apercu .grille i{font-size:0}
+.bloc.apercu div:last-child{display:flex;flex-direction:column;gap:6px;min-width:0}
+.bloc.apercu .etiq{font:700 11px/1.2 var(--texte);letter-spacing:.08em;text-transform:uppercase;color:var(--jaune)}
+.bloc.apercu p{font-size:15px;line-height:1.35;color:var(--blanc)}
+.chiffres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.chiffre{background:var(--carte);border:1px solid var(--trait);border-radius:14px;padding:14px 6px;text-align:center;display:flex;flex-direction:column;gap:8px;overflow-wrap:normal}
+.chiffre b{font:800 clamp(15px,4.8vw,20px)/1 var(--titre);color:var(--blanc);white-space:nowrap}
+.chiffre span{font-size:12px;line-height:1.35;color:var(--gris)}
+@media(max-width:350px){.chiffre span{font-size:11px}}
+@media(max-height:720px){.ecran.intro{padding-top:12px;gap:12px}.ecran.intro h1{font-size:clamp(24px,7vw,27px)}.bloc.apercu{padding:12px}.chiffre{padding:10px 6px;gap:6px}}
+@media(max-height:600px){.bloc.apercu{display:none}}
+.audience-preferences{width:100%;max-width:460px;padding:0!important;background:var(--nuit)!important}
 .etapes{display:flex;flex-direction:column;gap:14px;margin-top:6px}
 .etape{display:flex;gap:12px;align-items:center;color:var(--gris);opacity:.35;transition:opacity .3s}
 .etape.fait,.etape.cours{opacity:1}
@@ -149,6 +164,7 @@ input[aria-invalid=true]{border-color:var(--rouge)}
   const ORDRE = ['intro', 'resto', 'mot', 'insta', 'analyse', 'contact', 'resultat', 'paiement'];
   function montrer(nom, html, pied, retour) {
     ecran = nom; jeton++;
+    E.className = 'ecran ' + nom;
     E.innerHTML = html;
     P.innerHTML = pied || ''; P.hidden = !pied;
     R.hidden = !retour; R.onclick = retour || null;
@@ -164,11 +180,15 @@ input[aria-invalid=true]{border-color:var(--rouge)}
   function intro() {
     montrer('intro', `
       <h1>Pourquoi tes tables restent vides <em>certains soirs ?</em></h1>
-      <p>Gusto mesure ta visibilité sur Google autour de ton restaurant. Tu as la réponse en 30 secondes.</p>
-      <div class="bloc">
-        <div class="preuve"><b>+30 %</b><span>de réservations en moyenne chez les restaurants suivis par So MIAM</span></div>
-        <div class="preuve"><b>+50</b><span>restaurants accompagnés par So MIAM, partout en France</span></div>
-        <div class="preuve"><b>N°1</b><span>sur Google Maps dans leur ville : de la 20<sup>e</sup> place à la 1<sup>re</sup></span></div>
+      <p>Gusto mesure ta place sur Google autour de ton restaurant, en 30 secondes.</p>
+      <div class="bloc apercu">
+        <div class="grille" aria-hidden="true"><i class="r">14</i><i class="r">11</i><i class="o">8</i><i class="r">12</i><i class="r">16</i><i class="r">9</i><i class="o">6</i><i class="o">5</i><i class="o">7</i><i class="r">13</i><i class="o">7</i><i class="o">4</i><i class="v">2</i><i class="o">5</i><i class="r">11</i><i class="r">10</i><i class="o">6</i><i class="o">4</i><i class="o">8</i><i class="r">15</i><i class="r">17</i><i class="r">12</i><i class="o">9</i><i class="r">14</i><i class="r">19</i></div>
+        <div><span class="etiq">Exemple</span><p>Ta place sur Google, rue par rue, face à tes concurrents.</p></div>
+      </div>
+      <div class="chiffres">
+        <div class="chiffre"><b>+30 %</b><span>de réservations en moyenne</span></div>
+        <div class="chiffre"><b>+50</b><span>restaurants accompagnés</span></div>
+        <div class="chiffre"><b>N°1</b><span>sur Google Maps</span></div>
       </div>`,
       `<button class="cta" id="go" type="button">Analyser mon restaurant</button><p class="petit">Gratuit · 30 secondes · sans carte bancaire</p>`);
     document.getElementById('go').onclick = () => { suivi('diagnostic_debut'); resto(); };
@@ -395,12 +415,10 @@ input[aria-invalid=true]{border-color:var(--rouge)}
       <h2>Tes 14 jours gratuits <em>commencent maintenant.</em></h2>
       <div class="bloc">
         <div class="recap"><span>À payer aujourd'hui</span><b>0 €</b></div>
-        <div class="recap"><span>Rappel par e-mail</span><b>avant la fin de l'essai</b></div>
+        <div class="recap"><span>Pendant 14 jours</span><b>aucun prélèvement</b></div>
         <div class="recap"><span>Ensuite</span><b>69 € HT / mois</b></div>
         <div class="recap"><span>Arrêt</span><b>1 clic, quand tu veux</b></div>
-      </div>
-      <p>Tu arrêtes en 1 clic depuis ton compte, sans appeler personne. Si tu arrêtes avant la fin des 14 jours, tu ne paies rien.</p>
-      <p class="petit g">Ta carte sert à démarrer l'essai. Aucun prélèvement pendant 14 jours.</p>`,
+      </div>`,
       `<button class="cta" id="payer" type="button">Démarrer mon essai</button><p class="petit">Paiement sécurisé par Stripe</p>`, resultat);
     const bouton = document.getElementById('payer');
     bouton.onclick = async () => {
